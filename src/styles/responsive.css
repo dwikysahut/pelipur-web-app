@@ -7,7 +7,7 @@
     position: absolute;
     background-color: #005555;
     left: 0;
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center;
     opacity: 0.9;
 
@@ -55,6 +55,28 @@
   }
 }
 
+/* item produk */
+
+@media screen and (min-width: 700px) {
+  .item-produk {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  article {
+    width: 1000px;
+    margin: auto;
+  }
+
+  .item-produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Footer responsiv */
 
 @media screen and (min-width: 600px) {
@@ -90,6 +112,6 @@
   footer .copyrig p {
     text-align: center;
     font-family: Tahoma;
-    color: rgb(142, 16, 94);
+    color: #005555;
   }
 }

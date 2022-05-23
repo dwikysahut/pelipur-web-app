@@ -25,7 +25,6 @@
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2);
   background-color: #005555;
-  border-bottom: 2px solid burlywood;
 }
 
 .header__inner {
@@ -81,12 +80,112 @@ button {
 }
 
 /* heros Image */
-/* .hero {
-  min-height: 400px;
+.hero {
+  display: flex;
   width: 100%;
+  min-height: 500px;
+  align-items: center;
+  text-align: center;
   background-position: center;
-  background-image: url('../public/images/heros/hero-image_1.jpg');
-} */
+  background-image: url('../public/images/heros/bumi.jpg');
+}
+
+.hero__inner {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero__inner h1 {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Tahoma;
+}
+
+.hero__inner p {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 20px;
+  font-family: Tahoma;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@media screen and (min-wdith: 650px) {
+  .hero {
+    background-image: url('../public/images/heros/hero-image_2.jpg');
+  }
+}
+
+/* main */
+
+article {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.item-produk {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card .card-item {
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 8px 0 rgb(11, 240, 221);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3 {
+  padding: 10px;
+  margin-top: -20px;
+  color: white;
+  font-size: 13px;
+}
+
+.card h2 {
+  padding: 10px;
+  font-family: Tahoma;
+  color: #005555;
+}
+
+.card h4 {
+  margin-top: -50px;
+  color: white;
+  padding: 10px;
+}
+.card p {
+  padding: 5px;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
 
 /* footer */
 footer {
