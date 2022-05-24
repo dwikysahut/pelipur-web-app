@@ -8,5 +8,3 @@ const drawerelement = document.querySelector('#drawer');
 menuToggel.addEventListener('click', function () {
   drawerelement.classList.toggle('slide');
 });
-
-console.log('Hello Coders! :)');
