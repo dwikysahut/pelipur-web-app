@@ -1,9 +1,9 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
 }
 
-/* skip Element */
+skip Element
 .skip-link {
   position: absolute;
   top: -40px;
@@ -80,15 +80,15 @@ button {
   opacity: 0;
 }
 
-/* heros Image */
-/* .hero {
+heros Image
+.hero {
   min-height: 400px;
   width: 100%;
   background-position: center;
   background-image: url('../public/images/heros/hero-image_1.jpg');
-} */
+}
 
-/* footer */
+footer
 footer {
   display: grid;
   padding: 20px;
@@ -117,4 +117,4 @@ footer .copyrig p {
   color: white;
   font-size: 12px;
   font-weight: lighter;
-}
+} */
