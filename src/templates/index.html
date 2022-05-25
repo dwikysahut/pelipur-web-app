@@ -24,11 +24,23 @@
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
-          <li class="nav__item"><a href="#">Beranda</a></li>
-          <li class="nav__item"><a href="#">Tentang Kami</a></li>
-          <li class="nav__item"><a href="#">Bisnis</a></li>
-          <li class="nav__item"><a href="#">Masuk</a></li>
-          <li class="nav__item"><a href="#">Daftar</a></li>
+          <li class="nav__item"><a href="#/beranda">Beranda</a></li>
+          <li class="nav__item">
+            <a href="#/aboutus">Tentang Kami</a>
+            <ul class="sub-menu">
+              <li><a href="#">Visi&Misi</a></li>
+              <li><a href="#">Pendiri</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item"><a href="#/bisnis">Bisnis</a>
+          <ul tabindex="0" class="sub-menu">
+              <li tabindex="0"><a href="#">Info Bisnis</a></li>
+            </ul>
+          </li>
+          </li>
+          <li tabindex="0" class="nav__item"><a href="#">MASUK</a></li>
+          <li tabindex="0" class="nav__item"><a href="#">DAFTAR</a></li>
         </ul>
       </nav>
     </header>
@@ -43,6 +55,9 @@
     <br />
 
     <main tabindex="0" id="maincontent">
+      <article>
+        <div class="layanan"></div>
+      </article>
       <article>
         <div class="item-produk"></div>
       </article>
