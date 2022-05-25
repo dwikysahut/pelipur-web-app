@@ -20,7 +20,7 @@
 
 .header {
   display: grid;
-  grid-template-columns: 0.6fr 0.3fr 1fr;
+  grid-template-columns: 0.3fr 0.3fr 0.5fr;
   gap: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2);
@@ -28,7 +28,7 @@
 }
 
 .header__inner {
-  padding: 10px;
+  border: 1px soild red;
 }
 
 .nav__list {
@@ -48,18 +48,20 @@
 }
 
 .nav__list li:nth-child(4) {
-  background-color: #069a8e;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
   border-radius: 5px;
 }
 
 .nav__list li:nth-child(5) {
-  background-color: #069a8e;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
   border-radius: 5px;
 }
 
 .header__inner h3 {
   font-family: segoe UI;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
 }
 .nav__item a {
@@ -67,7 +69,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 13px;
-  padding: 17px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -77,6 +79,15 @@
 
 button {
   opacity: 0;
+}
+
+/* logo */
+.header__inner {
+  width: 100px;
+}
+
+.header__inner img {
+  width: 100%;
 }
 
 /* heros Image */
@@ -123,27 +134,19 @@ button {
   font-weight: 300;
 }
 
-@media screen and (min-wdith: 650px) {
-  .hero {
-    background-image: url('../public/images/heros/hero-image_2.jpg');
-  }
-}
-
 /* main */
 
 article {
   width: 80%;
   margin: auto;
   padding: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  background-color: #005555;
 }
 
 .item-produk {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  border: 1px solid red;
   box-sizing: border-box;
 }
 
@@ -156,7 +159,6 @@ article {
   background-color: white;
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: 0 8px 8px 0 rgb(11, 240, 221);
 }
 
 .card img {

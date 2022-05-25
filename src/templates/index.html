@@ -10,26 +10,37 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="resto.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="icon" href="favicon.png" />
     <title>Pelipur</title>
   </head>
   <body>
     <a href="#maincontent" class="skip-link">Menuju ke konten</a>
     <header class="header">
       <div class="header__inner">
-        <h3>Pelipur</h3>
+        <img src="./images/heros/logo.png" />
       </div>
       <div class="menu-toggle">
         <button tabindex="0">≣</button>
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
-          <li class="nav__item"><a href="#">Beranda</a></li>
-          <li class="nav__item"><a href="#">Tentang Kmai</a></li>
-          <li class="nav__item"><a href="#">Bisnis</a></li>
-          <li class="nav__item"><a href="#">Masuk</a></li>
-          <li class="nav__item"><a href="#">Daftar</a></li>
+          <li class="nav__item"><a href="#/beranda">Beranda</a></li>
+          <li class="nav__item">
+            <a href="#/aboutus">Tentang Kami</a>
+            <ul class="sub-menu">
+              <li><a href="#">Visi&Misi</a></li>
+              <li><a href="#">Pendiri</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item"><a href="#/bisnis">Bisnis</a>
+          <ul tabindex="0" class="sub-menu">
+              <li tabindex="0"><a href="#">Info Bisnis</a></li>
+            </ul>
+          </li>
+          </li>
+          <li tabindex="0" class="nav__item"><a href="#">MASUK</a></li>
+          <li tabindex="0" class="nav__item"><a href="#">DAFTAR</a></li>
         </ul>
       </nav>
     </header>
@@ -41,12 +52,16 @@
         <p class="hero__tagline">Jadilah Penyelamat Bumi Kita Untuk Generasi Yang Akan Datang</p>
       </div>
     </div>
+    <br />
 
     <main tabindex="0" id="maincontent">
       <article>
-        <h1>Dunia Dalam Berita</h1>
+        <div class="layanan"></div>
+      </article>
+      <article>
         <div class="item-produk"></div>
       </article>
+      <br />
     </main>
 
     <footer>
