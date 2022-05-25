@@ -1,8 +1,12 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/submenu.css';
-import '../scripts/views/templates/template-creator';
+import './views/component/header';
+
 import App from './views/app';
 
 const app = new App({

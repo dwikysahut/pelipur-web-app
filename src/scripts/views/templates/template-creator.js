@@ -1,10 +1,9 @@
 import data from '../../../DATA.json';
 
-let news = '';
-data.restaurants.forEach((berita) => {
-  news += `
-
- 
+const newsTemplate = () => {
+  let news = '';
+  data.restaurants.forEach((berita) => {
+    news += `
             <div class="card">
               <div class="card-item" tabindex="0">
               <img src="${berita.pictureId}" alt="" >
@@ -15,6 +14,9 @@ data.restaurants.forEach((berita) => {
           </div>    
     
     `;
-});
+  });
+  return news;
+};
 
-document.querySelector('.item-produk').innerHTML = news;
+// eslint-disable-next-line import/prefer-default-export
+export { newsTemplate };
