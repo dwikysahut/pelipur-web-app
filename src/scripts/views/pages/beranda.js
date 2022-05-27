@@ -3,11 +3,13 @@
 /* eslint-disable guard-for-in */
 import { chatTemplateCreator, newsTemplate } from '../templates/template-creator';
 import firebase from '../../utils/firebase-config';
-
+import '../component/hero';
 // const chat = [];
 const Beranda = {
   async render() {
     return `
+    <custom-hero></custom-hero>
+    <div>
     <article>
     <div class="layanan"><p>content</p></div>
   </article>
@@ -49,6 +51,7 @@ const Beranda = {
         </form>
       </div>
 
+    </div>
     </div>
         `;
   },

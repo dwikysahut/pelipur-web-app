@@ -1,8 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,100;1,600&family=Quicksand:wght@300;400;700&display=swap');
+
+@import 'login-register.css';
+@import 'submenu.css';
+@import 'responsive.css';
+
 * {
   margin: 0;
   padding: 0;
 }
 
+main , body{
+  min-height: 100vh;
+}
 /* skip Element */
 .skip-link {
   position: absolute;
@@ -20,9 +30,9 @@
 
 .header {
   display: grid;
-  grid-template-columns: 0.3fr 0.3fr 0.5fr;
+  grid-template-columns: 0.3fr 0.9fr auto;
   gap: 5px;
-  padding: 20px;
+  padding: 15px 20px;
   box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2);
   background-color: #005555;
 }
@@ -30,7 +40,15 @@
 .header__inner {
   border: 1px soild red;
 }
-
+.header__inner__title {
+  color: white;
+  font-weight: 400;
+  font-family: 'Oleo Script Swash Caps',cursive;
+  letter-spacing: 8px;
+}
+.header__inner__tag {
+font-size: 0.5em;
+}
 .nav__list {
   display: flex;
   justify-content: space-between;
@@ -44,7 +62,23 @@
 
 .nav__list li {
   line-height: normal;
-  padding: 10px;
+  margin-left: 5px;
+  min-width: fit-content;
+}
+.nav  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__item a.active {
+  background-color: #069A8E;
+  border-radius: 5px;
+  padding: 16px;
+}
+.nav__item a.active:hover {
+  background-color: white;
+  border-radius: 5px;
+  color: #069A8E;
 }
 
 .nav__list li:nth-child(4) {
@@ -76,14 +110,16 @@
 .nav__list li .nav__item a:nth-child(4) {
   color: black;
 }
-
+.nav__item {
+  margin: 0;
+}
 button {
   opacity: 0;
 }
 
 /* logo */
 .header__inner {
-  width: 100px;
+  width: fit-content;
 }
 
 .header__inner img {
@@ -145,7 +181,7 @@ article {
 
 .item-produk {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
   gap: 10px;
   box-sizing: border-box;
 }

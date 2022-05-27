@@ -7,7 +7,7 @@ class Header extends HTMLElement {
     this.innerHTML = `
         <header class="header">
       <div class="header__inner">
-        <img src="./images/heros/logo.png" />
+       <h1 class="header__inner__title">Pelipur</h1>
       </div>
       <div class="menu-toggle">
         <button tabindex="0">≣</button>
@@ -29,8 +29,8 @@ class Header extends HTMLElement {
             </ul>
           </li>
           </li>
-          <li tabindex="0" class="nav__item"><a href="#">MASUK</a></li>
-          <li tabindex="0" class="nav__item"><a href="#">DAFTAR</a></li>
+          <li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>
+          
         </ul>
       </nav>
     </header>
