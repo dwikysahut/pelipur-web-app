@@ -21,8 +21,14 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-    console.log(page);
+    const page = routes[url.page];
+    console.log(url.splitedUrl);
+    if (url.splitedUrl.resource === 'aboutus') {
+      document.querySelector('.header').style.display = 'none';
+    } else {
+      document.querySelector('.header').style.display = 'static';
+      document.querySelector('main').scrollTop = document.querySelector('body').scrollHeight;
+    }
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
