@@ -17,6 +17,33 @@ const newsTemplate = () => {
   });
   return news;
 };
+const chatTemplateCreator = (chat) => {
+  const messageContainer = document.querySelector('.text-message');
+  let chatTemplate = '';
+
+  //     chat.map((data) => (messageContainer.innerHTML += `
+  //      <div class="container-message ${data.from === '123' ? 'sender' : 'receiver'}">
+  //       <span class="sender-name" >${data.from === '123' ? 'me' : 'admin'}</span>
+  //       <div class="text-message ${data.from === '123' ? 'sender' : 'receiver'}">
+  //         <p>$P</p>
+  //       </div>
+
+  //     </div>
+  // `));
+  chat.forEach((item) => {
+    chatTemplate += `
+      <div class="container-message ${item.from === '123' ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === '123' ? 'me' : 'admin'}</span>
+       <div class="text-message ${item.from === '123' ? 'sender' : 'receiver'}">
+         <p>${item.message}</p>
+       </div>
+      
+     </div>
+ `;
+    messageContainer.innerHTML = chatTemplate;
+    document.querySelector('.chat__item-container').scrollTop = messageContainer.scrollHeight;
+  });
+};
 
 // eslint-disable-next-line import/prefer-default-export
-export { newsTemplate };
+export { newsTemplate, chatTemplateCreator };

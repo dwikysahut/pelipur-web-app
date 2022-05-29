@@ -1,9 +1,19 @@
-/* * {
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,100;1,600&family=Quicksand:wght@300;400;700&display=swap');
+
+@import 'login-register.css';
+@import 'submenu.css';
+@import 'responsive.css';
+
+* {
   margin: 0;
   padding: 0;
 }
 
-skip Element
+main , body{
+  min-height: 100vh;
+}
+/* skip Element */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -20,9 +30,9 @@ skip Element
 
 .header {
   display: grid;
-  grid-template-columns: 0.3fr 0.3fr 0.5fr;
+  grid-template-columns: 0.3fr 0.9fr auto;
   gap: 5px;
-  padding: 20px;
+  padding: 15px 20px;
   box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2);
   background-color: #005555;
 }
@@ -30,7 +40,15 @@ skip Element
 .header__inner {
   border: 1px soild red;
 }
-
+.header__inner__title {
+  color: white;
+  font-weight: 400;
+  font-family: 'Oleo Script Swash Caps',cursive;
+  letter-spacing: 8px;
+}
+.header__inner__tag {
+font-size: 0.5em;
+}
 .nav__list {
   display: flex;
   justify-content: space-between;
@@ -44,7 +62,23 @@ skip Element
 
 .nav__list li {
   line-height: normal;
-  padding: 10px;
+  margin-left: 5px;
+  min-width: fit-content;
+}
+.nav  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__item a.active {
+  background-color: #069A8E;
+  border-radius: 5px;
+  padding: 16px;
+}
+.nav__item a.active:hover {
+  background-color: white;
+  border-radius: 5px;
+  color: #069A8E;
 }
 
 .nav__list li:nth-child(4) {
@@ -76,14 +110,16 @@ skip Element
 .nav__list li .nav__item a:nth-child(4) {
   color: black;
 }
-
+.nav__item {
+  margin: 0;
+}
 button {
   opacity: 0;
 }
 
 /* logo */
 .header__inner {
-  width: 100px;
+  width: fit-content;
 }
 
 .header__inner img {
@@ -145,7 +181,7 @@ article {
 
 .item-produk {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
   gap: 10px;
   box-sizing: border-box;
 }
@@ -218,4 +254,109 @@ footer .copyrig p {
   color: white;
   font-size: 12px;
   font-weight: lighter;
+}
+
+
+
+/* chat */
+
+.chat {
+  padding: 8px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 20%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2); 
+  background-color: white;
+}
+
+.chat__item-container {
+  min-height: 40px;
+  max-height: 100%;
+  overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+  overflow: scroll;
+  background-color: white;
+}
+.chat__form__form-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.form__submit-container{
+  margin-top: 20px;
+  display: flex;
+  margin-left: 10px;
+  justify-content: flex-end;
+
+}
+.form__input {
+  
+}
+.submit-button {
+  color: black;
+  opacity: 100%;
+  padding: 0px 5px;
+  height: 44px;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 0.7em;
+  border: 1px solid gray;
+}
+.input-message {
+  height: 20px;
+}
+.text-message {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+}
+.container-message.sender{
+  
+  align-self: flex-end;
+
+}
+.container-message.receiver{
+  
+  align-self: flex-start;
+
+}
+.text-message.sender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #005555;
+  border-radius: 10px 10px 0px 10px;
+}
+.text-message.receiver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0px 10px 10px 10px;
+  
+}
+.sender,.receiver {
+  min-width: 40px;
+}
+.text-message.sender > p,.text-message.receiver > p{
+padding: 0;
+margin: 0;
+}
+.sender > p {
+  color: white;
+}
+.sender-name {
+  font-size: 0.7em;
 }

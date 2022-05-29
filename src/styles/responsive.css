@@ -1,29 +1,5 @@
 /* RESPONSIVE HEADER & NAV */
 
-@media screen and (max-width: 1200px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 1fr;
-    gap: 5px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 2fr;
-    gap: 5px;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 7fr;
-    gap: 1px;
-  }
-}
-
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
@@ -114,7 +90,7 @@
 
   .item-produk {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+   
   }
 }
 
@@ -127,11 +103,13 @@
       'alamat medsos'
       'copyright copyright';
   }
+ 
   footer .alamat {
     grid-area: alamat;
     text-align: center;
     font-family: Tahoma;
     font-size: 15px;
+    padding: 10px;
     margin-bottom: 20px;
     border-right: 1px solid white;
   }
