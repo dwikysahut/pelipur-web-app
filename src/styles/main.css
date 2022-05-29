@@ -20,16 +20,15 @@ skip Element
 
 .header {
   display: grid;
-  grid-template-columns: 0.6fr 0.3fr 1fr;
+  grid-template-columns: 0.3fr 0.3fr 0.5fr;
   gap: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2);
   background-color: #005555;
-  border-bottom: 2px solid burlywood;
 }
 
 .header__inner {
-  padding: 10px;
+  border: 1px soild red;
 }
 
 .nav__list {
@@ -49,18 +48,20 @@ skip Element
 }
 
 .nav__list li:nth-child(4) {
-  background-color: #069a8e;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
   border-radius: 5px;
 }
 
 .nav__list li:nth-child(5) {
-  background-color: #069a8e;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
   border-radius: 5px;
 }
 
 .header__inner h3 {
   font-family: segoe UI;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
 }
 .nav__item a {
@@ -68,7 +69,7 @@ skip Element
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 13px;
-  padding: 17px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -80,12 +81,112 @@ button {
   opacity: 0;
 }
 
-heros Image
-.hero {
-  min-height: 400px;
+/* logo */
+.header__inner {
+  width: 100px;
+}
+
+.header__inner img {
   width: 100%;
+}
+
+/* heros Image */
+.hero {
+  display: flex;
+  width: 100%;
+  min-height: 500px;
+  align-items: center;
+  text-align: center;
   background-position: center;
-  background-image: url('../public/images/heros/hero-image_1.jpg');
+  background-image: url('../public/images/heros/bumi.jpg');
+}
+
+.hero__inner {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero__inner h1 {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Tahoma;
+}
+
+.hero__inner p {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 20px;
+  font-family: Tahoma;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* main */
+
+article {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #005555;
+}
+
+.item-produk {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card .card-item {
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3 {
+  padding: 10px;
+  margin-top: -20px;
+  color: white;
+  font-size: 13px;
+}
+
+.card h2 {
+  padding: 10px;
+  font-family: Tahoma;
+  color: #005555;
+}
+
+.card h4 {
+  margin-top: -50px;
+  color: white;
+  padding: 10px;
+}
+.card p {
+  padding: 5px;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
 footer
@@ -117,4 +218,4 @@ footer .copyrig p {
   color: white;
   font-size: 12px;
   font-weight: lighter;
-} */
+}
