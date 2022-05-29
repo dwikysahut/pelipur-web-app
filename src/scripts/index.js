@@ -3,6 +3,8 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/submenu.css';
 import '../scripts/views/templates/template-creator';
+import './views/component/header';
+import './views/component/footer';
 import App from './views/app';
 
 const app = new App({

@@ -8,43 +8,13 @@
     <meta name="theme-color" content="#db0000" />
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
     <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="resto.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
     <link rel="icon" href="favicon.png" />
     <title>Pelipur</title>
   </head>
   <body>
     <a href="#maincontent" class="skip-link">Menuju ke konten</a>
-    <header class="header">
-      <div class="header__inner">
-        <img src="./images/heros/logo.png" />
-      </div>
-      <div class="menu-toggle">
-        <button tabindex="0">≣</button>
-      </div>
-      <nav id="drawer" class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#/beranda">Beranda</a></li>
-          <li class="nav__item">
-            <a href="#/aboutus">Tentang Kami</a>
-            <ul class="sub-menu">
-              <li><a href="#">Visi&Misi</a></li>
-              <li><a href="#">Pendiri</a></li>
-            </ul>
-          </li>
-
-          <li class="nav__item"><a href="#/bisnis">Bisnis</a>
-          <ul tabindex="0" class="sub-menu">
-              <li tabindex="0"><a href="#">Info Bisnis</a></li>
-            </ul>
-          </li>
-          </li>
-          <li tabindex="0" class="nav__item"><a href="#">MASUK</a></li>
-          <li tabindex="0" class="nav__item"><a href="#">DAFTAR</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    <custom-header></custom-header>
     <!-- Hero -->
     <div class="hero">
       <div class="hero__inner">
@@ -53,37 +23,9 @@
       </div>
     </div>
     <br />
-
-    <main tabindex="0" id="maincontent">
-      <article>
-        <div class="layanan"></div>
-      </article>
-      <article>
-        <div class="item-produk"></div>
-      </article>
-      <br />
-    </main>
-
-    <footer>
-      <div tabindex="0" class="alamat">
-        <h3>Alamat :</h3>
-        <p>jl. Green Sedayu Bizpark Blok DM Boulevard No.2 Jl.Daan Mogot KM.18 Kali Deres - Jakarta Barat</p>
-        <p>Tlp/Wa : 0857 XXX XXX</p>
-      </div>
-
-      <div tabindex="0" class="medsos">
-        <ul>
-          <li>Instaram</li>
-          <li>Facebok</li>
-        </ul>
-      </div>
-
-      <div tabindex="0" class="copyrig">
-        <p>&copy; Copyright 2022 | Pengelolaan Limbah Untuk Ramah lingkungan (Pelipur)</p>
-      </div>
-
-      <script src="../scripts/utils/drawer-initiator.js"></script>
-    </footer>
+    <!-- hero -->
+    <main tabindex="0" id="maincontent"></main>
+    <custom-footer></custom-footer>
   </body>
 </html>
 

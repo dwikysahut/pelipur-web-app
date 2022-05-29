@@ -1,6 +1,6 @@
 /* RESPONSIVE HEADER & NAV */
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .header {
     display: grid;
     grid-template-columns: 0.3fr 0.3fr 1fr;
@@ -22,7 +22,7 @@
     grid-template-columns: 0.3fr 0.3fr 7fr;
     gap: 1px;
   }
-}
+} */
 
 @media screen and (max-width: 700px) {
   #drawer {
@@ -31,7 +31,7 @@
     position: absolute;
     background-color: #005555;
     left: 0;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     opacity: 0.9;
 
@@ -66,7 +66,7 @@
     font-size: 22px;
     opacity: 2;
     margin-left: 60%;
-    margin-top: 20px;
+    margin-top: 5px;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -81,8 +81,8 @@
     position: absolute;
     font-size: 22px;
     opacity: 2;
-    margin-left: 30%;
-    margin-top: 20px;
+    margin-left: 40%;
+    margin-top: 5px;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
