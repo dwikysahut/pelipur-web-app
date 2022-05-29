@@ -14,23 +14,25 @@
   flex-direction: column;
   position: absolute;
   justify-content: space-evenly;
-  padding: 5px;
+  background-color: #005555;
+  width: 120px;
 }
 .nav__list .sub-menu a {
   color: white;
   width: 100px;
 }
 
-.nav__list li a:hover {
+/* .nav__list li a:hover {
   background-color: #069a8e;
   color: white;
   border-radius: 3px;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .sub-menu {
-    margin-top: -40px;
+    margin-top: -10px;
     margin-bottom: 50px;
+    margin-top: -40px;
   }
 }
 /* submenu-end */
