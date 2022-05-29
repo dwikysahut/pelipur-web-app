@@ -10,17 +10,13 @@ class Header extends HTMLElement {
        <h1 class="header__inner__title">Pelipur</h1>
       </div>
       <div class="menu-toggle">
-        <button tabindex="0">≣</button>
+        <button class="btn-drawer" tabindex="0">☰</button>
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
           <li class="nav__item"><a href="#/beranda">Beranda</a></li>
           <li class="nav__item">
             <a href="#/aboutus">Tentang Kami</a>
-            <ul class="sub-menu">
-              <li><a href="#">Visi&Misi</a></li>
-              <li><a href="#">Pendiri</a></li>
-            </ul>
           </li>
 
           <li class="nav__item"><a href="#/bisnis">Bisnis</a>

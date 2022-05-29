@@ -1,11 +1,15 @@
+import { createSkeletonNewsList } from "../templates/template-creator";
+
 const Detail = {
   async render() {
     return `
-        <h2> Tentang kami </h2>
+       ${createSkeletonNewsList(10)}
         `;
   },
 
-  async afterRender() {},
+  async afterRender() {
+    
+  },
 };
 
 export default Detail;
