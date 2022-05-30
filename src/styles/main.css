@@ -9,7 +9,8 @@
 @import 'profile.css';
 @import 'login-register.css';
 @import 'submenu.css';
-
+@import 'user-collection.css';
+@import 'user-history.css';
 
 
 * {
@@ -57,7 +58,8 @@ main , body{
 .header__inner__title {
   color: white;
   font-weight: 400;
-  font-family: 'Oleo Script Swash Caps',cursive;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-style: italic;
   letter-spacing: 8px;
 }
 .header__inner__tag {
@@ -108,7 +110,6 @@ font-size: 0.5em;
 }
 
 .header__inner h1 {
-  font-family: segoe UI;
   font-size: 20px;
   color: white;
 }
@@ -120,7 +121,7 @@ font-size: 0.5em;
 }
 .nav__item a {
   text-decoration: none;
-  font-family: calibri;
+  font-family: 'Poppins', sans-serif;
   color: white;
   font-size: 13px;
   padding: 15px;
@@ -341,9 +342,9 @@ footer .copyrig p {
   justify-content: flex-end;
 
 }
-.form__input {
+/* .form__input {
   
-}
+} */
 .submit-button {
   color: black;
   opacity: 100%;
