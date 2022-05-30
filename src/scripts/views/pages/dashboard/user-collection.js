@@ -1,10 +1,10 @@
-import '../../component/aside-dashboard';
+import '../../component/aside-user';
 
 const UserCollection = {
   async render() {
     return `
     <div class="wrapper-dashboard">
-      <aside-dashboard></aside-dashboard>
+      <aside-user></aside-user>
     
       <div class="dashboard-container">
         <div class="content">
