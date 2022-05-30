@@ -25,7 +25,7 @@ const Profile = {
       </div>
       <div class="content__form-item">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" disabled required />
       </div>
       <div class="content__form-item">
         <label for="address">Alamat</label>
