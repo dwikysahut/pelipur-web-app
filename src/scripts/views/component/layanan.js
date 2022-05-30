@@ -14,6 +14,7 @@ class Layanan extends HTMLElement {
 
     .judul h1{
         font-family:calibri;
+        font-weight: lighter;
         text-align:center;
         color:#005555;
     }
@@ -24,7 +25,7 @@ class Layanan extends HTMLElement {
 
     .layanan{
         display:flex;
-        width:60%;
+        width:70%;
         box-sizing:border-box;
         margin:30px auto;
         background-color:white;

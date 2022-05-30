@@ -8,7 +8,7 @@ import '../styles/responsive.css';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
 import './views/component/footer';
-
+import './views/component/keterangan-slide';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
