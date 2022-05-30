@@ -13,9 +13,17 @@ const Beranda = {
   </div></article>
 
    <artikel-custom 
-   src="./images/heros/bumi.jpg"
+   src="./images/heros/oil.jpg"
    alt="gambar bumi">
    </artikel-custom>
+
+  <div class="slider">
+      <img src="./images/heros/biodisel.jpg" />
+      <img src="./images/heros/ekonomis.jpg" />
+      <img src="./images/heros/bumi1.jpg" />
+  </div>
+    
+<keterangan-slider></keterangan-slider>
 
 
         `;

@@ -8,6 +8,7 @@ class Header extends HTMLElement {
       <header class="header">
       <div class="header__inner">
       <h1>Pelipur</h1>
+      <h4>Pengelolaan Limbah Ramah Lingkungan</h4>
       </div>
       <div class="menu-toggle">
         <button tabindex="0">≣</button>

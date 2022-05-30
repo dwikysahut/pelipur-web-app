@@ -66,7 +66,7 @@
     font-size: 22px;
     opacity: 2;
     margin-left: 60%;
-    margin-top: 5px;
+    margin-top: 0;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -82,7 +82,7 @@
     font-size: 22px;
     opacity: 2;
     margin-left: 40%;
-    margin-top: 5px;
+    margin-top: 0;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -115,6 +115,20 @@
   .item-produk {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* slider */
+
+@media screen and (max-width: 600px) {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .slider img {
+    width: 100%;
+    margin: 4px 0;
   }
 }
 
