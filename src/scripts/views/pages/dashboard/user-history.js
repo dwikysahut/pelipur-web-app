@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-function */
 import '../../component/aside-user';
 
 const UserHistory = {
