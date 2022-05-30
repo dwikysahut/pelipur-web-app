@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
