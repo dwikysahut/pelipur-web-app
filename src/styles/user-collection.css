@@ -126,7 +126,7 @@
 
   .content__form-item-total {
     display: grid;
-    grid-template-columns: 25% auto;
+    grid-template-columns:repeat(auto-fit,25%);;
     margin-bottom: 10px;
   }
 

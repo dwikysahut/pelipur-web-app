@@ -17,7 +17,7 @@ class AsideDashboard extends HTMLElement {
       <div class="sidebar__menu" id="sidebar__menu">
         <ul class="sidebar__list">
           <li class="sidebar__item">
-            <a href="#" class="sidebar__link">
+            <a href="#/dashboard" class="sidebar__link">
               <img
                 src="icons/dashboard_white_24dp.svg"
                 class="sidebar__icon"
@@ -27,7 +27,7 @@ class AsideDashboard extends HTMLElement {
             </a>
           </li>
           <li class="sidebar__item">
-            <a href="#" class="sidebar__link">
+            <a href="#/collections" class="sidebar__link">
               <img
                 src="icons/format_list_bulleted_white_24dp.svg"
                 class="sidebar__icon"
@@ -37,7 +37,7 @@ class AsideDashboard extends HTMLElement {
             </a>
           </li>
           <li class="sidebar__item">
-            <a href="#" class="sidebar__link">
+            <a href="#/partners" class="sidebar__link">
               <img
                 src="icons/account_balance_white_24dp.svg"
                 class="sidebar__icon"

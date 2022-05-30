@@ -13,7 +13,7 @@ const Auth = {
   },
 
   async afterRender() {
-    const loginText = document.querySelector('.title-text .login');
+    // const loginText = document.querySelector('.title-text .login');
     const loginForm = document.querySelector('form.login');
     const loginBtn = document.querySelector('label.login');
     const signupBtn = document.querySelector('label.signup');
@@ -24,7 +24,7 @@ const Auth = {
     const inputPassword = document.querySelector('#inputPasswordLogin');
 
     SliderButtonLoginPresenter.init({
-      loginText, loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     });
 
     inputEmail.addEventListener('keyup', (e) => {
