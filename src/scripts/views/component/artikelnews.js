@@ -16,11 +16,19 @@ class Artikel extends HTMLElement {
             padding:10px;
         }
 
-        .artikels p {
+        .artikel p {
             font-family:calibri;
+            font-weight: lighter;
         }
 
-        .artikel img{
+        .artikel h2{
+          font-family:calibri;
+          font-weight: lighter;
+          margin-bottom:10px;
+          color:#005555;
+        }
+
+        .gambar-artikel img{
             width:100%;
             max-height:450px;
         }
@@ -34,15 +42,30 @@ class Artikel extends HTMLElement {
         }
         </style>
 
-        <div class = "artikels">
-        <div class = "artikel">
-        <img src="${this.src}" alt="${this.alt}">
+      <div class = "artikels">
+        <div class = "gambar-artikel">
+          <img src="${this.src}" alt="${this.alt}">
         </div>
-       <p> Limbah adalah buangan yang kehadirannya pada suatu saat dan tempat tertentu tidak dikehendaki lingkungannya karena tidak mempunyai nilai ekonomi. Limbah tersebut dapat berupa limbah padat, limbah cair, maupun limbah gas
-       Limbah adalah buangan yang kehadirannya pada suatu saat dan tempat tertentu tidak dikehendaki lingkungannya karena tidak mempunyai nilai ekonomi. Limbah tersebut dapat berupa limbah padat, limbah cair, maupun limbah gas
-       Limbah adalah buangan yang kehadirannya pada suatu saat dan tempat tertentu tidak dikehendaki lingkungannya karena tidak mempunyai nilai ekonomi. Limbah tersebut dapat berupa limbah padat, limbah cair, maupun limbah gas
-       </p>
-        </div>
+
+       <div class="artikel">
+          <h2>Limbah Minyak Jelantah</h2>
+          <p> Makanan yang digoreng tentu memiliki 
+                kenikmatan tersendiri bagi penggemarnya dan 
+                hampir sebagian masyarakat Indonesia merupakan 
+                penikmat gorengan. Namun ternyata jelantah atau 
+                minyak bekas menggoreng mempunyai dampak 
+                serius. Selain berbahaya bagi kesehatan, 
+                minyak jelantah memiliki peran besar dalam 
+                pencemaran lingkungan jika dibuang sembarang. <br><br>
+
+                Saat ini masih banyak orang yang belum memiliki 
+                kesadaran akan bahaya membuang minyak jelantah 
+                sembarangan. Umumnya, minyak jelantah 
+                dibuang ke saluran dekat rumah, tempat sampah, 
+                atau ke tanah.<br><br> <a href="#"> Read More...<a/>  
+          </p>
+       </div>
+      </div>
         
         `;
   }

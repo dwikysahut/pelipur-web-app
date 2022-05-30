@@ -59,14 +59,20 @@
   border-radius: 5px;
 }
 
-.header__inner h3 {
+.header__inner h1 {
   font-family: segoe UI;
   font-size: 20px;
   color: white;
 }
+
+.header__inner h4 {
+  font-family: calibri;
+  font-size: 6px;
+  color: white;
+}
 .nav__item a {
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: calibri;
   color: white;
   font-size: 13px;
   padding: 15px;
@@ -188,6 +194,22 @@ article {
   padding: 5px;
   font-family: sans-serif;
   font-weight: lighter;
+}
+
+/* slider */
+
+.slider {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: #d8efef;
+  box-sizing: border-box;
+}
+.slider img {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+  margin: 4px;
 }
 
 /* footer */
