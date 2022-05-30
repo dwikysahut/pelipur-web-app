@@ -19,7 +19,7 @@ const Auth = {
           <div class="form-inner">
             <form action="#" class="login">
               <h2>Masuk</h2>
-              <p>Belum punya akun? <a href="#" class="link-daftar">Daftar Sekarang</a></p>
+              <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
               <div class="field">
                 <input type="email" placeholder="Masukan Email" required>
               </div>
@@ -27,8 +27,8 @@ const Auth = {
                 <input type="password" placeholder="Masukan Password" required>
               </div> <br>
               <div class="remember">
-                <input type="checkbox" name="rememberme" id="rememberme"> Remember me 
-                <a href="#" class="pass-link">Lupa password?</a>
+                <input type="checkbox" name="rememberme" id="rememberme"> Ingatkan Saya 
+                <a href="#/forgot-password" class="pass-link">Lupa password?</a>
               </div>
               
               <div class="field btn">
@@ -73,6 +73,11 @@ const Auth = {
     const loginBtn = document.querySelector('label.login');
     const signupBtn = document.querySelector('label.signup');
     const signupLink = document.querySelector('form .signup-link a');
+    const linkSignUp = document.querySelector('#linkSignUp');
+    linkSignUp.onclick = ((e) => {
+      e.preventDefault();
+      signupBtn.click();
+    });
     signupBtn.onclick = (() => {
       loginForm.style.marginLeft = '-50%';
       loginText.style.marginLeft = '-50%';

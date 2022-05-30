@@ -34,15 +34,14 @@
 /* Hamburger menu */
 
 @media screen and (max-width: 700px) {
-  button {
+  .btn-drawer {
     width: 44px;
     height: 44px;
     font-size: 20px;
-    position: absolute;
     font-size: 22px;
     opacity: 2;
-    margin-left: 60%;
-    margin-top: 20px;
+    
+    
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -50,15 +49,15 @@
 }
 
 @media screen and (max-width: 600px) {
-  button {
+  .btn-drawer {
     width: 44px;
     height: 44px;
     font-size: 20px;
-    position: absolute;
+    
     font-size: 22px;
     opacity: 2;
-    margin-left: 30%;
-    margin-top: 20px;
+    
+    
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -79,6 +78,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+  }
+  .btn-drawer {
+    display: none;
   }
 }
 
@@ -134,3 +136,25 @@
     color: #005555;
   }
 }
+
+@media screen and (min-width: 650px) {
+  
+  .wrapper-news {
+    width: 80%;
+    margin: 10px auto;
+    max-width: 800px;
+  }
+  .wrapper-news__item {
+    flex-direction: row;
+    
+  }
+  
+  .item-news__image{
+    min-width: 200px;
+    min-height: 160px;
+    max-width: 250px;
+    max-height: 240px;
+  
+  }
+  
+  }

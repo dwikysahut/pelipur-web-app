@@ -45,5 +45,35 @@ const chatTemplateCreator = (chat) => {
   });
 };
 
+const createSkeletonNewsList = (count) => {
+  let template = '';
+
+  for (let i = 0; i < count; i += 1) {
+    template += `
+    <div class="wrapper-news">
+    <div class="wrapper-news__item">
+      <div class="item-news__image">
+        <img src="" alt="" srcset="./images/placeholder.png">
+      </div>
+      <div class="item-news__content">
+        <h3>
+          Title
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, velit!</p>
+        <div class="item-news__footer">
+          <span class="footer__date">
+            null
+          </span>
+          <a href="http://"> <span>null</span></a>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+    `;
+  }
+  return template;
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export { newsTemplate, chatTemplateCreator };
+export { newsTemplate, chatTemplateCreator, createSkeletonNewsList };

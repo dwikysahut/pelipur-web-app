@@ -32,9 +32,12 @@ const API_ENDPOINT = {
   PUT_CONFIRMATION_COLLECTION: (id) => `${CONFIG.BASE_URL}collections/confirmation/${id}`,
   PUT_FINISH_COLLECTION: (id) => `${CONFIG.BASE_URL}collections/${id}`,
   GET_COLLECTION_BY_USER: (id) => `${CONFIG.BASE_URL}collections/users/${id}`,
+  // data dashboard
+  GET_DATAS_COUNT: `${CONFIG.BASE_URL}datas/count`,
 
-  DETAIL: (id) => `${CONFIG.BASE_URL}detail/${id}`,
-  POST_REVIEW: `${CONFIG.BASE_URL}review`,
+  // public api
+  GET_NEWS_API: 'https://api-berita-indonesia.vercel.app/suara/health/',
+
 };
 
 export default API_ENDPOINT;
