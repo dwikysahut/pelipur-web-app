@@ -24,7 +24,7 @@ html,body{
   flex-direction: column;
   max-width: 100% !important;
   padding: 0 !important;
-  height: 100vh;
+  /* height: 100vh; */
 
 }
 .container__side >img{

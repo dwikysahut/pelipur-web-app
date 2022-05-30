@@ -1,6 +1,8 @@
+/* eslint-disable no-shadow */
 /* eslint-disable no-unused-expressions */
 import Swal from 'sweetalert2';
 import AuthDbSource from '../../../data/authdb-source';
+import FormEventChangeHandler from '../../../utils/form-event-change-handler';
 import SliderButtonLoginPresenter from '../../../utils/slider-button-login-presenter';
 import { createAuthTemplate } from '../../templates/template-creator';
 
@@ -20,40 +22,91 @@ const Auth = {
     const signupLink = document.querySelector('form .signup-link a');
     const linkSignUp = document.querySelector('#linkSignUp');
 
-    const inputEmail = document.querySelector('#inputEmailLogin');
-    const inputPassword = document.querySelector('#inputPasswordLogin');
+    const inputEmailLogin = document.querySelector('#inputEmailLogin');
+    const inputPasswordLogin = document.querySelector('#inputPasswordLogin');
+
+    const formRegister = {
+      nama: document.querySelector('#inputNameReg'),
+      email: document.querySelector('#inputEmailReg'),
+      no_telp: document.querySelector('#inputPhoneReg'),
+      alamat: document.querySelector('#inputAddressReg'),
+      password: document.querySelector('#inputPasswordReg'),
+      confirmPassword: document.querySelector('#inputRePasswordReg'),
+    };
 
     SliderButtonLoginPresenter.init({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     });
 
-    inputEmail.addEventListener('keyup', (e) => {
-      (e.target.value.length > 0 && inputEmail.classList.remove('danger'));
-    });
-    inputPassword.addEventListener('keyup', (e) => {
-      (e.target.value.length > 0) && inputPassword.classList.remove('danger');
-    });
+    // handler change register form input
+    FormEventChangeHandler.init(formRegister);
 
-    const registerHandler = async () => {
+    // handler change login form input
+    FormEventChangeHandler.init({ inputEmailLogin, inputPasswordLogin });
 
+    const registerHandler = async (form) => {
+      try {
+        const response = await AuthDbSource.postRegister({
+          nama: form.nama.value,
+          email: form.email.value,
+          no_telp: form.no_telp.value,
+          alamat: form.alamat.value,
+          password: form.password.value,
+
+        });
+        console.log(response);
+        if (response.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            confirmButtonText: 'Okay!',
+            confirmButtonColor: '#005555',
+            text: `${response.data.message}, Check Your Email for Verification Code`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.history.replaceState('', '', '#/verify');
+              window.dispatchEvent(new HashChangeEvent('hashchange'));
+            }
+          });
+        }
+      } catch (error) {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `${error.response.data.message}`,
+        });
+      }
+      formRegister.email.value = '';
+      formRegister.no_telp.value = '';
+      formRegister.alamat.value = '';
+      formRegister.password.value = '';
+      formRegister.email.value = '';
+      formRegister.confirmPassword.value = '';
+      formRegister.nama.value = '';
     };
 
     const loginHandler = async ({ email, password }) => {
       try {
-        const result = await AuthDbSource.postLogin({ email, password });
-        if (result.status === 200) {
+        const response = await AuthDbSource.postLogin({ email, password });
+        if (response.status === 200) {
+          // console.log(result);
+          localStorage.setItem('email', response.data.data.email);
+          localStorage.setItem('image', response.data.data.image);
+          localStorage.setItem('role', response.data.data.id_role);
+          localStorage.setItem('token', response.data.data.token);
+          localStorage.setItem('refreshToken', response.data.data.refreshToken);
           Swal.fire({
             icon: 'success',
-            title: 'Sukses',
-            text: `${result.data.message}`,
+            title: 'Success',
+            text: `${response.data.message}`,
+            confirmButtonColor: '#005555',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.history.replaceState('', '', '#/beranda');
+              window.dispatchEvent(new HashChangeEvent('hashchange'));
+            }
           });
-          console.log(result);
-          localStorage.setItem('email', result.data.data.email);
-          localStorage.setItem('image', result.data.data.image);
-          localStorage.setItem('role', result.data.data.id_role);
-          localStorage.setItem('token', result.data.data.token);
-          localStorage.setItem('refreshToken', result.data.data.refreshToken);
-          window.history.pushState('/');
         }
       } catch (error) {
         if (error.response) {
@@ -76,14 +129,38 @@ const Auth = {
     };
     document.querySelector('#submitLogin').addEventListener('click', async (e) => {
       e.preventDefault();
-
-      if (inputEmail.value !== '' && inputPassword.value !== '') {
-        await loginHandler({ email: inputEmail.value, password: inputPassword.value });
-        inputEmail.value = '';
-        inputPassword.value = '';
+      if (inputEmailLogin.value !== '' && inputPasswordLogin.value !== '') {
+        await loginHandler({ email: inputEmailLogin.value, password: inputPasswordLogin.value });
+        inputEmailLogin.value = '';
+        inputPasswordLogin.value = '';
       } else {
-        inputEmail.value.length < 1 && inputEmail.classList.add('danger');
-        inputPassword.value.length < 1 && inputPassword.classList.add('danger');
+        inputEmailLogin.value.length < 1 && inputEmailLogin.classList.add('danger');
+        inputPasswordLogin.value.length < 1 && inputPasswordLogin.classList.add('danger');
+      }
+    });
+    document.querySelector('#submitRegister').addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (formRegister.email.value !== '' && formRegister.alamat.value !== '' && formRegister.no_telp.value !== ''
+      && formRegister.password.value !== '' && formRegister.nama.value !== '' && formRegister.confirmPassword.value !== '') {
+        if (formRegister.password.value !== formRegister.confirmPassword.value) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Password Doesn\'t match',
+          });
+          formRegister.password.classList.add('danger');
+          formRegister.confirmPassword.classList.add('danger');
+          return;
+        }
+
+        await registerHandler(formRegister);
+      } else {
+        formRegister.nama.value < 1 && formRegister.nama.classList.add('danger');
+        formRegister.email.value < 1 && formRegister.email.classList.add('danger');
+        formRegister.password.value < 1 && formRegister.password.classList.add('danger');
+        formRegister.alamat.value < 1 && formRegister.alamat.classList.add('danger');
+        formRegister.no_telp.value < 1 && formRegister.no_telp.classList.add('danger');
+        formRegister.confirmPassword.value < 1 && formRegister.confirmPassword.classList.add('danger');
       }
     });
   },

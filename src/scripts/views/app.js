@@ -24,16 +24,6 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url.page];
     console.log(url.splitedUrl);
-    // if (url.splitedUrl.resource === 'auth') {
-    //   document.querySelector('custom-header').style.display = 'none';
-    //   // document.querySelector('.hero').style.display = 'none';
-    //   document.querySelector('custom-footer').style.display = 'none';
-    // } else {
-    //   document.querySelector('custom-header').style.display = 'static';
-    //   // document.querySelector('.hero').style.display = 'flex';
-    //   document.querySelector('custom-footer').style.display = 'static';
-    //   document.querySelector('main').scrollTop = document.querySelector('body').scrollHeight;
-    // }
     this._content.innerHTML = await page.render();
     await page.afterRender();
     this._skipToLinkInit();

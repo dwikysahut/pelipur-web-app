@@ -23,11 +23,7 @@ const Beranda = {
      alt="gambar bumi">
      </artikel-custom>
       
-      <div class="slider">
-      <img src="./images/heros/biodisel.jpg" />
-      <img src="./images/heros/ekonomis.jpg" />
-      <img src="./images/heros/bumi1.jpg" />
-    </div>
+     
     <div class="carousel-item">
     <img src="..." alt="...">
     <div class="carousel-caption d-none d-md-block">
