@@ -9,7 +9,8 @@
 @import 'profile.css';
 @import 'login-register.css';
 @import 'submenu.css';
-
+@import 'user-collection.css';
+@import 'user-history.css';
 
 
 * {
@@ -341,9 +342,9 @@ footer .copyrig p {
   justify-content: flex-end;
 
 }
-.form__input {
+/* .form__input {
   
-}
+} */
 .submit-button {
   color: black;
   opacity: 100%;

@@ -8,6 +8,8 @@ import ForgotPassword from '../views/pages/auth/forgot-password';
 import Collection from '../views/pages/dashboard/collection';
 import Profile from '../views/pages/dashboard/profile';
 import Partner from '../views/pages/dashboard/partner';
+import UserCollection from '../views/pages/dashboard/user-collection';
+import UserHistory from '../views/pages/dashboard/user-history';
 
 const routes = {
   '/': Beranda,
@@ -21,6 +23,8 @@ const routes = {
   '/collections': Collection,
   '/profile': Profile,
   '/partner': Partner,
+  '/user-collection': UserCollection,
+  '/user-history': UserHistory,
 };
 
 export default routes;
