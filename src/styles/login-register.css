@@ -30,8 +30,13 @@ html,body{
 .container__side >img{
   width: 200%;
 }
-.container__inner {
-  
+.hint.danger {
+  font-size: 0.7em;
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  display: none;
 }
 .container__side {
   display: flex;

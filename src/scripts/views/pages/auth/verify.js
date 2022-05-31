@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-expressions */
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import AuthDbSource from '../../../data/authdb-source';
 import FormEventChangeHandler from '../../../utils/form-event-change-handler';
+import {
+  emptyFormHandler, formEmailValidation, swalConfirm, swalError,
+} from '../../../utils/function-helper';
 
 const Verify = {
   async render() {
@@ -19,7 +22,8 @@ const Verify = {
                 <h2>Verifikasi email</h2>
                 <p>Silahkan buka <b>email</b> anda dan masukkan <b>kode verifikasi</b></p>
                 <div class="field">
-                <input type="email" id="inputEmailVerif" name="inputEmailVerif" placeholder="Masukan Email Pendaftaran" required>
+                <input type="email" id="inputEmailVerif" name="inputEmailVerif" placeholder="Masukan Email Terdaftar" required>
+                <span id="alertEmailVerify" class="hint danger">error please enter a valid email</span> 
               </div>
                 <div class="field">
                   <input type="number" id="inputCodeVerif" name="inputCodeVerif" placeholder="Masukan Kode" required>
@@ -51,27 +55,13 @@ const Verify = {
           { email, kode },
         );
         if (response.status === 200) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            confirmButtonText: 'Okay!',
-            confirmButtonColor: '#005555',
-            text: `${response.data.message}`,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.history.replaceState('', '', '#/auth');
-              window.dispatchEvent(new HashChangeEvent('hashchange'));
-              inputEmailVerif.value = '';
-              inputCodeVerif.value = '';
-            }
-          });
+          await swalConfirm(`${response.data.message}`, '#/auth');
+          inputEmailVerif.value = '';
+          inputCodeVerif.value = '';
         }
       } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: `${error.response.data.message}`,
-        });
+        await swalError(`${error.response.data.message}`);
+
         inputEmailVerif.value = '';
         inputCodeVerif.value = '';
       }
@@ -81,10 +71,13 @@ const Verify = {
       e.preventDefault();
 
       if (inputEmailVerif.value !== '' && inputCodeVerif.value !== '') {
-        verifyEmail({ email: inputEmailVerif.value, kode: inputCodeVerif.value });
+        if (formEmailValidation(inputEmailVerif, '#alertEmailVerify')) {
+          verifyEmail({ email: inputEmailVerif.value, kode: inputCodeVerif.value });
+        }
       } else {
-        inputEmailVerif.value < 1 && inputEmailVerif.classList.add('danger');
-        inputCodeVerif.value < 1 && inputCodeVerif.classList.add('danger');
+        emptyFormHandler(inputEmailVerif, inputCodeVerif);
+        // inputEmailVerif.value < 1 && inputEmailVerif.classList.add('danger');
+        // inputCodeVerif.value < 1 && inputCodeVerif.classList.add('danger');
       }
     });
   },

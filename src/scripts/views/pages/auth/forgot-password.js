@@ -1,6 +1,9 @@
 import Swal from 'sweetalert2';
 import AuthDbSource from '../../../data/authdb-source';
 import FormEventChangeHandler from '../../../utils/form-event-change-handler';
+import {
+  emptyFormHandler, formEmailValidation, swalConfirm, swalError,
+} from '../../../utils/function-helper';
 
 const ForgotPassword = {
   async render() {
@@ -10,15 +13,14 @@ const ForgotPassword = {
           <div class="container__side">
             <img src="./images/verification.png" alt="authentication">
           </div>
-    
           <div class="container__wrapper">    
-           
               <div class="form-inner">
                 <form action="#" class="login">
                   <h2>Lupa Password</h2>
                   <p>Masukkan <b>Email</b> anda, password baru akan dikirim ke <b>Email</b> Anda</p>
                   <div class="field">
-                    <input type="email" id="inputEmailForgot" name="inputEmailForgot" placeholder="Masukan Email yang Terdaftar" required>
+                    <input type="email" id="inputEmailForgot" name="inputEmailForgot" placeholder="Masukkan Email Terdaftar" required>
+                    <span id="alertEmailForgot" class="hint danger">error please enter a valid email</span> 
                   </div>
                   
                   <div class="field btn">
@@ -46,26 +48,11 @@ const ForgotPassword = {
           { email },
         );
         if (response.status === 200) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            confirmButtonText: 'Okay!',
-            confirmButtonColor: '#005555',
-            text: `${response.data.message}`,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.history.replaceState('', '', '#/auth');
-              window.dispatchEvent(new HashChangeEvent('hashchange'));
-              inputEmailForgot.value = '';
-            }
-          });
+          await swalConfirm(`${response.data.message}`, '#/auth');
+          inputEmailForgot.value = '';
         }
       } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: `${error.response.data.message}`,
-        });
+        swalError(`${error.response.data.message}`);
         inputEmailForgot.value = '';
       }
     };
@@ -74,9 +61,11 @@ const ForgotPassword = {
       e.preventDefault();
 
       if (inputEmailForgot.value !== '') {
-        verifyEmail({ email: inputEmailForgot.value });
+        if (formEmailValidation(inputEmailForgot, '#alertEmailForgot')) {
+          verifyEmail({ email: inputEmailForgot.value });
+        }
       } else {
-        inputEmailForgot.value < 1 && inputEmailForgot.classList.add('danger');
+        emptyFormHandler(inputEmailForgot);
       }
     });
   },

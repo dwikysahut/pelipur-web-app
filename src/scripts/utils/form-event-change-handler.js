@@ -2,24 +2,9 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-unused-expressions */
 const FormEventChangeHandler = {
-  async init(formRegisterElement) {
-    this._formRegisterElement = formRegisterElement;
-    await this._eventChangeHandler(this._formRegisterElement);
-  },
-
-  async _initFunction() {
-    this._linkSignUp.onclick = ((e) => {
-      e.preventDefault();
-      this._signupBtn.click();
-    });
-    this._signupBtn.addEventListener('click', () => {
-      this._loginForm.style.marginLeft = '-50%';
-      // this._loginText.style.marginLeft = '-50%';
-    });
-    this._loginBtn.addEventListener('click', () => {
-      this._loginForm.style.marginLeft = '0%';
-      // this._loginText.style.marginLeft = '0%';
-    });
+  async init(formElement) {
+    this._formElement = formElement;
+    await this._eventChangeHandler(this._formElement);
   },
 
   async _eventChangeHandler(elements) {

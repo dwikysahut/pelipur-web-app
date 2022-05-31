@@ -4,6 +4,7 @@ class Artikel extends HTMLElement {
     this.alt = this.getAttribute('alt') || null;
     this.render();
   }
+
   render() {
     this.innerHTML = `
         <style>
@@ -74,6 +75,7 @@ class Artikel extends HTMLElement {
     this[name] = newValue;
     this.render();
   }
+
   static get observedAttributes() {
     return ['alt', 'p'];
   }

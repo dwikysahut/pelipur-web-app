@@ -37,6 +37,10 @@
   font-size: inherit;
   border: 1px solid #dddddd;
 }
+.content__form-item input.danger, .content__form-item-date input.danger, .content__form-item-time input.danger, .content__form-item-total input.danger{
+ 
+  border: 1px solid red;
+}
 
 .content__form-item-date input, .content__form-item-time input, .content__form-item-total input {
   width: 150px;
