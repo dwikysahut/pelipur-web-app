@@ -15,7 +15,7 @@ body {
   height: 100vh;
 }
 
-aside,aside-dashboard {
+aside,aside-dashboard, aside-user {
   position: fixed;
   bottom: 0;
 }
@@ -100,16 +100,14 @@ aside,aside-dashboard {
     left: 0;
     height: 100%;
     width: 100%;
-    overflow-x: scroll;
     background-color: #fff;
     display: flex;
     flex-direction: row;
   }
 
-  aside,aside-dashboard {
+  aside,aside-dashboard, aside-user {
     background-color: #005555;
     position: fixed;
-    /* padding: 14px 25px; */
     display: flex;
     width: 250px;
     flex-basis: 10%;
@@ -165,6 +163,5 @@ aside,aside-dashboard {
 
   .content {
     height: 100vh;
-    overflow-y: scroll;
   }
 }

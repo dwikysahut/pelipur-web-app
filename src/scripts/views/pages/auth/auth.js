@@ -1,94 +1,90 @@
+/* eslint-disable no-unused-expressions */
+import Swal from 'sweetalert2';
+import AuthDbSource from '../../../data/authdb-source';
+import SliderButtonLoginPresenter from '../../../utils/slider-button-login-presenter';
+import { createAuthTemplate } from '../../templates/template-creator';
+
 const Auth = {
   async render() {
     return `
-      <div class="container">
-      <div class="container__side">
-        <img src="./images/auth.png" alt="authentication">
-      </div>
-
-      <div class="container__wrapper">    
-        <div class="container__wrapper-form">
-          <div class="slide-controls">
-            <input type="radio" name="slide" id="login" checked>
-            <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">Masuk</label>
-            <label for="signup" class="slide signup">Daftar</label>
-            <div class="slider-tab"></div>
-          </div>
-          
-          <div class="form-inner">
-            <form action="#" class="login">
-              <h2>Masuk</h2>
-              <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
-              <div class="field">
-                <input type="email" placeholder="Masukan Email" required>
-              </div>
-              <div class="field">
-                <input type="password" placeholder="Masukan Password" required>
-              </div> <br>
-              <div class="remember">
-                <input type="checkbox" name="rememberme" id="rememberme"> Ingatkan Saya 
-                <a href="#/forgot-password" class="pass-link">Lupa password?</a>
-              </div>
-              
-              <div class="field btn">
-                <div class="btn-layer"></div>
-                  <input type="submit" value="Login">
-              </div>
-            </form>
-    
-            <form action="#" class="signup">
-              <h2>Daftar</h2>
-              <div class="field">
-                <input type="email" placeholder="Masukan Email" required>
-              </div>
-              <div class="field">
-                <input type="tel" placeholder="Masukkan Nomor Telepon" required>
-              </div>
-              <div class="field">
-                <input type="password" placeholder="Masukan Password" required>
-              </div>
-              <div class="field">
-                <input type="password" placeholder="Konfirmasi password" required>
-              </div>
-              <div class="field btn">
-                <div class="btn-layer"></div>
-                <input type="submit" value="Daftar">
-              </div>
-    
-            </form>
-          </div>
-        </div>
-     </div>
-    </div>
-     <script>
-       
-     </script>
+      ${createAuthTemplate()}
+     
           `;
   },
 
   async afterRender() {
-    const loginText = document.querySelector('.title-text .login');
+    // const loginText = document.querySelector('.title-text .login');
     const loginForm = document.querySelector('form.login');
     const loginBtn = document.querySelector('label.login');
     const signupBtn = document.querySelector('label.signup');
     const signupLink = document.querySelector('form .signup-link a');
     const linkSignUp = document.querySelector('#linkSignUp');
-    linkSignUp.onclick = ((e) => {
+
+    const inputEmail = document.querySelector('#inputEmailLogin');
+    const inputPassword = document.querySelector('#inputPasswordLogin');
+
+    SliderButtonLoginPresenter.init({
+      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+    });
+
+    inputEmail.addEventListener('keyup', (e) => {
+      (e.target.value.length > 0 && inputEmail.classList.remove('danger'));
+    });
+    inputPassword.addEventListener('keyup', (e) => {
+      (e.target.value.length > 0) && inputPassword.classList.remove('danger');
+    });
+
+    const registerHandler = async () => {
+
+    };
+
+    const loginHandler = async ({ email, password }) => {
+      try {
+        const result = await AuthDbSource.postLogin({ email, password });
+        if (result.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Sukses',
+            text: `${result.data.message}`,
+          });
+          console.log(result);
+          localStorage.setItem('email', result.data.data.email);
+          localStorage.setItem('image', result.data.data.image);
+          localStorage.setItem('role', result.data.data.id_role);
+          localStorage.setItem('token', result.data.data.token);
+          localStorage.setItem('refreshToken', result.data.data.refreshToken);
+          window.history.pushState('/');
+        }
+      } catch (error) {
+        if (error.response) {
+          if (error.response.status === 401) {
+            console.log(error.response);
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${error.response.data.message}`,
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something Wrong',
+            });
+          }
+        }
+      }
+    };
+    document.querySelector('#submitLogin').addEventListener('click', async (e) => {
       e.preventDefault();
-      signupBtn.click();
-    });
-    signupBtn.onclick = (() => {
-      loginForm.style.marginLeft = '-50%';
-      loginText.style.marginLeft = '-50%';
-    });
-    loginBtn.onclick = (() => {
-      loginForm.style.marginLeft = '0%';
-      loginText.style.marginLeft = '0%';
-    });
-    signupLink.onclick = (() => {
-      signupBtn.click();
-      return false;
+
+      if (inputEmail.value !== '' && inputPassword.value !== '') {
+        await loginHandler({ email: inputEmail.value, password: inputPassword.value });
+        inputEmail.value = '';
+        inputPassword.value = '';
+      } else {
+        inputEmail.value.length < 1 && inputEmail.classList.add('danger');
+        inputPassword.value.length < 1 && inputPassword.classList.add('danger');
+      }
     });
   },
 };

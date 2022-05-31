@@ -159,6 +159,20 @@ input[type="radio"] {
   font-size: 17px;
   transition: all 0.3s ease;
 }
+.form-inner form .field input.danger {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid red;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input.danger:focus {
+  border-color: red;
+}
 
 .form-inner form .field input:focus {
   border-color: #016363;

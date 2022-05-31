@@ -75,5 +75,70 @@ const createSkeletonNewsList = (count) => {
   return template;
 };
 
+const createAuthTemplate = () => ` <div class="container">
+<div class="container__side">
+  <img src="./images/auth.png" alt="authentication">
+</div>
+
+<div class="container__wrapper">    
+  <div class="container__wrapper-form">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="login" checked>
+      <input type="radio" name="slide" id="signup">
+      <label for="login" class="slide login">Masuk</label>
+      <label for="signup" class="slide signup">Daftar</label>
+      <div class="slider-tab"></div>
+    </div>
+    
+    <div class="form-inner">
+      <form action="#" class="login">
+        <h2>Masuk</h2>
+        <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
+        <div class="field">
+          <input type="email" id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
+        </div>
+        <div class="field">
+          <input type="password" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Masukan Password" required>
+        </div> <br>
+        <div class="remember">
+          <input type="checkbox" name="rememberme" id="rememberme"> Ingatkan Saya 
+          <a href="#/forgot-password" class="pass-link">Lupa password?</a>
+        </div>
+        
+        <div class="field btn">
+          <div class="btn-layer"></div>
+            <input type="submit" id="submitLogin" value="Login">
+        </div>
+      </form>
+
+      <form action="#" class="signup">
+        <h2>Daftar</h2>
+        <div class="field">
+          <input type="email" placeholder="Masukkan Email" required>
+        </div>
+        <div class="field">
+          <input type="tel" placeholder="Masukkan Nomor Telepon" required>
+        </div>
+        <div class="field">
+        <input type="textarea" placeholder="Masukkan Alamat" required>
+      </div>
+        <div class="field">
+          <input type="password" placeholder="Masukan Password" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Konfirmasi password" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="Daftar">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>`;
 // eslint-disable-next-line import/prefer-default-export
-export { newsTemplate, chatTemplateCreator, createSkeletonNewsList };
+export {
+  newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
+};

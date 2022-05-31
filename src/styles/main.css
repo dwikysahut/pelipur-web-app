@@ -1,15 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,100;1,600&family=Quicksand:wght@300;400;700&display=swap');
 
-@import 'dashboard.css';
+@import 'admin-dashboard.css';
 @import 'aside.css';
 @import 'responsive.css';
 
-@import 'collection-list.css';
-@import 'profile.css';
+@import 'admin-list.css';
+@import 'profile-partner.css';
 @import 'login-register.css';
 @import 'submenu.css';
-
+@import 'user-collection.css';
+@import 'user-history.css';
 
 
 * {
@@ -57,7 +58,8 @@ main , body{
 .header__inner__title {
   color: white;
   font-weight: 400;
-  font-family: 'Oleo Script Swash Caps',cursive;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-style: italic;
   letter-spacing: 8px;
 }
 .header__inner__tag {
@@ -107,14 +109,19 @@ font-size: 0.5em;
   border-radius: 5px;
 }
 
-.header__inner h3 {
-  font-family: segoe UI;
+.header__inner h1 {
   font-size: 20px;
+  color: white;
+}
+
+.header__inner h4 {
+  font-family: calibri;
+  font-size: 6px;
   color: white;
 }
 .nav__item a {
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
   font-size: 13px;
   padding: 15px;
@@ -219,6 +226,7 @@ article {
 
 .card img {
   width: 100%;
+  max-height: 200px;
 }
 
 .card h3 {
@@ -245,7 +253,23 @@ article {
   font-weight: lighter;
 }
 
-footer
+/* slider */
+
+.slider {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: #d8efef;
+  box-sizing: border-box;
+}
+.slider img {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+/* footer */
 footer {
   display: grid;
   padding: 20px;
@@ -318,9 +342,9 @@ footer .copyrig p {
   justify-content: flex-end;
 
 }
-.form__input {
+/* .form__input {
   
-}
+} */
 .submit-button {
   color: black;
   opacity: 100%;

@@ -22,10 +22,9 @@ class Footer extends HTMLElement {
       <div tabindex="0" class="copyrig">
         <p>&copy; Copyright 2022 | Pengelolaan Limbah Untuk Ramah lingkungan (Pelipur)</p>
       </div>
-
-      <script src="../scripts/utils/drawer-initiator.js"></script>
     </footer>
-          `;
+        `;
   }
 }
+
 customElements.define('custom-footer', Footer);
