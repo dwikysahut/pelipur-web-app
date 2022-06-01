@@ -10,16 +10,16 @@ const Partner = {
         <div class="content">
           <h2 class="content__title">Mitra</h2>
           <form class="content__form" id="content_form">
-            <div class="content__form-item">
+            <div class="content__form-item list">
               <label for="name">Nama</label>
               <input type="text" id="name" name="name" required />
             </div>
-            <div class="content__form-item">
+            <div class="content__form-item list">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required />
             </div>
-            <div class="content__form-item">
-              <label for="number">Tanggal bergabung</label>
+            <div class="content__form-item list__date">
+              <label for="number">Tanggal Bergabung</label>
               <input type="date" required />
             </div>
             <div class="content__form-item">
@@ -36,6 +36,10 @@ const Partner = {
                 required
               ></textarea>
             </div>
+            <div class="content__form-item-img">
+              <label for="img">Pilih Gambar</label>
+              <input type="file" id="img" name="img" accept="image/*">
+            </div>
             <div class="btn__form">
               <button type="submit" value="Submit" class="btn__save">
                 Simpan
@@ -48,7 +52,7 @@ const Partner = {
               </button>
             </div>
           </form>
-          <h2 class="content__title">Daftar Mitra</h2>
+          <h2 class="content__title list">Daftar Mitra</h2>
           <div class="content__table">
             <table>
               <thead>

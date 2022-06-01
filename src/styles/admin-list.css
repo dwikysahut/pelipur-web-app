@@ -1,5 +1,4 @@
 .content {
-  width: 100%;
   padding: 30px;
 }
 
@@ -37,7 +36,7 @@ th {
   text-align: center;
 }
 
-select {
+.content__table select {
   border-radius: 3px;
   min-width: 44px;
   min-height: 44px;
@@ -59,6 +58,10 @@ select {
   cursor: pointer;
   border: none;
   color: #fff;
+}
+
+.btn__accept:focus, .btn__reject:focus {
+  outline-color: #069a8e;
 }
 
 .btn__save, .btn__accept {
@@ -89,9 +92,9 @@ button:hover {
 }
 
 @media screen and (min-width: 798px) {
-  .content {
+  /* .content {
     padding: 2% 4%;
-  }
+  } */
 
   table {
     margin-top: 2%;

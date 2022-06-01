@@ -24,14 +24,19 @@ html,body{
   flex-direction: column;
   max-width: 100% !important;
   padding: 0 !important;
-  height: 100vh;
+  /* height: 100vh; */
 
 }
 .container__side >img{
   width: 200%;
 }
-.container__inner {
-  
+.hint.danger {
+  font-size: 0.7em;
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  display: none;
 }
 .container__side {
   display: flex;
@@ -268,7 +273,6 @@ form .btn input[type="submit"] {
   .container__side {
     display: flex;
     width: 50%;
-    
   }
   
   .container__side img {

@@ -6,6 +6,7 @@ import '../styles/aside.css';
 import '../styles/responsive.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
 import './views/component/footer';

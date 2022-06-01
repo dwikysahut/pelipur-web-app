@@ -1,3 +1,11 @@
+/* eslint-disable no-unused-expressions */
+// import Swal from 'sweetalert2';
+import AuthDbSource from '../../../data/authdb-source';
+import FormEventChangeHandler from '../../../utils/form-event-change-handler';
+import {
+  emptyFormHandler, formEmailValidation, swalConfirm, swalError,
+} from '../../../utils/function-helper';
+
 const Verify = {
   async render() {
     return `
@@ -14,7 +22,11 @@ const Verify = {
                 <h2>Verifikasi email</h2>
                 <p>Silahkan buka <b>email</b> anda dan masukkan <b>kode verifikasi</b></p>
                 <div class="field">
-                  <input type="number" id="inputCode" name="inputCode" placeholder="Masukan Kode" required>
+                <input type="email" id="inputEmailVerif" name="inputEmailVerif" placeholder="Masukan Email Terdaftar" required>
+                <span id="alertEmailVerify" class="hint danger">error please enter a valid email</span> 
+              </div>
+                <div class="field">
+                  <input type="number" id="inputCodeVerif" name="inputCodeVerif" placeholder="Masukan Kode" required>
                 </div>
                 
                 <div class="field btn">
@@ -32,22 +44,41 @@ const Verify = {
   },
 
   async afterRender() {
-    const loginText = document.querySelector('.title-text .login');
-    const loginForm = document.querySelector('form.login');
-    const loginBtn = document.querySelector('label.login');
-    const signupBtn = document.querySelector('label.signup');
-    const signupLink = document.querySelector('form .signup-link a');
-    // signupBtn.onclick = (() => {
-    //   loginForm.style.marginLeft = '-50%';
-    //   loginText.style.marginLeft = '-50%';
-    // });
-    // loginBtn.onclick = (() => {
-    //   loginForm.style.marginLeft = '0%';
-    //   loginText.style.marginLeft = '0%';
-    // });
-    signupLink.onclick = (() => {
-      signupBtn.click();
-      return false;
+    const inputEmailVerif = document.querySelector('#inputEmailVerif');
+    const inputCodeVerif = document.querySelector('#inputCodeVerif');
+
+    FormEventChangeHandler.init({ inputEmailVerif, inputCodeVerif });
+
+    const verifyEmail = async ({ email, kode }) => {
+      try {
+        const response = await AuthDbSource.postVerifyEmail(
+          { email, kode },
+        );
+        if (response.status === 200) {
+          await swalConfirm(`${response.data.message}`, '#/auth');
+          inputEmailVerif.value = '';
+          inputCodeVerif.value = '';
+        }
+      } catch (error) {
+        await swalError(`${error.response.data.message}`);
+
+        inputEmailVerif.value = '';
+        inputCodeVerif.value = '';
+      }
+    };
+
+    document.querySelector('#submitVerify').addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (inputEmailVerif.value !== '' && inputCodeVerif.value !== '') {
+        if (formEmailValidation(inputEmailVerif, '#alertEmailVerify')) {
+          verifyEmail({ email: inputEmailVerif.value, kode: inputCodeVerif.value });
+        }
+      } else {
+        emptyFormHandler(inputEmailVerif, inputCodeVerif);
+        // inputEmailVerif.value < 1 && inputEmailVerif.classList.add('danger');
+        // inputCodeVerif.value < 1 && inputCodeVerif.classList.add('danger');
+      }
     });
   },
 };

@@ -1,21 +1,19 @@
 import data from '../../../DATA.json';
+import { dateConvert } from '../../utils/function-helper';
 
-const newsTemplate = () => {
-  let news = '';
-  data.restaurants.forEach((berita) => {
-    news += `
+const newsTemplate = (news) => {
+  let template = '';
+
+  template += `
             <div class="card">
               <div class="card-item" tabindex="0">
-              <img src="${berita.pictureId}" alt="" >
-              <h4>${berita.city}</h4>
-              <h3>${berita.rating}</h3>
-              <h2>${berita.name}</h2>
+              <img src="${news.thumbnail}" alt="" >
+              <h3>${dateConvert(news.pubDate)}</h3>
+              <h2>${news.title}</h2>
             </div>
           </div>    
-    
     `;
-  });
-  return news;
+  return template;
 };
 const chatTemplateCreator = (chat) => {
   const messageContainer = document.querySelector('.text-message');
@@ -91,11 +89,13 @@ const createAuthTemplate = () => ` <div class="container">
     </div>
     
     <div class="form-inner">
-      <form action="#" class="login">
+      <form class="login">
         <h2>Masuk</h2>
         <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
+      
         <div class="field">
-          <input type="email" id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
+          <input type="email"  id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
+          <span id="alertEmailLogin" class="hint danger">error please enter a valid email</span> 
         </div>
         <div class="field">
           <input type="password" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Masukan Password" required>
@@ -110,27 +110,32 @@ const createAuthTemplate = () => ` <div class="container">
             <input type="submit" id="submitLogin" value="Login">
         </div>
       </form>
-
+    
       <form action="#" class="signup">
         <h2>Daftar</h2>
         <div class="field">
-          <input type="email" placeholder="Masukkan Email" required>
-        </div>
-        <div class="field">
-          <input type="tel" placeholder="Masukkan Nomor Telepon" required>
-        </div>
-        <div class="field">
-        <input type="textarea" placeholder="Masukkan Alamat" required>
+        <input type="text"  id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
       </div>
         <div class="field">
-          <input type="password" placeholder="Masukan Password" required>
+          <input type="email" id="inputEmailReg" name="inputEmailReg" placeholder="Masukkan Email" required>
+          <span id="alertEmailReg" class="hint danger">error please enter a valid email</span> 
         </div>
         <div class="field">
-          <input type="password" placeholder="Konfirmasi password" required>
+          <input type="tel" id="inputPhoneReg" name="inputPhoneReg" placeholder="Masukkan Nomor Telepon" required>
+        </div>
+        <div class="field">
+        <input type="textarea" id="inputAddressReg" name="inputAddressReg" placeholder="Masukkan Alamat" required>
+      </div>
+        <div class="field">
+          <input type="password" id="inputPasswordReg" name="inputPasswordReg" placeholder="Masukan Password" required>
+          <span id="alertPassReg" class="hint danger">password must be 8-12 characters in length</span> 
+        </div>
+        <div class="field">
+          <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" placeholder="Konfirmasi password" required>
         </div>
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input type="submit" value="Daftar">
+          <input type="submit" id="submitRegister" value="Daftar">
         </div>
 
       </form>

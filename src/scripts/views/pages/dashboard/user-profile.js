@@ -10,19 +10,25 @@ const Profile = {
         <div class="content">
           <h2 class="content__title">Profil</h2>
           <form class="content__form">
-            <div class="content__form-item">
+            <div class="content__form-item list">
               <label for="name">Nama</label>
               <input type="text" id="name" name="name" required />
             </div>
-            <div class="content__form-item">
+            <div class="content__form-item list__small">
               <label for="number">No. Telepon</label>
               <input type="number" id="number" name="number" required />
             </div>
-            <div class="content__form-item">
+            <div class="content__form-item list__small">
               <label for="detail">Keterangan</label>
-              <input type="text" id="detail" name="detail" required />
+              <td>
+                <select id="detail" name="detail">
+                  <option value="mitra1">Ibu Rumah Tangga</option>
+                  <option value="mitra2">Pabrik</option>
+                  <option value="mitra2">Rumah Makan</option>
+                </select>
+              </td>
             </div>
-            <div class="content__form-item">
+            <div class="content__form-item list">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" disabled required />
             </div>
@@ -36,7 +42,7 @@ const Profile = {
                 required
               ></textarea>
             </div>
-            <div class="content__form-item">
+            <div class="content__form-item list">
               <label for="password">Ubah Password</label>
               <input type="password" id="password" name="password" required />
             </div>
