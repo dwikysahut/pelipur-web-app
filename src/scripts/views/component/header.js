@@ -10,7 +10,7 @@ class Header extends HTMLElement {
        <h1 class="header__inner__title">Pelipur</h1>
       </div>
       <div class="menu-toggle">
-        <button class="btn-drawer" tabindex="0">☰</button>
+        <button id="hamburger" class="btn-drawer" tabindex="0">☰</button>
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
