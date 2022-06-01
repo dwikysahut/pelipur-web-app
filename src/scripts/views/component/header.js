@@ -16,7 +16,7 @@ class Header extends HTMLElement {
         <ul class="nav__list">
           <li class="nav__item"><a href="#/home">Beranda</a></li>
           <li class="nav__item">
-            <a href="#/aboutus">Tentang Kami</a>
+            <a href="#/about-us">Tentang Kami</a>
           </li>
 
           <li class="nav__item"><a href="#/bisnis">Bisnis</a>
