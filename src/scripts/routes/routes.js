@@ -14,8 +14,8 @@ import Collection from '../views/pages/dashboard/collection';
 
 const routes = {
   '/': Beranda,
-  '/beranda': Beranda,
-  '/aboutus': AboutUs,
+  '/home': Beranda,
+  '/about-us': AboutUs,
   '/bisnis': Detail,
   '/news/detail': Detail,
   '/auth': Auth,

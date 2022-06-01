@@ -11,9 +11,9 @@ class KeteranganSlide extends HTMLElement {
     <style>
     
     .ket-slider{
-        width:100%;
+        
         padding:20px;
-        margin-bottom:20px;
+        margin: 20px 0;
         background-color:#d8efef;
         box-sizing:border-box;
     }
@@ -42,13 +42,15 @@ class KeteranganSlide extends HTMLElement {
     @media screen and (min-width:700px){
         .ket-slider{
             display:flex;
+            margin: 20px 20px;
+           
         }
     }
     @media screen and (min-width:1200px){
         .ket-slider{
         width:80%;
         padding:20px;
-        margin: auto;
+        margin: 20px auto;
         margin-bottom:20px;
         background-color:#d8efef;
         box-sizing:border-box;
