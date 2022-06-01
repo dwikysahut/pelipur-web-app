@@ -1,4 +1,4 @@
-const SliderButtonLoginPresenter = {
+const SwiperButtonLoginPresenter = {
   async init({
     loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
   }) {
@@ -27,4 +27,4 @@ const SliderButtonLoginPresenter = {
 
 };
 
-export default SliderButtonLoginPresenter;
+export default SwiperButtonLoginPresenter;
