@@ -1,4 +1,4 @@
-import data from '../../../DATA.json';
+// import data from '../../../DATA.json';
 import { dateConvert } from '../../utils/function-helper';
 
 const newsTemplate = (news) => {

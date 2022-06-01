@@ -15,7 +15,7 @@ import App from './views/app';
 import swRegister from './utils/sw-register';
 
 const app = new App({
-  button: document.querySelector('button'),
+  button: document.querySelector('#hamburger'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),
 });

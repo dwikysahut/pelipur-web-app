@@ -101,7 +101,7 @@ font-size: 0.5em;
   max-height: 350px !important;
 }
 .carousel-inner {
-  margin: 0 20px;
+  
 }
 .carousel.slide {
   width: 80%;
@@ -434,7 +434,7 @@ margin: 0;
   font-size: 0.7em;
 }
 
-.danger {
+input.danger {
   border: 1px solid red !important;
 }
 /* news list detail */
