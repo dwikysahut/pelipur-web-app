@@ -1,12 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,100;1,600&family=Quicksand:wght@300;400;700&display=swap');
 
-@import 'dashboard.css';
+@import 'admin-dashboard.css';
 @import 'aside.css';
 @import 'responsive.css';
 
-@import 'collection-list.css';
-@import 'profile.css';
+@import 'admin-list.css';
+@import 'profile-partner.css';
 @import 'login-register.css';
 @import 'submenu.css';
 @import 'user-collection.css';
