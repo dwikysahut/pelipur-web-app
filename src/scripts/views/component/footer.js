@@ -13,9 +13,13 @@ class Footer extends HTMLElement {
       </div>
 
       <div tabindex="0" class="medsos">
+      <h3>Kunjungi Medsos kami</h3>
         <ul>
-          <li>Instaram</li>
-          <li>Facebok</li>
+         <li><img src = "./images/heros/fb.png" ></li>
+          <li><img src = "./images/heros/ig3.png" ></li>
+          <li><img src = "./images/heros/mail.png" ></li>
+          <li><img src = "./images/heros/twitter.png" ></li>
+         
         </ul>
       </div>
 

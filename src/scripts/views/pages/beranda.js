@@ -1,6 +1,8 @@
 import { newsTemplate } from '../templates/template-creator';
 import '../component/artikelnews.js';
 import '../component/layanan.js';
+import '../component/keterangan-slide.js';
+import '../component/listmitra.js';
 
 const Beranda = {
   async render() {
@@ -24,6 +26,7 @@ const Beranda = {
   </div>
     
 <keterangan-slider></keterangan-slider>
+<list-mitra></list-mitra>
 
 
         `;
