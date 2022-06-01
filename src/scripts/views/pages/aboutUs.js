@@ -1,7 +1,9 @@
+import '../component/aboutus/founder-aboutus.js';
+
 const AboutUs = {
   async render() {
     return `
-        <h2> Tentang kami </h2>
+        <founder-aboutus></founder-aboutus>
         `;
   },
 

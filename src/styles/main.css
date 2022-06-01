@@ -276,4 +276,5 @@ footer .copyrig p {
   max-height: 100px;
   cursor: pointer;
   box-sizing: border-box;
+  /* grid-template-columns: ; */
 }
