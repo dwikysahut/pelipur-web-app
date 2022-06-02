@@ -1,6 +1,5 @@
 .content {
-  width: 100%;
-  padding: 10px;
+  padding: 30px;
 }
 
 .content__title {
@@ -15,69 +14,47 @@
 
 .content__table {
   overflow-x: auto;
+  margin-top: 7%;
   margin-bottom: 70px;
+}
+
+.status {
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 25px;
+  width: 80px;
+  display: inline-block;
+}
+
+.status.success {
+  background-color: #36ae7c;
+}
+
+.status.taken {
+  background-color: #ff8c32;
+}
+
+.status.rejected {
+  background-color: #eb5353;
 }
 
 table {
   padding: 5px;
   width: 100%;
-  margin: 7% 0;
+  margin: 1% 0;
   border-collapse: collapse;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 7px 10px;
+  border: 1px solid #dddddd !important;
+  text-align: center !important;
+  padding: 8px 10px;
 }
 
 th {
   text-align: center;
-}
-
-select {
-  border-radius: 3px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 3px;
-  cursor: pointer;
-}
-
-.btn button {
-  display: inline-block;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 5px;
-  padding: 10px 8px;
-  cursor: pointer;
-  border: none;
-  color: #fff;
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn__save {
-  margin-bottom: 10px;
-  background-color: #36ae7c;
-}
-
-.btn__update {
-  background-color: #ff8c32;
-}
-
-.btn__delete {
-  background-color: #eb5353;
-}
-
-button:hover {
-  content: "";
-  opacity: 0.8;
 }
 
 @media screen and (min-width: 500px) {
@@ -85,15 +62,15 @@ button:hover {
     margin-top: 1%;
   }
 
-  table {
+  /* table {
     margin-top: 4%;
-  }
+  } */
 }
 
 @media screen and (min-width: 798px) {
-  .content {
-    padding: 2% 4%;
-  }
+  /* .content {
+    padding: 1% 4%;
+  } */
 
   table {
     margin-top: 2%;
@@ -101,22 +78,22 @@ button:hover {
   }
 
   .th__space {
-    width: 20%;
+    width: 40%;
   }
 
-  .btn__space {
+  /* .btn__space {
     width: 14%;
-  }
+  } */
 
   .content__table {
     margin-bottom: 0;
   }
 
-  .content__table .btn {
+  /* .content__table .btn {
     justify-content: space-between
-  }
+  } */
 
-  .btn__save {
+  /* .btn__save {
     margin-bottom: 0px;
-  }
+  } */
 }

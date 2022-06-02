@@ -29,7 +29,14 @@
   line-height: 44px;
 }
 
-.content__form-item input {
+.content__form-item-img {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-bottom: 40px;
+  line-height: 38px;
+}
+
+.content__form-item input, .content__form-item select {
   min-width: 44px;
   min-height: 44px;
   border-radius: 5px;
@@ -38,7 +45,18 @@
   border: 1px solid #dddddd;
 }
 
+.content__form-item.list__date input {
+  width: 150px;
+}
+
+.content__form-item-img input {
+  width: 200px;
+}
+
 .content__form-item input:focus,
+.content__form-item-img input:focus,
+.content__form-item select:focus,
+.content__table select:focus,
 .content__form-item textarea:focus,
 .btn__delete:focus,
 .btn__update:focus,
@@ -57,24 +75,12 @@
   margin-bottom: 0;
 }
 
-.content__form .btn {
+.content__form .btn__form {
   margin: 20px 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   column-gap: 10px;
   direction: rtl;
-}
-
-.content__form button {
-  display: block;
-  padding: 0 25px;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-  color: #fff;
-  margin-bottom: 10px;
 }
 
 .btn__delete {
@@ -91,23 +97,35 @@
 
 .content__form button:hover {
   content: "";
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 600px) {
-  .content__form-item {
+  .content__form-item, .content__form-item-img {
     display: grid;
     grid-template-columns: 25% auto;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+  }
+
+  .content__form-item.list input {
+    width: 350px;
+  }
+  
+  .content__form-item.list__small input, .content__form-item.list__small select {
+    width: 200px;
   }
 }
 
 @media screen and (min-width: 798px) {
-  .content {
+  /* .content {
     padding: 2% 10%;
-  }
+  } */
 
-  .content__form {
-    margin: 3% 0;
+  /* .content__form {
+    margin: 3% 0 0;
+  } */
+
+  .content__title.list {
+    margin-top: 40px;
   }
 }

@@ -16,20 +16,31 @@
   border-radius: 5px;
   padding: 25px;
   margin: 7% 0 20%;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
 }
 
-.content__form-item, .content__form-item-date, .content__form-item-time, .content__form-item-time {
+.content__form-item, .content__form-item-date, .content__form-item-time, .content__form-item-time, .content__form-item-city{
   display: grid;
   grid-template-rows: 1fr;
   margin-bottom: 20px;
 }
 
-.content__form-item label, .content__form-item-date label, .content__form-item-time label, .content__form-item-total label {
+.content__form-item-total-list {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  /* justify-content: space-around; */
+}
+
+.content__form-item label, .content__form-item-date label, .content__form-item-time label, .content__form-item-total label, .content__form-item-city label {
   line-height: 44px;
 }
 
-.content__form-item input, .content__form-item-date input, .content__form-item-time input, .content__form-item-total input{
+.content__form-item-total-list label {
+  margin-left: 10px;
+}
+
+.content__form-item input, .content__form-item-date input, .content__form-item-time input, .content__form-item-total input, .content__form-item-city select {
   min-width: 44px;
   min-height: 44px;
   border-radius: 5px;
@@ -37,12 +48,12 @@
   font-size: inherit;
   border: 1px solid #dddddd;
 }
-.content__form-item input.danger, .content__form-item-date input.danger, .content__form-item-time input.danger, .content__form-item-total input.danger{
- 
+
+.content__form-item input.danger, .content__form-item-date input.danger, .content__form-item-time input.danger, .content__form-item-total select.danger{
   border: 1px solid red;
 }
 
-.content__form-item-date input, .content__form-item-time input, .content__form-item-total input {
+.content__form-item-date input, .content__form-item-time input, .content__form-item-total input, .content__form-item-city select {
   width: 150px;
 }
 
@@ -50,6 +61,7 @@
 .content__form-item-date input:focus,
 .content__form-item-time input:focus,
 .content__form-item-total input:focus,
+.content__form-item-city select:focus,
 .content__form-item textarea:focus,
 .btn__delete:focus,
 .btn__update:focus,
@@ -67,7 +79,7 @@
 .content__form-item:last-child,
 .content__form-item-date:last-child,
 .content__form-item-time:last-child,
-.content__form-item-total:last-child {
+.content__form-item-total-list:last-child {
   margin-bottom: 0;
 }
 
@@ -122,7 +134,7 @@
     margin-bottom: 10px;
   }
 
-  .content__form-item-time {
+  .content__form-item-time, .content__form-item-city {
     display: grid;
     grid-template-columns: 25% auto;
     margin-bottom: 10px;
@@ -130,7 +142,9 @@
 
   .content__form-item-total {
     display: grid;
-    grid-template-columns:repeat(auto-fit,25%);;
+    grid-template-columns: repeat(auto-fit,25%);
+    /* display: flex;
+    flex-direction: row; */
     margin-bottom: 10px;
   }
 
@@ -139,12 +153,25 @@
 }
 
 @media screen and (min-width: 798px) {
-  .content {
+  /* .content {
     padding: 2% 10%;
-  }
+  } */
 
   .content__form {
-    margin: 3% 0;
+    margin: 3% 0 0;
+  }
+
+  .content__form-item-time label {
+    line-height: normal;
+  }
+
+  .content__form-item-total-list label {
+    line-height: 44px;
   }
 }
 
+@media screen and (min-width: 886px) {
+  .content__form-item-time label, .content__form-item-total label {
+    line-height: 44px;
+  }
+}

@@ -1,6 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-empty-function */
-
 import CollectionDbSource from '../../../data/collectiondb-source';
 import { emptyFormHandler } from '../../../utils/function-helper';
 import '../../component/aside-user';
@@ -25,12 +23,24 @@ const UserCollection = {
             </div>
             <div class="content__form-item-total">
               <label for="total">Total Minyak</label>
-              <input type="number" id="number" name="number" required />
-              <label for="liter">/ Liter</label>
+              <div class="content__form-item-total-list">
+                <input type="number" id="number" name="number" required />
+                <label for="liter">/Liter</label>
+              </div>
             </div>
             <div class="content__form-item">
               <label for="message">Pesan</label>
               <input type="text" id="message" name="pesan" required />
+            </div>
+            <div class="content__form-item-city">
+              <label for="city">Kota</label>
+              <select id="city" name="city">
+                <option value="bekasi">Bekasi</option>
+                <option value="bogor">Bogor</option>
+                <option value="bepok">Depok</option>
+                <option value="jakarta">Jakarta</option>
+                <option value="tangerang">Tangerang</option>
+              </select>
             </div>
             <div class="content__form-item">
               <label for="address">Alamat Tujuan</label>
@@ -42,7 +52,7 @@ const UserCollection = {
                 required
               ></textarea>
             </div>
-            <div class="btn">
+            <div class="btn__form">
               <button
                 type="submit"
                 form="content_form"
