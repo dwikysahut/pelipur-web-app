@@ -1,4 +1,3 @@
-/* eslint-disable no-empty-function */
 import '../../component/aside-dashboard';
 
 const Collection = {

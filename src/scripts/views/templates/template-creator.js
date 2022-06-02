@@ -143,7 +143,9 @@ const createAuthTemplate = () => ` <div class="container">
   </div>
 </div>
 </div>`;
+const cityItemTemplate = (item) => ` <option value="${item.id}">${item.kota}</option>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
+  cityItemTemplate,
 };

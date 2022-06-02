@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
 import Swal from 'sweetalert2';
 
 const validateEmail = (email) => String(email)
@@ -35,8 +38,10 @@ const swalConfirm = (message, path) => {
     confirmButtonColor: '#005555',
   }).then((result) => {
     if (result.isConfirmed) {
-      window.history.replaceState('', '', path);
-      window.dispatchEvent(new HashChangeEvent('hashchange'));
+      if (path !== '') {
+        window.history.replaceState('', '', path);
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+      }
     }
   });
 };
@@ -57,6 +62,14 @@ const swalError = (message, path = '') => {
 const emptyFormHandler = (...elements) => {
   elements.map((element) => element.value.length < 1 && element.classList.add('danger'));
 };
+const zeroValueHandler = (...elements) => {
+  elements.map((element) => element.value < 1 && element.classList.add('danger'));
+};
+const resetFormValue = (elements) => {
+  for (const keys in elements) {
+    elements[keys].value = '';
+  }
+};
 
 const dateConvert = (date) => {
   const newDate = new Date(date);
@@ -71,4 +84,5 @@ const dateConvert = (date) => {
 export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
+  resetFormValue, zeroValueHandler,
 };

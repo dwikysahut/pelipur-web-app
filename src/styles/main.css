@@ -434,7 +434,7 @@ margin: 0;
   font-size: 0.7em;
 }
 
-input.danger {
+input.danger, textarea.danger {
   border: 1px solid red !important;
 }
 /* news list detail */
