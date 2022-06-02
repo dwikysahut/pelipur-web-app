@@ -193,8 +193,7 @@ form .field input:focus::placeholder {
 }
 
 .form-inner form .pass-link {
-  margin-top: 5px;
-  text-align: right;
+  float: right;
 }
 
 .form-inner form .signup-link {

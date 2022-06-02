@@ -39,7 +39,7 @@ class AuthView {
 
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" id="submitLogin" value="Login">
+              <input type="submit" id="submitLogin" value="Masuk">
             </div>
           </form>
 
