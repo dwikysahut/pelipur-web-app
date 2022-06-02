@@ -109,7 +109,7 @@ button:hover {
   }
 
   .content__table .btn__action {
-    justify-content: space-between
+    justify-content: center;
   }
 
   .btn__save {

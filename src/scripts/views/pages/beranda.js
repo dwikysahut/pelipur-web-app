@@ -11,7 +11,16 @@ import NewsDbSource from '../../data/newsdb-source';
 // const chat = [];
 const Beranda = {
   async render() {
+    if (window.history.state.page === 'login') {
+      console.log(window.history.state);
+      window.location.reload();
+      window.history.replaceState({ page: '' }, '', '#/home');
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+
+      // window.history.state.page = '';
+    }
     return `
+    
   <div class="wrapper">
     <custom-hero></custom-hero>
     <layanan-custom></layanan-custom>

@@ -15,6 +15,32 @@ const newsTemplate = (news) => {
     `;
   return template;
 };
+const tableCollectionsTemplate = (item) => {
+  const date = new Date(item.tanggal);
+  return `
+  <tr>
+  <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
+  <td>${item.nama_user}</td>
+  <td>${item.total_minyak} Liter</td>
+  <td>${item.pesan}</td>
+  <td>${item.alamat}</td>
+  <td>
+    <select id="partner" name="partner" ${item.id_status !== 1 && 'disabled'}>
+      <option value="mitra1">Mitra 1</option>
+      <option value="mitra2">Mitra 2</option>
+      <option value="mitra3">Mitra 3</option>
+      <option value="mitra4">Mitra 4</option>
+    </select>
+  </td>
+  <td>
+  <div class="btn__action" >
+    
+    </div>
+  </td>
+</tr>
+`;
+};
+
 const chatTemplateCreator = (chat) => {
   const messageContainer = document.querySelector('.text-message');
   let chatTemplate = '';
@@ -144,8 +170,67 @@ const createAuthTemplate = () => ` <div class="container">
 </div>
 </div>`;
 const cityItemTemplate = (item) => ` <option value="${item.id}">${item.kota}</option>`;
+const categoryItemTemplate = (item, recentId) => {
+  if (recentId === item.id) {
+    return `<option value="${item.id}" selected>${item.keterangan}</option>`;
+  }
+
+  return ` <option value="${item.id}">${item.keterangan}</option>`;
+};
+const dataDashboardTemplate = (data) => `
+<div class="content__card">
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_user}</h3>
+    <span class="card__name">User</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/person_white_36dp.svg" alt="User" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_minyak} L</h3>
+    <span class="card__name">Total Minyak</span>
+  </div>
+  <div class="card__icon">
+    <img
+      src="icons/format_list_bulleted_white_36dp.svg"
+      alt="Daftar"
+    />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_kota}</h3>
+    <span class="card__name">Kota</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/room_white_36dp.svg" alt="Kota" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_mitra}</h3>
+    <span class="card__name">Mitra</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_pengumpulan}</h3>
+    <span class="card__name">Form Terkumpul</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+  </div>
+</div>
+</div>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
-  cityItemTemplate,
+  cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
+  categoryItemTemplate,
 };

@@ -18,8 +18,8 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   console.log(event.request);
-  if (event.request.method === 'POST') {
-    event.respondWith(CacheHelper.deleteOldCache());
-  }
+  // if (event.request.method === 'POST') {
+  //   event.respondWith(CacheHelper.deleteOldCache());
+  // }
   event.respondWith(CacheHelper.revalidateCache(event.request));
 });

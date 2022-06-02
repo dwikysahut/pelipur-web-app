@@ -64,18 +64,6 @@ class UserCollectionView {
               `;
   }
 
-  verifyFormInputListener(callback) {
-    document.querySelector('#submitVerify').addEventListener('click', (e) => {
-      e.preventDefault();
-      this.getVerifyFormInputListener(callback);
-    });
-  }
-
-  getVerifyFormInputListener(callback) {
-    const inputEmailVerif = document.querySelector('#inputEmailVerif');
-    const inputCodeVerif = document.querySelector('#inputCodeVerif');
-    callback({ inputEmailVerif, inputCodeVerif });
-  }
 
   collectionFormListener(callback) {
     document.querySelector('#submitCollection').addEventListener('click', async (e) => {

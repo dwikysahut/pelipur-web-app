@@ -7,13 +7,14 @@ import {
   emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
 } from '../../../../utils/function-helper';
 
-class UserCollectionPresenter {
+class AdminListPresenter {
   constructor({ view, dataDb }) {
     this._view = view;
     this._dataDb = dataDb;
-    this._generateCityDropdownHandler();
-    this._addCollectionHandler();
-    this._formCollectionEventChangeHandler();
+    this._getAllCollectionsHandler();
+    // this._generateCityDropdownHandler();
+    // this._addCollectionHandler();
+    // this._formCollectionEventChangeHandler();
   }
 
   // handler change collection form input
@@ -23,9 +24,18 @@ class UserCollectionPresenter {
     });
   }
 
+  async _getAllCollectionsHandler() {
+    const response = await this._dataDb.getAllCollections(localStorage.getItem('token'));
+    this._renderCollections(response);
+  }
+
+  _renderCollections(response) {
+    this._view.showCollections(response.data.data);
+  }
+
   async _generateCityDropdownHandler() {
     try {
-      const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
+      const responseCity = await this._dataDb.getCities(localStorage.token);
       console.log(responseCity);
       this._renderCities(responseCity.data.data);
     } catch (error) {
@@ -33,8 +43,14 @@ class UserCollectionPresenter {
     }
   }
 
+  _buttonActionHandler(type, data) {
+    console.log(type);
+  }
+
   _renderCities(items) {
-    this._view.showCities(items);
+    this._view.showCities(items, (type, data) => {
+      this._buttonActionHandler(type, data);
+    });
   }
 
   _addCollectionHandler() {
@@ -81,4 +97,4 @@ class UserCollectionPresenter {
     }
   }
 }
-export default UserCollectionPresenter;
+export default AdminListPresenter;

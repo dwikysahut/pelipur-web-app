@@ -30,7 +30,7 @@ const passwordValidation = (inputElement, alertElemet) => {
   return true;
 };
 
-const swalConfirm = (message, path) => {
+const swalConfirm = (message, path, currentPage = '') => {
   Swal.fire({
     icon: 'success',
     title: 'Success',
@@ -39,9 +39,20 @@ const swalConfirm = (message, path) => {
   }).then((result) => {
     if (result.isConfirmed) {
       if (path !== '') {
-        window.history.replaceState('', '', path);
-        window.dispatchEvent(new HashChangeEvent('hashchange'));
+        if (currentPage === 'login') {
+          window.history.replaceState({ page: 'login' }, null, path);
+          window.dispatchEvent(new HashChangeEvent('hashchange'));
+        } else {
+          window.location.href = path;
+        }
+        // window.dispatchEvent(new HashChangeEvent('hashchange'));
       }
+    } else if (currentPage === 'login') {
+      window.history.replaceState({ page: 'login' }, null, path);
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    } else {
+      window.history.replaceState('', '', path);
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
     }
   });
 };
