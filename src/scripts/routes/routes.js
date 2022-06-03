@@ -2,13 +2,31 @@ import Beranda from '../views/pages/beranda';
 import AboutUs from '../views/pages/aboutUs';
 import Bisnis from '../views/pages/bisnis';
 import Detail from '../views/pages/detail';
+import Auth from '../views/pages/auth/auth';
+import Verify from '../views/pages/auth/verify';
+import ForgotPassword from '../views/pages/auth/forgot-password';
+import Dashboard from '../views/pages/dashboard/dashboard';
+import Profile from '../views/pages/dashboard/profile';
+import Partner from '../views/pages/dashboard/partner';
+import UserCollection from '../views/pages/dashboard/user-collection';
+import UserHistory from '../views/pages/dashboard/user-history';
+import Collection from '../views/pages/dashboard/collection';
 
 const routes = {
   '/': Beranda,
-  '/beranda': Beranda,
-  '/aboutus': AboutUs,
+  '/home': Beranda,
+  '/about-us': AboutUs,
   '/bisnis': Bisnis,
-  '/detail/id': Detail,
+  '/news/detail': Detail,
+  '/auth': Auth,
+  '/verify': Verify,
+  '/forgot-password': ForgotPassword,
+  '/dashboard': Dashboard,
+  '/profile': Profile,
+  '/partners': Partner,
+  '/collections': Collection,
+  '/user-collection': UserCollection,
+  '/user-history': UserHistory,
 };
 
 export default routes;

@@ -5,37 +5,41 @@ class Header extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <header class="header">
+        <header class="header">
       <div class="header__inner">
-      <h1>Pelipur</h1>
-      <h4>Pengelolaan Limbah Ramah Lingkungan</h4>
+       <h1 class="header__inner__title">Pelipur</h1>
       </div>
       <div class="menu-toggle">
-        <button tabindex="0">≣</button>
+        <button tabindex="0">☰</button>
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
-          <li class="nav__item"><a href="#/beranda">Beranda</a></li>
+          <li class="nav__item"><a href="#/home">Beranda</a></li>
           <li class="nav__item">
-            <a href="#/aboutus">Tentang Kami</a>
-            <ul class="sub-menu">
-              <li><a href="#">Visi&Misi</a></li>
-              <li><a href="#">Pendiri</a></li>
-            </ul>
+            <a href="#/about-us">Tentang Kami</a>
           </li>
 
-          <li class="nav__item"><a href="#/bisnis">Bisnis</a>
-          <ul tabindex="0" class="sub-menu">
-              <li tabindex="0"><a href="#">Info Bisnis</a></li>
-            </ul>
-          </li>
-          </li>
-          <li tabindex="0" class="nav__item"><a href="#">MASUK</a></li>
+          <li class="nav__item"><a href="#/bisnis">Bisnis</a> </li>
+          </ul>
+          ${
+            !localStorage.getItem('token')
+              ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>'
+              : `         <a href="#/${localStorage.getItem('role') == 2 ? 'user-collection' : 'collections'}">
+    <div class="profile-pict">
+      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="">
+      <i class="fal fa-chevron-circle-down"></i>
+    </div>
+  </a>
+`
+          }
+          
+
+          
+          
         </ul>
       </nav>
     </header>
         `;
   }
 }
-
 customElements.define('custom-header', Header);

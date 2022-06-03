@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Footer extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -5,7 +6,7 @@ class Footer extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <footer>
+      <footer>
       <div tabindex="0" class="alamat">
         <h3>Alamat :</h3>
         <p>jl. Green Sedayu Bizpark Blok DM Boulevard No.2 Jl.Daan Mogot KM.18 Kali Deres - Jakarta Barat</p>
@@ -15,10 +16,10 @@ class Footer extends HTMLElement {
       <div tabindex="0" class="medsos">
       <h3>Kunjungi Medsos kami</h3>
         <ul>
-         <li><img src = "./images/heros/fb.png" ></li>
-          <li><img src = "./images/heros/ig3.png" ></li>
-          <li><img src = "./images/heros/mail.png" ></li>
-          <li><img src = "./images/heros/twitter.png" ></li>
+         <li tabindex="0"><img src = "./images/heros/fb.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/ig3.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/mail.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/twitter.png" ></li>
          
         </ul>
       </div>

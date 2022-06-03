@@ -25,8 +25,8 @@
 /* .nav__list li a:hover {
   background-color: #069a8e;
   color: white;
-  border-radius: 3px;
-} */
+  border-radius: 5px;
+}
 
 @media screen and (max-width: 600px) {
   .sub-menu {

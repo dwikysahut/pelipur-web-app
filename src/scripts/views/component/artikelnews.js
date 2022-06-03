@@ -1,11 +1,16 @@
 class Artikel extends HTMLElement {
+  constructor() {
+    super();
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
+  }
   connectedCallback() {
     this.src = this.getAttribute('src') || null;
     this.alt = this.getAttribute('alt') || null;
     this.render();
   }
+
   render() {
-    this.innerHTML = `
+    this.shadowDOM.innerHTML = `
         <style>
         .artikels{
             width:70%;
@@ -63,6 +68,7 @@ class Artikel extends HTMLElement {
     this[name] = newValue;
     this.render();
   }
+
   static get observedAttributes() {
     return ['alt', 'p'];
   }

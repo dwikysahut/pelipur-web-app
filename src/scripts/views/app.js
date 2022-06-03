@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-routes';
 import routes from '../routes/routes';
@@ -21,9 +22,19 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
+    const page = routes[url.page];
+    console.log(url.splitedUrl);
     this._content.innerHTML = await page.render();
     await page.afterRender();
+    this._skipToLinkInit();
+  }
+
+  _skipToLinkInit() {
+    const skipLinkElement = document.querySelector('.skip-link');
+    skipLinkElement.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#maincontent').focus();
+    });
   }
 }
 

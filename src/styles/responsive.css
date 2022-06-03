@@ -1,29 +1,5 @@
 /* RESPONSIVE HEADER & NAV */
 
-/* @media screen and (max-width: 1200px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 1fr;
-    gap: 5px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 2fr;
-    gap: 5px;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .header {
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 7fr;
-    gap: 1px;
-  }
-} */
-
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
@@ -34,6 +10,7 @@
     margin-top: 50px;
     text-align: center;
     opacity: 0.9;
+    z-index: 5;
 
     transition: transform 0.7s ease-in-out;
     transform: translate(-100%, 0);
@@ -58,15 +35,12 @@
 /* Hamburger menu */
 
 @media screen and (max-width: 700px) {
-  button {
+  .menu-toggle button {
     width: 44px;
     height: 44px;
     font-size: 20px;
-    position: absolute;
     font-size: 22px;
     opacity: 2;
-    margin-left: 60%;
-    margin-top: 0;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -74,15 +48,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  button {
+  .menu-toggle button {
     width: 44px;
     height: 44px;
     font-size: 20px;
-    position: absolute;
     font-size: 22px;
     opacity: 2;
-    margin-left: 40%;
-    margin-top: 0;
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -90,6 +61,11 @@
 
   button:focus {
     background-color: white;
+  }
+
+  .menu-toggle button {
+    opacity: 1;
+    border-radius: 3px;
   }
   #drawer.slide {
     transform: translate(0, 0);
@@ -104,6 +80,9 @@
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
+  .btn-drawer {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -114,7 +93,7 @@
 
   .item-produk {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+   
   }
 } */
 
@@ -141,11 +120,13 @@
       'alamat medsos'
       'copyright copyright';
   }
+
   footer .alamat {
     grid-area: alamat;
     text-align: center;
     font-family: Tahoma;
     font-size: 15px;
+    padding: 10px;
     margin-bottom: 20px;
     border-right: 1px solid white;
   }
@@ -159,14 +140,32 @@
 
   footer .copyrig {
     grid-area: copyright;
-    background-color: white;
+    background-color: #075757d6;
     padding: 20px;
     border-radius: 5px;
   }
 
-  footer .copyrig p {
+  .copyrig p {
     text-align: center;
     font-family: Tahoma;
     color: #005555;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .wrapper-news {
+    width: 80%;
+    margin: 10px auto;
+    max-width: 800px;
+  }
+  .wrapper-news__item {
+    flex-direction: row;
+  }
+
+  .item-news__image {
+    min-width: 200px;
+    min-height: 160px;
+    max-width: 250px;
+    max-height: 240px;
   }
 }
