@@ -13,13 +13,13 @@ class Carousel extends HTMLElement {
 </div>
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="images/heros/biodisel.jpg" class="d-block w-100 " alt="...">
+    <img src="images/heros/biodisel2.jpg" class="d-block w-100 " alt="...">
   </div>
   <div class="carousel-item">
-    <img src="images/heros/ekonomis.jpg" class="d-block w-100 " alt="...">
+    <img src="images/heros/ekonomis2.jpg" class="d-block w-100 " alt="...">
   </div>
   <div class="carousel-item">
-    <img src="images/heros/bumi1.jpg" class="d-block w-100 " alt="...">
+    <img src="images/heros/bumi2.jpg" class="d-block w-100 " alt="...">
   </div>
 </div>
 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

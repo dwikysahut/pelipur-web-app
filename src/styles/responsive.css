@@ -10,6 +10,7 @@
     margin-top: 50px;
     text-align: center;
     opacity: 0.9;
+    z-index: 5;
 
     transition: transform 0.7s ease-in-out;
     transform: translate(-100%, 0);
@@ -34,14 +35,12 @@
 /* Hamburger menu */
 
 @media screen and (max-width: 700px) {
-  .btn-drawer {
+  .menu-toggle button {
     width: 44px;
     height: 44px;
     font-size: 20px;
     font-size: 22px;
     opacity: 2;
-    
-    
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -49,15 +48,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  .btn-drawer {
+  .menu-toggle button {
     width: 44px;
     height: 44px;
     font-size: 20px;
-    
     font-size: 22px;
     opacity: 2;
-    
-    
     cursor: pointer;
     border-radius: 4px;
     color: maroon;
@@ -66,6 +62,11 @@
   button:focus {
     background-color: white;
   }
+
+  .menu-toggle button {
+    opacity: 1;
+    border-radius: 3px;
+  }
   #drawer.slide {
     transform: translate(0, 0);
   }
@@ -73,7 +74,7 @@
 
 /* item produk */
 
-@media screen and (min-width: 700px) {
+/* @media screen and (min-width: 700px) {
   .item-produk {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -94,7 +95,7 @@
     display: grid;
    
   }
-}
+} */
 
 /* slider */
 
@@ -119,7 +120,7 @@
       'alamat medsos'
       'copyright copyright';
   }
- 
+
   footer .alamat {
     grid-area: alamat;
     text-align: center;
@@ -139,12 +140,12 @@
 
   footer .copyrig {
     grid-area: copyright;
-    background-color: white;
+    background-color: #075757d6;
     padding: 20px;
     border-radius: 5px;
   }
 
-  footer .copyrig p {
+  .copyrig p {
     text-align: center;
     font-family: Tahoma;
     color: #005555;
@@ -152,7 +153,6 @@
 }
 
 @media screen and (min-width: 650px) {
-  
   .wrapper-news {
     width: 80%;
     margin: 10px auto;
@@ -160,15 +160,12 @@
   }
   .wrapper-news__item {
     flex-direction: row;
-    
   }
-  
-  .item-news__image{
+
+  .item-news__image {
     min-width: 200px;
     min-height: 160px;
     max-width: 250px;
     max-height: 240px;
-  
   }
-  
-  }
+}

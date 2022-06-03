@@ -7,6 +7,8 @@ import '../component/hero';
 import '../component/artikelnews';
 import '../component/layanan';
 import '../component/carousel';
+import '../component/keterangan-slide';
+import '../component/listmitra.js';
 import NewsDbSource from '../../data/newsdb-source';
 // const chat = [];
 const Beranda = {
@@ -21,14 +23,18 @@ const Beranda = {
         </div>
       </article>
 
-      <artikel-custom src="./images/heros/bumi.jpg" alt="gambar bumi">
+      <artikel-custom src="./images/heros/oil.jpg" alt="gambar bumi">
       </artikel-custom>
 
 
       <custom-carousel></custom-carousel>
       <keterangan-slider></keterangan-slider>
+      <list-mitra></list-mitra>
     </div>
   </div>
+    
+
+
 
 
         `;
@@ -42,9 +48,7 @@ const Beranda = {
       for (let i = 0; i < 6; i += 1) {
         document.querySelector('.item-produk').innerHTML += newsTemplate(dataNews[i]);
       }
-    } catch (error) {
-
-    }
+    } catch (error) {}
   },
 };
 

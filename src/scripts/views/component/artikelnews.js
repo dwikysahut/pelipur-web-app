@@ -1,4 +1,8 @@
 class Artikel extends HTMLElement {
+  constructor() {
+    super();
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
+  }
   connectedCallback() {
     this.src = this.getAttribute('src') || null;
     this.alt = this.getAttribute('alt') || null;
@@ -6,10 +10,10 @@ class Artikel extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.shadowDOM.innerHTML = `
         <style>
         .artikels{
-            width:60%;
+            width:70%;
             margin: 20px auto;
             display:grid;
             grid-template-columns: 1.5fr 1fr;
@@ -50,20 +54,9 @@ class Artikel extends HTMLElement {
 
        <div class="artikel">
           <h2>Limbah Minyak Jelantah</h2>
-          <p> Makanan yang digoreng tentu memiliki 
-                kenikmatan tersendiri bagi penggemarnya dan 
-                hampir sebagian masyarakat Indonesia merupakan 
-                penikmat gorengan. Namun ternyata jelantah atau 
-                minyak bekas menggoreng mempunyai dampak 
-                serius. Selain berbahaya bagi kesehatan, 
-                minyak jelantah memiliki peran besar dalam 
-                pencemaran lingkungan jika dibuang sembarang. <br><br>
-
-                Saat ini masih banyak orang yang belum memiliki 
-                kesadaran akan bahaya membuang minyak jelantah 
-                sembarangan. Umumnya, minyak jelantah 
-                dibuang ke saluran dekat rumah, tempat sampah, 
-                atau ke tanah.<br><br> <a href="#"> Read More...<a/>  
+          <p> Minyak jelantah (waste cooking oil) adalah minyak limbah yang bisa berasal dari jenis-jenis minyak goreng seperti halnya minyak jagung, minyak sayur, minyak samin dan sebagainya. Minyak ini merupakan minyak bekas pemakaian kebutuhan rumah tangga umumnya, dapat digunakan kembali untuk keperluan kuliner, akan tetapi bila ditinjau dari komposisi kimianya, minyak jelantah mengandung senyawa-senyawa yang bersifat karsinogenik (zat atau senyawa yang dapat menyebabkan kanker), yang terjadi selama proses penggorengan.
+          Jadi jelas bahwa, pemakaian minyak jelantah yang berkelanjutan dapat merusak kesehatan manusia, menimbulkan penyakit kanker, dan akibat selanjutnya dapat mengurangi kecerdasan generasi berikutnya. Untuk itu, perlu penanganan yang tepat agar limbah minyak jelantah ini dapat bermanfaat dan tidak menimbulkan kerugian dari aspek kesehatan manusia dan lingkungan, kegunaan lain dari minyak jelantah adalah bahan bakar biodiesel.
+          .<br><br> <a href="https://id.wikipedia.org/wiki/Minyak_jelantah"> Read More...<a/>  
           </p>
        </div>
       </div>

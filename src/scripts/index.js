@@ -10,12 +10,11 @@ import $ from 'jquery';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
 import './views/component/footer';
-import './views/component/keterangan-slide';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
 const app = new App({
-  button: document.querySelector('#hamburger'),
+  button: document.querySelector('button'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),
 });
