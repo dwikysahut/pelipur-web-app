@@ -62,25 +62,22 @@ class KeteranganSlide extends HTMLElement {
         <div class = "ket-slider">
             <div class = "keterangan1">
                 <h2>Biodisel</h2>
-                    <p>Saat ini masih banyak orang yang belum memiliki kesadaran akan bahaya membuang minyak jelantah sembarangan. 
-                    Umumnya, minyak jelantah dibuang ke saluran dekat rumah, tempat sampah, atau ke tanah.
-                    Selain berbahaya bagi kesehatan, minyak jelantah memiliki peran besar dalam pencemaran lingkungan jika dibuang sembarang. 
+                    <p>Penggunaan used cooking oil (UCO) atau minyak jelantah sebagai alternatif bahan baku dapat mendukung program biodiesel di Indonesia. Penggunaan minyak jelantah untuk biodiesel juga dapat menghemat biaya subsidi biodiesel yang mencapai Rp 3,6 triliun.
+. 
                     </p>
             </div>
 
             <div class = "keterangan1">
                 <h2>Bernilai Ekonomis</h2>
-                    <p>Saat ini masih banyak orang yang belum memiliki kesadaran akan bahaya membuang minyak jelantah sembarangan. 
-                    Umumnya, minyak jelantah dibuang ke saluran dekat rumah, tempat sampah, atau ke tanah.
-                    Selain berbahaya bagi kesehatan, minyak jelantah memiliki peran besar dalam pencemaran lingkungan jika dibuang sembarang. 
+                    <p>Dengan mengumpulkan minimal 10 jerigen minyak jelantah, Anda akan memperoleh pendapatan tambahan sebesar Rp 4.000 setiap 10 jerigen minyak jelantah yang Anda tukarkan kepada kami.
+. 
                     </p>
             </div>
 
               <div class = "keterangan1">
-                <h2>Mengurangi Pencemaran</h2>
-                    <p>Saat ini masih banyak orang yang belum memiliki kesadaran akan bahaya membuang minyak jelantah sembarangan. 
-                    Umumnya, minyak jelantah dibuang ke saluran dekat rumah, tempat sampah, atau ke tanah.
-                    Selain berbahaya bagi kesehatan, minyak jelantah memiliki peran besar dalam pencemaran lingkungan jika dibuang sembarang. 
+                <h2>Go Green dan Go Health</h2>
+                    <p>Minyak jelantah akan sangat berbahaya bila dikonsumsi atau dibuang secara sembarangan. Oleh karena itu,  kami ingin mendukung program penghijauan (Go Green) dan program hidup sehat (Go Health) yang diadakan oleh pemerintah.
+. 
                     </p>
             </div>
 

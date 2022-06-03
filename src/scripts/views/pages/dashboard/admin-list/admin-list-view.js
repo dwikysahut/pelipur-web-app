@@ -85,89 +85,29 @@ class AdminListView {
         const buttonContainer = document.querySelectorAll('.btn__action');
 
         if (item.id_status === 1) {
-          const btn_accept = document.createElement('button');
-          btn_accept.classList.add('btn__accept');
-          btn_accept.setAttribute('id', `accept-${item.id}`);
-          btn_accept.addEventListener('click', (e) => {
-            //   e.preventDefault();
-            console.log(e.target);
-          }, false);
-          const btn_reject = document.createElement('button');
-          btn_reject.classList.add('btn__reject');
-          btn_reject.setAttribute('id', `reject-${item.id}`);
-          btn_reject.innerHTML = `<img
-            src="icons/close_white_18dp.svg"
-              alt="Tolak"
-            />`;
-          // console.log('awal');
-
-          // console.log(btn_accept);
-          // console.log('akhir');
-
-          btn_accept.addEventListener('click', (e) => {
-            e.stopPropagation();
-
-            //   e.preventDefault();
-            console.log(e.target);
-          }, false);
-
-          btn_reject.addEventListener('click', (e) => {
-            //   e.preventDefault();
-            e.stopPropagation();
-            console.log('asdads');
-          }, false);
-
-          buttonContainer[i].append(btn_accept, btn_reject);
-        }
-
-        //   buttonContainer[i].innerHTML = `
-        //       <button class="btn__accept" id="${item.id}">
-        //       <img
-        //         src="icons/done_white_18dp.svg"
-        //         alt="Terima"
-        //       />
-        //     </button>
-        //     <button class="btn__reject"><img
-        //       src="icons/close_white_18dp.svg"
-        //       alt="Tolak"
-        //     /></button>`;
-        else if (item.id_status === 2) {
           buttonContainer[i].innerHTML = `
-            <button class="btn btn-warning btn-finish" id="finish-${item.id}">Finish</button>`;
+              <button class="btn__accept" data-id="${item.id}">
+              <img
+                src="icons/done_white_18dp.svg"
+                alt="Terima"
+              />
+            </button>
+            <button class="btn__reject" data-id="${item.id}"><img
+              src="icons/close_white_18dp.svg"
+              alt="Tolak"
+            /></button>`;
+        } else if (item.id_status === 2) {
+          buttonContainer[i].innerHTML = `
+            <button class="btn btn-warning btn-finish" data-id="${item.id}">Finish</button>`;
         } else if (item.id_status === 3) {
           buttonContainer[i].innerHTML = `
-            <button class="btn btn-outline-danger" disabled>Rejected</button>`;
+            <button class="btn btn-outline-danger"  disabled>Rejected</button>`;
         } else {
           buttonContainer[i].innerHTML = `
             <button class="btn btn-outline-success" disabled>Completed</button>`;
         }
         i += 1;
       });
-      // const btnAcc = document.querySelectorAll('.btn__accept');
-      // const btnReject = document.querySelectorAll('.btn__reject');
-      // const btnFinish = document.querySelectorAll('.btn.btn-warning.btn-finish');
-      // // console.log(btnFinish);
-      // // console.log(btnAction[0]);
-      // for (let k = 0; k < items.length; k += 1) {
-      //   if (btnAcc[k] !== undefined && btnAcc[k].id === `accept-${items[k].id}`) {
-      //     // console.log(btnAcc[k]);
-      //     btnAcc[k].addEventListener('click', () => {
-      //       console.log(items[k].id);
-      //     });
-      //   }
-      //   if (btnReject[k] !== undefined && btnReject[k].id === `reject-${items[k].id}`) {
-      //     btnReject[k].addEventListener('click', () => {
-      //       console.log(`reject ${items[k].id}`);
-      //     });
-      //   }
-      //   if (btnFinish[k] !== undefined && btnFinish[k].id === `finish-${items[k].id}`) {
-      //     console.log(btnFinish[k]);
-      //     btnFinish[k].addEventListener('click', () => {
-      //       console.log(`finish ${items[k].id}`);
-      //     });
-      //   }
-
-      // }
     }
   }
 }

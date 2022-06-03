@@ -1,7 +1,15 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable import/extensions */
+import '../component/aboutus/founder-aboutus.js';
+import '../component/aboutus/visi-misi.js';
+import '../component/aboutus/kritik-saran.js';
+
 const AboutUs = {
   async render() {
     return `
-        <h2> Tentang kami </h2>
+        <founder-aboutus></founder-aboutus>
+        <visi-misi></visi-misi>
+        <kritik-saran></kritik-saran>
         `;
   },
 

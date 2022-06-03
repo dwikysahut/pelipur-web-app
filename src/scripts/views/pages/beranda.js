@@ -3,11 +3,13 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
 import { newsTemplate } from '../templates/template-creator';
-import firebase from '../../utils/firebase-config';
+// import firebase from '../../utils/firebase-config';
 import '../component/hero';
 import '../component/artikelnews';
 import '../component/layanan';
 import '../component/carousel';
+import '../component/keterangan-slide';
+import '../component/listmitra';
 import NewsDbSource from '../../data/newsdb-source';
 import { swalError } from '../../utils/function-helper';
 // const chat = [];
@@ -34,14 +36,18 @@ const Beranda = {
         </div>
       </article>
 
-      <artikel-custom src="./images/heros/bumi.jpg" alt="gambar bumi">
+      <artikel-custom src="./images/heros/oil.jpg" alt="gambar bumi">
       </artikel-custom>
 
 
       <custom-carousel></custom-carousel>
       <keterangan-slider></keterangan-slider>
+      <list-mitra></list-mitra>
     </div>
   </div>
+    
+
+
 
 
         `;

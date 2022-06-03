@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Footer extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -13,9 +14,13 @@ class Footer extends HTMLElement {
       </div>
 
       <div tabindex="0" class="medsos">
+      <h3>Kunjungi Medsos kami</h3>
         <ul>
-          <li>Instaram</li>
-          <li>Facebok</li>
+         <li tabindex="0"><img src = "./images/heros/fb.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/ig3.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/mail.png" ></li>
+          <li tabindex="0"><img src = "./images/heros/twitter.png" ></li>
+         
         </ul>
       </div>
 
