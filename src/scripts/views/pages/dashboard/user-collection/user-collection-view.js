@@ -64,7 +64,6 @@ class UserCollectionView {
               `;
   }
 
-
   collectionFormListener(callback) {
     document.querySelector('#submitCollection').addEventListener('click', async (e) => {
       e.preventDefault();

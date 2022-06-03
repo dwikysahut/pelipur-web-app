@@ -1,4 +1,4 @@
-import { cityItemTemplate, dataDashboardTemplate } from '../../../templates/template-creator';
+import { dataDashboardTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
 /* eslint-disable class-methods-use-this */
 class AdminDashboardView {

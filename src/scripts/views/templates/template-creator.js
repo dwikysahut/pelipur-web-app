@@ -20,7 +20,7 @@ const tableCollectionsTemplate = (item) => {
   return `
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
-  <td>${item.nama_user}</td>
+  <td>${item.id}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
   <td>${item.alamat}</td>

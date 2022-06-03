@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const webpack = require('webpack');
 
@@ -42,6 +44,33 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WebpackPwaManifest({
+      name: 'Pelipur App',
+      short_name: 'Pelipur',
+      description: 'Pelipur',
+      start_url: '/index.html',
+      display: 'standalone',
+      background_color: '#ffffff',
+      theme_color: '#005555',
+      crossorigin: null,
+      icons: [
+        {
+          src: path.resolve(__dirname, 'src/public/favicon.png'),
+          sizes: [96, 120, 128, 152, 167, 180, 192, 256, 384, 512],
+          type: 'image/png',
+          purpose: 'any maskable',
+          destination: path.join('icons', 'icon'),
+        },
+        {
+          src: path.resolve(__dirname, 'src/public/favicon.png'),
+          sizes: [180, 192, 512],
+          type: 'image/png',
+          purpose: 'any maskable',
+          destination: path.join('icons', 'ios'),
+          ios: true,
         },
       ],
     }),

@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  emptyFormHandler, swalConfirm, swalError,
 } from '../../../../utils/function-helper';
 
 class UserProfilePresenter {

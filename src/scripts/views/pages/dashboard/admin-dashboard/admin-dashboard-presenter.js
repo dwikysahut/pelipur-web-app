@@ -2,10 +2,8 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
-import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
-import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
-} from '../../../../utils/function-helper';
+// import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
+import { swalError } from '../../../../utils/function-helper';
 
 class AdminDashboardPresenter {
   constructor({ view, dataDb }) {

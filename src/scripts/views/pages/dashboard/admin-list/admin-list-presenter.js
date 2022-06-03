@@ -25,12 +25,21 @@ class AdminListPresenter {
   }
 
   async _getAllCollectionsHandler() {
-    const response = await this._dataDb.getAllCollections(localStorage.getItem('token'));
-    this._renderCollections(response);
+    try {
+      const response = await this._dataDb.getAllCollections(localStorage.getItem('token'));
+      console.log(response);
+      if (response.status === 200) {
+        this._renderCollections(response.data.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  _renderCollections(response) {
-    this._view.showCollections(response.data.data);
+  async _renderCollections(response) {
+    await this._view.showCollections(response, () => {
+
+    });
   }
 
   async _generateCityDropdownHandler() {
