@@ -1,0 +1,121 @@
+.content {
+  width: 100%;
+  padding: 10px;
+}
+
+.content__title {
+  font-weight: 600;
+  padding: 20px;
+  line-height: 20px;
+  font-size: 23px;
+  color: #005555;
+  text-align: center;
+  border-bottom: 2px solid #069a8e;
+}
+
+.content__table {
+  overflow-x: auto;
+  margin-bottom: 70px;
+}
+
+table {
+  padding: 5px;
+  width: 100%;
+  margin: 7% 0;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 7px 10px;
+}
+
+th {
+  text-align: center;
+}
+
+select {
+  border-radius: 3px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.btn button {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 5px;
+  padding: 10px 8px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn__save {
+  margin-bottom: 10px;
+  background-color: #36ae7c;
+}
+
+.btn__update {
+  background-color: #ff8c32;
+}
+
+.btn__delete {
+  background-color: #eb5353;
+}
+
+button:hover {
+  content: "";
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 500px) {
+  .content__table {
+    margin-top: 1%;
+  }
+
+  table {
+    margin-top: 4%;
+  }
+}
+
+@media screen and (min-width: 798px) {
+  .content {
+    padding: 2% 4%;
+  }
+
+  table {
+    margin-top: 2%;
+  }
+
+  .th__space {
+    width: 20%;
+  }
+
+  .btn__space {
+    width: 14%;
+  }
+
+  .content__table {
+    margin-bottom: 0;
+  }
+
+  .content__table .btn {
+    justify-content: space-between
+  }
+
+  .btn__save {
+    margin-bottom: 0px;
+  }
+}

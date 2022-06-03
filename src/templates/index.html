@@ -4,71 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="icon" href="./images/favicon.png" />
     <meta name="description" content="Resto for You" />
     <meta name="theme-color" content="#db0000" />
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="resto.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="icon" href="favicon.png" />
     <title>Pelipur</title>
   </head>
+
   <body>
     <a href="#maincontent" class="skip-link">Menuju ke konten</a>
-    <header class="header">
-      <div class="header__inner">
-        <h3>Pelipur</h3>
-      </div>
-      <div class="menu-toggle">
-        <button tabindex="0">≣</button>
-      </div>
-      <nav id="drawer" class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#">Beranda</a></li>
-          <li class="nav__item"><a href="#">Tentang Kmai</a></li>
-          <li class="nav__item"><a href="#">Bisnis</a></li>
-          <li class="nav__item"><a href="#">Masuk</a></li>
-          <li class="nav__item"><a href="#">Daftar</a></li>
-        </ul>
-      </nav>
-    </header>
+
+    <custom-header></custom-header>
 
     <!-- Hero -->
-    <div class="hero">
+    <!-- <div class="hero">
       <div class="hero__inner">
         <h1 class="hero__title">Untuk Bumi Yang Lebih Sehat</h1>
         <p class="hero__tagline">Jadilah Penyelamat Bumi Kita Untuk Generasi Yang Akan Datang</p>
       </div>
-    </div>
+    </div> -->
+    <!-- <br /> -->
 
-    <main tabindex="0" id="maincontent">
-      <article>
-        <h1>Dunia Dalam Berita</h1>
-        <div class="item-produk"></div>
-      </article>
-    </main>
+    <main tabindex="0" id="maincontent"></main>
 
-    <footer>
-      <div tabindex="0" class="alamat">
-        <h3>Alamat :</h3>
-        <p>jl. Green Sedayu Bizpark Blok DM Boulevard No.2 Jl.Daan Mogot KM.18 Kali Deres - Jakarta Barat</p>
-        <p>Tlp/Wa : 0857 XXX XXX</p>
-      </div>
-
-      <div tabindex="0" class="medsos">
-        <ul>
-          <li>Instaram</li>
-          <li>Facebok</li>
-        </ul>
-      </div>
-
-      <div tabindex="0" class="copyrig">
-        <p>&copy; Copyright 2022 | Pengelolaan Limbah Untuk Ramah lingkungan (Pelipur)</p>
-      </div>
-
-      <script src="../scripts/utils/drawer-initiator.js"></script>
-    </footer>
+    <custom-footer></custom-footer>
   </body>
 </html>
 
