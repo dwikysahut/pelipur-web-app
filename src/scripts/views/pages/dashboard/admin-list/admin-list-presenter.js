@@ -12,7 +12,8 @@ class AdminListPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._getAllCollectionsHandler();
-    this._generatePartnersByCityDropdownHandler();
+    // this._generatePartnersByCityDropdownHandler();
+
     // this._addCollectionHandler();
     // this._formCollectionEventChangeHandler();
   }
@@ -21,6 +22,22 @@ class AdminListPresenter {
   _formCollectionEventChangeHandler() {
     this._view.getCollectionFormListener((formData) => {
       FormEventChangeHandler.init(formData);
+    });
+  }
+
+  _buttonGeneratePartnerHandler() {
+    this._view.buttonGeneratePartnerListener((btnElements) => {
+      console.log(btnElements);
+      btnElements.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          console.log(e.target.dataset.id);
+          console.log(e.target.dataset.kota);
+          const response = await this._dataDb.getPartnersByCity(e.target.dataset.id, localStorage.getItem('token'));
+
+          this._renderPartnersDropdown(response.data.data, e.target.dataset.id);
+          btn.classList.add('none');
+        });
+      });
     });
   }
 
@@ -38,37 +55,45 @@ class AdminListPresenter {
 
   _renderCollections(response) {
     this._view.showCollections(response, async () => {});
-    this._acceptActionHandler();
+    this._buttonGeneratePartnerHandler();
+
     this._rejectActionHandler();
     this._finishActionHandler();
   }
 
-  async _generatePartnersByCityDropdownHandler() {
-    try {
-      const response = await this._dataDb.getPartnersByCity(localStorage.getItem('token'));
-      console.log(response);
-      this._renderCities(response.data.data);
-    } catch (error) {
-      console.log(error);
-    }
+  _renderPartnersDropdown(data, datasetId) {
+    this._view.showPartners(data, datasetId, (element) => {
+      this._acceptActionHandler(element);
+    });
   }
+  // async _generatePartnersByCityDropdownHandler() {
+  //   try {
+  //     const response = await this._dataDb.getPartnersByCity(localStorage.getItem('token'));
+  //     console.log(response);
+  //     this._renderCities(response.data.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  _acceptActionHandler() {
-    this._view.acceptCollectionListener((accElements) => {
-      accElements.forEach((element) => {
-        console.log(element);
-        element.addEventListener('click', async (e) => {
-          e.preventDefault();
-          swalConfirmation('Yakin untuk Melanjutkan', 'Data sudah disetujui', async () => {
-            try {
-              await this._acceptCollectionHandler(e.target.dataset.id);
-            } catch (error) {
-              console.log(error);
-            }
+  _acceptActionHandler(selectElement) {
+    if (selectElement.value !== '') {
+      this._view.acceptCollectionListener((accElements) => {
+        accElements.forEach((element) => {
+          console.log(element);
+          element.addEventListener('click', async (e) => {
+            e.preventDefault();
+            swalConfirmation('Yakin untuk Melanjutkan', 'Data sudah disetujui', async () => {
+              try {
+                await this._acceptCollectionHandler(selectElement, e.target.dataset.id);
+              } catch (error) {
+                console.log(error);
+              }
+            });
           });
         });
       });
-    });
+    }
   }
 
   _rejectActionHandler() {
@@ -107,10 +132,10 @@ class AdminListPresenter {
     });
   }
 
-  async _acceptCollectionHandler(dataId) {
+  async _acceptCollectionHandler(selectElement, dataId) {
     try {
       console.log(dataId);
-      const response = await this._dataDb.confirmCollection(localStorage.getItem('token'), { id_mitra: 17, id_status: 2 }, dataId);
+      const response = await this._dataDb.confirmCollection(localStorage.getItem('token'), { id_mitra: selectElement.value, id_status: 2 }, dataId);
       if (response.status === 200) {
         swalConfirm('Pengajuan Berhasil Disetujui');
         this._getAllCollectionsHandler();
@@ -144,12 +169,6 @@ class AdminListPresenter {
     } catch (error) {
       swalError('Oops... Something Wrong');
     }
-  }
-
-  _renderCities(items) {
-    this._view.showCities(items, (type, data) => {
-      // this._acceptActionHandler();
-    });
   }
 
   _addCollectionHandler() {

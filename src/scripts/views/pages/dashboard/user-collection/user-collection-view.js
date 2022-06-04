@@ -33,7 +33,7 @@ class UserCollectionView {
             <div class="content__form-item-city">
               <label for="city">Kota</label>
               <select id="city" name="city">
-                <city-item></city-item>
+                
               </select>
             </div>
             <div class="content__form-item">

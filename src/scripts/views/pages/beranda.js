@@ -10,8 +10,9 @@ import '../component/layanan';
 import '../component/carousel';
 import '../component/keterangan-slide';
 import '../component/listmitra';
+import '../component/custom-loader';
 import NewsDbSource from '../../data/newsdb-source';
-import { swalError } from '../../utils/function-helper';
+import { openLoader, swalError } from '../../utils/function-helper';
 // const chat = [];
 const Beranda = {
   async render() {
@@ -21,12 +22,12 @@ const Beranda = {
         window.location.reload();
         window.history.replaceState({ page: '' }, '', '#/home');
         window.dispatchEvent(new HashChangeEvent('hashchange'));
-        return '<div></div>';
+        return ' <custom-loader></custom-loader>';
       }
       // window.history.state.page = '';
     }
     return `
-
+   
   <div class="wrapper">
     <custom-hero></custom-hero>
     <layanan-custom></layanan-custom>
@@ -56,6 +57,7 @@ const Beranda = {
   async afterRender() {
     if (window.history.state && window.history.state.page === 'login') {
       // loading bar
+      openLoader(document.querySelector('custom-loader'));
     } else {
       try {
         const response = await NewsDbSource.getAllNews();
