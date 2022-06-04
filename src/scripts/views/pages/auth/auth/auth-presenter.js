@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, formEmailValidation, passwordValidation, swalConfirm, swalError, validateEmail,
+  emptyFormHandler, formEmailValidation, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail,
 } from '../../../../utils/function-helper';
 import SwiperButtonLoginPresenter from '../../../../utils/slider-button-login-presenter';
 
@@ -67,9 +68,13 @@ class AuthPresenter {
         localStorage.setItem('image', response.data.data.image);
         localStorage.setItem('role', response.data.data.id_role);
         localStorage.setItem('token', response.data.data.token);
+        localStorage.setItem('id', response.data.data.id);
         localStorage.setItem('refreshToken', response.data.data.refreshToken);
 
-        await swalConfirm(`${response.data.message}`, '#/home');
+        await swalConfirm(`${response.data.message}`, '#/home', 'login');
+        // window.location.href = '#/home';
+        // window.history.replaceState('', '', '#/home');
+        // window.dispatchEvent(new HashChangeEvent('hashchange'));
       }
     } catch (error) {
       console.log(error);
@@ -102,13 +107,7 @@ class AuthPresenter {
             return;
           }
           await this._registerHandler(formRegister);
-          formRegister.email.value = '';
-          formRegister.no_telp.value = '';
-          formRegister.alamat.value = '';
-          formRegister.password.value = '';
-          formRegister.email.value = '';
-          formRegister.confirmPassword.value = '';
-          formRegister.nama.value = '';
+          resetFormValue(formRegister);
         }
       } else {
         emptyFormHandler(

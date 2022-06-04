@@ -25,6 +25,7 @@ class ListMitra extends HTMLElement {
       .list-mitra ul{
         margin:auto;
         display:flex;
+        padding: 0;
       }
 
       .list-mitra ul li{

@@ -16,7 +16,9 @@
   overflow-x: auto;
   margin-bottom: 70px;
 }
-
+.btn.btn-outline-dark{
+  width: max-content !important;
+}
 table {
   padding: 5px;
   width: 100%;
@@ -113,7 +115,7 @@ button:hover {
   }
 
   .content__table .btn__action {
-    justify-content: space-between
+    justify-content: center;
   }
 
   .btn__save {

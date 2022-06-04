@@ -18,7 +18,7 @@ const routes = {
   '/home': Beranda,
   '/about-us': AboutUs,
   '/bisnis': Bisnis,
-  '/news/detail': Detail,
+  '/news': Detail,
   '/auth': Auth,
   '/verify': Verify,
   '/forgot-password': ForgotPassword,

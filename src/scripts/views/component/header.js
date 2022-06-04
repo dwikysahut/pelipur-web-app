@@ -10,7 +10,7 @@ class Header extends HTMLElement {
        <h1 class="header__inner__title">Pelipur</h1>
       </div>
       <div class="menu-toggle">
-        <button tabindex="0">☰</button>
+      <button id="hamburger" class="btn-drawer" tabindex="0">☰</button>
       </div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
@@ -22,16 +22,16 @@ class Header extends HTMLElement {
           <li class="nav__item"><a href="#/bisnis">Bisnis</a> </li>
           </ul>
           ${
-            !localStorage.getItem('token')
-              ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>'
-              : `         <a href="#/${localStorage.getItem('role') == 2 ? 'user-collection' : 'collections'}">
+  !localStorage.getItem('token')
+    ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>'
+    : `         <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-collection' : 'collections'}">
     <div class="profile-pict">
-      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="">
+      <img src="${localStorage.getItem('image')}" alt="">
       <i class="fal fa-chevron-circle-down"></i>
     </div>
   </a>
 `
-          }
+}
           
 
           
