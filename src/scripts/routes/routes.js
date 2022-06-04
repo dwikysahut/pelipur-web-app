@@ -11,13 +11,15 @@ import Partner from '../views/pages/dashboard/admin-partner';
 import UserCollection from '../views/pages/dashboard/user-collection';
 import UserHistory from '../views/pages/dashboard/user-history';
 import Collection from '../views/pages/dashboard/admin-list';
+import UserNotFound from '../views/pages/dashboard/user-notfound';
+import AdminNotFound from '../views/pages/dashboard/admin-notfound';
 
 const routes = {
   '/': Beranda,
   '/home': Beranda,
   '/about-us': AboutUs,
   '/bisnis': Detail,
-  '/news/detail': Detail,
+  '/detail': Detail,
   '/auth': Auth,
   '/verify': Verify,
   '/forgot-password': ForgotPassword,
@@ -27,6 +29,8 @@ const routes = {
   '/collections': Collection,
   '/user-collection': UserCollection,
   '/user-history': UserHistory,
+  '/user-notfound': UserNotFound,
+  '/admin-notfound': AdminNotFound,
 };
 
 export default routes;
