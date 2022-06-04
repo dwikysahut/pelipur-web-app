@@ -49,6 +49,17 @@ body {
   /* box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2); */
   background-color: #005555;
 }
+.profile-pict{
+  width: 44px;
+  height: 44px;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+.profile-pict >img {
+  width: 100%;
+  border-radius: 50%;
+}
 
 .header__inner {
   border: 3px soild red;
@@ -73,6 +84,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin: 0 !important;
 }
 .nav__item {
   list-style: none;
@@ -231,7 +243,7 @@ article {
   width: 80%;
   margin: auto;
   padding: 20px;
-  background-color: #005555;
+  background-color: #eeeeee;
 }
 
 .item-produk {
@@ -254,11 +266,11 @@ article {
 
 .card img {
   width: 100%;
-  min-height: 220px;
+  
 }
 
 .card h3 {
-  padding: 10px;
+  padding: 0 10px;
   margin-top: -20px;
   color: white;
   font-size: 13px;
@@ -268,6 +280,7 @@ article {
   padding: 10px;
   font-family: Tahoma;
   color: #005555;
+  font-size: 1.2rem !important;
 }
 
 .card h4 {

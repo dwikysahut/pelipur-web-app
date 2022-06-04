@@ -24,9 +24,9 @@ class Header extends HTMLElement {
           ${
   !localStorage.getItem('token')
     ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>'
-    : `         <a href="#/${localStorage.getItem('role') == 2 ? 'user-collection' : 'collections'}">
+    : `         <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-collection' : 'collections'}">
     <div class="profile-pict">
-      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="">
+      <img src="${localStorage.getItem('image')}" alt="">
       <i class="fal fa-chevron-circle-down"></i>
     </div>
   </a>

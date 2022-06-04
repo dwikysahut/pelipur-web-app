@@ -43,6 +43,16 @@ class DataDbSource {
     return response;
   }
 
+  static async getCollectionsByUser(token, id) {
+    const response = await axios.get(API_ENDPOINT.GET_COLLECTION_BY_USER(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
   static async getAllDataCount(token) {
     const response = await axios.get(API_ENDPOINT.GET_DATAS_COUNT, {
       headers: {
@@ -75,6 +85,26 @@ class DataDbSource {
 
   static async putUserById(token, body, id) {
     const response = await axios.put(API_ENDPOINT.EDIT_PROFILE(id), body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async confirmCollection(token, body, id) {
+    const response = await axios.put(API_ENDPOINT.PUT_CONFIRMATION_COLLECTION(id), body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async putCollection(token, body, id) {
+    const response = await axios.put(API_ENDPOINT.PUT_COLLECTION(id), body, {
       headers: {
         Authorization: `${token}`,
 

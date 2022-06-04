@@ -7,7 +7,9 @@ const newsTemplate = (news) => {
   template += `
             <div class="card">
               <div class="card-item" tabindex="0">
+              <div class="img-news" tabindex="0">
               <img src="${news.thumbnail}" alt="" >
+              </div>
               <h3>${dateConvert(news.pubDate)}</h3>
               <h2>${news.title}</h2>
             </div>
@@ -25,12 +27,10 @@ const tableCollectionsTemplate = (item) => {
   <td>${item.pesan}</td>
   <td>${item.alamat}</td>
   <td>
-    <select id="partner" name="partner" ${item.id_status !== 1 && 'disabled'}>
-      <option value="mitra1">Mitra 1</option>
-      <option value="mitra2">Mitra 2</option>
-      <option value="mitra3">Mitra 3</option>
-      <option value="mitra4">Mitra 4</option>
-    </select>
+  ${item.id_status === 1 ? `<button class="btn btn-outline-dark" data-id="${item.id}">Pilih mitra</button>`
+    : `<button class="btn btn-outline-dark" data-id="${item.id}" disabled>Pilih mitra</button>`
+}
+    
   </td>
   <td>
   <div class="btn__action" >
@@ -228,9 +228,22 @@ const dataDashboardTemplate = (data) => `
   </div>
 </div>
 </div>`;
+const tableHistoryTemplate = (item) => {
+  const date = new Date(item.tanggal);
+  return `
+<tr class="data">
+  <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</td>
+  <td>${item.waktu}</td>
+  <td>${item.total_minyak}</td>
+  <td>${item.pesan}</td>
+  <td>${item.alamat}</td>
+  
+</tr>
+`;
+};
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
-  categoryItemTemplate,
+  categoryItemTemplate, tableHistoryTemplate,
 };

@@ -24,16 +24,34 @@ class FounderAboutus extends HTMLElement {
                 width:50%;
                 margin:30px auto;
                 padding:10px;
+                display: flex;
+                flex-direction:column;
+                align-items: center;
                 box-sizing:border-box;
                 text-align:center;
         
             }
 
             .founder-about .founder ul{              
-                list-style:none;             
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                width: 80%;
+                gap:10px;
+                align-items: center
             }
 
             .founder-about .founder ul li{      
+            }
+            li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            li > p {
+                margin:0;
+
             }
 
         .founder-about .founder h2{
@@ -47,10 +65,10 @@ class FounderAboutus extends HTMLElement {
         }
 
             .founder-about .founder img{
-                width:60%;
-                padding:10px;
+                width: 100%;
+                
                 box-sizing:border-box;
-                margin-right:50px;
+                
             }
 
              .founder-about .about{
@@ -103,7 +121,7 @@ class FounderAboutus extends HTMLElement {
                 }
 
                 .founder-about .founder{
-                    width:30%;                        
+                                 
                 }
                 .founder-about .about{
                     width:50%;
@@ -137,10 +155,10 @@ class FounderAboutus extends HTMLElement {
             <div class="founder">
              <h2>Founder Pelipur</h2>
                     <ul>
-                        <li><img src = "./images/heros/yoga2.jpg">Yoga</li>
-                        <li><img src = "./images/heros/dwiky.jpg">Dwiky</li>
-                        <li><img src = "./images/heros/logo.png">Nova</li>
-                        <li><img src = "./images/heros/deva.jpg">Deva</li>
+                        <li><img src = "./images/heros/yoga2.jpg"><p>Yoga</p</li>
+                        <li><img src = "./images/heros/dwiky.jpg"><p>Dwiky</p</li>
+                        <li><img src = "./images/heros/logo.png"><p>Nova</p</li>
+                        <li><img src = "./images/heros/deva.jpg"><p>Deva</p</li>
                         
                     </ul>
                    <h4>Menjaga Alam Adalah Tugas Kita Semua Sebagai Manusia, Untuk Menjadi Rahmat Bagi Semesta</h4>

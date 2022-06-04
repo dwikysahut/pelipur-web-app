@@ -76,8 +76,9 @@ class AdminListView {
 
     if (items.length > 0) {
       const container = document.querySelector('#tableContent');
+      container.innerHTML = '';
       let i = 0;
-      const j = 0;
+      console.log(items);
 
       items.forEach(async (item) => {
         const cityElement = tableCollectionsTemplate(item);
@@ -108,7 +109,20 @@ class AdminListView {
         }
         i += 1;
       });
+      callback();
     }
+  }
+
+  acceptCollectionListener(callback) {
+    callback(document.querySelectorAll('.btn__accept'));
+  }
+
+  rejectCollectionListener(callback) {
+    callback(document.querySelectorAll('.btn__reject'));
+  }
+
+  finishCollectionListener(callback) {
+    callback(document.querySelectorAll('.btn.btn-warning.btn-finish'));
   }
 }
 

@@ -30,7 +30,7 @@ const API_ENDPOINT = {
   GET_COLLECTION_BY_ID: (id) => `${CONFIG.BASE_URL}collections/${id}`,
   POST_COLLECTION: `${CONFIG.BASE_URL}collections`,
   PUT_CONFIRMATION_COLLECTION: (id) => `${CONFIG.BASE_URL}collections/confirmation/${id}`,
-  PUT_FINISH_COLLECTION: (id) => `${CONFIG.BASE_URL}collections/${id}`,
+  PUT_COLLECTION: (id) => `${CONFIG.BASE_URL}collections/${id}`,
   GET_COLLECTION_BY_USER: (id) => `${CONFIG.BASE_URL}collections/users/${id}`,
   // desc
   GET_DESC: `${CONFIG.BASE_URL}descriptions`,

@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  emptyFormHandler, resetFormValue, swalConfirm, swalConfirmation, swalError, zeroValueHandler,
 } from '../../../../utils/function-helper';
 
 class AdminListPresenter {
@@ -12,7 +12,7 @@ class AdminListPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._getAllCollectionsHandler();
-    // this._generateCityDropdownHandler();
+    this._generatePartnersByCityDropdownHandler();
     // this._addCollectionHandler();
     // this._formCollectionEventChangeHandler();
   }
@@ -36,29 +36,119 @@ class AdminListPresenter {
     }
   }
 
-  async _renderCollections(response) {
-    await this._view.showCollections(response, () => {
-
-    });
+  _renderCollections(response) {
+    this._view.showCollections(response, async () => {});
+    this._acceptActionHandler();
+    this._rejectActionHandler();
+    this._finishActionHandler();
   }
 
-  async _generateCityDropdownHandler() {
+  async _generatePartnersByCityDropdownHandler() {
     try {
-      const responseCity = await this._dataDb.getCities(localStorage.token);
-      console.log(responseCity);
-      this._renderCities(responseCity.data.data);
+      const response = await this._dataDb.getPartnersByCity(localStorage.getItem('token'));
+      console.log(response);
+      this._renderCities(response.data.data);
     } catch (error) {
       console.log(error);
     }
   }
 
-  _buttonActionHandler(type, data) {
-    console.log(type);
+  _acceptActionHandler() {
+    this._view.acceptCollectionListener((accElements) => {
+      accElements.forEach((element) => {
+        console.log(element);
+        element.addEventListener('click', async (e) => {
+          e.preventDefault();
+          swalConfirmation('Yakin untuk Melanjutkan', 'Data sudah disetujui', async () => {
+            try {
+              await this._acceptCollectionHandler(e.target.dataset.id);
+            } catch (error) {
+              console.log(error);
+            }
+          });
+        });
+      });
+    });
+  }
+
+  _rejectActionHandler() {
+    this._view.rejectCollectionListener((rejectElements) => {
+      rejectElements.forEach((element) => {
+        console.log(element);
+        element.addEventListener('click', async (e) => {
+          e.preventDefault();
+          swalConfirmation('Yakin untuk Menolak', 'Data berhasil Ditolak', async () => {
+            try {
+              await this._rejectCollectionHandler(e.target.dataset.id);
+            } catch (error) {
+              console.log(error);
+            }
+          });
+        });
+      });
+    });
+  }
+
+  _finishActionHandler() {
+    this._view.finishCollectionListener((accElements) => {
+      accElements.forEach((element) => {
+        console.log(element);
+        element.addEventListener('click', async (e) => {
+          e.preventDefault();
+          swalConfirmation('Yakin untuk Melanjutkan', 'Pengumpulan selesai', async () => {
+            try {
+              await this._finishCollectionHandler(e.target.dataset.id);
+            } catch (error) {
+              console.log(error);
+            }
+          });
+        });
+      });
+    });
+  }
+
+  async _acceptCollectionHandler(dataId) {
+    try {
+      console.log(dataId);
+      const response = await this._dataDb.confirmCollection(localStorage.getItem('token'), { id_mitra: 17, id_status: 2 }, dataId);
+      if (response.status === 200) {
+        swalConfirm('Pengajuan Berhasil Disetujui');
+        this._getAllCollectionsHandler();
+      }
+    } catch (error) {
+      swalError('Oops... Something Wrong');
+    }
+  }
+
+  async _rejectCollectionHandler(dataId) {
+    try {
+      console.log(dataId);
+      const response = await this._dataDb.putCollection(localStorage.getItem('token'), { id_status: 3 }, dataId);
+      if (response.status === 200) {
+        swalConfirm('Pengajuan Telah Ditolak');
+        this._getAllCollectionsHandler();
+      }
+    } catch (error) {
+      swalError('Oops... Something Wrong');
+    }
+  }
+
+  async _finishCollectionHandler(dataId) {
+    try {
+      console.log(dataId);
+      const response = await this._dataDb.putCollection(localStorage.getItem('token'), { id_status: 4 }, dataId);
+      if (response.status === 200) {
+        swalConfirm('Pengumpulan minyak Selesai');
+        this._getAllCollectionsHandler();
+      }
+    } catch (error) {
+      swalError('Oops... Something Wrong');
+    }
   }
 
   _renderCities(items) {
     this._view.showCities(items, (type, data) => {
-      this._buttonActionHandler(type, data);
+      // this._acceptActionHandler();
     });
   }
 
