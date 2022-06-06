@@ -87,6 +87,10 @@ class VisiMisi extends HTMLElement {
         @media screen and (min-width:600px){
         .visimisi{
           display:flex;
+          flex-direction:column;
+        }
+        .inner__visimisi{
+          display:flex;
           flex-direction:row;
         }
 
@@ -119,8 +123,10 @@ class VisiMisi extends HTMLElement {
 
 
 
-       <h2>Visi dan Misi Kami</h2>
+     
         <div class="visimisi">
+        <h2>Visi dan Misi Kami</h2>
+        <div class="inner__visimisi">
           
           <div class = "visi">
             <h2>Visi</h2>
@@ -134,6 +140,7 @@ class VisiMisi extends HTMLElement {
               <li>2. Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah  </li>
               <li>3. Memberikan Pelayanan yang Baik</li>
             </ul>
+          </div>
           </div>
         </div>
         

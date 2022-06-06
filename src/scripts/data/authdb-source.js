@@ -22,6 +22,11 @@ class AuthDbSource {
     const response = await axios.post(API_ENDPOINT.FORGOT_PASSWORD, body);
     return response;
   }
+
+  static async postLogout(body) {
+    const response = await axios.post(API_ENDPOINT.LOGOUT, body);
+    return response;
+  }
 }
 
 export default AuthDbSource;

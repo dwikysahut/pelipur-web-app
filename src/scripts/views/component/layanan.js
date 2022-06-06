@@ -8,65 +8,85 @@ class Layanan extends HTMLElement {
 
     <style>
     .judul{
-        width:30%;
-        margin: auto;
+        width:100%;
+        text-align: center;
     }
 
-    .judul h1{
-        font-family:calibri;
-        font-weight: lighter;
+    .judul h2{
         text-align:center;
-        color:#005555;
     }
 
-
-
-
-
-    .layanan{
+    .layanan {
         display:flex;
-        width:70%;
+        flex-direction:column;
+        width:80%;
         box-sizing:border-box;
-        margin:30px auto;
-        background-color:white;
-        
+        margin: 0 auto 30px;
     }
 
     .gambar{
-        width:60%;
+        width: 0%;
         margin: auto;
         box-sizing:border-box;
         display:flex;
+        flex-direction: column;
+        align-items: center;
         justify-content:center;
     }
 
     .gambar img{
-      width:100%;
-      max-height:300px;
+      height:140px;
     }
 
+    .gambar span {
+        font-size: 20px;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 30px;
+        width: 300px;
+        text-align: center;
+    }
 
+    @media screen and (min-width:690px){
+        .layanan{
+           flex-direction: row;
+        }
 
+        .gambar span {
+            
+        }
+    }
 
- 
-
-     @media screen and (max-width:600px){
+     @media screen and (min-width:950px){
          .layanan{
-             flex-direction:column;
+            flex-direction: row;
          }
+         
          .gambar img{
-             width:100%;
+            height:180px;
+         }
+
+         .gambar span {
+             
          }
      }
-    
     </style>
 
 
-       <div class="judul"><h1>Layanan</h1></div>
+       <div class="judul"><h2>Layanan</h2></div>
         <div class = "layanan">
-            <div class="gambar"><img src="./images/heros/jemput.jpg"></div>
-            <div class="gambar"><img src="./images/heros/chat.jpg"></div>
-            <div class="gambar"><img src="./images/heros/pay.jpg"></div>       
+            <div class="gambar">
+                <img src="./images/undraw_On_the_way_re_swjt.png">
+                <span>Jemput Gratis</span>
+            </div>
+            <div class="gambar">
+                <img src="./images/undraw_Chatting_re_j55r.png">
+                <span>Live Chat</span>
+            </div>
+            <div class="gambar">
+                <img src="./images/undraw_printing_invoices_5r4r.png">
+                <span>Menghasilkan Uang</span>
+            </div>       
         </div>
         `;
   }
