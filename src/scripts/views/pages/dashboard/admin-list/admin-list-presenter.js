@@ -2,9 +2,16 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
-import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
+
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalConfirmation, swalError, zeroValueHandler,
+  closeLoader,
+  emptyFormHandler,
+  openLoader,
+  resetFormValue,
+  swalConfirm,
+  swalConfirmation,
+  swalError,
+  zeroValueHandler,
 } from '../../../../utils/function-helper';
 
 class AdminListPresenter {
@@ -12,17 +19,6 @@ class AdminListPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._getAllCollectionsHandler();
-    // this._generatePartnersByCityDropdownHandler();
-
-    // this._addCollectionHandler();
-    // this._formCollectionEventChangeHandler();
-  }
-
-  // handler change collection form input
-  _formCollectionEventChangeHandler() {
-    this._view.getCollectionFormListener((formData) => {
-      FormEventChangeHandler.init(formData);
-    });
   }
 
   _buttonGeneratePartnerHandler() {
@@ -32,10 +28,18 @@ class AdminListPresenter {
         btn.addEventListener('click', async (e) => {
           console.log(e.target.dataset.id);
           console.log(e.target.dataset.kota);
-          const response = await this._dataDb.getPartnersByCity(e.target.dataset.id, localStorage.getItem('token'));
 
-          this._renderPartnersDropdown(response.data.data, e.target.dataset.id);
-          btn.classList.add('none');
+          try {
+            btn.classList.add('none');
+            openLoader(this._view.loaderElementListener());
+            const response = await this._dataDb.getPartnersByCity(e.target.dataset.id, localStorage.getItem('token'));
+            if (response.status === 200) {
+              closeLoader(this._view.loaderElementListener());
+              this._renderPartnersDropdown(response.data.data, e.target.dataset.id);
+            }
+          } catch (error) {
+            btn.classList.remove('none');
+          }
         });
       });
     });
@@ -63,23 +67,17 @@ class AdminListPresenter {
 
   _renderPartnersDropdown(data, datasetId) {
     this._view.showPartners(data, datasetId, (element) => {
-      this._acceptActionHandler(element);
+      this._acceptActionHandler(element, datasetId);
     });
   }
-  // async _generatePartnersByCityDropdownHandler() {
-  //   try {
-  //     const response = await this._dataDb.getPartnersByCity(localStorage.getItem('token'));
-  //     console.log(response);
-  //     this._renderCities(response.data.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
-  _acceptActionHandler(selectElement) {
+  _acceptActionHandler(selectElement, datasetId) {
     if (selectElement.value !== '') {
       this._view.acceptCollectionListener((accElements) => {
         accElements.forEach((element) => {
+          if (element.dataset.id === datasetId) {
+            element.removeAttribute('disabled');
+          }
           console.log(element);
           element.addEventListener('click', async (e) => {
             e.preventDefault();

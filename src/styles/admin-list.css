@@ -43,6 +43,7 @@ th {
 .content__table select {
   border-radius: 3px;
   min-width: 44px;
+  width: 91px;
   min-height: 44px;
   padding: 0 3px;
   cursor: pointer;
@@ -70,6 +71,11 @@ th {
 
 .btn__save, .btn__accept {
   background-color: #36ae7c;
+}
+
+.btn__accept[disabled]{
+  background-color: gray;
+  cursor: default;
 }
 
 .btn__update {

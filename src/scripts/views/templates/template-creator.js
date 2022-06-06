@@ -22,10 +22,13 @@ const tableCollectionsTemplate = (item) => {
   return `
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
-  <td>${item.id}</td>
+  <td>${item.nama_user}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
+  <td>${item.email_user}</td>
   <td>${item.alamat}</td>
+  <td>${item.kota}</td>
+
   <td>
   ${item.id_status === 1 ? `<button class="btn btn-outline-dark generate" data-id="${item.id}" data-kota="${item.id_kota}">Pilih mitra</button>`
     : `${item.nama_mitra === null ? '-' : item.nama_mitra}`
@@ -33,6 +36,7 @@ const tableCollectionsTemplate = (item) => {
     <select id="partnersDropdown" name="partnersDropdown" class="partnersDropdown none" data-id="${item.id}">   
 
     </select>
+    <loader-content></loader-content>
     
   </td>
   <td>
@@ -181,6 +185,8 @@ const categoryItemTemplate = (item, recentId) => {
   return ` <option value="${item.id}">${item.keterangan}</option>`;
 };
 const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.nama}</option>`;
+const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
+
 const dataDashboardTemplate = (data) => `
 <div class="content__card">
 <div class="card__item">
@@ -249,5 +255,5 @@ const tableHistoryTemplate = (item) => {
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
-  categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate,
+  categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
 };

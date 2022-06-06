@@ -610,5 +610,28 @@ custom-loader {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 5000;
+    z-index: 99;
+}
+loader-content {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: fit-content;
+}
+.loader-container {
+  width: fit-content;
+}
+.loader-content {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #005555;
+  border-bottom: 16px solid #005555;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+button > i {
+  pointer-events: none;
 }

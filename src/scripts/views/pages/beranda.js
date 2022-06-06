@@ -17,7 +17,7 @@ import { openLoader, swalError } from '../../utils/function-helper';
 const Beranda = {
   async render() {
     if (window.history.state) {
-      if (window.history.state.page === 'login') {
+      if (window.history.state.page === 'login' || window.history.state.page === 'logout') {
         console.log(window.history.state);
         window.location.reload();
         window.history.replaceState({ page: '' }, '', '#/home');

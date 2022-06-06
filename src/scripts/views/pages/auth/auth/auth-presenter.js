@@ -81,6 +81,7 @@ class AuthPresenter {
           title: 'Success',
           timer: 1000,
           text: `${response.data.message}`,
+          showConfirmButton: false,
         });
         openLoader(this._view.loaderListener());
         setTimeout(() => {

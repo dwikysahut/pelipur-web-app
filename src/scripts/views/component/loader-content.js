@@ -6,7 +6,7 @@ class LoaderComponent extends HTMLElement {
   render() {
     this.innerHTML = `
         <div id="loader" class="loader-container">
-            <div class="loader"></div>
+            <div class="loader-content"></div>
         </div>
     `;
   }

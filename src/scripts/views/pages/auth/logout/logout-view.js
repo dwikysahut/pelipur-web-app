@@ -7,6 +7,10 @@ class LogoutView {
     <custom-loader></custom-loader>
               `;
   }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
+  }
 }
 
 export default LogoutView;
