@@ -251,9 +251,25 @@ const tableHistoryTemplate = (item) => {
 </tr>
 `;
 };
+const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
+  <td>${item.id}</td>
+  <td>${item.kota}</td>
+  <td>  
+  <div class="btn__action">
+    <button type="submit" value="Submit" class="btn__update city" data-id =${item.id}>
+      Edit
+    </button>
+    <button type="submit" value="Submit" class="btn__delete city" data-id =${item.id}>
+      Hapus
+    </button>
+</div>
+</td>
+</tr>
+  `;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
+  tableCityTemplate,
 };

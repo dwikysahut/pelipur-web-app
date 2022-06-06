@@ -30,27 +30,17 @@ const Beranda = {
    
   <div class="wrapper">
     <custom-hero></custom-hero>
-    <layanan-custom></layanan-custom>
     <div>
-      <article>
-        <div class="item-produk">
-        </div>
-      </article>
-
-      <artikel-custom src="./images/heros/oil.jpg" alt="gambar bumi">
-      </artikel-custom>
-
-
+      <artikel-custom src="./images/oil-cooking.png" alt="Minyak"></artikel-custom>
       <custom-carousel></custom-carousel>
-      <keterangan-slider></keterangan-slider>
+      <layanan-custom></layanan-custom>
+      <article>
+        <h2 class="news-title">Berita</h2>
+        <div class="item-produk"></div>
+      </article>
       <list-mitra></list-mitra>
     </div>
   </div>
-    
-
-
-
-
         `;
   },
 

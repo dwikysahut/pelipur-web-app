@@ -13,13 +13,16 @@ class Carousel extends HTMLElement {
 </div>
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="images/heros/biodisel2.jpg" class="d-block w-100 " alt="...">
+    <h2 class="d-block w-100 ">Biodisel</h2>
+    <p>Penggunaan used cooking oil (UCO) atau minyak jelantah sebagai alternatif bahan baku dapat mendukung program biodiesel di Indonesia. Penggunaan minyak jelantah untuk biodiesel juga dapat menghemat biaya subsidi biodiesel yang mencapai Rp 3,6 triliun.</p>
   </div>
   <div class="carousel-item">
-    <img src="images/heros/ekonomis2.jpg" class="d-block w-100 " alt="...">
+    <h2 class="d-block w-100 ">Bernilai Ekonomis</h2>
+    <p>Dengan mengumpulkan minimal 10 jerigen minyak jelantah, Anda akan memperoleh pendapatan tambahan sebesar Rp 4.000 setiap 10 jerigen minyak jelantah yang Anda tukarkan kepada kami.</p>
   </div>
   <div class="carousel-item">
-    <img src="images/heros/bumi2.jpg" class="d-block w-100 " alt="...">
+    <h2 class="d-block w-100 ">Go Green dan Go Health</h2>
+    <p>Minyak jelantah akan sangat berbahaya bila dikonsumsi atau dibuang secara sembarangan. Oleh karena itu, kami ingin mendukung program penghijauan (Go Green) dan program hidup sehat (Go Health) yang diadakan oleh pemerintah</p>
   </div>
 </div>
 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

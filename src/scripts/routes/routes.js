@@ -12,6 +12,7 @@ import UserCollection from '../views/pages/dashboard/user-collection';
 import UserHistory from '../views/pages/dashboard/user-history';
 import Collection from '../views/pages/dashboard/admin-list';
 import Logout from '../views/pages/auth/logout';
+import CityList from '../views/pages/dashboard/admin-cities';
 
 const routes = {
   '/': Beranda,
@@ -29,6 +30,7 @@ const routes = {
   '/user-collection': UserCollection,
   '/user-history': UserHistory,
   '/logout': Logout,
+  '/city-list': CityList,
 };
 
 export default routes;

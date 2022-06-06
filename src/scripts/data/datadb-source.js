@@ -112,6 +112,26 @@ class DataDbSource {
     });
     return response;
   }
+
+  static async postCity(token, body) {
+    const response = await axios.post(API_ENDPOINT.POST_CITY, body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async deleteCity(token, id) {
+    const response = await axios.delete(API_ENDPOINT.DELETE_CITY(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
 }
 
 export default DataDbSource;

@@ -39,7 +39,9 @@ th {
 th {
   text-align: center;
 }
-
+.action-column{
+  width: 100px;
+}
 .content__table select {
   border-radius: 3px;
   min-width: 44px;
@@ -92,7 +94,7 @@ th {
 } */
 
 @media screen and (min-width: 500px) {
-  .content__table {
+  .content__table, .content__table-cities {
     margin-top: 1%;
   }
 
@@ -116,6 +118,10 @@ th {
 
   .content__table {
     margin-bottom: 0;
+  }
+
+  .content__table-cities {
+    padding: 5px 110px;
   }
 
   .content__table .btn__action {
