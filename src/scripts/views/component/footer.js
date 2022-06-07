@@ -25,10 +25,10 @@ class Footer extends HTMLElement {
       <h3>Hubungi Kami</h3>
           
         <ul>
-         <li tabindex="0"><i class="fa fa-instagram" aria-hidden="true"></i></li>
-          <li tabindex="0"><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
-          <li tabindex="0"><i class="fa fa-envelope" aria-hidden="true"></i></li>
-          <li tabindex="0"><i class="fa fa-whatsapp" aria-hidden="true"></i></li>         
+         <li tabindex="0"><a href="https://www.facebook.com/profile.php?id=100081708250334"><i class="fa fa-instagram" aria-hidden="true"></a></i></li>
+          <li tabindex="0"><a href="https://www.facebook.com/profile.php?id=100081708250334" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></a></i></li>
+          <li tabindex="0"><a href="mailto:pelipurapps@gmail.com" target="_blank"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+          <li tabindex="0"><a href="https://wa.me/082234632343" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>         
         </ul>
       </div>
 

@@ -492,7 +492,9 @@ footer .jadwal h3 {
 footer .fa {
   font-size: 25px;
 }
-
+.fa.fa-instagram,.fa.fa-facebook-official,.fa.fa-envelope,.fa.fa-whatsapp{
+  color: white !important;
+}
 /* chat */
 
 .chat {
