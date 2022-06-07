@@ -16,7 +16,10 @@ class AdminCitiesView {
           </div>
           <div class="btn__form">
             <button type="submit" value="Submit" id="submitCityButton" class="btn__save">
-              Simpan
+              Tambah
+            </button>
+            <button type="submit" value="Submit" id="editCityButton" class="btn__update">
+            Edit
             </button>
           </div>
         </form>
@@ -45,6 +48,10 @@ class AdminCitiesView {
     callback({ nameForm: document.querySelector('#cityNameForm') });
   }
 
+  getEditButtonFormListener() {
+    return document.querySelector('#editCityButton');
+  }
+
   submitButtonListener(callback) {
     document.querySelector('#submitCityButton').addEventListener('click', (e) => {
       e.preventDefault();
@@ -58,6 +65,14 @@ class AdminCitiesView {
     items.forEach((item) => {
       itemContainer.innerHTML += tableCityTemplate(item);
     });
+  }
+
+  editCityListener(callback) {
+    callback(document.querySelectorAll('.btn__update.city'));
+  }
+
+  getEditFormListener() {
+    return document.querySelector('#cityNameForm');
   }
 
   deleteCityListener(callback) {

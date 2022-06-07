@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
@@ -59,22 +60,26 @@ const Beranda = {
   async afterRender() {
     const loadMessage = async () => {
       const chat = [];
-      firebase.database().ref('messages/123/321').on('value', (value) => {
-        const data = value.val();
-        for (const keys in data) {
-          const msg = {
-            from: data[keys].from,
-            message: data[keys].message,
-            to: data[keys].to,
-          };
-          chat.push(msg);
-          if (chat.length > 15) {
-            chat.splice(0, 6);
+      firebase
+        .database()
+        .ref('messages/123/321')
+        .on('value', (value) => {
+          const data = value.val();
+          for (const keys in data) {
+            const msg = {
+              from: data[keys].from,
+              message: data[keys].message,
+              to: data[keys].to,
+            };
+            chat.push(msg);
+            if (chat.length > 15) {
+              chat.splice(0, 6);
+            }
           }
-        }
-        chatTemplateCreator(chat);
-      });
-    }; loadMessage();
+          chatTemplateCreator(chat);
+        });
+    };
+    loadMessage();
 
     // firebase.database().ref('users/').on('value', (value) => {
     //   console.log(value.val());
@@ -89,14 +94,12 @@ const Beranda = {
           from: '123',
           message: inputMessage.value,
           to: '321',
-
         });
 
         firebase.database().ref(`/messages/321/123/${new Date().getTime()}`).set({
           from: '321',
           message: inputMessage.value,
           to: '123',
-
         });
         loadMessage();
         // chat.push({
@@ -110,7 +113,6 @@ const Beranda = {
 
     document.querySelector('.item-produk').innerHTML = newsTemplate();
   },
-
 };
 
 export default Beranda;

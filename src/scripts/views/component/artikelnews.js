@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable lines-between-class-members */
+/* eslint-disable linebreak-style */
 class Artikel extends HTMLElement {
   constructor() {
     super();
@@ -38,7 +41,10 @@ class Artikel extends HTMLElement {
         }
 
         .gambar-artikel {
+          
+          display: flex;
           width: 70%;
+          justify-content: center;
           margin: 20px auto !important;
           margin-bottom: 0 !important;
         }

@@ -83,7 +83,9 @@ th {
 .btn__update {
   background-color: #ff8c32;
 }
-
+.btn__update#editCityButton {
+display: none;
+}
 .btn__delete, .btn__reject {
   background-color: #eb5353;
 }

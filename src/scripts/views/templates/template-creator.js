@@ -1,4 +1,5 @@
 // import data from '../../../DATA.json';
+import CONFIG from '../../globals/config';
 import { dateConvert } from '../../utils/function-helper';
 
 const newsTemplate = (news) => {
@@ -17,6 +18,7 @@ const newsTemplate = (news) => {
     `;
   return template;
 };
+
 const tableCollectionsTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
@@ -176,7 +178,9 @@ const createAuthTemplate = () => ` <div class="container">
   </div>
 </div>
 </div>`;
+
 const cityItemTemplate = (item) => ` <option value="${item.id}">${item.kota}</option>`;
+
 const categoryItemTemplate = (item, recentId) => {
   if (recentId === item.id) {
     return `<option value="${item.id}" selected>${item.keterangan}</option>`;
@@ -184,7 +188,9 @@ const categoryItemTemplate = (item, recentId) => {
 
   return ` <option value="${item.id}">${item.keterangan}</option>`;
 };
+
 const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.nama}</option>`;
+
 const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
 
 const dataDashboardTemplate = (data) => `
@@ -238,6 +244,7 @@ const dataDashboardTemplate = (data) => `
   </div>
 </div>
 </div>`;
+
 const tableHistoryTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
@@ -251,6 +258,7 @@ const tableHistoryTemplate = (item) => {
 </tr>
 `;
 };
+
 const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
   <td>${item.id}</td>
   <td>${item.kota}</td>
@@ -266,10 +274,12 @@ const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
 </td>
 </tr>
   `;
+
+const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
-  tableCityTemplate,
+  tableCityTemplate, mitraListTemplate,
 };

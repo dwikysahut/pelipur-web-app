@@ -25,6 +25,7 @@ class AuthPresenter {
     this._view.elementButtonInit(({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     }) => {
+      window.scrollTo(0, 0);
       SwiperButtonLoginPresenter.init({
         loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
       });
