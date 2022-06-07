@@ -10,7 +10,6 @@ class Footer extends HTMLElement {
       <div tabindex="0" class="alamat">
         <h3>Alamat :</h3>
         <p>jl. Green Sedayu Bizpark Blok DM Boulevard No.2 Jl.Daan Mogot KM.18 Kali Deres - Jakarta Barat</p>
-        <p>Tlp/Wa : 0857 XXX XXX</p>
       </div>
 
       <div class = "jadwal">

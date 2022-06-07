@@ -17,7 +17,7 @@ class AdminDashboardPresenter {
       const response = await this._dataDb.getAllDataCount(localStorage.getItem('token'));
       this._renderData(response.data.data);
     } catch (error) {
-      swalError('Ooops Something wrong', '#/');
+      // swalError('Ooops Something wrong', '#/');
     }
   }
 
