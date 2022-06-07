@@ -206,10 +206,10 @@
 
 @media screen and (min-width: 600px) {
   footer {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      'alamat medsos'
-      'copyright copyright';
+      'alamat jadwal medsos'
+      'copyright copyright copyright';
   }
 
   footer .alamat {
@@ -219,7 +219,10 @@
     font-size: 15px;
     padding: 10px;
     margin-bottom: 20px;
-    border-right: 1px solid white;
+  }
+
+  footer .jadwal {
+    grid-area: jadwal;
   }
 
   footer .medsos li {
@@ -228,11 +231,25 @@
     margin-top: 20px;
     text-align: center;
   }
+  footer .medsos h3 {
+    text-align: center;
+  }
+  footer .medsos p {
+    color: white;
+    margin-top: -50px;
+  }
+
+  footer .jadwal h3 {
+    font-size: 14px;
+    text-align: center;
+  }
 
   footer .copyrig {
     grid-area: copyright;
     background-color: #075757d6;
     
+    background-color: white;
+    padding: 20px;
     border-radius: 5px;
   }
 

@@ -1,17 +1,16 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/extensions */
+/* eslint-disable linebreak-style */
+import '../component/bisnis/info-bisnis.js';
+
 const Bisnis = {
   async render() {
     return `
-
-     <style>
-    h2{
-      color:red;
-      padding:20px;
-    }
-    </style>
-
-        <h2>Bisnis</h2>
-        <h3>Berita</h3>
-        `;
+    
+    <info-bisnis></info-bisnis>
+    
+    
+    `;
   },
 
   async afterRender() {},

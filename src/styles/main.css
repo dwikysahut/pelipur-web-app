@@ -431,12 +431,66 @@ footer .medsos li {
   color: white;
 }
 
+footer .medsos p {
+  color: white;
+}
+
+footer .jadwal ul li {
+  list-style: none;
+}
+
+footer .jadwal {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+footer .jadwal p {
+  font-size: 13px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+footer .alamat h3 {
+  font-size: 14px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+footer .alamat p {
+  font-size: 12px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 footer .copyrig p {
   text-align: center;
-  font-family: Tahoma;
-  color: white;
-  font-size: 12px;
+  font-family: sans-serif;
+  color: #005555;
+  font-size: 13px;
   font-weight: lighter;
+}
+
+.copyrig {
+  background-color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+footer .medsos h3 {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+footer .jadwal h3 {
+  font-size: 14px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+footer .fa {
+  font-size: 25px;
 }
 
 /* chat */
