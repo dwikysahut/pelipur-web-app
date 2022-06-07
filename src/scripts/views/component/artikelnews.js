@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable lines-between-class-members */
+/* eslint-disable linebreak-style */
 class Artikel extends HTMLElement {
   constructor() {
     super();

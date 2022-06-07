@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
