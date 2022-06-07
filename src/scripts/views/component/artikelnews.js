@@ -38,7 +38,10 @@ class Artikel extends HTMLElement {
         }
 
         .gambar-artikel {
+          
+          display: flex;
           width: 70%;
+          justify-content: center;
           margin: 20px auto !important;
           margin-bottom: 0 !important;
         }

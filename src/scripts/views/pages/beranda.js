@@ -13,7 +13,11 @@ import '../component/listmitra';
 import '../component/custom-loader';
 import NewsDbSource from '../../data/newsdb-source';
 import { openLoader, swalError } from '../../utils/function-helper';
+import BerandaView from './beranda/beranda-view';
+import BerandaPresenter from './beranda/beranda-presenter';
+import DataDbSource from '../../data/datadb-source';
 // const chat = [];
+const view = new BerandaView();
 const Beranda = {
   async render() {
     if (window.history.state) {
@@ -26,22 +30,7 @@ const Beranda = {
       }
       // window.history.state.page = '';
     }
-    return `
-   
-  <div class="wrapper">
-    <custom-hero></custom-hero>
-    <div>
-      <artikel-custom src="./images/oil-cooking.png" alt="Minyak"></artikel-custom>
-      <custom-carousel></custom-carousel>
-      <layanan-custom></layanan-custom>
-      <article>
-        <h2 class="news-title">Berita</h2>
-        <div class="item-produk"></div>
-      </article>
-      <list-mitra></list-mitra>
-    </div>
-  </div>
-        `;
+    return view.getTemplate();
   },
 
   async afterRender() {
@@ -49,21 +38,7 @@ const Beranda = {
       // loading bar
       openLoader(document.querySelector('custom-loader'));
     } else {
-      try {
-        const response = await NewsDbSource.getAllNews();
-
-        const dataNews = response.data.data.posts;
-        const itemContainer = document.querySelector('.item-produk');
-        console.log(itemContainer);
-        if (itemContainer !== null) {
-          for (let i = 0; i < 6; i += 1) {
-            itemContainer.innerHTML += newsTemplate(dataNews[i]);
-          }
-        }
-      } catch (error) {
-        console.log(error);
-        swalError('Ooops something wrong...');
-      }
+      new BerandaPresenter({ view, newsDb: NewsDbSource, dataDb: DataDbSource });
     }
   },
 };
