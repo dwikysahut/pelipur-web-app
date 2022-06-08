@@ -20,15 +20,28 @@ class Header extends HTMLElement {
           </li>
 
           <li class="nav__item"><a href="#/bisnis">Bisnis</a> </li>
-          </ul>
           ${
   !localStorage.getItem('token')
     ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>'
-    : `         <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-collection' : 'collections'}">
-    <div class="profile-pict">
-      <img src="${localStorage.getItem('image')}" alt="">
-      <i class="fal fa-chevron-circle-down"></i>
-    </div>
+    : `<li tabindex="0" class="nav__item dropdown">
+    
+        <div class="profile-pict">
+             <img src="${localStorage.getItem('image')}" alt="">
+              <div class="header-icon">
+                <i class="fa fa-sort-desc"></i>
+              </div>
+          </div>
+          <div class="dropdown-content">
+          <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-collection' : 'collections'}">Dashboard</a>
+          <a href="#/logout">Logout</a>
+          </div>
+
+        
+    </li>
+          </ul>
+        
+        
+   
   </a>
 `
 }

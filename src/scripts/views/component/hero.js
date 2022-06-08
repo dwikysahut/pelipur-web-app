@@ -8,7 +8,7 @@ class Hero extends HTMLElement {
       <div class="hero">
         <div class="hero__inner">
           <h1 class="hero__title">Untuk <span class="hero__highlight">Bumi</span> <br> yang lebih <span class="hero__highlight">sehat</span></h1>
-          <button class="hero__join">Bergabung sekarang</button>
+          <a class="hero__join" href="#/auth">Daftar Sekarang</a>
         </div>
       </div>
           `;

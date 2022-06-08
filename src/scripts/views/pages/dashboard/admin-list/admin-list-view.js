@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-loop-func */
 /* eslint-disable camelcase */
-import { tableCollectionsTemplate } from '../../../templates/template-creator';
+import { partnerByCityItemTemplate, tableCollectionsTemplate } from '../../../templates/template-creator';
 
 import '../../../component/aside-dashboard';
 
@@ -21,7 +22,7 @@ class AdminListView {
                   <th>Nama User</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
-                  <th class="th__space">Alamat</th>
+                  <th>Alamat</th>
                   <th>Mitra</th>
                   <th>Aksi</th>
                 </tr>
@@ -37,13 +38,6 @@ class AdminListView {
               `;
   }
 
-  verifyFormInputListener(callback) {
-    document.querySelector('#submitVerify').addEventListener('click', (e) => {
-      e.preventDefault();
-      this.getVerifyFormInputListener(callback);
-    });
-  }
-
   getVerifyFormInputListener(callback) {
     const inputEmailVerif = document.querySelector('#inputEmailVerif');
     const inputCodeVerif = document.querySelector('#inputCodeVerif');
@@ -57,23 +51,38 @@ class AdminListView {
     });
   }
 
-  generateCityDropdownListener(callback) {
-    callback(document.querySelector('#city'));
+  buttonGeneratePartnerListener(callback) {
+    console.log(document.querySelectorAll('.btn.btn-outline-dark.generate'));
+    callback(document.querySelectorAll('.btn.btn-outline-dark.generate'));
+  }
+
+  // partnerDropDownListener(callback) {
+  //   const container = document.querySelectorAll('.partnersDropdown.none');
+  //   callback(container);
+  // }
+  renderAllDropdownContainer(callback) {
+    const containers = document.querySelectorAll('.partnersDropdown.none');
+    containers.forEach((container) => {
+      callback(container);
+    });
+  }
+
+  showPartners(items, btnId, callback) {
+    if (items.length > 0) {
+      this.renderAllDropdownContainer((container) => {
+        if (container.dataset.id === btnId) {
+          container.classList.remove('none');
+          container.innerHTML = '';
+          items.forEach((item) => {
+            container.innerHTML += partnerByCityItemTemplate(item);
+          });
+          callback(container);
+        }
+      });
+    }
   }
 
   async showCollections(items, callback) {
-    // items = [
-    //   {
-    //     tanggal: '2',
-    //     nama_user: 'dwi',
-    //     total_minyak: '2',
-    //     pesan: 'sss',
-    //     waktu: '20.00',
-    //     alamat: 'malang',
-    //     id_status: 1,
-    //   },
-    // ];
-
     if (items.length > 0) {
       const container = document.querySelector('#tableContent');
       container.innerHTML = '';

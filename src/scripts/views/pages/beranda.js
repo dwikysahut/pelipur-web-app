@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
-import { newsTemplate } from '../templates/template-creator';
+import { newsTemplate, skeletonNewsHomeTemplate } from '../templates/template-creator';
 // import firebase from '../../utils/firebase-config';
 import '../component/hero';
 import '../component/artikelnews';
@@ -10,8 +10,9 @@ import '../component/layanan';
 import '../component/carousel';
 import '../component/keterangan-slide';
 import '../component/listmitra';
+import '../component/custom-loader';
 import NewsDbSource from '../../data/newsdb-source';
-import { swalError } from '../../utils/function-helper';
+import { openLoader, swalError } from '../../utils/function-helper';
 // const chat = [];
 const Beranda = {
   async render() {
@@ -21,12 +22,12 @@ const Beranda = {
         window.location.reload();
         window.history.replaceState({ page: '' }, '', '#/home');
         window.dispatchEvent(new HashChangeEvent('hashchange'));
-        return '<div></div>';
+        return ' <custom-loader></custom-loader>';
       }
       // window.history.state.page = '';
     }
     return `
-
+   
   <div class="wrapper">
     <custom-hero></custom-hero>
     <div>
@@ -35,7 +36,10 @@ const Beranda = {
       <layanan-custom></layanan-custom>
       <article>
         <h2 class="news-title">Berita</h2>
-        <div class="item-produk"></div>
+        <div class="item-produk">
+          ${skeletonNewsHomeTemplate(20)}
+        </div>
+        <a class="news-list" href="#/news">Baca selengkapnya <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
       </article>
       <list-mitra></list-mitra>
     </div>
@@ -46,12 +50,14 @@ const Beranda = {
   async afterRender() {
     if (window.history.state && window.history.state.page === 'login') {
       // loading bar
+      openLoader(document.querySelector('custom-loader'));
     } else {
       try {
         const response = await NewsDbSource.getAllNews();
 
         const dataNews = response.data.data.posts;
         const itemContainer = document.querySelector('.item-produk');
+        itemContainer.innerHTML = '';
         console.log(itemContainer);
         if (itemContainer !== null) {
           for (let i = 0; i < 6; i += 1) {

@@ -46,20 +46,9 @@ body {
   display: flex;
   justify-content: space-between;
 
-  padding: 20px;
+  padding: 16px 32px;
   /* box-shadow: 0 4px 8px 0 rgba(14, 55, 238, 0.2); */
   background-color: #005555;
-}
-.profile-pict{
-  width: 44px;
-  height: 44px;
-  padding: 5px;
-  border-radius: 50%;
-  margin-left: 15px;
-}
-.profile-pict >img {
-  width: 100%;
-  border-radius: 50%;
 }
 
 .header__inner {
@@ -84,6 +73,7 @@ body {
 .nav__list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin: 0 !important;
 }
@@ -96,6 +86,7 @@ body {
 .nav__list li {
   line-height: normal;
   margin-left: 5px;
+  list-style: none;
   min-width: fit-content;
 }
 .nav {
@@ -137,25 +128,45 @@ body {
   width: 70%;
   font-size: 1.1rem;
 }
-
-.nav__item a.active:hover {
+/* .nav__item a.active:hover {
   background-color: white;
   border-radius: 5px;
   color: #069a8e;
-}
+} */
 
 .nav__list li:nth-child(4) {
-  border-bottom: solid 1px white;
-  border-top: solid 1px white;
+  
+  
   border-radius: 5px;
 }
 
 .nav__list li:nth-child(5) {
-  border-bottom: solid 1px white;
-  border-top: solid 1px white;
+  
+
   border-radius: 5px;
 }
 
+.profile-pict{
+  width: 44px;
+  height: max-content;
+  border-radius: 50%;
+  margin-left: 8px;
+  
+}
+.profile-pict >img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.header-icon{
+  display: flex;
+  justify-content: end;
+  
+}
+.header-icon i {
+  color: white;
+  position: absolute;
+}
 .header__inner h1 {
   font-size: 2rem;
   color: white;
@@ -174,6 +185,7 @@ body {
   padding: 15px;
   text-align: center;
 }
+
 .nav__item a:hover {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
@@ -181,7 +193,7 @@ body {
   font-size: 13px;
   background-color: #069a8e;
   border-radius: 5px;
-  padding: 15px;
+  /* padding: 15px; */
   text-align: center;
 }
 
@@ -197,14 +209,49 @@ body {
   font-size: 32px;
   padding: 8px;
   line-height: 8px;
-  background-color: transparent;
   border: none;
+  background-color: transparent !important;
 }
 
 button {
   /* opacity: 0; */
 }
 
+.dropdown-content li {
+  color: white;
+
+}
+.dropdown-content a {
+  width: 100%;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+.dropdown-content a:hover {
+
+  color: white;
+  border-radius: 0 0 5px 5px;
+  
+}
+.nav
+.nav__item.dropdown{
+  text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 13px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.nav__item.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+
+}
 /* logo */
 .header__inner {
   width: fit-content;
@@ -245,9 +292,11 @@ button {
 }
 
 .hero__join {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 5px 10px;
+  display: block;
+  width: 150px;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 13px;
   border-radius: 5px;
   background-color: #069A8E;
   color: #fff;
@@ -255,6 +304,12 @@ button {
   font-weight: 500;
   border: none;
   margin-top: 25px;
+  text-decoration: none;
+}
+
+.hero__join:hover {
+  opacity: 0.9;
+  color: #fff;
 }
 
 /* .hero__inner p {
@@ -298,6 +353,21 @@ article {
   grid-template-columns: 1fr;
   gap: 10px;
   box-sizing: border-box;
+}
+
+.news-list {
+  text-align: right;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.news-list:hover {
+  color: #069a8e;
 }
 
 .card {
@@ -362,7 +432,6 @@ article {
 footer {
   display: grid;
   padding: 20px;
-  gap: 20px;
   background-color: #005555;
 }
 
@@ -504,6 +573,7 @@ input.danger, textarea.danger {
   justify-content: space-evenly;
   border-radius: 6px;
 }
+
 .item-news__image > img {
   width: 100%;
   height: 100%;
@@ -538,13 +608,15 @@ input.danger, textarea.danger {
 
 .medsos {
   width: 100%;
-  margin: auto;
+  height: 100%;
+  margin: 10px auto;
   text-align: center;
   box-sizing: border-box;
 }
 .medsos h3 {
   font-family: calibri;
   color: white;
+  margin-bottom: 20px;
 }
 
 .medsos ul {
@@ -570,4 +642,44 @@ input.danger, textarea.danger {
   cursor: pointer;
   box-sizing: border-box;
   /* grid-template-columns: ; */
+}
+
+
+
+/* LOADER */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #005555;
+  border-bottom: 16px solid #005555;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+custom-loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 5000;
 }

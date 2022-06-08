@@ -17,6 +17,26 @@ const newsTemplate = (news) => {
     `;
   return template;
 };
+
+const skeletonNewsHomeTemplate = () => {
+  let template = '';
+
+  for (let i = 0; i < 6; i += 1) {
+    template += `
+            <div class="card">
+              <div class="card-item" tabindex="0">
+                <div class="img-news" tabindex="0">
+                  <img srcset="./images/placeholder.png" alt="">
+                </div>
+                <h3>0/0/0000 0:0</h3>
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+              </div>
+            </div>    
+    `;
+  }
+  return template;
+};
+
 const tableCollectionsTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
@@ -27,9 +47,12 @@ const tableCollectionsTemplate = (item) => {
   <td>${item.pesan}</td>
   <td>${item.alamat}</td>
   <td>
-  ${item.id_status === 1 ? `<button class="btn btn-outline-dark" data-id="${item.id}">Pilih mitra</button>`
-    : `<button class="btn btn-outline-dark" data-id="${item.id}" disabled>Pilih mitra</button>`
+  ${item.id_status === 1 ? `<button class="btn btn-outline-dark generate" data-id="${item.id}" data-kota="${item.id_kota}">Pilih mitra</button>`
+    : `${item.nama_mitra === null ? '-' : item.nama_mitra}`
 }
+    <select id="partnersDropdown" name="partnersDropdown" class="partnersDropdown none" data-id="${item.id}">   
+
+    </select>
     
   </td>
   <td>
@@ -177,6 +200,7 @@ const categoryItemTemplate = (item, recentId) => {
 
   return ` <option value="${item.id}">${item.keterangan}</option>`;
 };
+const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.nama}</option>`;
 const dataDashboardTemplate = (data) => `
 <div class="content__card">
 <div class="card__item">
@@ -245,5 +269,5 @@ const tableHistoryTemplate = (item) => {
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
-  categoryItemTemplate, tableHistoryTemplate,
+  categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, skeletonNewsHomeTemplate,
 };

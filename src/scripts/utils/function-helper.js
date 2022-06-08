@@ -107,9 +107,17 @@ const dateConvert = (date) => {
   }:${newDate.getMinutes()
   }`;
 };
+const closeLoader = (element) => {
+  element.style.display = 'none';
+};
+
+const openLoader = (element) => {
+  element.style.display = 'flex';
+};
 
 export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
-  resetFormValue, zeroValueHandler, swalConfirmation,
+  resetFormValue, zeroValueHandler, swalConfirmation, openLoader,
+  closeLoader,
 };
