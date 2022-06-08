@@ -10,6 +10,7 @@
 @import 'submenu.css';
 @import 'user-collection.css';
 @import 'user-history.css';
+@import 'not-found.css';
 
 * {
   margin: 0;
