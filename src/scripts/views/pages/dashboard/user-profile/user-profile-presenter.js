@@ -103,6 +103,7 @@ class UserProfilePresenter {
       const response = await this._dataDb.putUserById(token, newForm, id);
       if (response.status === 200) {
         await swalConfirm(`${response.data.message}`, '');
+        await this._generateUserDataHandler();
         // resetFormValue(formData);
       }
     } catch (error) {

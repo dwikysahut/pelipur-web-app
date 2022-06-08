@@ -413,7 +413,7 @@ article {
 footer {
   display: grid;
   padding: 20px;
-  background-color: #273443;
+  background-color: #005555;
 }
 
 footer .alamat {
@@ -476,6 +476,7 @@ footer .copyrig p {
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
+
 }
 
 footer .medsos h3 {
