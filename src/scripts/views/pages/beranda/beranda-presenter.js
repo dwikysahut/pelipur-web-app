@@ -33,7 +33,7 @@ class BerandaPresenter {
       }
     } catch (error) {
       console.log(error);
-      swalError('Ooops Something wrong', '#/');
+    //   swalError('Ooops Something wrong', '#/');
     }
   }
 

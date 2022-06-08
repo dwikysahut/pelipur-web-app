@@ -413,7 +413,7 @@ article {
 footer {
   display: grid;
   padding: 20px;
-  background-color: #005555;
+  background-color: #273443;
 }
 
 footer .alamat {
@@ -492,7 +492,9 @@ footer .jadwal h3 {
 footer .fa {
   font-size: 25px;
 }
-
+.fa.fa-instagram,.fa.fa-facebook-official,.fa.fa-envelope,.fa.fa-whatsapp{
+  color: white !important;
+}
 /* chat */
 
 .chat {

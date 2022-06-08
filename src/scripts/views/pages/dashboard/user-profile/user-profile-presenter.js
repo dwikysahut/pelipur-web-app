@@ -39,7 +39,8 @@ class UserProfilePresenter {
       const responseUser = await this._dataDb.getUserById(localStorage.getItem('token'), localStorage.getItem('id'));
       this._renderUserForm(responseUser.data.data);
     } catch (error) {
-      swalError('Oops something wrong');
+      console.log(error);
+      // swalError('Oops something wrong');
     }
   }
 
