@@ -13,6 +13,8 @@ import UserHistory from '../views/pages/dashboard/user-history';
 import Collection from '../views/pages/dashboard/admin-list';
 import UserNotFound from '../views/pages/dashboard/user-notfound';
 import AdminNotFound from '../views/pages/dashboard/admin-notfound';
+import Logout from '../views/pages/auth/logout';
+import CityList from '../views/pages/dashboard/admin-cities';
 
 const routes = {
   '/': Beranda,
@@ -20,6 +22,8 @@ const routes = {
   '/about-us': AboutUs,
   '/bisnis': Detail,
   '/detail': Detail,
+  '/bisnis': Bisnis,
+  '/news': Detail,
   '/auth': Auth,
   '/verify': Verify,
   '/forgot-password': ForgotPassword,
@@ -31,6 +35,8 @@ const routes = {
   '/user-history': UserHistory,
   '/user-notfound': UserNotFound,
   '/admin-notfound': AdminNotFound,
+  '/logout': Logout,
+  '/city-list': CityList,
 };
 
 export default routes;

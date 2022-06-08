@@ -1,7 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable no-param-reassign */
+import Swal from 'sweetalert2';
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, formEmailValidation, passwordValidation, swalConfirm, swalError, validateEmail,
+  closeLoader,
+  emptyFormHandler, formEmailValidation, openLoader, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail,
 } from '../../../../utils/function-helper';
 import SwiperButtonLoginPresenter from '../../../../utils/slider-button-login-presenter';
 
@@ -22,10 +25,12 @@ class AuthPresenter {
     this._view.elementButtonInit(({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     }) => {
+      window.scrollTo(0, 0);
       SwiperButtonLoginPresenter.init({
         loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
       });
     });
+    closeLoader(this._view.loaderListener());
   }
 
   // handler change login form input
@@ -61,15 +66,34 @@ class AuthPresenter {
   async _loginHandler({ email, password }) {
     try {
       const response = await this._authDb.postLogin({ email, password });
+
       if (response.status === 200) {
         // console.log(result);
         localStorage.setItem('email', response.data.data.email);
         localStorage.setItem('image', response.data.data.image);
         localStorage.setItem('role', response.data.data.id_role);
         localStorage.setItem('token', response.data.data.token);
+        localStorage.setItem('id', response.data.data.id);
         localStorage.setItem('refreshToken', response.data.data.refreshToken);
 
-        await swalConfirm(`${response.data.message}`, '#/home');
+        // await swalConfirm(`${response.data.message}`, '#/home', 'login');
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          timer: 1000,
+          text: `${response.data.message}`,
+          showConfirmButton: false,
+        });
+        openLoader(this._view.loaderListener());
+        setTimeout(() => {
+          window.history.replaceState({ page: 'login' }, null, '#/home');
+          window.dispatchEvent(new HashChangeEvent('hashchange'));
+          closeLoader(this._view.loaderListener());
+        }, 2);
+
+        // window.location.href = '#/home';
+        // window.history.replaceState('', '', '#/home');
+        // window.dispatchEvent(new HashChangeEvent('hashchange'));
       }
     } catch (error) {
       console.log(error);
@@ -102,13 +126,7 @@ class AuthPresenter {
             return;
           }
           await this._registerHandler(formRegister);
-          formRegister.email.value = '';
-          formRegister.no_telp.value = '';
-          formRegister.alamat.value = '';
-          formRegister.password.value = '';
-          formRegister.email.value = '';
-          formRegister.confirmPassword.value = '';
-          formRegister.nama.value = '';
+          resetFormValue(formRegister);
         }
       } else {
         emptyFormHandler(

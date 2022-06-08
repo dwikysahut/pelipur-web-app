@@ -33,7 +33,7 @@ class UserCollectionView {
             <div class="content__form-item-city">
               <label for="city">Kota</label>
               <select id="city" name="city">
-                <city-item></city-item>
+                
               </select>
             </div>
             <div class="content__form-item">
@@ -62,19 +62,6 @@ class UserCollectionView {
       </div>
     </div>
               `;
-  }
-
-  verifyFormInputListener(callback) {
-    document.querySelector('#submitVerify').addEventListener('click', (e) => {
-      e.preventDefault();
-      this.getVerifyFormInputListener(callback);
-    });
-  }
-
-  getVerifyFormInputListener(callback) {
-    const inputEmailVerif = document.querySelector('#inputEmailVerif');
-    const inputCodeVerif = document.querySelector('#inputCodeVerif');
-    callback({ inputEmailVerif, inputCodeVerif });
   }
 
   collectionFormListener(callback) {

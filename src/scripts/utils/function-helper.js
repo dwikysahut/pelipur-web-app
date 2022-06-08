@@ -30,7 +30,7 @@ const passwordValidation = (inputElement, alertElemet) => {
   return true;
 };
 
-const swalConfirm = (message, path) => {
+const swalConfirm = (message, path = '', currentPage = '') => {
   Swal.fire({
     icon: 'success',
     title: 'Success',
@@ -39,9 +39,36 @@ const swalConfirm = (message, path) => {
   }).then((result) => {
     if (result.isConfirmed) {
       if (path !== '') {
-        window.history.replaceState('', '', path);
-        window.dispatchEvent(new HashChangeEvent('hashchange'));
+        if (currentPage === 'login') {
+          window.history.replaceState({ page: 'login' }, null, path);
+          window.dispatchEvent(new HashChangeEvent('hashchange'));
+        } else {
+          window.location.href = path;
+        }
+        // window.dispatchEvent(new HashChangeEvent('hashchange'));
       }
+    } else if (currentPage === 'login') {
+      window.history.replaceState({ page: 'login' }, null, path);
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    } else {
+      window.history.replaceState('', '', path);
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
+  });
+};
+const swalConfirmation = (message, messageAfter, action) => {
+  Swal.fire({
+    title: 'Apakah Anda Yakin ?',
+    text: `${message}`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Ya',
+    cancelButtonText: 'Batal',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      action();
     }
   });
 };
@@ -80,9 +107,17 @@ const dateConvert = (date) => {
   }:${newDate.getMinutes()
   }`;
 };
+const closeLoader = (element) => {
+  element.style.display = 'none';
+};
+
+const openLoader = (element) => {
+  element.style.display = 'flex';
+};
 
 export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
-  resetFormValue, zeroValueHandler,
+  resetFormValue, zeroValueHandler, swalConfirmation, openLoader,
+  closeLoader,
 };

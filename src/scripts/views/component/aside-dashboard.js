@@ -46,6 +46,16 @@ class AsideDashboard extends HTMLElement {
               <span class="sidebar__name">Mitra</span>
             </a>
           </li>
+          <li class="sidebar__item">
+            <a href="#/city-list" class="sidebar__link">
+              <img
+                src="icons/pin_drop_white_24dp.svg"
+                class="sidebar__icon"
+                alt="Kota"
+              />
+              <span class="sidebar__name">Kota</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

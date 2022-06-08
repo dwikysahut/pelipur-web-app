@@ -1,49 +1,46 @@
+/* eslint-disable consistent-return */
+/* eslint-disable import/extensions */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-return-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
-import { chatTemplateCreator, newsTemplate } from '../templates/template-creator';
-import firebase from '../../utils/firebase-config';
+import { newsTemplate } from '../templates/template-creator';
+// import firebase from '../../utils/firebase-config';
 import '../component/hero';
 import '../component/artikelnews';
 import '../component/layanan';
 import '../component/carousel';
+import '../component/keterangan-slide';
+import '../component/listmitra';
+import '../component/custom-loader';
 import NewsDbSource from '../../data/newsdb-source';
+import { openLoader, swalError } from '../../utils/function-helper';
+import BerandaView from './beranda/beranda-view';
+import BerandaPresenter from './beranda/beranda-presenter';
+import DataDbSource from '../../data/datadb-source';
 // const chat = [];
+const view = new BerandaView();
 const Beranda = {
   async render() {
-    return `
-  <div class="wrapper">
-    <custom-hero></custom-hero>
-    <layanan-custom></layanan-custom>
-    <div>
-      <article>
-        <div class="item-produk">
-        </div>
-      </article>
-
-      <artikel-custom src="./images/heros/bumi.jpg" alt="gambar bumi">
-      </artikel-custom>
-
-
-      <custom-carousel></custom-carousel>
-      <keterangan-slider></keterangan-slider>
-    </div>
-  </div>
-
-
-        `;
+    if (window.history.state) {
+      if (window.history.state.page === 'login' || window.history.state.page === 'logout') {
+        console.log(window.history.state);
+        window.location.reload();
+        window.history.replaceState({ page: '' }, '', '#/home');
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+        return ' <custom-loader></custom-loader>';
+      }
+      // window.history.state.page = '';
+    }
+    return view.getTemplate();
   },
 
   async afterRender() {
-    try {
-      const response = await NewsDbSource.getAllNews();
-
-      const dataNews = response.data.data.posts;
-      for (let i = 0; i < 6; i += 1) {
-        document.querySelector('.item-produk').innerHTML += newsTemplate(dataNews[i]);
-      }
-    } catch (error) {
-
+    if (window.history.state && window.history.state.page === 'login') {
+      // loading bar
+      openLoader(document.querySelector('custom-loader'));
+    } else {
+      new BerandaPresenter({ view, newsDb: NewsDbSource, dataDb: DataDbSource });
     }
   },
 };

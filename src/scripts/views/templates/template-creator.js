@@ -1,4 +1,5 @@
 // import data from '../../../DATA.json';
+import CONFIG from '../../globals/config';
 import { dateConvert } from '../../utils/function-helper';
 
 const newsTemplate = (news) => {
@@ -7,7 +8,9 @@ const newsTemplate = (news) => {
   template += `
             <div class="card">
               <div class="card-item" tabindex="0">
+              <div class="img-news" tabindex="0">
               <img src="${news.thumbnail}" alt="" >
+              </div>
               <h3>${dateConvert(news.pubDate)}</h3>
               <h2>${news.title}</h2>
             </div>
@@ -15,6 +18,38 @@ const newsTemplate = (news) => {
     `;
   return template;
 };
+
+const tableCollectionsTemplate = (item) => {
+  const date = new Date(item.tanggal);
+  return `
+  <tr>
+  <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
+  <td>${item.nama_user}</td>
+  <td>${item.total_minyak} Liter</td>
+  <td>${item.pesan}</td>
+  <td>${item.email_user}</td>
+  <td>${item.alamat}</td>
+  <td>${item.kota}</td>
+
+  <td>
+  ${item.id_status === 1 ? `<button class="btn btn-outline-dark generate" data-id="${item.id}" data-kota="${item.id_kota}">Pilih mitra</button>`
+    : `${item.nama_mitra === null ? '-' : item.nama_mitra}`
+}
+    <select id="partnersDropdown" name="partnersDropdown" class="partnersDropdown none" data-id="${item.id}">   
+
+    </select>
+    <loader-content></loader-content>
+    
+  </td>
+  <td>
+  <div class="btn__action" >
+    
+    </div>
+  </td>
+</tr>
+`;
+};
+
 const chatTemplateCreator = (chat) => {
   const messageContainer = document.querySelector('.text-message');
   let chatTemplate = '';
@@ -143,9 +178,108 @@ const createAuthTemplate = () => ` <div class="container">
   </div>
 </div>
 </div>`;
+
 const cityItemTemplate = (item) => ` <option value="${item.id}">${item.kota}</option>`;
+
+const categoryItemTemplate = (item, recentId) => {
+  if (recentId === item.id) {
+    return `<option value="${item.id}" selected>${item.keterangan}</option>`;
+  }
+
+  return ` <option value="${item.id}">${item.keterangan}</option>`;
+};
+
+const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.nama}</option>`;
+
+const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
+
+const dataDashboardTemplate = (data) => `
+<div class="content__card">
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_user}</h3>
+    <span class="card__name">User</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/person_white_36dp.svg" alt="User" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_minyak} L</h3>
+    <span class="card__name">Total Minyak</span>
+  </div>
+  <div class="card__icon">
+    <img
+      src="icons/format_list_bulleted_white_36dp.svg"
+      alt="Daftar"
+    />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_kota}</h3>
+    <span class="card__name">Kota</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/room_white_36dp.svg" alt="Kota" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_mitra}</h3>
+    <span class="card__name">Mitra</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+  </div>
+</div>
+<div class="card__item">
+  <div class="card__detail">
+    <h3 class="card__number">${data.total_pengumpulan}</h3>
+    <span class="card__name">Form Terkumpul</span>
+  </div>
+  <div class="card__icon">
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+  </div>
+</div>
+</div>`;
+
+const tableHistoryTemplate = (item) => {
+  const date = new Date(item.tanggal);
+  return `
+<tr class="data">
+  <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</td>
+  <td>${item.waktu}</td>
+  <td>${item.total_minyak}</td>
+  <td>${item.pesan}</td>
+  <td>${item.alamat}</td>
+  
+</tr>
+`;
+};
+
+const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
+  <td>${item.id}</td>
+  <td>${item.kota}</td>
+  <td>  
+  <div class="btn__action">
+    <button type="submit" value="Submit" class="btn__update city" data-id =${item.id}>
+      Edit
+    </button>
+    <button type="submit" value="Submit" class="btn__delete city" data-id =${item.id}>
+      Hapus
+    </button>
+</div>
+</td>
+</tr>
+  `;
+
+const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
-  cityItemTemplate,
+  cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
+  categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
+  tableCityTemplate, mitraListTemplate,
 };

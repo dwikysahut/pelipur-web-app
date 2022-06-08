@@ -7,7 +7,7 @@ import {
   emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
 } from '../../../../utils/function-helper';
 
-class UserCollectioPresenter {
+class UserCollectionPresenter {
   constructor({ view, dataDb }) {
     this._view = view;
     this._dataDb = dataDb;
@@ -25,7 +25,7 @@ class UserCollectioPresenter {
 
   async _generateCityDropdownHandler() {
     try {
-      const responseCity = await this._dataDb.getCities(localStorage.token);
+      const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
       console.log(responseCity);
       this._renderCities(responseCity.data.data);
     } catch (error) {
@@ -73,7 +73,7 @@ class UserCollectioPresenter {
 
       }, token);
       if (response.status === 200) {
-        await swalConfirm(`${response.data.message}`, '');
+        await swalConfirm('Form berhasil dikirim', '');
         resetFormValue(formData);
       }
     } catch (error) {
@@ -81,4 +81,4 @@ class UserCollectioPresenter {
     }
   }
 }
-export default UserCollectioPresenter;
+export default UserCollectionPresenter;

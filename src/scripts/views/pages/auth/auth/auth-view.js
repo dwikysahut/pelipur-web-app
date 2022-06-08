@@ -1,9 +1,10 @@
 // import { createMovieItemTemplate } from '../../templates/template-creator';
-
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class AuthView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="container">
     <div class="container__side">
       <img src="./images/auth.png" alt="authentication">
@@ -33,7 +34,7 @@ class AuthView {
                 required>
             </div> <br>
             <div class="remember">
-              <input type="checkbox" name="rememberme" id="rememberme"> Ingatkan Saya
+              
               <a href="#/forgot-password" class="pass-link">Lupa password?</a>
             </div>
 
@@ -90,6 +91,10 @@ class AuthView {
     callback({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     });
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   loginFormListener(callback) {
