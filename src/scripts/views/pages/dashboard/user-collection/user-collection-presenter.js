@@ -73,7 +73,7 @@ class UserCollectionPresenter {
 
       }, token);
       if (response.status === 200) {
-        await swalConfirm(`${response.data.message}`, '');
+        await swalConfirm('Form berhasil dikirim', '');
         resetFormValue(formData);
       }
     } catch (error) {

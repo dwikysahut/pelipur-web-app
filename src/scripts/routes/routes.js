@@ -11,6 +11,8 @@ import Partner from '../views/pages/dashboard/admin-partner';
 import UserCollection from '../views/pages/dashboard/user-collection';
 import UserHistory from '../views/pages/dashboard/user-history';
 import Collection from '../views/pages/dashboard/admin-list';
+import UserNotFound from '../views/pages/dashboard/user-notfound';
+import AdminNotFound from '../views/pages/dashboard/admin-notfound';
 import Logout from '../views/pages/auth/logout';
 import CityList from '../views/pages/dashboard/admin-cities';
 
@@ -18,6 +20,8 @@ const routes = {
   '/': Beranda,
   '/home': Beranda,
   '/about-us': AboutUs,
+  '/bisnis': Detail,
+  '/detail': Detail,
   '/bisnis': Bisnis,
   '/news': Detail,
   '/auth': Auth,
@@ -29,6 +33,8 @@ const routes = {
   '/collections': Collection,
   '/user-collection': UserCollection,
   '/user-history': UserHistory,
+  '/user-notfound': UserNotFound,
+  '/admin-notfound': AdminNotFound,
   '/logout': Logout,
   '/city-list': CityList,
 };

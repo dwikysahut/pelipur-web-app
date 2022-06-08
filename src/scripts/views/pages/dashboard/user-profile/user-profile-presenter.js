@@ -39,7 +39,8 @@ class UserProfilePresenter {
       const responseUser = await this._dataDb.getUserById(localStorage.getItem('token'), localStorage.getItem('id'));
       this._renderUserForm(responseUser.data.data);
     } catch (error) {
-      swalError('Oops something wrong');
+      console.log(error);
+      // swalError('Oops something wrong');
     }
   }
 
@@ -102,6 +103,7 @@ class UserProfilePresenter {
       const response = await this._dataDb.putUserById(token, newForm, id);
       if (response.status === 200) {
         await swalConfirm(`${response.data.message}`, '');
+        await this._generateUserDataHandler();
         // resetFormValue(formData);
       }
     } catch (error) {

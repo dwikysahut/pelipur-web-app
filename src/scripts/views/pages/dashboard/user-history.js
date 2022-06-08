@@ -1,4 +1,4 @@
-import DataDbSource from '../../../data/datadb-source';
+/* eslint-disable no-empty-function */
 import '../../component/aside-user';
 import UserHistoryPresenter from './user-history/user-history-presenter';
 import UserHistoryView from './user-history/user-history-view';

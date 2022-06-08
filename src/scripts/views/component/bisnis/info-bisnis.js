@@ -111,11 +111,12 @@ class InfoBisnis extends HTMLElement {
           <img src ="./images/heros/bisnis.jpg">
           </div>
         </div>
+      ${localStorage.getItem('token') ? '' : `<div class ="daftar">
+      <h2> Mari Bergabung Bersama kami </h2>
+      <button onClick="window.location.href='#/auth';">DAFTAR</button>
+    </div>`
 
-        <div class ="daftar">
-          <h2> Mari Bergabung Bersama kami </h2>
-          <button onClick="window.location.href='#/auth';">DAFTAR</button>
-        </div>
+}
         
         `;
   }
