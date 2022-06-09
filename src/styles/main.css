@@ -297,9 +297,11 @@ button {
 }
 
 .hero__join {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 5px 10px;
+  display: block;
+  width: 150px;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 13px;
   border-radius: 5px;
   background-color: #069A8E;
   color: #fff;
@@ -307,6 +309,12 @@ button {
   font-weight: 500;
   border: none;
   margin-top: 25px;
+  text-decoration: none;
+}
+
+.hero__join:hover {
+  opacity: 0.9;
+  color: #fff;
 }
 
 /* .hero__inner p {
@@ -350,6 +358,21 @@ article {
   grid-template-columns: 1fr;
   gap: 10px;
   box-sizing: border-box;
+}
+
+.news-list {
+  text-align: right;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.news-list:hover {
+  color: #069a8e;
 }
 
 .card {
@@ -612,6 +635,7 @@ input.danger, textarea.danger {
   justify-content: space-evenly;
   border-radius: 6px;
 }
+
 .item-news__image > img {
   width: 100%;
   height: 100%;

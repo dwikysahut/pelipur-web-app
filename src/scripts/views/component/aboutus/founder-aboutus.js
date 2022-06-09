@@ -55,12 +55,10 @@ class FounderAboutus extends HTMLElement {
             }
 
         .founder-about .founder h2{
-            font-family:calibri;
-            color:#005555;
+            font-weight: 500;
         }
 
         .founder-about .founder h4{
-            font-family:calibri;
             color:#005555;
         }
 
@@ -75,21 +73,16 @@ class FounderAboutus extends HTMLElement {
                  width:100%;
                  padding:15px;
                  box-sizing:border-box;
-                
-                
-
              }
 
              .founder-about .about h2{
-                font-family:Tahoma;
-                color:#005555;
+                font-weight: 500;
                 margin-bottom:20px;
         
              }
 
              .founder-about .about p{
-                font-family:calibri;
-                font-size:17px;
+                font-size: 1rem;
              }
 
               @media screen and (min-width:600px){

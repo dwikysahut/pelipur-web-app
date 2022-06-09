@@ -1,15 +1,15 @@
 .content {
-  padding: 30px;
+  padding: 30px 30px 20px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
 }
 
 .content__title {
   font-weight: 500;
-  padding: 20px;
-  line-height: 20px;
   font-size: 23px;
-  color: #005555;
+  color: black;
   text-align: center;
-  border-bottom: 2px solid #069a8e;
+  /* border-bottom: 1px solid #dddddd; */
 }
 
 .content__card {
@@ -51,9 +51,8 @@
     overflow-y: auto;
   }
 
-  .content,
   .dashboard-container {
-    padding: 1% 90px 5%;
+    padding: 4% 4% ;
     flex: 1;
     overflow-x: auto;
   }

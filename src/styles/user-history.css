@@ -1,8 +1,8 @@
-.content {
+/* .content {
   padding: 30px;
-}
+} */
 
-.content__title {
+/* .content__title {
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
@@ -10,7 +10,7 @@
   color: #005555;
   text-align: center;
   border-bottom: 2px solid #069a8e;
-}
+} */
 
 .content__table {
   overflow-x: auto;
@@ -78,7 +78,7 @@ th {
   }
 
   .th__space {
-    width: 40%;
+    width: 200px;
   }
 
   /* .btn__space {

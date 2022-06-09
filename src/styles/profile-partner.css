@@ -1,8 +1,8 @@
-.content {
+/* .content {
   padding: 30px;
-}
+} */
 
-.content__title {
+/* .content__title {
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
@@ -10,12 +10,12 @@
   color: #005555;
   text-align: center;
   border-bottom: 2px solid #069a8e;
-}
+} */
 
 .content__form {
   border-radius: 5px;
   padding: 25px;
-  margin: 7% 0 20%;
+  margin: 3% 0 20%;
   border: 1px solid #dddddd;
 }
 

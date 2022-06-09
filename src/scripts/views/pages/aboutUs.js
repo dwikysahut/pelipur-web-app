@@ -9,7 +9,6 @@ const AboutUs = {
     return `
         <founder-aboutus></founder-aboutus>
         <visi-misi></visi-misi>
-        <kritik-saran></kritik-saran>
         `;
   },
 

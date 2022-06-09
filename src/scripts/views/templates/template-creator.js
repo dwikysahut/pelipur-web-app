@@ -275,11 +275,30 @@ const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
 </tr>
   `;
 
+const skeletonNewsHomeTemplate = () => {
+  let template = '';
+
+  for (let i = 0; i < 6; i += 1) {
+    template += `
+              <div class="card">
+                <div class="card-item" tabindex="0">
+                  <div class="img-news" tabindex="0">
+                    <img srcset="./images/placeholder.png" alt="">
+                  </div>
+                  <h3>0/0/0000 0:0</h3>
+                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+                </div>
+              </div>    
+      `;
+  }
+  return template;
+};
+
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
-  tableCityTemplate, mitraListTemplate,
+  tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate,
 };

@@ -73,7 +73,7 @@ const Partner = {
                   <th>ID User</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
-                  <th class="th__space">Alamat</th>
+                  <th>Alamat</th>
                   <th>Mitra</th>
                   <th>Aksi</th>
                 </tr>

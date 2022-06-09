@@ -4,7 +4,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
-import { newsTemplate } from '../templates/template-creator';
+import { newsTemplate, skeletonNewsHomeTemplate } from '../templates/template-creator';
 // import firebase from '../../utils/firebase-config';
 import '../component/hero';
 import '../component/artikelnews';

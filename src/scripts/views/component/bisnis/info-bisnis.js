@@ -16,22 +16,23 @@ class InfoBisnis extends HTMLElement {
 
     <style>
     .keterangan-bisnis{
-             width:80%;
-            margin: 70px auto;
-            display:grid;
-            grid-template-columns:1fr;
-            gap: 10px;
-            padding:10px;
-            box-sizing:boreder-box;
-            box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
+      width:80%;
+      margin: 70px auto;
+      display:grid;
+      grid-template-columns:1fr;
+      gap: 10px;
+      padding:10px;
+      box-sizing:boreder-box;
+      box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
     }
 
     .ket-gambar{
       width:60%;
     }
 
-    .keterangan-bisnis h1{
-      font-family:'Poppins', sans-serif;
+    h2 {
+      font-weight: 500;
+      text-align: center;
     }
 
     .keterangan-bisnis .ket-bisnis{
@@ -45,14 +46,14 @@ class InfoBisnis extends HTMLElement {
     }
 
     .keterangan-bisnis .ket-gambar{
-       width:100%;
+      width:100%;
       padding:5px;
       box-sizing:border-box;
     }
 
     .ket-gambar img{
       width:96%;
-       max-height:400px;
+      max-height:400px;
     }
 
     .daftar{
@@ -63,7 +64,6 @@ class InfoBisnis extends HTMLElement {
       text-align:center;
       border-radius:5px;
       box-sizing:border-box;
-      
     }
 
     button{
@@ -73,21 +73,25 @@ class InfoBisnis extends HTMLElement {
       padding:10px;
       box-sizing:border-box;
       border-radius:5px;
-       cursor: pointer;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      height: 44px;
+      line-height: 10px;
     }
 
     @media screen and (min-width:600px){
      .keterangan-bisnis{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap: 10px;
-      padding:20px;
-       box-sizing:border-box;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap: 10px;
+        padding:20px;
+        box-sizing:border-box;
      }
 
      .keterangan-bisnis .ket-bisnis p{
-        font-family: sans-serif;
-        font-weight: lighter;
+        font-weight: 400;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -104,11 +108,12 @@ class InfoBisnis extends HTMLElement {
 
         <div class= "keterangan-bisnis">
           <div class ="ket-bisnis">
-            <p> Pelipur hadir untuk memberikan solusi dalam hal Pengelolaan Limbah Ramah Lingkungan. Untuk saat ini kami fokus pada pengolahan limbah minyak, yang mana nantinya limbah minyak jelantah tersebut bisa dijual kepada kami. Tentunya ini merupakan peluang untuk menambah penghasilan bagi para pelaku usaha seperti restoran, rumah makan, tukang gorengan, warung pecel, umkm,  mau pun bagi ibu rumah tangga yang rutin memasak untuk keperluan sehari-hari. Limbah Minyak Jelantah yang dijual kepada kami akan diperoses menjadi biodisel. Dalam hal pengelolaan minyak jelantah menjadi biodisel kami bekerjasama dengan beberapa perusahaan yang sudah sangat berpengalaman. Kami pun membuka program kerjasama dengan pihak manapun  terkait pengumpulan dan pengelohan limbah minyak jelantah ini. Kami berharap dengan program kerjasama tersebut maka akan memberikan dampak yang besar terhadap pencegahan pencemaran lingkungan yang dihasilkan limbah minyak jelantah.</p>
+            <h2>Bisnis</h2>
+            <p>Pelipur hadir untuk memberikan solusi dalam hal Pengelolaan Limbah Ramah Lingkungan. Untuk saat ini kami fokus pada pengolahan limbah minyak, yang mana nantinya limbah minyak jelantah tersebut bisa dijual kepada kami. Tentunya ini merupakan peluang untuk menambah penghasilan bagi para pelaku usaha seperti restoran, rumah makan, tukang gorengan, warung pecel, umkm, mau pun bagi ibu rumah tangga yang rutin memasak untuk keperluan sehari-hari. Limbah Minyak Jelantah yang dijual kepada kami akan diproses menjadi biodiesel. Dalam hal pengelolaan minyak jelantah menjadi biodiesel kami bekerjasama dengan beberapa perusahaan yang sudah sangat berpengalaman. Kami pun membuka program kerjasama dengan pihak manapun terkait pengumpulan dan pengolahan limbah minyak jelantah ini. Kami berharap dengan program kerjasama tersebut maka akan memberikan dampak yang besar terhadap pencegahan pencemaran lingkungan yang dihasilkan limbah minyak.
+            </p>
           </div>
-
           <div class = "ket-gambar">
-          <img src ="./images/heros/bisnis.jpg">
+            <img src ="./images/heros/bisnis.jpg">
           </div>
         </div>
       ${localStorage.getItem('token') ? '' : `<div class ="daftar">

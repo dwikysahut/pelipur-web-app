@@ -15,7 +15,7 @@ class VisiMisi extends HTMLElement {
 
         .visimisi{
           width:100%;
-          background-color: #d8efef;
+          background-color: #f4f4f5;
           padding:20px;
           box-sizing:border-box;
           margin:10px auto;
@@ -28,26 +28,15 @@ class VisiMisi extends HTMLElement {
           box-sizing:border-box;
           border-radius:5px;
           margin-bottom:10px;
-       
         }
 
         .visimisi .visi:hover{
-             box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.896);
-        }
-
-
-
-        .visimisi .visi h2{
-          font-family:calibri;
-          color:#005555;
+          box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.896);
         }
 
         .visimisi .visi p{
-          font-family:calibri;
-          font-size:17px;
+          font-size: 1rem;
         }
-
-
 
         .visimisi .misi{
           width:100%;
@@ -63,26 +52,14 @@ class VisiMisi extends HTMLElement {
           box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.896);
         }
 
-        .visimisi .misi h2{
-          font-family:calibri;
-          color:#005555;
-        }
-
         .visimisi .misi li{
-          font-family:calibri;
-          font-size:17px;
-        }
-
-        .visimisi .misi ul{
-          list-style:none;
+          font-size: 1rem;
         }
 
         h2{
-          font-family:calibri;
           text-align:center;
-          color:#005555;
+          font-weight: 500;
         }
-
 
         @media screen and (min-width:600px){
         .visimisi{
@@ -97,6 +74,7 @@ class VisiMisi extends HTMLElement {
         .visi{
           margin:4px;
         }
+
         .misi{
           margin:4px;
         }
@@ -135,11 +113,11 @@ class VisiMisi extends HTMLElement {
 
           <div class = "misi">
           <h2>Misi</h2>
-            <ul>
-              <li>1. Meningkatkan Litersi Masyarakat terhadap isu Lingkungan </li>
-              <li>2. Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah  </li>
-              <li>3. Memberikan Pelayanan yang Baik</li>
-            </ul>
+            <ol>
+              <li>Meningkatkan Litersi Masyarakat terhadap isu Lingkungan </li>
+              <li>Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah  </li>
+              <li>Memberikan Pelayanan yang Baik</li>
+            </ol>
           </div>
           </div>
         </div>

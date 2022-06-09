@@ -56,6 +56,16 @@ class Artikel extends HTMLElement {
           margin-bottom: 0 !important;
         }
 
+        .oil-details {
+          color: black;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        
+        .oil-details:hover {
+          color: #069a8e;
+        }
+
         @media screen and (min-width:900px){
           .artikels{
             grid-template-columns: repeat(2, 1fr);
@@ -73,11 +83,6 @@ class Artikel extends HTMLElement {
             margin-right: 70px;
         }
       }
-      
-      @media screen and (min-width:900px) {
-        
-      }
-        
         </style>
 
       <div class = "artikels">
@@ -88,7 +93,7 @@ class Artikel extends HTMLElement {
        <div class="artikel">
           <h2>Limbah Minyak Jelantah</h2>
           <p>Minyak jelantah (waste cooking oil) adalah minyak limbah yang bisa berasal dari jenis-jenis minyak goreng seperti halnya minyak jagung, minyak sayur, minyak samin dan sebagainya. Minyak ini merupakan minyak bekas pemakaian kebutuhan rumah tangga umumnya, dapat digunakan kembali untuk keperluaran kuliner akan tetapi bila ditinjau dari komposisi kimianya, minyak jelantah mengandung senyawa-senyawa yang bersifat karsinogenik, yang terjadi selama proses penggorengan.
-          <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer"> Read more...<a/>  
+          <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer" class="oil-details">Read more...<a/>  
           </p>
        </div>
       </div>
