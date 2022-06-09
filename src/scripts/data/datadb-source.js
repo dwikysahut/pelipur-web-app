@@ -23,8 +23,28 @@ class DataDbSource {
     return response;
   }
 
+  static async getCityById(token, id) {
+    const response = await axios.get(API_ENDPOINT.GET_CITY_BY_ID(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
   static async getPartnersByCity(id, token) {
     const response = await axios.get(API_ENDPOINT.GET_PARTNER_BY_CITIES(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async getAllPartners(token) {
+    const response = await axios.get(API_ENDPOINT.GET_PARTNERS, {
       headers: {
         Authorization: `${token}`,
 
@@ -105,6 +125,36 @@ class DataDbSource {
 
   static async putCollection(token, body, id) {
     const response = await axios.put(API_ENDPOINT.PUT_COLLECTION(id), body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async postCity(token, body) {
+    const response = await axios.post(API_ENDPOINT.POST_CITY, body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async putCity(token, body, id) {
+    const response = await axios.put(API_ENDPOINT.EDIT_CITY(id), body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async deleteCity(token, id) {
+    const response = await axios.delete(API_ENDPOINT.DELETE_CITY(id), {
       headers: {
         Authorization: `${token}`,
 

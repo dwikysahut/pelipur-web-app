@@ -1,6 +1,11 @@
+/* eslint-disable class-methods-use-this */
 class ListMitra extends HTMLElement {
   connectedCallback() {
     this.render();
+  }
+
+  get mitraContainer() {
+    return document.querySelector('#mitraList');
   }
 
   render() {
@@ -38,9 +43,7 @@ class ListMitra extends HTMLElement {
         
         <div class="list-mitra">
           <h2> Mitra </h2>
-          <ul>
-              <li><img src="./images/heros/mitra1.jpg" alt=""></li>
-              <li><img src="./images/heros/mitra2.jpg" alt=""></li>
+          <ul id='mitraList'>
           </ul>
         </div>
         

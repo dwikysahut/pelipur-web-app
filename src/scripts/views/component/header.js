@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 class Header extends HTMLElement {
   connectedCallback() {
     this.render();

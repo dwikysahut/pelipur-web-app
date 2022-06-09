@@ -7,6 +7,7 @@
 import AuthDbSource from '../../../data/authdb-source';
 import AuthView from './auth/auth-view';
 import AuthPresenter from './auth/auth-presenter';
+import '../../component/custom-loader';
 
 const view = new AuthView();
 

@@ -23,7 +23,7 @@ class UserHistoryPresenter {
       }
     } catch (error) {
       console.log(error);
-      swalError('Oops... Something Error');
+      // swalError('Oops... Something Error');
     }
   }
 

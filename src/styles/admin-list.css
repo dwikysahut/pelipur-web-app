@@ -43,10 +43,13 @@ th {
 th {
   text-align: center;
 }
-
+.action-column{
+  width: 100px;
+}
 .content__table select {
   border-radius: 3px;
   min-width: 44px;
+  width: 91px;
   min-height: 44px;
   padding: 0 3px;
   cursor: pointer;
@@ -76,10 +79,17 @@ th {
   background-color: #36ae7c;
 }
 
+.btn__accept[disabled]{
+  background-color: gray;
+  cursor: default;
+}
+
 .btn__update {
   background-color: #ff8c32;
 }
-
+.btn__update#editCityButton {
+display: none;
+}
 .btn__delete, .btn__reject {
   background-color: #eb5353;
 }

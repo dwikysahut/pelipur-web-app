@@ -25,6 +25,7 @@ class AuthPresenter {
     this._view.elementButtonInit(({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
     }) => {
+      window.scrollTo(0, 0);
       SwiperButtonLoginPresenter.init({
         loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
       });
@@ -81,6 +82,7 @@ class AuthPresenter {
           title: 'Success',
           timer: 1000,
           text: `${response.data.message}`,
+          showConfirmButton: false,
         });
         openLoader(this._view.loaderListener());
         setTimeout(() => {

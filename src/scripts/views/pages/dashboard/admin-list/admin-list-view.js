@@ -1,9 +1,10 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-loop-func */
 /* eslint-disable camelcase */
-import { partnerByCityItemTemplate, tableCollectionsTemplate } from '../../../templates/template-creator';
+import { partnerByCityEmptyTemplate, partnerByCityItemTemplate, tableCollectionsTemplate } from '../../../templates/template-creator';
 
 import '../../../component/aside-dashboard';
+import '../../../component/loader-content';
 
 /* eslint-disable class-methods-use-this */
 class AdminListView {
@@ -22,7 +23,9 @@ class AdminListView {
                   <th>Nama User</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
-                  <th>Alamat</th>
+                  <th class="th__space">Email</th>
+                  <th class="th__space">Alamat</th>
+                  <th class="th__space">Kota</th>
                   <th>Mitra</th>
                   <th>Aksi</th>
                 </tr>
@@ -36,6 +39,10 @@ class AdminListView {
       </div>
     </div>     
               `;
+  }
+
+  loaderElementListener() {
+    return document.querySelector('loader-content');
   }
 
   getVerifyFormInputListener(callback) {
@@ -79,6 +86,15 @@ class AdminListView {
           callback(container);
         }
       });
+    } else {
+      this.renderAllDropdownContainer((container) => {
+        if (container.dataset.id === btnId) {
+          container.classList.remove('none');
+          container.innerHTML = '';
+          container.innerHTML += partnerByCityEmptyTemplate();
+          callback(container);
+        }
+      });
     }
   }
 
@@ -96,16 +112,10 @@ class AdminListView {
 
         if (item.id_status === 1) {
           buttonContainer[i].innerHTML = `
-              <button class="btn__accept" data-id="${item.id}">
-              <img
-                src="icons/done_white_18dp.svg"
-                alt="Terima"
-              />
+              <button class="btn__accept" data-id="${item.id}" disabled>
+              <i class="fa fa-check" aria-hidden="true"></i>
             </button>
-            <button class="btn__reject" data-id="${item.id}"><img
-              src="icons/close_white_18dp.svg"
-              alt="Tolak"
-            /></button>`;
+            <button class="btn__reject" data-id="${item.id}"><i class="fa fa-times" aria-hidden="true"></i></button>`;
         } else if (item.id_status === 2) {
           buttonContainer[i].innerHTML = `
             <button class="btn btn-warning btn-finish" data-id="${item.id}">Finish</button>`;
