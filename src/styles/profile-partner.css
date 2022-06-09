@@ -100,6 +100,56 @@
   opacity: 0.8;
 }
 
+/* checkboxes */
+.multi-select {
+  /* width: 200px; */
+}
+
+.select-box {
+  position: relative;
+}
+
+.select-box select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkBoxes {
+  display: none;
+  position: absolute;
+  border: 1px #dadada solid;
+  opacity: 0;
+  width: inherit;
+  /* z-index: 10; */
+  transition: visibility 0s, opacity 0.3s linear;
+  background-color: white;
+}
+
+#checkBoxes label {
+  display: flex;
+  padding: 5px;
+
+}
+#checkBoxes input {
+  margin-right: 10px;
+}
+#checkBoxes input[type="checkbox"]{
+  min-width: auto !important;
+}
+#checkBoxes label:hover {
+  background-color: #005555;
+  color: white;
+
+}
+
 @media screen and (min-width: 600px) {
   .content__form-item, .content__form-item-img {
     display: grid;

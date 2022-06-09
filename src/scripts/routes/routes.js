@@ -18,10 +18,13 @@ import CityList from '../views/pages/dashboard/admin-cities';
 import UserNotFound from '../views/pages/dashboard/user-notfound';
 import AdminNotFound from '../views/pages/dashboard/admin-notfound';
 
+
 const routes = {
   '/': Beranda,
   '/home': Beranda,
   '/about-us': AboutUs,
+  '/bisnis': Bisnis,
+  '/detail': Detail,
   '/bisnis': Bisnis,
   '/news': Detail,
   '/auth': Auth,

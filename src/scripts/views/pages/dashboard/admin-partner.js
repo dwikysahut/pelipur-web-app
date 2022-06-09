@@ -24,7 +24,22 @@ const Partner = {
             </div>
             <div class="content__form-item">
               <label for="detail">Jangkauan Kota</label>
-              <input type="text" id="detail" name="detail" required />
+              <div class="multi-select">
+                <div class="select-box">
+                  <select id="selectDisplay" class="form-select" aria-label="Default select example">
+                    <option></option>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div id="checkBoxes">
+                  <label for="one">
+                    <input class="cb" type="checkbox" id="one" value="jakarta" />First checkbox</label>
+                  <label for="two">
+                    <input class="cb" type="checkbox" id="two" value="bogor" />Second checkbox</label>
+                  <label for="three">
+                    <input class="cb" type="checkbox" id="three" value="3" />Third checkbox</label>
+                </div>
+             </div>
             </div>
             <div class="content__form-item">
               <label for="address">Alamat</label>
@@ -195,7 +210,49 @@ const Partner = {
     `;
   },
 
-  async afterRender() {},
+  async afterRender() {
+    let expanded = false;
+
+    const showCheckboxes = () => {
+      const checkboxes = document.getElementById('checkBoxes');
+      if (!expanded) {
+        checkboxes.style.display = 'block';
+        checkboxes.style.opacity = '1';
+        expanded = true;
+      } else {
+        checkboxes.style.display = 'none';
+        checkboxes.style.opacity = '0';
+        expanded = false;
+      }
+    };
+
+    const selectBox = document.querySelector('.select-box');
+    selectBox.addEventListener('click', showCheckboxes);
+    const cbs = document.querySelectorAll('.cb');
+    const selectDisplay = document.querySelector('#selectDisplay');
+    const selectText = selectDisplay.firstElementChild;
+    cbs.forEach((cb) => {
+      console.log(selectText)
+      cb.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          if (selectText.innerHTML === '') {
+            selectText.innerHTML += e.target.value;
+          } else {
+            selectText.innerHTML += `,${e.target.value}`;
+          }
+        } else {
+          console.log('non koma');
+          selectText.innerHTML = selectText.innerHTML.toString()
+            .replace(`${e.target.value}`, '');
+          selectText.innerHTML = selectText.innerHTML.toString()
+            .replace(/^,|,$/g, '');
+          selectText.innerHTML = selectText.innerHTML.toString()
+            .replace(/,+/g, ',');
+        }
+        console.log(JSON.stringify(selectText.innerHTML.toString().split(',')));
+      });
+    });
+  },
 };
 
 export default Partner;
