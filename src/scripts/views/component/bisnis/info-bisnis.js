@@ -55,27 +55,6 @@ class InfoBisnis extends HTMLElement {
        max-height:400px;
     }
 
-    .daftar{
-      width:60%;
-      padding:20px;
-      margin:10px auto;
-      box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
-      text-align:center;
-      border-radius:5px;
-      box-sizing:border-box;
-      
-    }
-
-    button{
-      width:100%;
-      background-color:#005555;
-      color:white;
-      padding:10px;
-      box-sizing:border-box;
-      border-radius:5px;
-       cursor: pointer;
-    }
-
     @media screen and (min-width:600px){
      .keterangan-bisnis{
       display:grid;
@@ -94,10 +73,6 @@ class InfoBisnis extends HTMLElement {
         -webkit-line-clamp: 13; /* number of lines to show */
         -webkit-box-orient: vertical;
      }
-
-       button{
-      width:50%;
-    }
     }
     </style>
 
@@ -110,11 +85,6 @@ class InfoBisnis extends HTMLElement {
           <div class = "ket-gambar">
           <img src ="./images/heros/bisnis.jpg">
           </div>
-        </div>
-
-        <div class ="daftar">
-          <h2> Mari Bergabung Bersama kami </h2>
-          <button onClick="window.location.href='#/auth';">DAFTAR</button>
         </div>
         
         `;
