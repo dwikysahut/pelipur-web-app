@@ -25,21 +25,18 @@ const Partner = {
             <div class="content__form-item">
               <label for="detail">Jangkauan Kota</label>
               <div class="multi-select">
-                <div class="select-box">
-                  <select id="selectDisplay" class="form-select" aria-label="Default select example">
-                    <option></option>
-                  </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div id="checkBoxes">
-                  <label for="one">
-                    <input class="cb" type="checkbox" id="one" value="jakarta" />First checkbox</label>
-                  <label for="two">
-                    <input class="cb" type="checkbox" id="two" value="bogor" />Second checkbox</label>
-                  <label for="three">
-                    <input class="cb" type="checkbox" id="three" value="3" />Third checkbox</label>
-                </div>
-             </div>
+              <div class="select-box">
+                <input disabled id="selectCityDisplay"  onkeydown="return false" class="form-select" aria-label="Default select example" value="">
+              </div>
+              <div id="checkBoxes">
+                <label for="one">
+                  <input class="cb" type="checkbox" id="one" value="jakarta" />First checkbox</label>
+                <label for="two">
+                  <input class="cb" type="checkbox" id="two" value="bogor" />Second checkbox</label>
+                <label for="three">
+                  <input class="cb" type="checkbox" id="three" value="3" />Third checkbox</label>
+              </div>
+            </div>
             </div>
             <div class="content__form-item">
               <label for="address">Alamat</label>
@@ -227,29 +224,29 @@ const Partner = {
     };
 
     const selectBox = document.querySelector('.select-box');
-    selectBox.addEventListener('click', showCheckboxes);
     const cbs = document.querySelectorAll('.cb');
-    const selectDisplay = document.querySelector('#selectDisplay');
-    const selectText = selectDisplay.firstElementChild;
+    const selectText = document.querySelector('#selectCityDisplay');
+
+    selectBox.addEventListener('click', showCheckboxes);
     cbs.forEach((cb) => {
-      console.log(selectText)
       cb.addEventListener('change', (e) => {
         if (e.target.checked) {
-          if (selectText.innerHTML === '') {
-            selectText.innerHTML += e.target.value;
+          console.log('sss');
+          if (selectText.value.length < 1) {
+            selectText.value += e.target.value;
           } else {
-            selectText.innerHTML += `,${e.target.value}`;
+            selectText.value += `,${e.target.value}`;
           }
         } else {
           console.log('non koma');
-          selectText.innerHTML = selectText.innerHTML.toString()
+          selectText.value = selectText.value
             .replace(`${e.target.value}`, '');
-          selectText.innerHTML = selectText.innerHTML.toString()
+          selectText.value = selectText.value
             .replace(/^,|,$/g, '');
-          selectText.innerHTML = selectText.innerHTML.toString()
+          selectText.value = selectText.value
             .replace(/,+/g, ',');
         }
-        console.log(JSON.stringify(selectText.innerHTML.toString().split(',')));
+        console.log(JSON.stringify(selectText.value.toString().split(',')));
       });
     });
   },

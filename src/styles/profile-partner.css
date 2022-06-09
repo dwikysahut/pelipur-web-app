@@ -101,12 +101,9 @@
 }
 
 /* checkboxes */
-.multi-select {
-  /* width: 200px; */
-}
 
 .select-box {
-  position: relative;
+  position: static;
 }
 
 .select-box select {
@@ -124,15 +121,20 @@
 
 #checkBoxes {
   display: none;
-  position: absolute;
+  position: relative;
   border: 1px #dadada solid;
   opacity: 0;
   width: inherit;
+  height: 150px;
+  overflow-y: auto;
   /* z-index: 10; */
   transition: visibility 0s, opacity 0.3s linear;
   background-color: white;
 }
-
+#selectCityDisplay{
+  caret-color: transparent;
+  background-color: white;
+}
 #checkBoxes label {
   display: flex;
   padding: 5px;

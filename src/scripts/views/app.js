@@ -25,6 +25,7 @@ class App {
     const page = routes[url.page];
     console.log(url.splitedUrl);
     this._content.innerHTML = await page.render();
+    window.scrollTo(0, 0);
     await page.afterRender();
     this._skipToLinkInit();
   }
