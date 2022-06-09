@@ -294,6 +294,7 @@ const skeletonNewsHomeTemplate = () => {
   return template;
 };
 
+
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
