@@ -2,8 +2,6 @@
 
 @import 'admin-dashboard.css';
 @import 'aside.css';
-@import 'responsive.css';
-
 @import 'admin-list.css';
 @import 'profile-partner.css';
 @import 'login-register.css';
@@ -271,16 +269,31 @@ button {
 .hero {
   display: flex;
   width: 100%;
-  min-height: 530px;
   align-items: center;
   background-position: center;
-  background-image: url('../public/images/heros/hero1.png');
+  /* background-image: url('../public/images/heros/hero1.png'); */
 }
 
 .hero__inner{
   margin: 0 auto;
   width: 100%;
-  padding-left: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 150px; */
+}
+.hero__inner__image {
+  width: 100%;
+  flex-basis: 75%;
+}
+.hero__inner__text {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.hero__inner__image>img {
+  width: 100%;
 }
 
 .hero__highlight {
@@ -291,7 +304,7 @@ button {
 
 .hero__title {
   margin: 0 auto;
-  width: 100%;
+  text-align: center;
   font-size: 39px;
   font-weight: 500;
   line-height: 1.4;
@@ -310,12 +323,17 @@ button {
   font-weight: 500;
   border: none;
   margin-top: 25px;
+  opacity: 1;
+  transition: 0.3s;
   text-decoration: none;
 }
 
 .hero__join:hover {
   opacity: 0.9;
-  color: #fff;
+  color: #005555;
+  background-color: white;
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+  
 }
 
 /* .hero__inner p {
@@ -767,6 +785,38 @@ loader-content {
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
+
+/* loader dots */
+.dots {
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0% 50%,
+  radial-gradient(circle closest-side, currentColor 90%, transparent) 50% 50%,
+  radial-gradient(circle closest-side, currentColor 90%, transparent) 100% 50%;
+  
+  background-size:  calc(100%/3) 12px;
+  background-repeat: no-repeat;
+  animation:  dots 1s infinite linear;
+
+}
+@keyframes dots {
+  20%{
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40%{
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60%{
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80%{
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+  
+}
+
+
 button > i {
   pointer-events: none;
 }

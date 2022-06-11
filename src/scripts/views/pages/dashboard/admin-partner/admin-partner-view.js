@@ -160,6 +160,17 @@ class AdminPartnerView {
       container.innerHTML += dropdownCityCheckBoxTemplate(item);
     });
   }
+
+  getModalElementsListener(callback) {
+    const modals = document.querySelectorAll('.modal');
+    const imgs = document.querySelectorAll('.img-partner');
+    const modalImg = document.querySelectorAll('.modal-content');
+    const captionText = document.querySelectorAll('.partner-caption');
+    const span = document.querySelectorAll('.close');
+    callback({
+      modals, imgs, modalImg, captionText, span,
+    });
+  }
 }
 
 export default AdminPartnerView;

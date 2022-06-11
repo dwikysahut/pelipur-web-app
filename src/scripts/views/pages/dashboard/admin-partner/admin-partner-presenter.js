@@ -277,26 +277,24 @@ class AdminPartnerPresenter {
   }
 
   _modalImageHandler() {
-    const modals = document.querySelectorAll('.modal');
-
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    const imgs = document.querySelectorAll('.img-partner');
-    const modalImg = document.querySelectorAll('.modal-content');
-    const captionText = document.querySelectorAll('.partner-caption');
-    const span = document.querySelectorAll('.close');
-    // this._view.getModalElementsListener({modals,imgs,modalImg,captionText,span})
-    imgs.forEach((img, i) => {
-      img.addEventListener('click', () => {
-        modals[i].style.display = 'block';
-        modalImg[i].src = img.dataset.src;
-        captionText[i].innerHTML = img.dataset.alt;
-      });
 
-      // Get the <span> element that closes the modal
+    this._view.getModalElementsListener(({
+      modals, imgs, modalImg, captionText, span,
+    }) => {
+      imgs.forEach((img, i) => {
+        img.addEventListener('click', () => {
+          modals[i].style.display = 'block';
+          modalImg[i].src = img.dataset.src;
+          captionText[i].innerHTML = img.dataset.alt;
+        });
 
-      // When the user clicks on <span> (x), close the modal
-      span[i].addEventListener('click', () => {
-        modals[i].style.display = 'none';
+        // Get the <span> element that closes the modal
+
+        // When the user clicks on <span> (x), close the modal
+        span[i].addEventListener('click', () => {
+          modals[i].style.display = 'none';
+        });
       });
     });
   }
