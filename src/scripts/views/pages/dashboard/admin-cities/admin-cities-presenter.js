@@ -98,6 +98,11 @@ class AdminCitiesPresenter {
               form,
               e.target.dataset.id,
             );
+            this._view.scrollToTop((container) => {
+              container.scrollTo(0, 0);
+
+              window.scrollTo(0, 0);
+            });
           } catch (error) {
             console.log(error);
           }
@@ -114,10 +119,14 @@ class AdminCitiesPresenter {
     editBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       // openLoader
-      swalConfirmation('Data Sudah Benar ?', '', async () => {
-        await this._editCity(form, id);
-        editBtn.style.display = 'none';
-      });
+      if (form.value !== '') {
+        swalConfirmation('Data Sudah Benar ?', '', async () => {
+          await this._editCity(form, id);
+          editBtn.style.display = 'none';
+        });
+      } else {
+        emptyFormHandler(form);
+      }
     });
   }
 

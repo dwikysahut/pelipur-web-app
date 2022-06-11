@@ -1,5 +1,6 @@
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
+
 import { dateConvert } from '../../utils/function-helper';
 
 const newsTemplate = (news) => {
@@ -274,6 +275,33 @@ const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
 </td>
 </tr>
   `;
+const tablePartnerTemplate = (item) => `
+  <tr>
+        <td>${item.id}</td>
+        <td>${item.nama}</td>
+        <td>${item.alamat}</td>
+        <td>${item.email}</td>
+        <td><img class="img-partner" src="${CONFIG.BASE_IMAGE_URL}${item.image}" data-src="${CONFIG.BASE_IMAGE_URL}${item.image}" data-alt="logo ${item.nama}"></img></td>
+        <td>${JSON.parse(item.kota_jangkauan).toString()}</td>
+        <td>  
+         <div class="btn__action">
+            <button type="submit" value="Submit" class="btn__update partner" data-id =${item.id}>
+              Edit
+            </button>
+            <button type="submit" value="Submit" class="btn__delete partner" data-id =${item.id}>
+              Hapus
+            </button>
+          </div>
+        </td>  
+        
+  </tr>
+
+<div class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" >
+<div class="partner-caption"></div>
+</div>
+  `;
 
 const skeletonNewsHomeTemplate = () => {
   let template = '';
@@ -293,7 +321,9 @@ const skeletonNewsHomeTemplate = () => {
   }
   return template;
 };
-
+const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
+  <input class="cb" type="checkbox" id="city-${item.kota}" value="${item.kota}" />${item.kota}</label>
+`;
 
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
@@ -301,5 +331,6 @@ export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
-  tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate,
+  tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
+  dropdownCityCheckBoxTemplate,
 };

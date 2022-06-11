@@ -24,6 +24,7 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url.page];
     console.log(url.splitedUrl);
+    document.querySelector('custom-footer').style.display = 'block';
     this._content.innerHTML = await page.render();
     window.scrollTo(0, 0);
     await page.afterRender();

@@ -6,6 +6,7 @@ import AdminDashboardView from './admin-dashboard/admin-dashboard-view';
 const view = new AdminDashboardView();
 const Collection = {
   async render() {
+    document.querySelector('custom-footer').style.display = 'none';
     return view.getTemplate();
   },
 

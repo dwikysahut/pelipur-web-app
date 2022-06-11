@@ -59,6 +59,10 @@ class AdminCitiesView {
     });
   }
 
+  scrollToTop(callback) {
+    callback(document.querySelector('.content'));
+  }
+
   showAllData(items) {
     const itemContainer = document.querySelector('.content-table');
     itemContainer.innerHTML = '';
