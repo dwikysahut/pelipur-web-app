@@ -14,8 +14,8 @@ class NewsDetailPresenter {
   async _showNewsData() {
     try {
       const response = await this._newsDb.getAllNews();
-      console.log(response);
-      const dataNews = response.data.data.posts;
+      // console.log(response);
+      const dataNews = response.data.articles;
       this._renderNews(dataNews);
     } catch (error) {
       console.log(error);

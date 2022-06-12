@@ -3,13 +3,13 @@
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
-    height: 200px;
+    
     position: absolute;
     background-color: #005555;
     left: 0;
     top: 70px;
     text-align: center;
-    opacity: 1;
+
     z-index: 5;
 
     transition: transform 0.7s ease-in-out;
@@ -21,15 +21,11 @@
     font-size: 0.9rem;
     
   }
-  .item-news__content h3 {
-
-    font-size: 1.2rem;
-}
-  .nav__item.dropdown{
+  .nav__item.dropdown {
     width: 100%;
     margin: 0 !important;
   }
-  .profile-pict{
+  .profile-pict {
     display: none;
   }
   .nav__list {
@@ -38,14 +34,6 @@
   .nav__item a:hover {
     background-color: transparent;
   }
-  .copyrig{
-    margin-bottom: 80px;
-    
-  }
- 
-    
- 
- 
   .dropdown-content {
     display: flex;
     visibility: visible;
@@ -60,18 +48,17 @@
     min-width: 120px;
     background-color: #005555;
     transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     transition: visibility 0s, opacity 0.3s linear;
     z-index: 4;
-    
+    gap: 7px;
+
     border-radius: 0 0 5px 5px;
   }
   #hamburger.rotate {
-    transform: rotate(90deg) ;
+    transform: rotate(90deg);
     transform-origin: center center;
     background-color: transparent;
     transition: all 0.7s ease-in-out;
-
   }
   button#hambuger {
     transition: all 0.7s ease-in-out;
@@ -80,8 +67,8 @@
   .nav__list {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
-    gap: 15px;
+    margin: 30px 0 10px;
+    gap: 20px;
   }
   .nav__item {
     margin-top: 10px;
@@ -96,8 +83,6 @@
 }
 
 /* Hamburger menu */
-
-
 
 @media screen and (max-width: 700px) {
   .menu-toggle button {
@@ -142,14 +127,14 @@
     position: absolute;
     top: 40px;
     opacity: 0;
-    right: -33px;
+    right: -25px;
     min-width: 120px;
     background-color: white;
     transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     transition: visibility 0s, opacity 0.3s linear;
-    z-index: 4;
     
+
     border-radius: 0 0 5px 5px;
   }
     
@@ -169,34 +154,23 @@
   .btn-drawer {
     display: none;
   }
-  .profile-pict{
+  .profile-pict {
     width: 44px;
     height: 44px;
     padding: 5px;
     border-radius: 50%;
-    
   }
-  .item-news__content h3 {
-
-    font-size: 1.5em;
-    
-  }
-  .item-news__content p {
-    font-size: 1rem;
-    
-  }
-  .nav__item a{
+  .nav__item a {
     color: #005555 !important;
   }
-  .profile-pict >img {
+  .profile-pict > img {
     width: 100%;
     border-radius: 50%;
   }
-  
-  .header-icon{
+
+  .header-icon {
     display: flex;
     justify-content: end;
-    
   }
   .header-icon i {
     color: white;
@@ -283,9 +257,6 @@
 
   footer .copyrig {
     grid-area: copyright;
-    background-color: #075757d6;
-    
-    background-color: white;
     padding: 20px;
     border-radius: 5px;
   }
@@ -308,7 +279,9 @@
   }
 
   .item-news__image {
-    min-width: 200px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
     min-height: 160px;
     
     max-height: 240px;

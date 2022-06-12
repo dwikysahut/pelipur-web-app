@@ -9,6 +9,10 @@ import $ from 'jquery';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
 import './views/component/footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
@@ -23,6 +27,8 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
+  AOS.init();
   app.renderPage();
+
   swRegister();
 });

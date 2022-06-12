@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
       <footer>
       <div tabindex="0" class="alamat">
         <h3>Alamat :</h3>
-        <p>Jln. Rasuna Said Kunciran RT/RW 002/002 Jaya Pinang Kota Tangerang Banten, 15144</p>
+        <p>Jln. Rasuna Said RT/RW 002/002 Kunciran Jaya Pinang Kota Tangerang Banten, 15144</p>
       </div>
 
       <div class = "jadwal">

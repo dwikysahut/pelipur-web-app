@@ -52,7 +52,7 @@ class UserCollectionView {
                 form="content_form"
                 id='submitCollection'
                 value="Submit"
-                class="btn__update"
+                class="btn__save"
               >
                 Kirim
               </button>

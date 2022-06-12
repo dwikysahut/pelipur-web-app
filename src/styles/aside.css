@@ -31,53 +31,65 @@ aside,aside-dashboard, aside-user {
   background-color: #005555;
   box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
   width: 100%;
-  height: 4.5rem;
+  height: 5rem;
   display: grid;
   align-content: center;
   transition: 0.5s;
+  border-top: 2px solid #fff;
 }
 
 .sidebar__list,
-.sidebar__link {
+.sidebar__link-user, 
+.sidebar__link-dashboard {
   display: flex;
 }
 
-.sidebar__link:focus {
+.sidebar__link-user:focus 
+.sidebar__link-dashboard:focus {
   outline-color: #069a8e;
 }
 
-.sidebar__link {
+.sidebar__link-user, .sidebar__link-dashboard {
   flex-direction: column;
   align-items: center;
-  row-gap: 2px;
+  row-gap: 1px;
   font-weight: 500;
-  width: 130px;
   border-radius: 5px;
   text-decoration: none;
 }
 
-.sidebar__link:hover {
+.sidebar__link-user {
+  width: 130px;
+}
+
+.sidebar__link-dashboard {
+  width: 90px;
+}
+
+.sidebar__link-user:hover,
+.sidebar__link-dashboard:hover {
   content: "";
   color: #fff;
   background-color: #069a8e;
 }
 
 .sidebar__list {
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   list-style: none;
   padding-left: 0 !important;
   margin-bottom: 0 !important;
 }
 
-.sidebar__icon {
+/* .sidebar__icon {
   padding: 10px;
   margin-top: 0.5em;
-}
+} */
 
 .sidebar__name {
-  display: none;
+  /* display: none; */
   color: #fff;
+  font-size: 13px;
 }
 
 
@@ -90,9 +102,15 @@ aside,aside-dashboard, aside-user {
     justify-content: space-around;
     align-items: center;
   }
+
+  .sidebar__link-user, 
+  .sidebar__link-dashboard {
+    row-gap: 4px;
+  }
+
   .sidebar__name {
     display: block;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
   }
 }
 
@@ -131,6 +149,7 @@ aside,aside-dashboard, aside-user {
     position: static;
     display: flex;
     flex-direction: column;
+    border-top: none;
   }
 
   .sidebar__list {
@@ -145,7 +164,8 @@ aside,aside-dashboard, aside-user {
     margin: 0 auto;
   }
 
-  .sidebar__link {
+  .sidebar__link-user,
+  .sidebar__link-dashboard {
     display: flex;
     flex-direction: row;
     padding: 10px;

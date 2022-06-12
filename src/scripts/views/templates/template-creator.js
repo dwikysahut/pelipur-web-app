@@ -10,10 +10,10 @@ const newsTemplate = (news) => {
             <div class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
-              <img src="${news.thumbnail}" alt="" >
+              <img src="${news.urlToImage}" alt="" >
               </div>
-              <h3>${dateConvert(news.pubDate)}</h3>
-              <h2>${news.title}</h2>
+             <h3>${dateConvert(news.publishedAt)}</h3>
+             <a href="${news.url}" target="_blank"><h2>${news.title}</h2></a>
             </div>
           </div>    
     `;
@@ -232,7 +232,7 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Mitra</span>
   </div>
   <div class="card__icon">
-    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitra" />
   </div>
 </div>
 <div class="card__item">
@@ -241,7 +241,7 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Form Terkumpul</span>
   </div>
   <div class="card__icon">
-    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+    <img src="icons/assignment_white_36dp.svg" alt="Form Terkumpul" />
   </div>
 </div>
 </div>`;

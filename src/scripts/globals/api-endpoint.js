@@ -42,7 +42,7 @@ const API_ENDPOINT = {
   GET_DATAS_COUNT: `${CONFIG.BASE_URL}datas/count`,
 
   // public api
-  GET_NEWS_API: 'https://api-berita-indonesia.vercel.app/suara/health/',
+  GET_NEWS_API: `https://newsapi.org/v2/everything?apiKey=${CONFIG.API_KEY}&q=isu lingkungan`,
 
 };
 

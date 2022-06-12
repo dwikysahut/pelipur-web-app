@@ -15,7 +15,7 @@
 .content__form {
   border-radius: 5px;
   padding: 25px;
-  margin: 3% 0 20%;
+  margin: 3% 0 55px;
   border: 1px solid #dddddd;
 }
 
@@ -80,6 +80,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   column-gap: 10px;
+  row-gap: 10px;
   direction: rtl;
 }
 
