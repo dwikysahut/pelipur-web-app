@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class FounderAboutus extends HTMLElement {
   constructor() {
     super();
@@ -150,7 +151,7 @@ class FounderAboutus extends HTMLElement {
                     <ul>
                         <li><img src = "./images/heros/yoga2.jpg"><p>Yoga</p</li>
                         <li><img src = "./images/heros/dwiky.jpg"><p>Dwiky</p</li>
-                        <li><img src = "./images/heros/logo.png"><p>Nova</p</li>
+                        <li><img src = "./images/heros/nova.jpg"><p>Nova</p</li>
                         <li><img src = "./images/heros/deva.jpg"><p>Deva</p</li>
                         
                     </ul>

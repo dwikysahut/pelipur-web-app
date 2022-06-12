@@ -23,7 +23,7 @@ class AdminCitiesView {
             </button>
           </div>
         </form>
-        <h2 class="content__title list">Kota</h2>
+        <h2 class="content__title list">Daftar Kota</h2>
         <div class="content__table-cities">
           <table>
             <thead>

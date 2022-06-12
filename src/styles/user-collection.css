@@ -53,8 +53,12 @@
   border: 1px solid red;
 }
 
-.content__form-item-date input, .content__form-item-time input, .content__form-item-total input, .content__form-item-city select {
+.content__form-item-date input, .content__form-item-time input, .content__form-item-total input {
   width: 150px;
+}
+
+.content__form-item-city select {
+  width: 200px;
 }
 
 .content__form-item input:focus,
@@ -94,14 +98,14 @@
 
 .content__form button {
   display: block;
-  padding: 0 25px;
+  /* padding: 0 25px; */
   min-width: 44px;
   min-height: 44px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
   color: #fff;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .btn__delete {
@@ -118,7 +122,7 @@
 
 .content__form button:hover {
   content: "";
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 600px) {

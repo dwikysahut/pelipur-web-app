@@ -18,6 +18,10 @@
   margin-bottom: 70px;
 }
 
+.th__space {
+  width: 200px;
+}
+
 .status {
   color: #fff;
   padding: 5px 0;
@@ -75,10 +79,6 @@ th {
   table {
     margin-top: 2%;
     border: 1px solid #005555;
-  }
-
-  .th__space {
-    width: 200px;
   }
 
   /* .btn__space {

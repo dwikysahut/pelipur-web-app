@@ -138,33 +138,27 @@ body {
 } */
 
 .nav__list li:nth-child(4) {
-  
-  
   border-radius: 5px;
 }
 
 .nav__list li:nth-child(5) {
-  
-
   border-radius: 5px;
 }
 
-.profile-pict{
+.profile-pict {
   width: 44px;
   height: max-content;
   border-radius: 50%;
   margin-left: 8px;
-  
 }
-.profile-pict >img {
+.profile-pict > img {
   width: 100%;
   border-radius: 50%;
 }
 
-.header-icon{
+.header-icon {
   display: flex;
   justify-content: end;
-  
 }
 .header-icon i {
   color: white;
@@ -188,7 +182,7 @@ body {
   padding: 15px;
   text-align: center;
 }
-.fa.fa-sort-desc{
+.fa.fa-sort-desc {
   color: #005555;
 }
 .nav__item a:hover {
@@ -218,13 +212,8 @@ body {
   background-color: transparent !important;
 }
 
-button {
-  /* opacity: 0; */
-}
-
 .dropdown-content li {
   color: white;
-
 }
 .dropdown-content a {
   width: 100%;
@@ -235,27 +224,23 @@ button {
   text-align: center;
 }
 .dropdown-content a:hover {
-
   color: white;
   border-radius: 0 0 5px 5px;
-  
 }
-.nav
-.nav__item.dropdown{
+.nav .nav__item.dropdown {
   text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size: 13px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 13px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .nav__item.dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
-
 }
 /* logo */
 .header__inner {
@@ -276,7 +261,7 @@ button {
   background-image: url('../public/images/heros/hero1.png');
 }
 
-.hero__inner{
+.hero__inner {
   margin: 0 auto;
   width: 100%;
   padding-left: 150px;
@@ -303,7 +288,7 @@ button {
   line-height: 20px;
   padding: 13px;
   border-radius: 5px;
-  background-color: #069A8E;
+  background-color: #069a8e;
   color: #fff;
   font-size: 15px;
   font-weight: 500;
@@ -444,7 +429,6 @@ footer .alamat {
   text-align: center;
   font-family: Tahoma;
   font-size: 15px;
-  margin-bottom: 20px;
   color: white;
 }
 
@@ -490,13 +474,12 @@ footer .alamat p {
 footer .copyrig p {
   text-align: center;
   font-family: sans-serif;
-  color: #005555;
-  font-size: 13px;
+  color: white;
+  font-size: 10px;
   font-weight: lighter;
 }
 
 .copyrig {
-  background-color: white;
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -517,7 +500,10 @@ footer .jadwal h3 {
 footer .fa {
   font-size: 25px;
 }
-.fa.fa-instagram,.fa.fa-facebook-official,.fa.fa-envelope,.fa.fa-whatsapp{
+.fa.fa-instagram,
+.fa.fa-facebook-official,
+.fa.fa-envelope,
+.fa.fa-whatsapp {
   color: white !important;
 }
 /* chat */
@@ -618,7 +604,8 @@ footer .fa {
   font-size: 0.7em;
 }
 
-input.danger, textarea.danger {
+input.danger,
+textarea.danger {
   border: 1px solid red !important;
 }
 /* news list detail */
@@ -707,8 +694,6 @@ input.danger, textarea.danger {
   /* grid-template-columns: ; */
 }
 
-
-
 /* LOADER */
 .loader {
   border: 16px solid #f3f3f3;
@@ -723,13 +708,21 @@ input.danger, textarea.danger {
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 custom-loader {
   position: absolute;
@@ -739,12 +732,12 @@ custom-loader {
   justify-content: center;
   align-items: center;
 
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
 }
 loader-content {
   display: none;
@@ -769,6 +762,7 @@ loader-content {
 button > i {
   pointer-events: none;
 }
-.btn__update.city,.btn__delete.city {
+.btn__update.city,
+.btn__delete.city {
   padding: 0 8px;
 }
