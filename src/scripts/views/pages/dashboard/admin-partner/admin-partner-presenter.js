@@ -55,6 +55,7 @@ class AdminPartnerPresenter {
           } else {
             selectText.value += `,${e.target.value}`;
           }
+          selectText.classList.remove('danger');
         } else {
           selectText.value = selectText.value
             .replace(`${e.target.value}`, '');
