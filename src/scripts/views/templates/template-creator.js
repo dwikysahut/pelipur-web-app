@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
 
@@ -25,7 +26,9 @@ const tableCollectionsTemplate = (item) => {
   return `
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
+  <td>${item.id}</td>
   <td>${item.nama_user}</td>
+  <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
   <td>${item.email_user}</td>
@@ -50,32 +53,38 @@ const tableCollectionsTemplate = (item) => {
 </tr>
 `;
 };
+const userListChat = (users, container) => {
+  let userTemplate = '';
 
-const chatTemplateCreator = (chat) => {
+  users.forEach((userId) => {
+    userTemplate += `
+    <div class="user-list__item" data-id="${userId}">
+    <span>${userId}</span>
+        <p>User</p>
+       
+    </div>
+    `;
+  });
+  container.innerHTML = userTemplate;
+};
+const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
   let chatTemplate = '';
 
-  //     chat.map((data) => (messageContainer.innerHTML += `
-  //      <div class="container-message ${data.from === '123' ? 'sender' : 'receiver'}">
-  //       <span class="sender-name" >${data.from === '123' ? 'me' : 'admin'}</span>
-  //       <div class="text-message ${data.from === '123' ? 'sender' : 'receiver'}">
-  //         <p>$P</p>
-  //       </div>
-
-  //     </div>
-  // `));
   chat.forEach((item) => {
     chatTemplate += `
-      <div class="container-message ${item.from === '123' ? 'sender' : 'receiver'}">
-       <span class="sender-name" >${item.from === '123' ? 'me' : 'admin'}</span>
-       <div class="text-message ${item.from === '123' ? 'sender' : 'receiver'}">
+      <div class="container-message ${item.from === currentId ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === currentId ? 'me' : 'admin'}</span>
+       <div class="text-message ${item.from === currentId ? 'sender' : 'receiver'}">
          <p>${item.message}</p>
        </div>
       
      </div>
  `;
     messageContainer.innerHTML = chatTemplate;
-    document.querySelector('.chat__item-container').scrollTop = messageContainer.scrollHeight;
+    const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
+      : document.querySelector('.chat__item-admin');
+    container.scrollTop = messageContainer.scrollHeight;
   });
 };
 
@@ -251,6 +260,7 @@ const tableHistoryTemplate = (item) => {
   return `
 <tr class="data">
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</td>
+  <td>${item.id}</td>
   <td>${item.waktu}</td>
   <td>${item.total_minyak}</td>
   <td>${item.pesan}</td>
@@ -332,5 +342,5 @@ export {
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
-  dropdownCityCheckBoxTemplate,
+  dropdownCityCheckBoxTemplate, userListChat,
 };

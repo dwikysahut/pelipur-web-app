@@ -14,6 +14,7 @@ const CONFIG = {
   DATABASE_NAME: 'pelipur-apps-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'pelipur',
+  ADMIN_ID: 'yhSjkxUxIaE6e5v3',
 };
 
 export default CONFIG;
