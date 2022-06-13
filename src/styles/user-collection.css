@@ -96,7 +96,7 @@
   direction: rtl;
 }
 
-.content__form button {
+ .btn__form button {
   display: block;
   /* padding: 0 25px; */
   min-width: 44px;

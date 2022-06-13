@@ -89,6 +89,9 @@ const swalError = (message, path = '') => {
 const emptyFormHandler = (...elements) => {
   elements.map((element) => element.value.length < 1 && element.classList.add('danger'));
 };
+const emptyFileHandler = (...elements) => {
+  elements.map((element) => element.files.length < 1 && element.classList.add('danger'));
+};
 const zeroValueHandler = (...elements) => {
   elements.map((element) => element.value < 1 && element.classList.add('danger'));
 };
@@ -119,5 +122,5 @@ export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
   resetFormValue, zeroValueHandler, swalConfirmation, openLoader,
-  closeLoader,
+  closeLoader, emptyFileHandler,
 };

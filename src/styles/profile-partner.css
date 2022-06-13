@@ -182,3 +182,11 @@
     margin-top: 40px;
   }
 }
+
+.img-partner {
+  width: 44px;
+
+}
+.btn__update#editPartnerButton{
+  display: none;
+}

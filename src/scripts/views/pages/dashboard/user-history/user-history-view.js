@@ -18,6 +18,7 @@ class UserHistoryView {
                 <th>Estimasi Waktu</th>
                 <th>Total Minyak</th>
                 <th class="th__space">Pesan</th>
+                <th>Kota</th>
                 <th class="th__space">Alamat Tujuan</th>
                 <th>Status</th>
               </tr>

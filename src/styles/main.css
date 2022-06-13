@@ -2,8 +2,6 @@
 
 @import 'admin-dashboard.css';
 @import 'aside.css';
-@import 'responsive.css';
-
 @import 'admin-list.css';
 @import 'profile-partner.css';
 @import 'login-register.css';
@@ -15,6 +13,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 main,
@@ -255,16 +254,32 @@ body {
 .hero {
   display: flex;
   width: 100%;
-  min-height: 530px;
   align-items: center;
   background-position: center;
-  background-image: url('../public/images/heros/hero1.png');
+  /* background-image: url('../public/images/heros/hero1.png'); */
 }
 
 .hero__inner {
   margin: 0 auto;
   width: 100%;
-  padding-left: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 150px; */
+}
+.hero__inner__image {
+  width: 100%;
+  flex-basis: 60%;
+}
+.hero__inner__text {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.hero__inner__image>img {
+  width: 100%;
+  transform: scaleX(-1);
 }
 
 .hero__highlight {
@@ -275,7 +290,7 @@ body {
 
 .hero__title {
   margin: 0 auto;
-  width: 100%;
+  text-align: center;
   font-size: 39px;
   font-weight: 500;
   line-height: 1.4;
@@ -294,12 +309,17 @@ body {
   font-weight: 500;
   border: none;
   margin-top: 25px;
+  opacity: 1;
+  transition: 0.3s;
   text-decoration: none;
 }
 
 .hero__join:hover {
   opacity: 0.9;
-  color: #fff;
+  color: #005555;
+  background-color: white;
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+  
 }
 
 /* .hero__inner p {
@@ -759,10 +779,134 @@ loader-content {
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
+
+/* loader dots */
+.dots {
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0% 50%,
+  radial-gradient(circle closest-side, currentColor 90%, transparent) 50% 50%,
+  radial-gradient(circle closest-side, currentColor 90%, transparent) 100% 50%;
+  
+  background-size:  calc(100%/3) 12px;
+  background-repeat: no-repeat;
+  animation:  dots 1s infinite linear;
+
+}
+@keyframes dots {
+  20%{
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40%{
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60%{
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80%{
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+  
+}
+
+
 button > i {
   pointer-events: none;
 }
 .btn__update.city,
 .btn__delete.city {
   padding: 0 8px;
+}
+
+
+/* image zoom */
+
+.img-partner {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#partner:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 60%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+.partner-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, .partner-caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+.partner-caption {
+  color: white;
+  text-align: center;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
