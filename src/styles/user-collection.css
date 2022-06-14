@@ -87,8 +87,20 @@
   margin-bottom: 0;
 }
 
+.btn__collection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .content__form .btn {
-  margin: 20px 0 0;
+  /* margin: 20px 0 0; */
   display: grid;
   /* grid-template-columns: repeat(auto-fill, 100px); */
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
@@ -96,10 +108,10 @@
   direction: rtl;
 }
 
- .btn__form button {
+ .btn__form button, .btn__collection button {
   display: block;
   /* padding: 0 25px; */
-  min-width: 44px;
+  min-width: 100px;
   min-height: 44px;
   border-radius: 5px;
   cursor: pointer;

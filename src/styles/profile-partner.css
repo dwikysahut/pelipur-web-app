@@ -76,7 +76,7 @@
 }
 
 .content__form .btn__form {
-  margin: 20px 0 0;
+  /* margin: 20px 0 0; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   column-gap: 10px;

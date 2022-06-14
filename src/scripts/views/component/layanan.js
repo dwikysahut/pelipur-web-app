@@ -74,7 +74,14 @@ class Layanan extends HTMLElement {
 
 
        <div class="judul"><h2>Layanan</h2></div>
-        <div class = "layanan">
+        <div data-aos="zoom-in" 
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        class = "layanan">
             <div class="gambar">
                 <img src="./images/undraw_On_the_way_re_swjt.png">
                 <span>Jemput Gratis</span>

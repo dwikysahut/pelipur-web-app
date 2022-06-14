@@ -3,11 +3,11 @@
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
-    height: 100%;
+    
     position: absolute;
     background-color: #005555;
     left: 0;
-    margin-top: 50px;
+    top: 70px;
     text-align: center;
 
     z-index: 5;
@@ -48,9 +48,9 @@
     min-width: 120px;
     background-color: #005555;
     transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     transition: visibility 0s, opacity 0.3s linear;
     z-index: 4;
+    gap: 7px;
 
     border-radius: 0 0 5px 5px;
   }
@@ -67,8 +67,15 @@
   .nav__list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    margin: 30px 0 10px;
+    gap: 20px;
   }
+
+  .nav__list li:nth-child(4) {
+    border-radius: 5px;
+    margin-bottom: 40px;
+  }
+
   .nav__item {
     margin-top: 10px;
   }
@@ -126,13 +133,13 @@
     position: absolute;
     top: 40px;
     opacity: 0;
-    right: -33px;
+    right: -25px;
     min-width: 120px;
     background-color: white;
     transition: all 0.7s ease-in-out;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     transition: visibility 0s, opacity 0.3s linear;
-    z-index: 4;
+    
 
     border-radius: 0 0 5px 5px;
   }
@@ -225,7 +232,6 @@
   footer .alamat {
     grid-area: alamat;
     text-align: center;
-    font-family: Tahoma;
     font-size: 15px;
     padding: 10px;
     margin-bottom: 20px;
@@ -238,7 +244,7 @@
   footer .medsos li {
     grid-area: medsos;
     list-style: none;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     text-align: center;
   }
   footer .medsos h3 {
@@ -256,13 +262,11 @@
 
   footer .copyrig {
     grid-area: copyright;
-    padding: 20px;
     border-radius: 5px;
   }
 
   .copyrig p {
     text-align: center;
-    font-family: Tahoma;
     color: #005555;
   }
 }
@@ -278,7 +282,9 @@
   }
 
   .item-news__image {
-    min-width: 200px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
     min-height: 160px;
     
     max-height: 240px;

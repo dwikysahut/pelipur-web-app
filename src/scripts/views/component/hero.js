@@ -5,7 +5,9 @@ class Hero extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div class="hero">
+      <div class="hero"
+      data-aos="zoom-in"
+      >
         <div class="hero__inner">
           <div class="hero__inner__image">
           <img src="./images/heros/undraw_World_re_768g.png">

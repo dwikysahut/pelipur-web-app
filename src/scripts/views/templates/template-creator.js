@@ -10,10 +10,10 @@ const newsTemplate = (news) => {
             <div class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
-              <img src="${news.thumbnail}" alt="" >
+              <img src="${news.urlToImage}" alt="" >
               </div>
-              <h3>${dateConvert(news.pubDate)}</h3>
-              <h2>${news.title}</h2>
+             <h3>${dateConvert(news.publishedAt)}</h3>
+             <a href="${news.url}" target="_blank"><h2>${news.title}</h2></a>
             </div>
           </div>    
     `;
@@ -254,6 +254,7 @@ const tableHistoryTemplate = (item) => {
   <td>${item.waktu}</td>
   <td>${item.total_minyak}</td>
   <td>${item.pesan}</td>
+  <td>${item.kota}</td>
   <td>${item.alamat}</td>
   
 </tr>

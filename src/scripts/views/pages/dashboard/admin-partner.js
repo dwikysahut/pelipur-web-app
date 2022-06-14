@@ -7,6 +7,7 @@ import AdminPartnerView from './admin-partner/admin-partner-view';
 const view = new AdminPartnerView();
 const Partner = {
   async render() {
+    document.querySelector('custom-footer').style.display = 'none';
     return view.getTemplate();
   },
 

@@ -17,7 +17,7 @@ class BerandaPresenter {
     try {
       const response = await this._newsDb.getAllNews();
 
-      const dataNews = response.data.data.posts;
+      const dataNews = response.data.articles;
       this._renderNews(dataNews);
     } catch (error) {
       console.log(error);

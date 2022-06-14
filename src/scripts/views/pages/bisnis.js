@@ -9,7 +9,8 @@ const Bisnis = {
     return `
     
     <info-bisnis></info-bisnis>
-    <custom-daftar></custom-daftar>
+    ${localStorage.getItem('token') ? '' : '<custom-daftar></custom-daftar>'}
+    
     
     
     `;

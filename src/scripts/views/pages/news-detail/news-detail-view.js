@@ -19,18 +19,9 @@ class NewsDetailView {
       for (let i = 0; i < 20; i += 1) {
         const element = document.createElement('news-list');
         element.item = items[i];
-        console.log(element);
         itemContainer.appendChild(element);
       }
     }
-  }
-
-  showPartners(items) {
-    console.log(items);
-    const itemContainer = document.querySelector('list-mitra').mitraContainer;
-    items.forEach((item) => {
-      itemContainer.innerHTML += mitraListTemplate(item);
-    });
   }
 }
 
