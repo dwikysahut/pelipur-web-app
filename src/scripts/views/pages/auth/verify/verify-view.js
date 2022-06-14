@@ -44,6 +44,10 @@ class VerifyView {
     });
   }
 
+  alertEmailVerif() {
+    return document.querySelector('#alertEmailVerify');
+  }
+
   getVerifyFormInputListener(callback) {
     const inputEmailVerif = document.querySelector('#inputEmailVerif');
     const inputCodeVerif = document.querySelector('#inputCodeVerif');
