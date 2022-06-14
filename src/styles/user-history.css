@@ -18,8 +18,8 @@
   margin-bottom: 70px;
 }
 
-.th__space {
-  width: 200px;
+.content__table .th__space {
+  min-width: 200px;
 }
 
 .status {
@@ -47,7 +47,6 @@ table {
   width: 100%;
   margin: 1% 0;
   border-collapse: collapse;
-  /* border: 1px solid black; */
 }
 
 td,

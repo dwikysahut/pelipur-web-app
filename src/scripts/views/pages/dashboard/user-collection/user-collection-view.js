@@ -55,16 +55,16 @@ class UserCollectionView {
                 value="Submit"
                 class="btn__save"
                 >
-                  Tersimpan
+                  Simpan sebagai template
                 </button>
                 <button
                 type="submit"
                 form="content_form"
                 id='submitCollection'
                 value="Submit"
-                class="btn__save"
+                class="btn__last"
                 >
-                  Terakhir
+                  Gunakan data terakhir
                 </button>
               </div>
               <div class="btn__form">
