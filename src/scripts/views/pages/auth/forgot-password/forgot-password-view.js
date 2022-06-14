@@ -44,6 +44,10 @@ class ForgotPasswordView {
     const inputEmailForgot = document.querySelector('#inputEmailForgot');
     callback({ inputEmailForgot });
   }
+
+  alertEmailForgot() {
+    return document.querySelector('#alertEmailForgot');
+  }
 }
 
 export default ForgotPasswordView;
