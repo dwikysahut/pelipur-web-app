@@ -17,7 +17,8 @@ import Logout from '../views/pages/auth/logout';
 import CityList from '../views/pages/dashboard/admin-cities';
 import UserNotFound from '../views/pages/dashboard/user-notfound';
 import AdminNotFound from '../views/pages/dashboard/admin-notfound';
-
+import NotFound from '../views/pages/not-found';
+import Unauthorized from '../views/pages/unauthorized';
 
 const routes = {
   '/': Beranda,
@@ -25,19 +26,20 @@ const routes = {
   '/about-us': AboutUs,
   '/bisnis': Bisnis,
   '/detail': Detail,
-  '/bisnis': Bisnis,
   '/news': Detail,
   '/auth': Auth,
   '/verify': Verify,
   '/forgot-password': ForgotPassword,
-  '/dashboard': Dashboard,
-  '/profile': Profile,
-  '/partners': Partner,
-  '/collections': Collection,
-  '/user-collection': UserCollection,
-  '/user-history': UserHistory,
+  '/dashboard': localStorage.getItem('role') === '1' ? Dashboard : Unauthorized,
+  '/profile': localStorage.getItem('role') === '2' ? Profile : Unauthorized,
+  '/partners': localStorage.getItem('role') === '1' ? Partner : Unauthorized,
+  '/collections': localStorage.getItem('role') === '1' ? Collection : Unauthorized,
+  '/user-collection': localStorage.getItem('role') === '2' ? UserCollection : Unauthorized,
+  '/user-history': localStorage.getItem('role') === '2' ? UserHistory : Unauthorized,
   '/logout': Logout,
-  '/city-list': CityList,
+  '/city-list': localStorage.getItem('role') === '1' ? CityList : Unauthorized,
+  '/not-found': NotFound,
+  '/unauthorize': Unauthorized,
   '/user-notfound': UserNotFound,
   '/admin-notfound': AdminNotFound,
 };

@@ -1,7 +1,9 @@
+/* eslint-disable prefer-regex-literals */
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const webpack = require('webpack');
@@ -78,8 +80,36 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
+
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
+
+    // new InjectManifest({
+    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+    //   swDest: 'sw.js',
+    // }),
+    // new GenerateSW({
+    //   clientsClaim: true,
+    //   skipWaiting: true,
+    //   runtimeCaching: [
+    //     {
+    //       urlPattern: new RegExp('http://localhost:5000/#/home'),
+    //       handler: 'StaleWhileRevalidate',
+    //     },
+    //     {
+    //       urlPattern: new RegExp('https://dicoding-restaurant-api.el.r.appspot.com/detail/'),
+    //       handler: 'NetworkFirst',
+    //     },
+    //     {
+    //       urlPattern: new RegExp('http://localhost:8080/#/about-us'),
+    //       handler: 'StaleWhileRevalidate',
+    //     },
+    //     {
+    //       urlPattern: new RegExp('http://localhost:8080/#/bisnis'),
+    //       handler: 'StaleWhileRevalidate',
+    //     },
+    //   ],
+    // }),
   ],
 };

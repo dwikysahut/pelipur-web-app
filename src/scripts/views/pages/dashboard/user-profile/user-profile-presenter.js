@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, swalConfirm, swalError,
+  emptyFormHandler, formPhoneValidation, swalConfirm, swalError,
 } from '../../../../utils/function-helper';
 
 class UserProfilePresenter {
@@ -66,6 +66,7 @@ class UserProfilePresenter {
       if (formData.name.value.length > 0 && formData.email.value.length > 0
         && formData.number.value.length > 0 && formData.address.value.length > 0
       ) {
+        if (!formPhoneValidation(formData.number, this._view.alertPhoneProfileListener())) return;
         if (formData.password.value.length < 1) {
           delete formData.password;
         } else if (formData.password.value.length < 8 || formData.password.value.length > 12) {

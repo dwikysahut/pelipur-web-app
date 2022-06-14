@@ -15,6 +15,7 @@ class UserHistoryView {
             <thead>
               <tr>
                 <th>Tanggal</th>
+                <th>Kode Transaksi</th>
                 <th>Estimasi Waktu</th>
                 <th>Total Minyak</th>
                 <th class="th__space">Pesan</th>

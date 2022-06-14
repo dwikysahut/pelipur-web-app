@@ -9,6 +9,7 @@ import $ from 'jquery';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
 import './views/component/footer';
+import './views/component/live-chat';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
@@ -18,6 +19,8 @@ import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('button'),
+  chatButton: document.querySelector('#btnOpenChat'),
+  chatContainer: document.querySelector('#chatContainer'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),
 });
