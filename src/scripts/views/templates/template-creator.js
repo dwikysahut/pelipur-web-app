@@ -56,11 +56,11 @@ const tableCollectionsTemplate = (item) => {
 const userListChat = (users, container) => {
   let userTemplate = '';
 
-  users.forEach((userId) => {
+  users.forEach((user) => {
     userTemplate += `
-    <div class="user-list__item" data-id="${userId}">
-    <span>${userId}</span>
-        <p>User</p>
+    <div class="user-list__item" data-id="${user.id}">
+    <span>${user.id}</span>
+        <p>${user.email}</p>
        
     </div>
     `;

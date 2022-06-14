@@ -89,7 +89,7 @@ class Artikel extends HTMLElement {
       data-aos-once="true"
       class = "artikels">
         <div class = "gambar-artikel">
-          <img src="${this.src}" alt="${this.alt}">
+          <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">
         </div>
 
        <div class="artikel" 
