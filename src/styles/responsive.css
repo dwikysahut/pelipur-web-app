@@ -70,6 +70,12 @@
     margin: 30px 0 10px;
     gap: 20px;
   }
+
+  .nav__list li:nth-child(4) {
+    border-radius: 5px;
+    margin-bottom: 40px;
+  }
+
   .nav__item {
     margin-top: 10px;
   }
@@ -226,7 +232,6 @@
   footer .alamat {
     grid-area: alamat;
     text-align: center;
-    font-family: Tahoma;
     font-size: 15px;
     padding: 10px;
     margin-bottom: 20px;
@@ -239,7 +244,7 @@
   footer .medsos li {
     grid-area: medsos;
     list-style: none;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     text-align: center;
   }
   footer .medsos h3 {
@@ -257,13 +262,11 @@
 
   footer .copyrig {
     grid-area: copyright;
-    padding: 20px;
     border-radius: 5px;
   }
 
   .copyrig p {
     text-align: center;
-    font-family: Tahoma;
     color: #005555;
   }
 }
@@ -294,6 +297,4 @@
   .hero__highlight {
     font-size: 50px !important;
   }
-  
-
 }

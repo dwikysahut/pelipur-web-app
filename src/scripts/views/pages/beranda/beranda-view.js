@@ -20,7 +20,9 @@ class BerandaView {
           <div class="item-produk">
             ${skeletonNewsHomeTemplate(6)}
           </div>
-          <a class="news-list" href="#/news">Baca selengkapnya <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+          <div class="news-list">
+            <a href="#/news">Tampilkan semua<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+          </div>
         </article>
         <list-mitra></list-mitra>
         </div>

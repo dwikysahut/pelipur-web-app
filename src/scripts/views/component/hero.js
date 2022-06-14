@@ -6,13 +6,7 @@ class Hero extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="hero"
-      data-aos="fade-right"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="true"
-      data-aos-once="false"
+      data-aos="zoom-in"
       >
         <div class="hero__inner">
           <div class="hero__inner__image">

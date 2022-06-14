@@ -25,20 +25,18 @@ class Artikel extends HTMLElement {
         }
 
         .artikel p {
-            font-weight: 400;
-            font-size: 1.1rem;
+          font-weight: 400;
+          font-size: 1.1rem;
         }
 
         .artikel h2{
-          margin-bottom: 10px;
+          margin: 15px auto 10px;
           font-weight: 500;
           font-size: 1.7rem;
         }
 
         .gambar-artikel {
-          
           display: flex;
-
           justify-content: center;
         }
 
@@ -62,7 +60,7 @@ class Artikel extends HTMLElement {
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
             column-gap: 70px;
-            
+            margin-bottom: 0;
           }
 
           .gambar-artikel {
@@ -74,19 +72,13 @@ class Artikel extends HTMLElement {
 
           .artikel {
             display: block;
-            
             margin-right: 70px;
         }
       }
         </style>
 
       <div
-      data-aos="fade-left"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-once="true"
+      data-aos="zoom-in"
       class = "artikels">
         <div class = "gambar-artikel">
           <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">

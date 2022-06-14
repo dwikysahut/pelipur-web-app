@@ -233,7 +233,7 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Kota</span>
   </div>
   <div class="card__icon">
-    <img src="icons/room_white_36dp.svg" alt="Kota" />
+    <img src="icons/pin_drop_white_36dp.svg" alt="Kota" />
   </div>
 </div>
 <div class="card__item">
@@ -265,6 +265,7 @@ const tableHistoryTemplate = (item) => {
   <td>${item.waktu}</td>
   <td>${item.total_minyak}</td>
   <td>${item.pesan}</td>
+  <td>${item.kota}</td>
   <td>${item.alamat}</td>
   
 </tr>

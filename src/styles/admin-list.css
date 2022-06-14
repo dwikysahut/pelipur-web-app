@@ -16,7 +16,7 @@
   display: none !important;
 }
 
-.content__table {
+.content__table, .content__table-cities {
   overflow-x: auto;
   margin-bottom: 70px;
 }
@@ -43,9 +43,11 @@ th {
 th {
   text-align: center;
 }
+
 .action-column{
-  width: 200px;
+  width: 100px;
 }
+
 .content__table select {
   border-radius: 3px;
   min-width: 44px;
@@ -57,18 +59,20 @@ th {
 
 .btn__action {
   display: flex;
-  justify-content: space-around;
+  column-gap: 10px;
+  justify-items: center;
 }
 
 .btn__action button {
   display: inline-block;
-  margin: 0 5px;
-  min-width: 44px;
+  min-width: 60px;
   min-height: 44px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
   color: #fff;
+  line-height: 44px;
+  margin: 0 auto;
 }
 
 .btn__accept:focus, .btn__reject:focus {

@@ -46,16 +46,38 @@ class UserCollectionView {
                 required
               ></textarea>
             </div>
-            <div class="btn__form">
-              <button
+            <div class="btn__collection">
+              <div class="btn-item">
+                <button
                 type="submit"
                 form="content_form"
                 id='submitCollection'
                 value="Submit"
                 class="btn__save"
-              >
-                Kirim
-              </button>
+                >
+                  Simpan sebagai template
+                </button>
+                <button
+                type="submit"
+                form="content_form"
+                id='submitCollection'
+                value="Submit"
+                class="btn__last"
+                >
+                  Gunakan data terakhir
+                </button>
+              </div>
+              <div class="btn__form">
+                <button
+                  type="submit"
+                  form="content_form"
+                  id='submitCollection'
+                  value="Submit"
+                  class="btn__save"
+                >
+                  Kirim
+                </button>
+              </div>
             </div>
           </form>
         </div>
