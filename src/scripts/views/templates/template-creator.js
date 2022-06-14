@@ -71,6 +71,8 @@ const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
   messageContainer.innerHTML = '';
   let chatTemplate = '';
+  const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
+    : document.querySelector('.chat__item-admin');
 
   chat.forEach((item) => {
     chatTemplate += `
@@ -82,11 +84,33 @@ const chatTemplateCreator = (chat, currentId) => {
       
      </div>
  `;
-    messageContainer.innerHTML = chatTemplate;
-    const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
-      : document.querySelector('.chat__item-admin');
-    container.scrollTop = messageContainer.scrollHeight;
   });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
+};
+const chatTemplateAdminCreator = (chat, currentId) => {
+  const messageContainer = document.querySelector('.text-message');
+  messageContainer.innerHTML = '';
+
+  let chatTemplate = '';
+  const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
+    : document.querySelector('.chat__item-admin');
+
+  chat.forEach((item) => {
+    chatTemplate += `
+      <div class="container-message ${item.from === currentId ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === currentId ? 'me' : 'user'}</span>
+       <div class="text-message ${item.from === currentId ? 'sender' : 'receiver'}">
+         <p>${item.message}</p>
+       </div>
+      
+     </div>
+ `;
+
+    // messageContainer.lastChild.scrollIntoView(false);
+  });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
 };
 
 const createSkeletonNewsList = (count) => {
@@ -344,5 +368,5 @@ export {
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
-  dropdownCityCheckBoxTemplate, userListChat,
+  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator,
 };

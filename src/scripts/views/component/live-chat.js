@@ -2,11 +2,12 @@
 /* eslint-disable no-restricted-syntax */
 import CONFIG from '../../globals/config';
 import firebase from '../../utils/firebase-config';
-import { chatTemplateCreator, userListChat } from '../templates/template-creator';
+import { chatTemplateAdminCreator, chatTemplateCreator, userListChat } from '../templates/template-creator';
 
 class LiveChat extends HTMLElement {
   connectedCallback() {
     this._idTarget = '';
+
     if (localStorage.getItem('role') === '2') {
       this.loadUserChat();
     } else if (localStorage.getItem('role') === '1') {
@@ -54,7 +55,7 @@ class LiveChat extends HTMLElement {
               chat.splice(0, 6);
             }
           }
-          chatTemplateCreator(chat, localStorage.getItem('id'), id);
+          chatTemplateAdminCreator(chat, localStorage.getItem('id'));
         });
     };
     // when user list clicked
@@ -69,8 +70,11 @@ class LiveChat extends HTMLElement {
       });
     });
     if (this._idTarget !== '') {
+      document.querySelector('#submitMessageAdmin').setAttribute('disabled', false);
+      console.log(this._idTarget);
       loadMesageFromUser(this._idTarget);
     }
+
     const inputMessage = document.querySelector('#inputMessageAdmin');
     document.querySelector('#submitMessageAdmin').addEventListener('click', (e) => {
       e.preventDefault();
@@ -95,6 +99,28 @@ class LiveChat extends HTMLElement {
     });
   }
 
+  // async updateMessage() {
+  //   const chat = [];
+  //   firebase
+  //     .database()
+  //     .ref(`messages/${localStorage.getItem('id')}/${id}`)
+  //     .on('child_added', (value) => {
+  //       const data = value.val();
+  //       for (const keys in data) {
+  //         const msg = {
+  //           from: data[keys].from,
+  //           message: data[keys].message,
+  //           to: data[keys].to,
+  //         };
+  //         chat.push(msg);
+  //         if (chat.length > 15) {
+  //           chat.splice(0, 6);
+  //         }
+  //       }
+  //       chatTemplateCreator(chat, localStorage.getItem('id'), id);
+  //     });
+  // }
+
   loadUserChat() {
     this.renderChatUser();
 
@@ -116,7 +142,7 @@ class LiveChat extends HTMLElement {
               chat.splice(0, 6);
             }
           }
-          chatTemplateCreator(chat, localStorage.getItem('id'), CONFIG.ADMIN_ID);
+          chatTemplateCreator(chat, localStorage.getItem('id'));
         });
     };
     loadMessage();
