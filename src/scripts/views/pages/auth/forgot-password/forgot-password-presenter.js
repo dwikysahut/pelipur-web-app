@@ -23,7 +23,7 @@ class ForgotPasswordPresenter {
   _forgotFormHandler() {
     this._view.forgotFormInputListener(async ({ inputEmailForgot }) => {
       if (inputEmailForgot.value !== '') {
-        if (formEmailValidation(inputEmailForgot, '#alertEmailForgot')) {
+        if (formEmailValidation(inputEmailForgot, this._view.alertEmailForgot())) {
           await this._forgotPasswordHandler({ email: inputEmailForgot.value });
           inputEmailForgot.value = '';
         }
