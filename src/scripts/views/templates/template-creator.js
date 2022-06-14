@@ -69,6 +69,7 @@ const userListChat = (users, container) => {
 };
 const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
+  messageContainer.innerHTML = '';
   let chatTemplate = '';
 
   chat.forEach((item) => {
