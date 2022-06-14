@@ -23,7 +23,7 @@ class VerifyPresenter {
   _verifyFormHandler() {
     this._view.verifyFormInputListener(async ({ inputEmailVerif, inputCodeVerif }) => {
       if (inputEmailVerif.value !== '' && inputCodeVerif.value !== '') {
-        if (formEmailValidation(inputEmailVerif, '#alertEmailVerify')) {
+        if (formEmailValidation(inputEmailVerif, this._view.alertEmailVerif())) {
           await this._verifyEmail({ email: inputEmailVerif.value, kode: inputCodeVerif.value });
           inputEmailVerif.value = '';
           inputCodeVerif.value = '';

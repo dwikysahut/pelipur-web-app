@@ -20,12 +20,13 @@ class LiveChat extends HTMLElement {
     const loadUserList = async () => {
       await firebase
         .database()
-        .ref(`messages/${localStorage.getItem('id')}`)
+        .ref('users')
         .on('value', async (value) => {
+          console.log(Object.values(value.val()));
           const container = document.querySelector('.user-list');
           container.innerHTML = '';
           console.log(Object.keys(value.val()));
-          await userListChat(Object.keys(value.val()), container);
+          await userListChat(Object.values(value.val()), container);
           this._onClickUserList();
         });
     };
@@ -87,6 +88,7 @@ class LiveChat extends HTMLElement {
           message: inputMessage.value,
           to: this._idTarget,
         });
+
         loadMesageFromUser(this._idTarget);
       }
       inputMessage.value = '';
@@ -136,6 +138,11 @@ class LiveChat extends HTMLElement {
           message: inputMessage.value,
           to: CONFIG.ADMIN_ID,
         });
+        firebase.database().ref(`/users/${localStorage.getItem('id')}`).set({
+          id: localStorage.getItem('id'),
+          email: localStorage.getItem('email'),
+          nama: localStorage.getItem('nama'),
+        });
         loadMessage();
       }
       inputMessage.value = '';
@@ -163,7 +170,7 @@ class LiveChat extends HTMLElement {
             <form class="chat__form__form-message">
                 <div class="form__input">
                     <textarea id="inputMessageAdmin" name="inputMessage" placeholder="Type here..."
-                        class="form-control input-message" rows="2"></textarea>
+                        class="form-control input-message" rows="1"></textarea>
                 </div>
                 <div class="form__submit-container">
                     <button type="submit" id="submitMessageAdmin" class="submit-button">Submit</button>

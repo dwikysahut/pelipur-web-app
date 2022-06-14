@@ -583,9 +583,10 @@ footer .fa {
   right: 10px;
   bottom: 10px;
   border-radius: 5px;
-  min-width: 400px;
-  max-width: 20%;
+  width:50%;
   z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
   height: 50%;
   display: none;
   font-family: 'Quicksand', sans-serif;
@@ -607,10 +608,11 @@ footer .fa {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
 }
 .chat__inner {
   display: flex;
-  max-height: 230px;
+  overflow: hidden;
   flex: 1;
 }
 
@@ -619,7 +621,6 @@ footer .fa {
   flex-basis: 25%;
 
   overflow: auto;
-  max-height: 230px;
   padding: 8px 2px;
   flex-direction: column;
   overflow: -moz-scrollbars-vertical;
@@ -639,9 +640,15 @@ footer .fa {
 
 }
 
-
+.chat__form__form-message > .form__input {
+  flex-basis: 90%;
+}
 .user-list__item p {
   margin: 0;
+  font-size: 10px;
+  word-wrap: break-word;      /* IE 5.5-7 */
+  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+  white-space: pre-wrap;      /* current browsers */
 }
 .user-list__item span {
   color: gray;
@@ -663,14 +670,19 @@ footer .fa {
   margin-left: 10px;
   justify-content: flex-end;
 }
-.form-control.input-message {
-  width: 220px !important;
+.chat__form__form-message > .form__input {
+  min-height: 44px;
+}
+.chat__form__form-message > .form__input > .form-control {
+
+  height: 100% !important;
 }
 .submit-button {
   color: black;
   opacity: 100%;
   padding: 0px 5px;
-  height: 44px;
+  min-height: 44px;
+  min-width: 44px;
   border-radius: 6px;
   background-color: white;
   font-size: 0.7em;
