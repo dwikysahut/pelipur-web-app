@@ -32,17 +32,19 @@ class LiveChat extends HTMLElement {
         });
     };
     await loadUserList();
+    // const inputMessage = document.querySelector('#inputMessageAdmin');
+    // inputMessage.setAttribute('disabled', true);
   }
 
   _onClickUserList() {
     const userListElement = document.querySelectorAll('.user-list__item');
     console.log(userListElement);
     const loadMesageFromUser = async (id) => {
-      const chat = [];
       firebase
         .database()
         .ref(`messages/${localStorage.getItem('id')}/${id}`)
         .on('value', (value) => {
+          const chat = [];
           const data = value.val();
           for (const keys in data) {
             const msg = {
@@ -70,9 +72,12 @@ class LiveChat extends HTMLElement {
       });
     });
     if (this._idTarget !== '') {
-      document.querySelector('#submitMessageAdmin').setAttribute('disabled', false);
-      console.log(this._idTarget);
+      const inputMessage = document.querySelector('#inputMessageAdmin');
+      inputMessage.setAttribute('disabled', false);
+
       loadMesageFromUser(this._idTarget);
+    } else {
+
     }
 
     const inputMessage = document.querySelector('#inputMessageAdmin');
@@ -125,11 +130,11 @@ class LiveChat extends HTMLElement {
     this.renderChatUser();
 
     const loadMessage = async () => {
-      const chat = [];
       firebase
         .database()
         .ref(`messages/${localStorage.getItem('id')}/${CONFIG.ADMIN_ID}`)
         .on('value', (value) => {
+          const chat = [];
           const data = value.val();
           for (const keys in data) {
             const msg = {

@@ -70,9 +70,9 @@ const userListChat = (users, container) => {
 const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
   messageContainer.innerHTML = '';
+
   let chatTemplate = '';
-  const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
-    : document.querySelector('.chat__item-admin');
+  const container = document.querySelector('.chat__item-container');
 
   chat.forEach((item) => {
     chatTemplate += `
@@ -93,8 +93,7 @@ const chatTemplateAdminCreator = (chat, currentId) => {
   messageContainer.innerHTML = '';
 
   let chatTemplate = '';
-  const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
-    : document.querySelector('.chat__item-admin');
+  const container = document.querySelector('.chat__item-admin');
 
   chat.forEach((item) => {
     chatTemplate += `
@@ -229,7 +228,7 @@ const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.
 const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
 
 const dataDashboardTemplate = (data) => `
-<div class="content__card">
+
 <div class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
@@ -275,11 +274,10 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Form Terkumpul</span>
   </div>
   <div class="card__icon">
-    <img src="icons/account_balance_white_36dp.svg" alt="Form" />
     <img src="icons/assignment_white_36dp.svg" alt="Form Terkumpul" />
   </div>
 </div>
-</div>`;
+`;
 
 const tableHistoryTemplate = (item) => {
   const date = new Date(item.tanggal);
