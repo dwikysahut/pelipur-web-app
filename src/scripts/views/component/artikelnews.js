@@ -2,11 +2,6 @@
 /* eslint-disable lines-between-class-members */
 /* eslint-disable linebreak-style */
 class Artikel extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.src = this.getAttribute('src') || null;
     this.alt = this.getAttribute('alt') || null;
@@ -14,7 +9,7 @@ class Artikel extends HTMLElement {
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
         <style>
         .artikels{
           width: 80%;
@@ -30,65 +25,71 @@ class Artikel extends HTMLElement {
         }
 
         .artikel p {
-            font-weight: 400;
-            font-size: 1.1rem;
+          font-weight: 400;
+          font-size: 1.1rem;
         }
 
         .artikel h2{
-          margin-bottom: 10px;
+          margin: 15px auto 10px;
           font-weight: 500;
           font-size: 1.7rem;
         }
 
         .gambar-artikel {
-          
           display: flex;
-          width: 70%;
           justify-content: center;
-          margin: 20px auto !important;
-          margin-bottom: 0 !important;
         }
 
         .gambar-artikel img{
           display: block;
           max-height: 300px;
-          margin: 0 auto;
-          margin-bottom: 0 !important;
+        }
+
+        .oil-details {
+          color: black;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        
+        .oil-details:hover {
+          color: #069a8e;
         }
 
         @media screen and (min-width:900px){
           .artikels{
             grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            column-gap: 70px;
+            margin-bottom: 0;
           }
 
           .gambar-artikel {
-            width: 70%;
-            margin: 20px auto !important;
-            margin-bottom: 0 !important;
+            align-items: self-end;
+            display: flex;
+            justify-content: flex-end;
+            
           }
 
           .artikel {
             display: block;
-            margin-top: 0;
             margin-right: 70px;
         }
       }
-      
-      @media screen and (min-width:900px) {
-        
-      }
-        
         </style>
 
-      <div class = "artikels">
+      <div
+      data-aos="zoom-in"
+      class = "artikels">
         <div class = "gambar-artikel">
-          <img src="${this.src}" alt="${this.alt}">
+          <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">
         </div>
 
-       <div class="artikel">
+       <div class="artikel" 
+      
+       >
           <h2>Limbah Minyak Jelantah</h2>
           <p>Minyak jelantah (waste cooking oil) adalah minyak limbah yang bisa berasal dari jenis-jenis minyak goreng seperti halnya minyak jagung, minyak sayur, minyak samin dan sebagainya. Minyak ini merupakan minyak bekas pemakaian kebutuhan rumah tangga umumnya, dapat digunakan kembali untuk keperluaran kuliner akan tetapi bila ditinjau dari komposisi kimianya, minyak jelantah mengandung senyawa-senyawa yang bersifat karsinogenik, yang terjadi selama proses penggorengan.
-          <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer"> Read more...<a/>  
+          <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer" class="oil-details">Read more...<a/>  
           </p>
        </div>
       </div>

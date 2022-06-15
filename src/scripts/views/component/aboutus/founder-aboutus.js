@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class FounderAboutus extends HTMLElement {
   constructor() {
     super();
@@ -55,12 +56,10 @@ class FounderAboutus extends HTMLElement {
             }
 
         .founder-about .founder h2{
-            font-family:calibri;
-            color:#005555;
+            font-weight: 500;
         }
 
         .founder-about .founder h4{
-            font-family:calibri;
             color:#005555;
         }
 
@@ -75,21 +74,16 @@ class FounderAboutus extends HTMLElement {
                  width:100%;
                  padding:15px;
                  box-sizing:border-box;
-                
-                
-
              }
 
              .founder-about .about h2{
-                font-family:Tahoma;
-                color:#005555;
+                font-weight: 500;
                 margin-bottom:20px;
         
              }
 
              .founder-about .about p{
-                font-family:calibri;
-                font-size:17px;
+                font-size: 1rem;
              }
 
               @media screen and (min-width:600px){
@@ -157,7 +151,7 @@ class FounderAboutus extends HTMLElement {
                     <ul>
                         <li><img src = "./images/heros/yoga2.jpg"><p>Yoga</p</li>
                         <li><img src = "./images/heros/dwiky.jpg"><p>Dwiky</p</li>
-                        <li><img src = "./images/heros/logo.png"><p>Nova</p</li>
+                        <li><img src = "./images/heros/nova.jpg"><p>Nova</p</li>
                         <li><img src = "./images/heros/deva.jpg"><p>Deva</p</li>
                         
                     </ul>

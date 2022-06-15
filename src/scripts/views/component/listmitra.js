@@ -21,6 +21,8 @@ class ListMitra extends HTMLElement {
             margin:auto;
             display:flex;
             padding: 0;
+            justify-content: center;
+            gap: 10%;
           }
 
           .list-mitra ul li{
@@ -28,15 +30,14 @@ class ListMitra extends HTMLElement {
           }
 
           .list-mitra img{
-              width:50%;
+              width:80px;
+              border-radius: 50%;
           }
 
           @media screen and (min-width: 700px) {
-            .list-mitra{
-              width:40% !important;
-            }  
+           
             .list-mitra img{
-              width:65%;
+              width:120px;
           }
           }
         </style>

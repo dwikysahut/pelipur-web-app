@@ -16,7 +16,9 @@ class UserProfileView {
           </div>
           <div class="content__form-item list__small">
             <label for="number">No. Telepon</label>
-            <input type="number" id="numberProfile" name="numberProfile" required />
+            <input type="tel" id="numberProfile" name="numberProfile" required />
+            <div></div>
+            <span id="alertPhoneProfile" class="hint danger">Input Number Only</span>
           </div>
           <div class="content__form-item list__small">
             <label for="detail">Keterangan</label>
@@ -93,6 +95,10 @@ class UserProfileView {
 
   generateCategoriesDropdownListener(callback) {
     callback(document.querySelector('#descProfile'));
+  }
+
+  alertPhoneProfileListener() {
+    return document.querySelector('#alertPhoneProfile');
   }
 
   showCategories(items, recentId) {

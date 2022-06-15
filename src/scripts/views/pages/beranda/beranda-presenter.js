@@ -1,27 +1,31 @@
-import CONFIG from '../../../globals/config';
-import FormEventChangeHandler from '../../../utils/form-event-change-handler';
-import {
-  closeLoader, emptyFormHandler, openLoader, swalConfirm, swalConfirmation, swalError,
-} from '../../../utils/function-helper';
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-restricted-syntax */
 
+
+/* eslint-disable guard-for-in */
 class BerandaPresenter {
   constructor({ view, newsDb, dataDb }) {
     this._view = view;
     this._newsDb = newsDb;
     this._dataDb = dataDb;
     this._showNewsData();
+    this._renderMessage();
     this._showPartnersData();
+  }
+
+  _renderMessage() {
+
   }
 
   async _showNewsData() {
     try {
       const response = await this._newsDb.getAllNews();
 
-      const dataNews = response.data.data.posts;
+      const dataNews = response.data.articles;
       this._renderNews(dataNews);
     } catch (error) {
       console.log(error);
-      swalError('Ooops Something wrong', '#/');
+      // swalError('Ooops Something wrong', '#/');
     }
   }
 
@@ -33,6 +37,7 @@ class BerandaPresenter {
       }
     } catch (error) {
       console.log(error);
+      this._renderPartners([]);
     //   swalError('Ooops Something wrong', '#/');
     }
   }

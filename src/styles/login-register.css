@@ -33,7 +33,6 @@ html,body{
 .hint.danger {
   font-size: 0.7em;
   color: red;
-  font-style: italic;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   display: none;
