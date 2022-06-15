@@ -37,10 +37,10 @@ class App {
     if (localStorage.getItem('token') == null) {
       this._chatButton.style.opacity = '0';
       this._chatButton.setAttribute('disabled', 'true');
-      console.log('und');
     }
     const url = UrlParser.parseActiveUrlWithCombiner();
     let page = routes[url.page];
+    console.log(page);
     if (page === undefined) {
       page = NotFound;
     }

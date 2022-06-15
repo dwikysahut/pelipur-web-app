@@ -2,10 +2,10 @@ import { swalError } from '../../utils/function-helper';
 
 const NotFound = {
   async render() {
-    if (!localStorage.getItem('token')) {
-      await swalError('Please Login First', '#/auth');
-      return false;
-    }
+    // if (!localStorage.getItem('token')) {
+    //   await swalError('Please Login First', '#/auth');
+    //   return false;
+    // }
     return `
     <div class="wrapper-dashboard">
       <div class="dashboard-container">
