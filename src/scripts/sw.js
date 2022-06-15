@@ -1,103 +1,107 @@
+/* eslint-disable no-undef */
 // /* eslint-disable no-unused-vars */
-import 'regenerator-runtime';
-import CacheHelper from './utils/cache-helper';
+// import 'regenerator-runtime';
+// import CacheHelper from './utils/cache-helper';
 
-/* eslint-disable no-restricted-globals */
-const { assets } = global.serviceWorkerOption;
+// /* eslint-disable no-restricted-globals */
+// const { assets } = global.serviceWorkerOption;
 
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
-  console.log('Installing service worker...');
-  event.waitUntil(CacheHelper.cachingAppShell([...assets, './']));
-});
-
-self.addEventListener('activate', (event) => {
-  console.log('activating service worker');
-  event.waitUntil(CacheHelper.deleteOldCache());
-});
-
-self.addEventListener('fetch', (event) => {
-  console.log(event.request);
-  // if (event.request.method === 'POST') {
-  //   event.respondWith(CacheHelper.deleteOldCache());
-  // }
-  event.respondWith(CacheHelper.revalidateCache(event.request));
-});
-
-// /* eslint-disable no-undef */
-// console.log('hello, from service worker');
-
-// workbox.core.skipWaiting();
-// workbox.core.clientsClaim();
-
-// if (workbox) console.log('Yay! Workbox is loaded 🎉');
-// else console.log('Boo! Workbox didn\'t load');
-
-// workbox.core.setCacheNameDetails({
-//   prefix: 'Pelipur-PWA',
-//   precache: 'precache',
-//   runtime: 'runtime',
+// self.addEventListener('install', (event) => {
+//   self.skipWaiting();
+//   console.log('Installing service worker...');
+//   event.waitUntil(CacheHelper.cachingAppShell([...assets, './']));
 // });
 
-// // eslint-disable-next-line no-restricted-globals
-// workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
+// self.addEventListener('activate', (event) => {
+//   console.log('activating service worker');
+//   event.waitUntil(CacheHelper.deleteOldCache());
+// });
 
-// workbox.routing.registerRoute(
-//   ({ request }) => request.destination === 'image',
-//   new workbox.strategies.NetworkFirst({
-//     cacheName: 'images',
-//     plugins: [
-//       new workbox.expiration.Plugin({
-//         maxEntries: 60,
-//         maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-//       }),
-//     ],
-//   }),
-// );
+// self.addEventListener('fetch', (event) => {
+//   console.log(event.request);
+//   // if (event.request.method === 'POST') {
+//   //   event.respondWith(CacheHelper.deleteOldCache());
+//   // }
+//   event.respondWith(CacheHelper.revalidateCache(event.request));
+// });
 
-// workbox.routing.registerRoute(
-//   new RegExp('^https://dicoding-restaurant-api.el.r.appspot.com/'),
-//   new workbox.strategies.StaleWhileRevalidate({
-//     cacheName: 'dicoding-restaurant-api',
-//     plugins: [
-//       new workbox.cacheableResponse.Plugin({
-//         statuses: [200, 404],
-//       }),
-//     ],
-//   }),
-// );
+// /* eslint-disable no-undef */
 
-// // Menyimpan cache dari CSS Google Fonts
-// workbox.routing.registerRoute(
-//   /^https:\/\/fonts\.googleapis\.com/,
-//   workbox.strategies.staleWhileRevalidate({
-//     cacheName: 'google-fonts-stylesheets',
-//   }),
-// );
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
 
-// // Menyimpan cache dari font awesome
-// workbox.routing.registerRoute(
-//   /^https:\/\/kit\.fontawesome\.com/,
-//   workbox.strategies.staleWhileRevalidate({
-//     cacheName: 'font-awesome',
-//   }),
-// );
+console.log('hello, from service worker');
 
-// // Menyimpan cache untuk file font selama 1 tahun
-// workbox.routing.registerRoute(
-//   /^https:\/\/fonts\.gstatic\.com/,
-//   workbox.strategies.cacheFirst({
-//     cacheName: 'google-fonts-webfonts',
-//     plugins: [
-//       new workbox.cacheableResponse.Plugin({
-//         statuses: [0, 200],
-//       }),
-//       new workbox.expiration.Plugin({
-//         maxAgeSeconds: 60 * 60 * 24 * 365,
-//         maxEntries: 30,
-//       }),
-//     ],
-//   }),
-// );
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
 
-// workbox.precaching.cleanupOutdatedCaches();
+if (workbox) console.log('Yay! Workbox is loaded 🎉');
+else console.log('Boo! Workbox didn\'t load');
+
+workbox.core.setCacheNameDetails({
+  prefix: 'Pelipur-PWA',
+  precache: 'precache',
+  runtime: 'runtime',
+});
+
+// eslint-disable-next-line no-restricted-globals
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
+
+workbox.routing.registerRoute(
+  ({ request }) => request.destination === 'image',
+  new workbox.strategies.NetworkFirst({
+    cacheName: 'images',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  }),
+);
+
+workbox.routing.registerRoute(
+  new RegExp('^https://dicoding-restaurant-api.el.r.appspot.com/'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'dicoding-restaurant-api',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [200, 404],
+      }),
+    ],
+  }),
+);
+
+// Menyimpan cache dari CSS Google Fonts
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.googleapis\.com/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'google-fonts-stylesheets',
+  }),
+);
+
+// Menyimpan cache dari font awesome
+workbox.routing.registerRoute(
+  /^https:\/\/kit\.fontawesome\.com/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'font-awesome',
+  }),
+);
+
+// Menyimpan cache untuk file font selama 1 tahun
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.gstatic\.com/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'google-fonts-webfonts',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new workbox.expiration.ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 365,
+        maxEntries: 30,
+      }),
+    ],
+  }),
+);
+
+workbox.precaching.cleanupOutdatedCaches();

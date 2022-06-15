@@ -85,10 +85,11 @@ module.exports = {
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
 
-    // new InjectManifest({
-    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-    //   swDest: 'sw.js',
-    // }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+      swDest: 'sw.js',
+      maximumFileSizeToCacheInBytes: 5000000,
+    }),
     // new GenerateSW({
     //   clientsClaim: true,
     //   skipWaiting: true,
