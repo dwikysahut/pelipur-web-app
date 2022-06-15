@@ -9,7 +9,7 @@ class AdminDashboardView {
     <div class="dashboard-container">
       <div class="content">
         <h2 class="content__title">Dashboard</h2>
-       
+      
       </div>
     </div>
   </div>
