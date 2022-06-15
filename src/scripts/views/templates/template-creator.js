@@ -70,9 +70,9 @@ const userListChat = (users, container) => {
 const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
   messageContainer.innerHTML = '';
+
   let chatTemplate = '';
-  const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
-    : document.querySelector('.chat__item-admin');
+  const container = document.querySelector('.chat__item-container');
 
   chat.forEach((item) => {
     chatTemplate += `
