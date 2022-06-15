@@ -275,11 +275,8 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Form Terkumpul</span>
   </div>
   <div class="card__icon">
-<<<<<<< HEAD
     <img src="icons/account_balance_white_36dp.svg" alt="Form" />
-=======
     <img src="icons/assignment_white_36dp.svg" alt="Form Terkumpul" />
->>>>>>> 7cb3898a31e3373ba64426a7d03191e97e1b4b77
   </div>
 </div>
 </div>`;
