@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
   closeLoader,
-  emptyFormHandler, formEmailValidation, openLoader, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail,
+  emptyFormHandler, formEmailValidation, formPhoneValidation, openLoader, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail,
 } from '../../../../utils/function-helper';
 import SwiperButtonLoginPresenter from '../../../../utils/slider-button-login-presenter';
 
@@ -50,7 +50,7 @@ class AuthPresenter {
     this._view.loginFormListener(async ({ inputEmailLogin, inputPasswordLogin }) => {
       if (inputEmailLogin.value !== '' && inputPasswordLogin.value !== '') {
         console.log(validateEmail(inputEmailLogin.value));
-        if (formEmailValidation(inputEmailLogin, '#alertEmailLogin')) {
+        if (formEmailValidation(inputEmailLogin, this._view.alertEmailRegListener())) {
           await this._loginHandler(
             { email: inputEmailLogin.value, password: inputPasswordLogin.value },
           );
@@ -116,8 +116,9 @@ class AuthPresenter {
     this._view.registerFormListener(async (formRegister) => {
       if (formRegister.email.value !== '' && formRegister.alamat.value !== '' && formRegister.no_telp.value !== ''
         && formRegister.password.value !== '' && formRegister.nama.value !== '' && formRegister.confirmPassword.value !== '') {
-        if (formEmailValidation(formRegister.email, '#alertEmailReg')) {
-          if (!passwordValidation(formRegister.password, '#alertPassReg')) return;
+        if (formEmailValidation(formRegister.email, this._view.alertEmailRegListener())) {
+          if (!formPhoneValidation(formRegister.no_telp, this._view.alertPhoneRegListener())) return;
+          if (!passwordValidation(formRegister.password, this._view.alertPassRegListener())) return;
 
           if (formRegister.password.value !== formRegister.confirmPassword.value) {
             await swalError('Password Doesn\'t match');

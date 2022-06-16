@@ -40,9 +40,9 @@ const API_ENDPOINT = {
   DELETE_DESC: (id) => `${CONFIG.BASE_URL}descriptions/${id}`,
   // data dashboard
   GET_DATAS_COUNT: `${CONFIG.BASE_URL}datas/count`,
-
+  GET_COLLECTIONS_COUNT_BY_MONTH: `${CONFIG.BASE_URL}datas/count/collections-month`,
   // public api
-  GET_NEWS_API: 'https://api-berita-indonesia.vercel.app/suara/health/',
+  GET_NEWS_API: `https://newsapi.org/v2/everything?apiKey=${CONFIG.API_KEY}&q=isu lingkungan`,
 
 };
 

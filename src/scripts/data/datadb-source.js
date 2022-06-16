@@ -53,6 +53,46 @@ class DataDbSource {
     return response;
   }
 
+  static async postPartner(token, body) {
+    const response = await axios.post(API_ENDPOINT.POST_PARTNER, body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async putPartner(token, body, id) {
+    const response = await axios.put(API_ENDPOINT.EDIT_PARTNER(id), body, {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async deletePartner(token, id) {
+    const response = await axios.delete(API_ENDPOINT.DELETE_PARTNER(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
+  static async getPartnerById(token, id) {
+    const response = await axios.get(API_ENDPOINT.GET_PARTNER_BY_ID(id), {
+      headers: {
+        Authorization: `${token}`,
+
+      },
+    });
+    return response;
+  }
+
   static async getAllCollections(token) {
     const response = await axios.get(API_ENDPOINT.GET_COLLECTIONS, {
       headers: {
@@ -79,6 +119,13 @@ class DataDbSource {
         Authorization: `${token}`,
 
       },
+    });
+    return response;
+  }
+
+  static async getCollectionsByMonth() {
+    const response = await axios.get(API_ENDPOINT.GET_COLLECTIONS_COUNT_BY_MONTH, {
+
     });
     return response;
   }

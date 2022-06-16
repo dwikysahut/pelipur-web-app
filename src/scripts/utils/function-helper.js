@@ -8,24 +8,39 @@ const validateEmail = (email) => String(email)
   .match(
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   );
-
+const validatePhone = (email) => String(email)
+  .toLowerCase()
+  .match(
+    /^[0-9]*$/,
+  );
 const formEmailValidation = (input, element) => {
   if (!validateEmail(input.value)) {
-    document.querySelector(element).style.display = 'block';
+    element.style.display = 'block';
     input.classList.add('danger');
     return false;
   }
-  document.querySelector(element).style.display = 'none';
+  element.style.display = 'none';
+  input.classList.remove('danger');
+  return true;
+};
+
+const formPhoneValidation = (input, element) => {
+  if (!validatePhone(input.value)) {
+    element.style.display = 'block';
+    input.classList.add('danger');
+    return false;
+  }
+  element.style.display = 'none';
   input.classList.remove('danger');
   return true;
 };
 const passwordValidation = (inputElement, alertElemet) => {
   if (inputElement.value.length < 8 || inputElement.value.length > 12) {
     inputElement.classList.add('danger');
-    document.querySelector(alertElemet).style.display = 'block';
+    alertElemet.style.display = 'block';
     return false;
   }
-  document.querySelector('#alertPassReg').style.display = 'none';
+  alertElemet.style.display = 'none';
   inputElement.classList.remove('danger');
   return true;
 };
@@ -89,6 +104,9 @@ const swalError = (message, path = '') => {
 const emptyFormHandler = (...elements) => {
   elements.map((element) => element.value.length < 1 && element.classList.add('danger'));
 };
+const emptyFileHandler = (...elements) => {
+  elements.map((element) => element.files.length < 1 && element.classList.add('danger'));
+};
 const zeroValueHandler = (...elements) => {
   elements.map((element) => element.value < 1 && element.classList.add('danger'));
 };
@@ -119,5 +137,5 @@ export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
   resetFormValue, zeroValueHandler, swalConfirmation, openLoader,
-  closeLoader,
+  closeLoader, emptyFileHandler, formPhoneValidation,
 };

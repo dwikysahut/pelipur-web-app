@@ -55,6 +55,7 @@ class AuthView {
             </div>
             <div class="field">
               <input type="tel" id="inputPhoneReg" name="inputPhoneReg" placeholder="Masukkan Nomor Telepon" required>
+              <span id="alertPhoneReg" class="hint danger">Input Number Only</span>
             </div>
             <div class="field">
               <input type="textarea" id="inputAddressReg" name="inputAddressReg" placeholder="Masukkan Alamat" required>
@@ -102,6 +103,18 @@ class AuthView {
       e.preventDefault();
       this.getLoginFormListener(callback);
     });
+  }
+
+  alertEmailRegListener() {
+    return document.querySelector('#alertEmailReg');
+  }
+
+  alertPhoneRegListener() {
+    return document.querySelector('#alertPhoneReg');
+  }
+
+  alertPassRegListener() {
+    return document.querySelector('#alertPassReg');
   }
 
   getLoginFormListener(callback) {

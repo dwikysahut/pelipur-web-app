@@ -1,8 +1,8 @@
-.content {
+/* .content {
   padding: 30px;
-}
+} */
 
-.content__title {
+/* .content__title {
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
@@ -10,17 +10,21 @@
   color: #005555;
   text-align: center;
   border-bottom: 2px solid #069a8e;
-}
+} */
+
 .none{
   display: none !important;
 }
-.content__table {
+
+.content__table, .content__table-cities {
   overflow-x: auto;
   margin-bottom: 70px;
 }
+
 .btn.btn-outline-dark{
   width: max-content !important;
 }
+
 table {
   padding: 5px;
   width: 100%;
@@ -39,9 +43,11 @@ th {
 th {
   text-align: center;
 }
+
 .action-column{
   width: 100px;
 }
+
 .content__table select {
   border-radius: 3px;
   min-width: 44px;
@@ -53,18 +59,20 @@ th {
 
 .btn__action {
   display: flex;
-  justify-content: space-around;
+  column-gap: 10px;
+  justify-items: center;
 }
 
 .btn__action button {
   display: inline-block;
-  margin: 0 5px;
-  min-width: 44px;
+  min-width: 60px;
   min-height: 44px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
   color: #fff;
+  line-height: 44px;
+  margin: 0 auto;
 }
 
 .btn__accept:focus, .btn__reject:focus {
@@ -110,13 +118,13 @@ display: none;
     padding: 2% 4%;
   } */
 
-  table {
+  /* table {
     margin-top: 2%;
-  }
+  } */
 
-  .th__space {
-    width: 15%;
-  }
+  /* .th__space {
+    width: 100px;
+  } */
 
   .content__table {
     margin-bottom: 0;

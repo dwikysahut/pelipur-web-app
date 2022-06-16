@@ -1,15 +1,19 @@
 .content {
-  padding: 30px;
+  padding: 30px 30px 70px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
 }
 
 .content__title {
   font-weight: 500;
-  padding: 20px;
-  line-height: 20px;
   font-size: 23px;
-  color: #005555;
+  color: black;
   text-align: center;
-  border-bottom: 2px solid #069a8e;
+  /* border-bottom: 1px solid #dddddd; */
+}
+
+.content__chart h2 {
+  color: #005555;
 }
 
 .content__card {
@@ -26,7 +30,7 @@
 
 .card__item {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 30px;
   border-radius: 10px;
   color: #fff;
@@ -34,10 +38,21 @@
   /* box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%); */
 }
 
+.chart__card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  margin: 3% 0% 6%;
+}
+
 @media screen and (min-width: 500px) {
   .content__card {
     grid-template-columns: repeat(2, 1fr);
     margin: 3% 0 8%;
+  }
+
+  .chart__card {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -51,9 +66,8 @@
     overflow-y: auto;
   }
 
-  .content,
   .dashboard-container {
-    padding: 1% 90px 5%;
+    padding: 4% 4% ;
     flex: 1;
     overflow-x: auto;
   }
@@ -62,5 +76,9 @@
 @media screen and (min-width: 992px) {
   .content__card {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .chart__card {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

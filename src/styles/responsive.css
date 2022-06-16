@@ -3,24 +3,29 @@
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
-    height: 200px;
+    
     position: absolute;
     background-color: #005555;
     left: 0;
-    margin-top: 50px;
+    top: 70px;
     text-align: center;
-    opacity: 1;
+
     z-index: 5;
 
     transition: transform 0.7s ease-in-out;
     transform: translate(-100%, 0);
     
   }
-  .nav__item.dropdown{
+
+  .item-news__content p {
+    font-size: 0.9rem;
+    
+  }
+  .nav__item.dropdown {
     width: 100%;
     margin: 0 !important;
   }
-  .profile-pict{
+  .profile-pict {
     display: none;
   }
   .nav__list {
@@ -29,14 +34,6 @@
   .nav__item a:hover {
     background-color: transparent;
   }
-  .copyrig{
-    margin-bottom: 80px;
-    
-  }
- 
-    
- 
- 
   .dropdown-content {
     display: flex;
     visibility: visible;
@@ -51,18 +48,17 @@
     min-width: 120px;
     background-color: #005555;
     transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     transition: visibility 0s, opacity 0.3s linear;
     z-index: 4;
-    
+    gap: 7px;
+
     border-radius: 0 0 5px 5px;
   }
   #hamburger.rotate {
-    transform: rotate(90deg) ;
+    transform: rotate(90deg);
     transform-origin: center center;
     background-color: transparent;
     transition: all 0.7s ease-in-out;
-
   }
   button#hambuger {
     transition: all 0.7s ease-in-out;
@@ -71,8 +67,15 @@
   .nav__list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    margin: 30px 0 10px;
+    gap: 20px;
   }
+
+  .nav__list li:nth-child(4) {
+    border-radius: 5px;
+    margin-bottom: 40px;
+  }
+
   .nav__item {
     margin-top: 10px;
   }
@@ -86,8 +89,6 @@
 }
 
 /* Hamburger menu */
-
-
 
 @media screen and (max-width: 700px) {
   .menu-toggle button {
@@ -132,38 +133,50 @@
     position: absolute;
     top: 40px;
     opacity: 0;
-    right: -33px;
+    right: -25px;
     min-width: 120px;
-    background-color: #005555;
+    background-color: white;
     transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     transition: visibility 0s, opacity 0.3s linear;
-    z-index: 4;
     
+
     border-radius: 0 0 5px 5px;
+  }
+    
+  .hero__title {
+    font-size: 2.9em;
+    font-weight: lighter;
+  }
+  .hero__inner{
+    flex-direction: row !important;
+  }
+  .hero__inner__text {
+   align-items: flex-start;
+  }
+  .hero__title {
+    text-align: left;
   }
   .btn-drawer {
     display: none;
   }
-  .profile-pict{
+  .profile-pict {
     width: 44px;
     height: 44px;
     padding: 5px;
     border-radius: 50%;
-    
   }
-  .nav__item a{
+  .nav__item a {
     color: #005555 !important;
   }
-  .profile-pict >img {
+  .profile-pict > img {
     width: 100%;
     border-radius: 50%;
   }
-  
-  .header-icon{
+
+  .header-icon {
     display: flex;
     justify-content: end;
-    
   }
   .header-icon i {
     color: white;
@@ -219,7 +232,6 @@
   footer .alamat {
     grid-area: alamat;
     text-align: center;
-    font-family: Tahoma;
     font-size: 15px;
     padding: 10px;
     margin-bottom: 20px;
@@ -232,7 +244,7 @@
   footer .medsos li {
     grid-area: medsos;
     list-style: none;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     text-align: center;
   }
   footer .medsos h3 {
@@ -250,16 +262,11 @@
 
   footer .copyrig {
     grid-area: copyright;
-    background-color: #075757d6;
-    
-    background-color: white;
-    padding: 20px;
     border-radius: 5px;
   }
 
   .copyrig p {
     text-align: center;
-    font-family: Tahoma;
     color: #005555;
   }
 }
@@ -275,41 +282,19 @@
   }
 
   .item-news__image {
-    min-width: 200px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
     min-height: 160px;
-    max-width: 250px;
+    
     max-height: 240px;
   }
 }
 
-@media screen and (min-width: 600px) {
-  .hero__inner{
-    padding-left: 380px !important;
-  }
-}
 
 @media screen and (min-width: 800px) {
-  .hero__inner{
-    padding-left: 490px !important;
-  }
 
   .hero__highlight {
     font-size: 50px !important;
-  }
-  
-  .hero__title {
-    font-size: 50px !important;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .hero__inner{
-    padding-left: 580px !important;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .hero__inner{
-    padding-left: 800px !important;
   }
 }

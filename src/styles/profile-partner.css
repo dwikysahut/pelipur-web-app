@@ -1,8 +1,8 @@
-.content {
+/* .content {
   padding: 30px;
-}
+} */
 
-.content__title {
+/* .content__title {
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
@@ -10,12 +10,12 @@
   color: #005555;
   text-align: center;
   border-bottom: 2px solid #069a8e;
-}
+} */
 
 .content__form {
   border-radius: 5px;
   padding: 25px;
-  margin: 7% 0 20%;
+  margin: 3% 0 55px;
   border: 1px solid #dddddd;
 }
 
@@ -76,10 +76,11 @@
 }
 
 .content__form .btn__form {
-  margin: 20px 0 0;
+  /* margin: 20px 0 0; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   column-gap: 10px;
+  row-gap: 10px;
   direction: rtl;
 }
 
@@ -98,6 +99,58 @@
 .content__form button:hover {
   content: "";
   opacity: 0.8;
+}
+
+/* checkboxes */
+
+.select-box {
+  position: static;
+}
+
+.select-box select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkBoxes {
+  display: none;
+  position: relative;
+  border: 1px #dadada solid;
+  opacity: 0;
+  width: inherit;
+  height: 150px;
+  overflow-y: auto;
+  /* z-index: 10; */
+  transition: visibility 0s, opacity 0.3s linear;
+  background-color: white;
+}
+#selectCityDisplay{
+  caret-color: transparent;
+  background-color: white;
+}
+#checkBoxes label {
+  display: flex;
+  padding: 5px;
+
+}
+#checkBoxes input {
+  margin-right: 10px;
+}
+#checkBoxes input[type="checkbox"]{
+  min-width: auto !important;
+}
+#checkBoxes label:hover {
+  background-color: #005555;
+  color: white;
+
 }
 
 @media screen and (min-width: 600px) {
@@ -128,4 +181,12 @@
   .content__title.list {
     margin-top: 40px;
   }
+}
+
+.img-partner {
+  width: 44px;
+
+}
+.btn__update#editPartnerButton{
+  display: none;
 }

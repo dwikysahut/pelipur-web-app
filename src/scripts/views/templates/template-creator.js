@@ -1,5 +1,7 @@
+/* eslint-disable no-param-reassign */
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
+
 import { dateConvert } from '../../utils/function-helper';
 
 const newsTemplate = (news) => {
@@ -9,10 +11,10 @@ const newsTemplate = (news) => {
             <div class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
-              <img src="${news.thumbnail}" alt="" >
+              <img src="${news.urlToImage}" alt="" >
               </div>
-              <h3>${dateConvert(news.pubDate)}</h3>
-              <h2>${news.title}</h2>
+             <h3>${dateConvert(news.publishedAt)}</h3>
+             <a href="${news.url}" target="_blank"><h2>${news.title}</h2></a>
             </div>
           </div>    
     `;
@@ -24,7 +26,9 @@ const tableCollectionsTemplate = (item) => {
   return `
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
+  <td>${item.id}</td>
   <td>${item.nama_user}</td>
+  <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
   <td>${item.email_user}</td>
@@ -49,33 +53,63 @@ const tableCollectionsTemplate = (item) => {
 </tr>
 `;
 };
+const userListChat = (users, container) => {
+  let userTemplate = '';
 
-const chatTemplateCreator = (chat) => {
+  users.forEach((user) => {
+    userTemplate += `
+    <div class="user-list__item" data-id="${user.id}">
+    <span>${user.id}</span>
+        <p>${user.email}</p>
+       
+    </div>
+    `;
+  });
+  container.innerHTML = userTemplate;
+};
+const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
+  messageContainer.innerHTML = '';
+
   let chatTemplate = '';
+  const container = document.querySelector('.chat__item-container');
 
-  //     chat.map((data) => (messageContainer.innerHTML += `
-  //      <div class="container-message ${data.from === '123' ? 'sender' : 'receiver'}">
-  //       <span class="sender-name" >${data.from === '123' ? 'me' : 'admin'}</span>
-  //       <div class="text-message ${data.from === '123' ? 'sender' : 'receiver'}">
-  //         <p>$P</p>
-  //       </div>
-
-  //     </div>
-  // `));
   chat.forEach((item) => {
     chatTemplate += `
-      <div class="container-message ${item.from === '123' ? 'sender' : 'receiver'}">
-       <span class="sender-name" >${item.from === '123' ? 'me' : 'admin'}</span>
-       <div class="text-message ${item.from === '123' ? 'sender' : 'receiver'}">
+      <div class="container-message ${item.from === currentId ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === currentId ? 'me' : 'admin'}</span>
+       <div class="text-message ${item.from === currentId ? 'sender' : 'receiver'}">
          <p>${item.message}</p>
        </div>
       
      </div>
  `;
-    messageContainer.innerHTML = chatTemplate;
-    document.querySelector('.chat__item-container').scrollTop = messageContainer.scrollHeight;
   });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
+};
+const chatTemplateAdminCreator = (chat, currentId) => {
+  const messageContainer = document.querySelector('.text-message');
+  messageContainer.innerHTML = '';
+
+  let chatTemplate = '';
+  const container = document.querySelector('.chat__item-admin');
+
+  chat.forEach((item) => {
+    chatTemplate += `
+      <div class="container-message ${item.from === currentId ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === currentId ? 'me' : 'user'}</span>
+       <div class="text-message ${item.from === currentId ? 'sender' : 'receiver'}">
+         <p>${item.message}</p>
+       </div>
+      
+     </div>
+ `;
+
+    // messageContainer.lastChild.scrollIntoView(false);
+  });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
 };
 
 const createSkeletonNewsList = (count) => {
@@ -194,7 +228,7 @@ const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.
 const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
 
 const dataDashboardTemplate = (data) => `
-<div class="content__card">
+
 <div class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
@@ -222,7 +256,7 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Kota</span>
   </div>
   <div class="card__icon">
-    <img src="icons/room_white_36dp.svg" alt="Kota" />
+    <img src="icons/pin_drop_white_36dp.svg" alt="Kota" />
   </div>
 </div>
 <div class="card__item">
@@ -231,7 +265,7 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Mitra</span>
   </div>
   <div class="card__icon">
-    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+    <img src="icons/account_balance_white_36dp.svg" alt="Mitra" />
   </div>
 </div>
 <div class="card__item">
@@ -240,19 +274,21 @@ const dataDashboardTemplate = (data) => `
     <span class="card__name">Form Terkumpul</span>
   </div>
   <div class="card__icon">
-    <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+    <img src="icons/assignment_white_36dp.svg" alt="Form Terkumpul" />
   </div>
 </div>
-</div>`;
+`;
 
 const tableHistoryTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
 <tr class="data">
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()}</td>
+  <td>${item.id}</td>
   <td>${item.waktu}</td>
   <td>${item.total_minyak}</td>
   <td>${item.pesan}</td>
+  <td>${item.kota}</td>
   <td>${item.alamat}</td>
   
 </tr>
@@ -274,6 +310,55 @@ const tableCityTemplate = (item) => `   <tr id ="city-${item.id}">
 </td>
 </tr>
   `;
+const tablePartnerTemplate = (item) => `
+  <tr>
+        <td>${item.id}</td>
+        <td>${item.nama}</td>
+        <td>${item.alamat}</td>
+        <td>${item.email}</td>
+        <td><img class="img-partner" src="${CONFIG.BASE_IMAGE_URL}${item.image}" data-src="${CONFIG.BASE_IMAGE_URL}${item.image}" data-alt="logo ${item.nama}"></img></td>
+        <td>${JSON.parse(item.kota_jangkauan).toString()}</td>
+        <td>  
+         <div class="btn__action">
+            <button type="submit" value="Submit" class="btn__update partner" data-id =${item.id}>
+              Edit
+            </button>
+            <button type="submit" value="Submit" class="btn__delete partner" data-id =${item.id}>
+              Hapus
+            </button>
+          </div>
+        </td>  
+        
+  </tr>
+
+<div class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" >
+<div class="partner-caption"></div>
+</div>
+  `;
+
+const skeletonNewsHomeTemplate = () => {
+  let template = '';
+
+  for (let i = 0; i < 6; i += 1) {
+    template += `
+              <div class="card">
+                <div class="card-item" tabindex="0">
+                  <div class="img-news" tabindex="0">
+                    <img srcset="./images/placeholder.png" alt="">
+                  </div>
+                  <h3>0/0/0000 0:0</h3>
+                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+                </div>
+              </div>    
+      `;
+  }
+  return template;
+};
+const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
+  <input class="cb" type="checkbox" id="city-${item.kota}" value="${item.kota}" />${item.kota}</label>
+`;
 
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
@@ -281,5 +366,6 @@ export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
-  tableCityTemplate, mitraListTemplate,
+  tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
+  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator,
 };

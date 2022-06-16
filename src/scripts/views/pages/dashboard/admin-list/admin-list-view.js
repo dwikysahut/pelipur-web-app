@@ -20,12 +20,14 @@ class AdminListView {
               <thead>
                 <tr>
                   <th>Tanggal Penjemputan</th>
-                  <th>Nama User</th>
+                  <th>Kode Transaksi</th>
+                  <th>Nama</th>
+                  <th>No Telepon</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
-                  <th class="th__space">Email</th>
+                  <th>Email</th>
                   <th class="th__space">Alamat</th>
-                  <th class="th__space">Kota</th>
+                  <th>Kota</th>
                   <th>Mitra</th>
                   <th>Aksi</th>
                 </tr>
