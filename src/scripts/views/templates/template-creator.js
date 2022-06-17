@@ -90,7 +90,7 @@ const chatTemplateCreator = (chat, currentId) => {
 };
 const chatTemplateAdminCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
-  messageContainer.innerHTML = '';
+  
 
   let chatTemplate = '';
   const container = document.querySelector('.chat__item-admin');

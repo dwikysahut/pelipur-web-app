@@ -17,7 +17,7 @@ class LiveChat extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     this[name] = newValue;
-    this.renderAdminChat();
+    this.loadAdminChat();
   }
 
   static get observedAttributes() {
@@ -77,12 +77,12 @@ class LiveChat extends HTMLElement {
         e.stopPropagation();
         console.log(e.currentTarget.dataset.id);
         this._idTarget = e.currentTarget.dataset.id;
-        // loadMesageFromUser(e.currentTarget.dataset.id);
+        loadMesageFromUser(e.currentTarget.dataset.id);
         if (this._idTarget !== '') {
           const inputMessage = document.querySelector('#inputMessageAdmin');
           inputMessage.removeAttribute('disabled');
 
-          loadMesageFromUser(this._idTarget);
+        loadMesageFromUser(this._idTarget);
         }
       });
     });
