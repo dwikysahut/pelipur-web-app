@@ -1,6 +1,6 @@
 const CONFIG = {
   BASE_URL: 'http://54.151.210.185:5000/',
-  BASE_IMAGE_URL: 'http://54.151.210.185:5000/public/image',
+  BASE_IMAGE_URL: 'http://54.151.210.185:5000/public/image/',
   // BASE_URL: 'http://localhost:5000/',
   // BASE_IMAGE_URL: 'http://localhost:5000/public/image/',
 
