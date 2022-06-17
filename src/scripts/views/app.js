@@ -34,6 +34,11 @@ class App {
   }
 
   async renderPage() {
+    if (window.scrollHeight - window.scrollTop === window.clientHeight) {
+      console.log(window.clientHeight);
+      // eslint-disable-next-line no-param-reassign
+      this._chatButton.style.color = 'white';
+    }
     if (localStorage.getItem('token') == null) {
       this._chatButton.style.opacity = '0';
       this._chatButton.setAttribute('disabled', 'true');

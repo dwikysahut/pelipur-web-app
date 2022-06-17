@@ -1,7 +1,6 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-restricted-syntax */
 
-
 /* eslint-disable guard-for-in */
 class BerandaPresenter {
   constructor({ view, newsDb, dataDb }) {
@@ -20,8 +19,10 @@ class BerandaPresenter {
   async _showNewsData() {
     try {
       const response = await this._newsDb.getAllNews();
+      const responseEnv = await this._newsDb.getAllNewsEnv();
 
-      const dataNews = response.data.articles;
+      const dataNews = { ...responseEnv.data.articles, ...response.data.articles };
+      console.log(dataNews);
       this._renderNews(dataNews);
     } catch (error) {
       console.log(error);

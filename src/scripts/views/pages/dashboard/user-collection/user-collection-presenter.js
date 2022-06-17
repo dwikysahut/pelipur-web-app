@@ -77,6 +77,7 @@ class UserCollectionPresenter {
         resetFormValue(formData);
       }
     } catch (error) {
+      console.log(error);
       await swalError(`${error.response.data.message}`);
     }
   }
