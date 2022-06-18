@@ -20,7 +20,7 @@ const Beranda = {
         window.location.reload();
         window.history.replaceState({ page: '' }, '', '#/home');
         window.dispatchEvent(new HashChangeEvent('hashchange'));
-        return ' <custom-loader></custom-loader>';
+        return { content: ' <custom-loader></custom-loader>' };
       }
     }
     return {
