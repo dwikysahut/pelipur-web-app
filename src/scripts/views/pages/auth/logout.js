@@ -7,7 +7,10 @@ import LogoutView from './logout/logout-view';
 const view = new LogoutView();
 const Logout = {
   async render() {
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

@@ -6,9 +6,10 @@ import NewsDetailView from './news-detail/news-detail-view';
 const view = new NewsDetailView();
 const NewsDetail = {
   async render() {
-    return `
-      ${view.getTemplate()}
-        `;
+    return {
+      footer: true,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

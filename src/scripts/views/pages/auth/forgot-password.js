@@ -6,7 +6,10 @@ import ForgotPasswordView from './forgot-password/forgot-password-view';
 const view = new ForgotPasswordView();
 const ForgotPassword = {
   async render() {
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

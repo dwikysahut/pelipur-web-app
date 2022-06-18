@@ -29,9 +29,11 @@ const Beranda = {
         window.dispatchEvent(new HashChangeEvent('hashchange'));
         return ' <custom-loader></custom-loader>';
       }
-      // window.history.state.page = '';
     }
-    return view.getTemplate();
+    return {
+      footer: true,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

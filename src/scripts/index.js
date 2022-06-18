@@ -23,6 +23,7 @@ const app = new App({
   chatContainer: document.querySelector('#chatContainer'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),
+  footer: document.querySelector('custom-footer'),
 });
 
 window.addEventListener('hashchange', () => {
