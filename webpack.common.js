@@ -117,11 +117,10 @@ module.exports = {
     //   ],
     // }),
 
-   
-
     new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
+    }),
   ],
 };
