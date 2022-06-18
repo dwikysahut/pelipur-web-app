@@ -1,7 +1,5 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable import/extensions */
-
-import AboutUsView from './about-us/aboutUs-view.js';
+import AboutUsPresenter from './about-us/aboutUs-presenter';
+import AboutUsView from './about-us/aboutUs-view';
 
 const view = new AboutUsView();
 const AboutUs = {
@@ -12,7 +10,9 @@ const AboutUs = {
     };
   },
 
-  async afterRender() {},
+  async afterRender() {
+    new AboutUsPresenter({ view });
+  },
 };
 
 export default AboutUs;

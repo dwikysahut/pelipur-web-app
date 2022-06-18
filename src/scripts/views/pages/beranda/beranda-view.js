@@ -21,7 +21,7 @@ class BerandaView {
             ${skeletonNewsHomeTemplate(6)}
           </div>
           <div class="news-list">
-            <a href="#/news">Tampilkan semua<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <a href="#/news">Tampilkan semua <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
         <list-mitra></list-mitra>

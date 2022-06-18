@@ -1,10 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable import/extensions */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable guard-for-in */
-// import firebase from '../../utils/firebase-config';
 import '../component/hero';
 import '../component/artikelnews';
 import '../component/layanan';
@@ -13,7 +6,7 @@ import '../component/keterangan-slide';
 import '../component/listmitra';
 import '../component/custom-loader';
 import NewsDbSource from '../../data/newsdb-source';
-import { openLoader, swalError } from '../../utils/function-helper';
+import { openLoader } from '../../utils/function-helper';
 import BerandaView from './beranda/beranda-view';
 import BerandaPresenter from './beranda/beranda-presenter';
 import DataDbSource from '../../data/datadb-source';

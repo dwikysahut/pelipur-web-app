@@ -41,19 +41,21 @@ class App {
     let page = routes[url.page];
     page = this._notFoundCheck(page);
 
+    window.scrollTo(0, 0);
     const { footer, content } = await page.render();
     !footer ? this._footer.style.display = 'none' : this._footer.style.display = 'block';
     this._content.innerHTML = content;
-    window.scrollTo(0, 0);
+
     await page.afterRender();
 
     this._skipToLinkInit();
   }
 
   _chatButtonRenderInit() {
-    if (localStorage.getItem('token') == null) {
-      this._chatButton.style.opacity = '0';
-      this._chatButton.setAttribute('disabled', 'true');
+    if (localStorage.getItem('token') != null) {
+      this._chatButton.style.opacity = '1';
+      this._chatButton.removeAttribute('disabled');
+      this._chatButton.style.display = 'block';
     }
   }
 

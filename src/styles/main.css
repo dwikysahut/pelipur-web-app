@@ -534,8 +534,8 @@ footer .fa {
 .fa.fa-commenting {
   color: white;
 }
-.btn-open-chat.hide {
-  display: none !important;
+.btn-open-chat.show {
+  display: block !important;
 }
 .btn-open-chat{
   width: 55px;
@@ -544,7 +544,7 @@ footer .fa {
   border: none;
   position: fixed;
   right: 10px;
-  display: block;
+  display: none;
   z-index: 10;
   box-shadow: 0 0 0 0.6px white;
   bottom: 10px;
