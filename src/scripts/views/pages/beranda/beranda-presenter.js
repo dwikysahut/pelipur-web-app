@@ -18,9 +18,9 @@ class BerandaPresenter {
 
   async _showNewsData() {
     try {
-      const response = await this._newsDb.getAllNews();
+      const response = await this._dataDb.getAllNews();
 
-      const dataNews = response.data.articles;
+      const dataNews = response.data.data;
       console.log(dataNews);
       this._renderNews(dataNews);
     } catch (error) {
