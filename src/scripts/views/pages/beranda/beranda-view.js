@@ -5,7 +5,7 @@ import {
 /* eslint-disable class-methods-use-this */
 class BerandaView {
   getTemplate() {
-    return `   
+    return `
     <div class="wrapper">
       <custom-hero></custom-hero>
       <div>
@@ -35,6 +35,10 @@ class BerandaView {
     callback({ nameForm: document.querySelector('#cityNameForm') });
   }
 
+  getNewsContainerListener() {
+    return document.querySelector('.item-produk');
+  }
+
   showNews(items) {
     const itemContainer = document.querySelector('.item-produk');
     itemContainer.innerHTML = '';
@@ -53,9 +57,14 @@ class BerandaView {
     }
   }
 
+  getMitracontainerListener() {
+    return document.querySelector('list-mitra');
+  }
+
   showPartners(items) {
     console.log(items);
-    const itemContainer = document.querySelector('list-mitra').mitraContainer;
+
+    const itemContainer = this.getMitracontainerListener().mitraContainer;
     items.forEach((item) => {
       itemContainer.innerHTML += mitraListTemplate(item);
     });

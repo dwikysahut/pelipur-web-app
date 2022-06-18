@@ -20,7 +20,7 @@ const Beranda = {
         window.location.reload();
         window.history.replaceState({ page: '' }, '', '#/home');
         window.dispatchEvent(new HashChangeEvent('hashchange'));
-        return { content: ' <custom-loader></custom-loader>' };
+        return { footer: true, content: ' <custom-loader></custom-loader>' };
       }
     }
     return {
@@ -33,6 +33,7 @@ const Beranda = {
     if (window.history.state && window.history.state.page === 'login') {
       // loading bar
       openLoader(document.querySelector('custom-loader'));
+      console.log('loader');
     } else {
       new BerandaPresenter({ view, newsDb: NewsDbSource, dataDb: DataDbSource });
     }
