@@ -21,11 +21,11 @@ class AdminListView {
                 <tr>
                   <th>Tanggal Penjemputan</th>
                   <th>Kode Transaksi</th>
+                  <th>Email</th>
                   <th>Nama</th>
                   <th>No Telepon</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
-                  <th>Email</th>
                   <th class="th__space">Alamat</th>
                   <th>Kota</th>
                   <th>Mitra</th>

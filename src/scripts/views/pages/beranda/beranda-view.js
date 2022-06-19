@@ -1,5 +1,5 @@
 import {
-  createSkeletonNewsList, mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
+  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
 } from '../../templates/template-creator';
 
 /* eslint-disable class-methods-use-this */
