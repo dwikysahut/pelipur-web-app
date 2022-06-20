@@ -13,7 +13,8 @@ class Layanan extends HTMLElement {
     }
 
     .judul h2{
-        text-align:center;
+        font-size: 23px;
+        font-weight: 500;
     }
 
     .layanan {
@@ -21,7 +22,7 @@ class Layanan extends HTMLElement {
         flex-direction:column;
         width:80%;
         box-sizing:border-box;
-        margin: 0 auto 30px;
+        margin: 0 auto 70px;
     }
 
     .gambar{
@@ -39,10 +40,9 @@ class Layanan extends HTMLElement {
     }
 
     .gambar span {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 400;
         display: block;
-        margin-bottom: 30px;
         width: 300px;
         text-align: center;
     }
@@ -51,46 +51,55 @@ class Layanan extends HTMLElement {
         .layanan{
            flex-direction: row;
         }
-
-        .gambar span {
-            
-        }
     }
 
      @media screen and (min-width:950px){
-         .layanan{
-            flex-direction: row;
-         }
-         
-         .gambar img{
-            height:180px;
+        .layanan{
+            width:60%;
          }
 
-         .gambar span {
-             
+         .gambar img{
+            height: 150px;
          }
      }
     </style>
 
 
        <div class="judul"><h2>Layanan</h2></div>
-        <div data-aos="zoom-in" 
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        class = "layanan">
-            <div class="gambar">
+        <div class = "layanan">
+            <div 
+                data-aos="flip-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="true"
+                class="gambar">
                 <img src="./images/undraw_On_the_way_re_swjt.png">
                 <span>Jemput Gratis</span>
             </div>
-            <div class="gambar">
+            <div 
+                data-aos="flip-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="true"   
+                class="gambar">
                 <img src="./images/undraw_Chatting_re_j55r.png">
                 <span>Live Chat</span>
             </div>
-            <div class="gambar">
+            <div 
+                data-aos="flip-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="true"
+                class="gambar">
                 <img src="./images/undraw_printing_invoices_5r4r.png">
                 <span>Menghasilkan Uang</span>
             </div>       

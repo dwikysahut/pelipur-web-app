@@ -3,7 +3,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
 // import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
-import { swalError } from '../../../../utils/function-helper';
+import { swalError, openLoader, closeLoader } from '../../../../utils/function-helper';
 
 class AdminDashboardPresenter {
   constructor({ view, dataDb }) {
@@ -14,11 +14,14 @@ class AdminDashboardPresenter {
 
   async _showAllData() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllDataCount(localStorage.getItem('token'));
       this._renderData(response.data.data);
     } catch (error) {
       console.log(error);
       // swalError('Ooops Something wrong', '#/');
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 

@@ -47,6 +47,7 @@ class AdminListPresenter {
 
   async _getAllCollectionsHandler() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllCollections(localStorage.getItem('token'));
       console.log(response);
       if (response.status === 200) {
@@ -54,6 +55,8 @@ class AdminListPresenter {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 

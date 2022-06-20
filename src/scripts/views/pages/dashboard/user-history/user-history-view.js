@@ -1,9 +1,11 @@
 import { cityItemTemplate, tableHistoryTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class UserHistoryView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-user></aside-user>
   
@@ -55,6 +57,10 @@ class UserHistoryView {
       }
       i += 1;
     });
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 }
 

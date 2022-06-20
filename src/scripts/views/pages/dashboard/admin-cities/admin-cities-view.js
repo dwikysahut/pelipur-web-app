@@ -1,9 +1,11 @@
 import { tableCityTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-dashboard';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class AdminCitiesView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-dashboard></aside-dashboard>
     <div class="dashboard-container">
@@ -50,6 +52,10 @@ class AdminCitiesView {
 
   getEditButtonFormListener() {
     return document.querySelector('#editCityButton');
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   submitButtonListener(callback) {

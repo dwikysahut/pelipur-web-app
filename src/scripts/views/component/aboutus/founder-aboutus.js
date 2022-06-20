@@ -1,23 +1,18 @@
 /* eslint-disable linebreak-style */
 class FounderAboutus extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
 
         <style>
             .founder-about{
                 display:grid;
                 grid-template-columns: 1fr ;
                 width:100%;
-                margin:60px auto;
+                margin: 0 auto 70px;
                 box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
             }
 
@@ -55,12 +50,14 @@ class FounderAboutus extends HTMLElement {
 
             }
 
-        .founder-about .founder h2{
-            font-weight: 500;
-        }
+            .founder h2 {
+                font-size: 23px;
+                font-weight: 500;
+            }
 
         .founder-about .founder h4{
             color:#005555;
+            font-size: 15px;
         }
 
             .founder-about .founder img{
@@ -77,13 +74,15 @@ class FounderAboutus extends HTMLElement {
              }
 
              .founder-about .about h2{
+                font-size: 23px;
                 font-weight: 500;
                 margin-bottom:20px;
-        
+                text-align:center;
              }
 
              .founder-about .about p{
-                font-size: 1rem;
+                font-size: 15px;
+                text-align: justify;
              }
 
               @media screen and (min-width:600px){
@@ -95,7 +94,7 @@ class FounderAboutus extends HTMLElement {
                 .founder-about .about{
                  width:60%;
                  padding:15px;
-                 margin:auto;
+                 margin: 30px auto 0;
                  box-sizing:border-box;
                   }
 
@@ -109,17 +108,10 @@ class FounderAboutus extends HTMLElement {
                   width:90%;
                   display:flex;          
                 }
-
-                .founder-about .about h2{
-                    text-align:center;
-                }
-
-                .founder-about .founder{
-                                 
-                }
                 .founder-about .about{
                     width:50%;
                 }
+
                 .founder ul{
                     display:flex;
                     justify-content: center;
@@ -149,11 +141,46 @@ class FounderAboutus extends HTMLElement {
             <div class="founder">
              <h2>Founder Pelipur</h2>
                     <ul>
-                        <li><img src = "./images/heros/yoga2.jpg"><p>Yoga</p</li>
-                        <li><img src = "./images/heros/dwiky.jpg"><p>Dwiky</p</li>
-                        <li><img src = "./images/heros/nova.jpg"><p>Nova</p</li>
-                        <li><img src = "./images/heros/deva.jpg"><p>Deva</p</li>
-                        
+                        <li data-aos="flip-left"
+                            data-aos-offset="200"
+                            data-aos-delay="50"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out"
+                            data-aos-mirror="true"
+                            data-aos-once="true">
+                            <img src = "./images/heros/yoga2.jpg" alt="Yoga">
+                            <p>Yoga</p>
+                        </li>
+                        <li data-aos="flip-left"
+                            data-aos-offset="200"
+                            data-aos-delay="50"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out"
+                            data-aos-mirror="true"
+                            data-aos-once="true">
+                            <img src = "./images/heros/dwiky.jpg" alt="Dwiky">
+                            <p>Dwiky</p>
+                        </li>
+                        <li data-aos="flip-left"
+                            data-aos-offset="200"
+                            data-aos-delay="50"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out"
+                            data-aos-mirror="true"
+                            data-aos-once="true">
+                            <img src = "./images/heros/nova.jpg" alt="Nova">
+                            <p>Nova</p>
+                        </li>
+                        <li data-aos="flip-left"
+                            data-aos-offset="200"
+                            data-aos-delay="50"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out"
+                            data-aos-mirror="true"
+                            data-aos-once="true">
+                            <img src = "./images/heros/deva.jpg" alt="Deva">
+                            <p>Deva</p>
+                        </li>
                     </ul>
                    <h4>Menjaga Alam Adalah Tugas Kita Semua Sebagai Manusia, Untuk Menjadi Rahmat Bagi Semesta</h4>
             </div>

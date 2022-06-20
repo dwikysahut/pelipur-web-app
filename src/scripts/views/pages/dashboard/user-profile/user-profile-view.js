@@ -1,9 +1,11 @@
 import { categoryItemTemplate } from '../../../templates/template-creator';
+import '../../../component/custom-loader';
 
 /* eslint-disable class-methods-use-this */
 class UserProfileView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-user></aside-user>
     <div class="dashboard-container">
@@ -69,6 +71,10 @@ class UserProfileView {
       e.preventDefault();
       this.getProfileFormInputListener(callback);
     });
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   getProfileFormInputListener(callback) {
