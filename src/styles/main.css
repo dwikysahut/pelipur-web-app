@@ -545,6 +545,7 @@ footer .fa {
 .fa.fa-whatsapp {
   color: white !important;
 }
+
 /* chat */
 .fa.fa-commenting {
   color: white;
@@ -570,6 +571,7 @@ footer .fa {
 .chat.show {
   display: flex;
 }
+
 .chat {
   padding: 8px;
   position: fixed;
@@ -585,13 +587,14 @@ footer .fa {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
   background-color: white;
 }
+
 .chat-admin.show {
   display: flex;
 }
+
 .chat-admin {
   padding: 8px;
   position: fixed;
