@@ -1,5 +1,5 @@
 import {
-  buttonSuspendTemplate, buttonUnSuspendTemplate, cityItemTemplate, tableHistoryTemplate, userDetailItemTemplate,
+  buttonSuspendTemplate, buttonUnSuspendTemplate, userDetailItemTemplate,
 } from '../../../templates/template-creator';
 import '../../../component/aside-dashboard';
 import '../../../component/custom-loader';
@@ -7,7 +7,6 @@ import '../../../component/custom-loader';
 class UserDetailViee {
   getTemplate() {
     return `
-    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-dashboard></aside-dashboard>
   

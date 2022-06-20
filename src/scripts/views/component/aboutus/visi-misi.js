@@ -18,12 +18,18 @@ class VisiMisi extends HTMLElement {
           background-color: #f4f4f5;
           padding:20px;
           box-sizing:border-box;
-          margin:10px auto;
+          background-image: url('./images/bg-visi-misi.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center; 
+          background-size: cover;
+          margin:0 auto;
         }
 
         .visimisi .visi{
           width:100%;
-          background-color:white;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
           padding:10px;
           box-sizing:border-box;
           border-radius:5px;
@@ -40,7 +46,8 @@ class VisiMisi extends HTMLElement {
 
         .visimisi .misi{
           width:100%;
-          background-color:white;
+          background: rgba(0, 0, 0, 0.5);
+          color:white;
           padding:10px;
           box-sizing:border-box;
           border-radius:5px;
@@ -54,6 +61,9 @@ class VisiMisi extends HTMLElement {
 
         .visimisi .misi li{
           font-size: 1rem;
+        }
+        .visimisi>h2{
+          color:white;
         }
 
         h2{
@@ -86,12 +96,14 @@ class VisiMisi extends HTMLElement {
           box-sizing:border-box;
          }
          .visimisi .misi{
-           background-color:white;
+           background: rgba(0, 0, 0, 0.5);
+           color: white;
            width:30%;
            margin:auto
          }
          .visimisi .visi{
-            background-color:white;
+           background: rgba(0, 0, 0, 0.5);
+           color: white;
            width:30%;
            margin:auto
          }
@@ -103,7 +115,7 @@ class VisiMisi extends HTMLElement {
 
      
         <div class="visimisi">
-        <h2>Visi dan Misi Kami</h2>
+        <h2>Visi dan Misi</h2>
         <div class="inner__visimisi">
           
           <div class = "visi">

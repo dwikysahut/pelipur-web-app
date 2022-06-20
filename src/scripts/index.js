@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 import './views/component/header';
+import './views/component/chat-button';
 import './views/component/footer';
 import './views/component/live-chat';
 import AOS from 'aos';

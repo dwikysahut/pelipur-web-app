@@ -24,7 +24,6 @@ class UserDetailPresenter {
       const response = await this._dataDb.getUserById(localStorage.getItem('token'), url.id);
       if (response.status === 200) {
         this._renderUserDetail(response.data.data);
-        closeLoader(this._view.getLoaderListener());
       }
     } catch (error) {
       console.log(error);
