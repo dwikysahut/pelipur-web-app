@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import {
   createSkeletonNewsList, mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
 } from '../../templates/template-creator';

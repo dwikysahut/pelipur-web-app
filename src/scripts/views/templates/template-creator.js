@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-param-reassign */
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
