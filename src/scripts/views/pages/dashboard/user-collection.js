@@ -1,3 +1,4 @@
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 import UserCollectionPresenter from './user-collection/user-collection-presenter';
 import UserCollectionView from './user-collection/user-collection-view';
@@ -12,7 +13,7 @@ const UserCollection = {
   },
 
   async afterRender() {
-    new UserCollectionPresenter({ view, dataDb: DataDbSource });
+    new UserCollectionPresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
   },
 
 };

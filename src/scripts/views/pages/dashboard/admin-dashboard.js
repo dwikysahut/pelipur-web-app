@@ -1,4 +1,5 @@
 /* eslint-disable import/order */
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 import '../../component/aside-dashboard';
 import AdminDashboardPresenter from './admin-dashboard/admin-dashboard-presenter';
@@ -19,7 +20,7 @@ const Collection = {
   },
 
   async afterRender() {
-    new AdminDashboardPresenter({ view, dataDb: DataDbSource });
+    new AdminDashboardPresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
 
     console.log('render');
   },

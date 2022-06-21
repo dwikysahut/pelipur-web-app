@@ -2,6 +2,7 @@
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 import Swal from 'sweetalert2';
+import CONSTANT from '../globals/constant';
 
 const validateEmail = (email) => String(email)
   .toLowerCase()
@@ -100,6 +101,18 @@ const swalError = (message, path = '') => {
     }
   });
 };
+const errorFetch = async (errorMessage, actionRefreshToken = null) => {
+  if (errorMessage === CONSTANT.NO_ACCESS) {
+    window.history.replaceState('', '', '#/unauthorize');
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+  } else if (errorMessage === CONSTANT.TOKEN_ERROR) {
+    swalError('Please Login First', '#/auth');
+  } else if (errorMessage === CONSTANT.TOKEN_EXPIRED) {
+    await actionRefreshToken(localStorage.getItem('refreshToken'));
+  } else {
+    // swalError('Oops.. Something Wrong', '');
+  }
+};
 
 const emptyFormHandler = (...elements) => {
   elements.map((element) => element.value.length < 1 && element.classList.add('danger'));
@@ -137,5 +150,5 @@ export {
   validateEmail, swalConfirm, swalError, emptyFormHandler,
   formEmailValidation, passwordValidation, dateConvert,
   resetFormValue, zeroValueHandler, swalConfirmation, openLoader,
-  closeLoader, emptyFileHandler, formPhoneValidation,
+  closeLoader, emptyFileHandler, formPhoneValidation, errorFetch,
 };
