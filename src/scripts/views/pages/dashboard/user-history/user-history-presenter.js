@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler, openLoader, closeLoader,
 } from '../../../../utils/function-helper';
 
 class UserHistoryPresenter {
@@ -17,6 +17,7 @@ class UserHistoryPresenter {
   // handler change collection form input
   async _getAllCollectionsHandler() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getCollectionsByUser(localStorage.getItem('token'), localStorage.getItem('id'));
       if (response.status === 200) {
         this._renderCollectionsByUser(response.data.data);
@@ -24,6 +25,8 @@ class UserHistoryPresenter {
     } catch (error) {
       console.log(error);
       // swalError('Oops... Something Error');
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 

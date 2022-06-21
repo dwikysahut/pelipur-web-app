@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import 'regenerator-runtime';

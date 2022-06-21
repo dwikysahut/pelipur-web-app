@@ -9,7 +9,7 @@ class BerandaView {
     return `   
     <div class="wrapper">
       <custom-hero></custom-hero>
-      <div>
+      
         <artikel-custom 
         src="./images/oil-cooking.png" alt="Minyak"></artikel-custom>
         </div>
@@ -22,12 +22,12 @@ class BerandaView {
             ${skeletonNewsHomeTemplate(6)}
           </div>
           <div class="news-list">
-            <a href="#/news">Tampilkan semua<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <a href="#/news">Tampilkan semua <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
         <list-mitra></list-mitra>
         </div>
-      </div>
+      
     </div>
               `;
   }

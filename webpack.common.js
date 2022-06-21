@@ -1,8 +1,16 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-dupe-keys */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 /* eslint-disable prefer-regex-literals */
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
@@ -83,6 +91,23 @@ module.exports = {
 
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    }),
+
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
+        ImageminPngquant([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
+      ],
     }),
 
     // new InjectManifest({

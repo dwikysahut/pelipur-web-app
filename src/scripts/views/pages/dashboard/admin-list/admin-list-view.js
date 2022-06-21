@@ -5,11 +5,13 @@ import { partnerByCityEmptyTemplate, partnerByCityItemTemplate, tableCollections
 
 import '../../../component/aside-dashboard';
 import '../../../component/loader-content';
+import '../../../component/custom-loader';
 
 /* eslint-disable class-methods-use-this */
 class AdminListView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
       <aside-dashboard></aside-dashboard>
       <div class="dashboard-container">
@@ -45,6 +47,10 @@ class AdminListView {
 
   loaderElementListener() {
     return document.querySelector('loader-content');
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   getVerifyFormInputListener(callback) {

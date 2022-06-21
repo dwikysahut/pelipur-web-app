@@ -13,8 +13,14 @@ class ListMitra extends HTMLElement {
         <style>
           .list-mitra{
             width:90%;
-            margin: 0 auto 50px;
+            margin: 0 auto 70px;
             text-align:center;
+          }
+
+          .list-mitra h2 {
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 20px;
           }
 
           .list-mitra ul{
@@ -44,7 +50,15 @@ class ListMitra extends HTMLElement {
         
         <div class="list-mitra">
           <h2> Mitra </h2>
-          <ul id='mitraList'>
+          <ul 
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          id='mitraList'>
           </ul>
         </div>
         

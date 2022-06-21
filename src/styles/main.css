@@ -27,17 +27,23 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
 }
 /* skip Element */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: 0;
-  background-color: #bf1722;
+  background-color: black;
   color: white;
-  padding: 8px;
+  padding: 15px;
+  line-height: 15px;
   z-index: 100;
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 15px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 .skip-link:focus {
@@ -105,6 +111,10 @@ body {
   color: white !important;
 }
 
+.carousel-inner {
+  min-height: 350px;
+}
+
 .carousel-item {
   max-height: 500px !important;
   background-color: #069a8e;
@@ -113,7 +123,7 @@ body {
 
 .carousel.slide {
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   background-color: #069a8e;
   /* border: 1px solid red; */
   border-radius: 10px;
@@ -121,8 +131,10 @@ body {
 }
 .carousel-item h2 {
   text-align: center;
-  margin: 50px auto 15px;
-  display: block;
+  margin: 40px auto 15px;
+  font-size: 23px;
+  font-weight: 500;
+  padding: 0 10px;
 }
 
 .carousel-item p {
@@ -130,7 +142,7 @@ body {
   margin: 0 auto 70px;
   display: block;
   width: 70%;
-  font-size: 1.1rem;
+  font-size: 15px;
 }
 /* .nav__item a.active:hover {
   background-color: white;
@@ -258,6 +270,7 @@ body {
   width: 100%;
   align-items: center;
   background-position: center;
+  margin-bottom: 0;
   /* background-image: url('../public/images/heros/hero1.png'); */
 }
 
@@ -348,13 +361,15 @@ justify-content: center;
 
 article {
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   padding: 20px;
   background-color: #eeeeee;
   border-radius: 5px;
 }
 
 .news-title {
+  font-size: 23px;
+  font-weight: 500;
   text-align: center;
   margin: 10px auto 20px;
 }
@@ -376,7 +391,7 @@ article {
 .news-list a {
   text-align: right;
   color: black;
-  font-size: 1.2rem;
+  font-size: 16px;
   font-weight: 500;
   display: block;
   margin-top: 20px;
@@ -406,24 +421,24 @@ article {
   border-radius: 5px;
 }
 
-.card h3 {
+.card h4 {
   padding: 0 10px;
   margin-top: -20px;
   color: white;
   font-size: 13px;
 }
 
-.card h2 {
+.card h3 {
   padding: 10px;
   color: #005555;
-  font-size: 1.2rem !important;
+  font-size: 17px !important;
 }
 
-.card h4 {
+/* .card h4 {
   margin-top: -50px;
   color: white;
   padding: 10px;
-}
+} */
 .card p {
   padding: 5px;
   font-family: sans-serif;
@@ -491,7 +506,7 @@ footer .jadwal p {
 
 footer .alamat h3 {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -517,7 +532,7 @@ footer .copyrig p {
 
 footer .jadwal h3 {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -530,6 +545,7 @@ footer .fa {
 .fa.fa-whatsapp {
   color: white !important;
 }
+
 /* chat */
 .fa.fa-commenting {
   color: white;
@@ -543,7 +559,8 @@ footer .fa {
   border-radius: 50%;
   border: none;
   position: fixed;
-  right: 10px;
+  right: 20px;
+  margin-bottom: 70px;
   display: block;
   z-index: 10;
   box-shadow: 0 0 0 0.6px white;
@@ -554,6 +571,7 @@ footer .fa {
 .chat.show {
   display: flex;
 }
+
 .chat {
   padding: 8px;
   position: fixed;
@@ -569,13 +587,14 @@ footer .fa {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
   background-color: white;
 }
+
 .chat-admin.show {
   display: flex;
 }
+
 .chat-admin {
   padding: 8px;
   position: fixed;
@@ -758,6 +777,7 @@ textarea.danger {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  border-radius: 5px;
 }
 .item-news__image {
   min-height: 120px;
@@ -772,19 +792,28 @@ textarea.danger {
 .item-news__content h3 {
   padding: 0;
   margin: 10px 0;
-
-  
+  font-size: 20px;
 }
 
 .item-news__footer {
   display: flex;
   flex-direction: row;
-  font-size: 0.9em;
+  font-size: 14px;
   justify-content: space-between;
 }
+
 .footer__date {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 14px;
+}
+
+.news-link {
+  text-decoration: none;
+  color: black;
+}
+
+.news-link:hover {
+  color: #005555;
 }
 
 .medsos {
@@ -796,9 +825,10 @@ textarea.danger {
 }
 .medsos h3 {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .medsos ul {
@@ -809,7 +839,7 @@ textarea.danger {
 
 .medsos ul li {
   margin: auto;
-  padding: 5px;
+  padding: 12px;
   box-sizing: border-box;
 }
 

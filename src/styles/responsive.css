@@ -3,24 +3,20 @@
 @media screen and (max-width: 700px) {
   #drawer {
     width: 100%;
-    
     position: absolute;
     background-color: #005555;
     left: 0;
     top: 70px;
     text-align: center;
-
     z-index: 5;
-
     transition: transform 0.7s ease-in-out;
     transform: translate(-100%, 0);
-    
   }
 
-  .item-news__content p {
-    font-size: 0.9rem;
-    
+  .hero {
+    margin-bottom: 50px;
   }
+  
   .nav__item.dropdown {
     width: 100%;
     margin: 0 !important;
@@ -101,10 +97,6 @@
     border-radius: 4px;
     transition: all 0.7s ease-in-out;
     color: #005555;
-  }
-
-  button:focus {
-    background-color: white;
   }
 
   .menu-toggle button {
@@ -247,17 +239,10 @@
     /* margin-top: 20px; */
     text-align: center;
   }
-  footer .medsos h3 {
-    text-align: center;
-  }
+  
   footer .medsos p {
     color: white;
     margin-top: -50px;
-  }
-
-  footer .jadwal h3 {
-    font-size: 14px;
-    text-align: center;
   }
 
   footer .copyrig {
@@ -283,18 +268,33 @@
 
   .item-news__image {
     min-width: 300px;
-    width: 300px;
+    width: 400px;
     max-width: 300px;
     min-height: 160px;
-    
-    max-height: 240px;
+    max-height: 200px;
   }
 }
 
 
 @media screen and (min-width: 800px) {
-
   .hero__highlight {
     font-size: 50px !important;
   }
+
+  .btn-open-chat {
+    margin-bottom: 20px;
+  }
 }
+
+
+@media screen and (min-width: 480px) {
+  .carousel-inner {
+    min-height: 0;
+  }
+}
+
+/* @media screen and (min-width: 900px) {
+  .carousel-inner {
+    min-height: 230px;
+  }
+} */

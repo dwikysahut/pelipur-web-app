@@ -14,8 +14,8 @@ const newsTemplate = (news) => {
               <div class="img-news" tabindex="0">
               <img src="${news.urlToImage}" alt="" >
               </div>
-             <h3>${dateConvert(news.publishedAt)}</h3>
-             <a href="${news.url}" target="_blank"><h2>${news.title}</h2></a>
+             <h4>${dateConvert(news.publishedAt)}</h4>
+             <a href="${news.url}" target="_blank"><h3>${news.title}</h3></a>
             </div>
           </div>    
     `;
@@ -349,8 +349,8 @@ const skeletonNewsHomeTemplate = () => {
                   <div class="img-news" tabindex="0">
                     <img srcset="./images/placeholder.png" alt="">
                   </div>
-                  <h3>0/0/0000 0:0</h3>
-                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+                  <h4>0/0/0000 0:0</h4>
+                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
                 </div>
               </div>    
       `;
