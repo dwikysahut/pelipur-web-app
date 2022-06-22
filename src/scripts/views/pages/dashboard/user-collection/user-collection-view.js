@@ -95,6 +95,20 @@ class UserCollectionView {
     });
   }
 
+  saveTemplateListener(callback) {
+    document.querySelector('#saveTemplateCollection').addEventListener('click', (e) => {
+      e.preventDefault();
+      this.getCollectionFormListener(callback);
+    });
+  }
+
+  useTemplateListener(callback) {
+    document.querySelector('#useTemplateCollection').addEventListener('click', (e) => {
+      e.preventDefault();
+      this.getCollectionFormListener(callback);
+    });
+  }
+
   loaderListener() {
     return document.querySelector('custom-loader');
   }

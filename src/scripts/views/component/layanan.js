@@ -10,17 +10,23 @@ class Layanan extends HTMLElement {
     .judul{
         width:100%;
         text-align: center;
+        margin-bottom: 20px;
     }
 
     .judul h2{
         font-size: 23px;
         font-weight: 500;
+        
     }
 
     .layanan {
         display:flex;
         flex-direction:column;
         width:80%;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        row-gap: 40px;
         box-sizing:border-box;
         margin: 0 auto 70px;
     }
@@ -36,7 +42,8 @@ class Layanan extends HTMLElement {
     }
 
     .gambar img{
-      height:140px;
+      height:100px;
+      margin-bottom: 8px;
     }
 
     .gambar span {
@@ -58,9 +65,7 @@ class Layanan extends HTMLElement {
             width:60%;
          }
 
-         .gambar img{
-            height: 150px;
-         }
+      
      }
     </style>
 
@@ -76,7 +81,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_On_the_way_re_swjt.png">
+                <img src="./images/undraw_on_the_way.svg">
                 <span>Jemput Gratis</span>
             </div>
             <div 
@@ -88,7 +93,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"   
                 class="gambar">
-                <img src="./images/undraw_Chatting_re_j55r.png">
+                <img src="./images/undraw_chatting.svg">
                 <span>Live Chat</span>
             </div>
             <div 
@@ -100,7 +105,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_printing_invoices_5r4r.png">
+                <img src="./images/undraw_printing_invoices.svg">
                 <span>Menghasilkan Uang</span>
             </div>       
         </div>

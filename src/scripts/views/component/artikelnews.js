@@ -59,7 +59,7 @@ class Artikel extends HTMLElement {
           .artikels{
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
-            column-gap: 70px;
+            column-gap: 20px;
           }
 
           .gambar-artikel {
@@ -71,7 +71,6 @@ class Artikel extends HTMLElement {
 
           .artikel {
             display: block;
-            margin-right: 70px;
         }
       }
         </style>
@@ -86,7 +85,7 @@ class Artikel extends HTMLElement {
         data-aos-mirror="true"
         data-aos-once="true" 
         class = "gambar-artikel">
-          <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">
+          <img src="./images/minyak-jelantah.jpg" alt="gambar ilustrasi minyak">
         </div>
 
        <div class="artikel">

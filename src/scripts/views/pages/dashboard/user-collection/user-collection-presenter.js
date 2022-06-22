@@ -8,11 +8,14 @@ import {
 } from '../../../../utils/function-helper';
 
 class UserCollectionPresenter {
-  constructor({ view, dataDb }) {
+  constructor({ view, dataDb, formTemplateDb }) {
     this._view = view;
     this._dataDb = dataDb;
+    this._formTemplateDb = formTemplateDb;
     this._generateCityDropdownHandler();
     this._addCollectionHandler();
+    this._saveTemplateCollectionHandler();
+    this._useTemplateCollectionHandler();
     this._formCollectionEventChangeHandler();
   }
 
@@ -20,6 +23,45 @@ class UserCollectionPresenter {
   _formCollectionEventChangeHandler() {
     this._view.getCollectionFormListener((formData) => {
       FormEventChangeHandler.init(formData);
+    });
+  }
+
+  _saveTemplateCollectionHandler() {
+    this._view.saveTemplateListener(async (formData) => {
+      const newData = {
+        id: localStorage.getItem('id'),
+        tanggal: formData.tanggal.value,
+        total_minyak: formData.total_minyak.value,
+        pesan: formData.pesan.value,
+        alamat: formData.alamat.value,
+        id_kota: formData.id_kota.value,
+        waktu: formData.waktu.value,
+      };
+      try {
+        await this._formTemplateDb.putTemplate(newData);
+        swalConfirm('Save Template Successfully');
+      } catch (error) {
+        swalError('Failed to Save Template');
+      }
+    });
+  }
+
+  _useTemplateCollectionHandler() {
+    this._view.useTemplateListener(async (formData) => {
+      try {
+        const response = await this._formTemplateDb.getTemplate(localStorage.getItem('id'));
+        if (response !== null) {
+          formData.tanggal.value = response.tanggal;
+          formData.total_minyak.value = response.total_minyak;
+          formData.pesan.value = response.pesan;
+          formData.alamat.value = response.alamat;
+          formData.id_kota.value = response.id_kota;
+          formData.waktu.value = response.waktu;
+        }
+        swalConfirm('Use Recently Template Successfully');
+      } catch (error) {
+        swalError('No Template Found');
+      }
     });
   }
 
