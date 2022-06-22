@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Layanan extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -76,7 +77,11 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_On_the_way_re_swjt.png">
+                <picture>
+                    <source media ="(max-width:600px)" data-src="./images/undraw_On_the_way_re_swjt-small.png" class="lazyload">
+                    <img data-src="./images/undraw_On_the_way_re_swjt-large.png"
+                    alt="layanan image" class="lazyload"></img>
+                </picture>
                 <span>Jemput Gratis</span>
             </div>
             <div 
@@ -88,7 +93,10 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"   
                 class="gambar">
-                <img src="./images/undraw_Chatting_re_j55r.png">
+                 <picture>
+                    <source media ="(max-width:600px)" data-srx="./images/undraw_Chatting_re_j55r-small.png" class="lazyload">
+                    <img data-src="./images/undraw_Chatting_re_j55r-large.png" class="lazyload" alt="layanan image"></img>
+                </picture>
                 <span>Live Chat</span>
             </div>
             <div 
@@ -100,7 +108,11 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_printing_invoices_5r4r.png">
+                <picture>
+                    <source media ="(max-width:600px)" data-src="./images/undraw_printing_invoices_5r4r-small.png" class="lazyload">
+                    <img data-src="./images/undraw_printing_invoices_5r4r-large.png" class="lazyload"
+                    alt="layanan image"></img>
+                </picture>
                 <span>Menghasilkan Uang</span>
             </div>       
         </div>

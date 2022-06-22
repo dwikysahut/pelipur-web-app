@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // import { createMovieItemTemplate } from '../../templates/template-creator';
 import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
@@ -7,7 +8,11 @@ class AuthView {
     <custom-loader></custom-loader>
     <div class="container">
     <div class="container__side">
-      <img src="./images/auth.png" alt="authentication">
+     <picture>
+            <source media ="(max-width:600px)" srcset="./images/auth-small.png">
+            <img src="./images/auth-large.png"
+            alt="authentication"></img>
+          </picture>
     </div>
 
     <div class="container__wrapper">
@@ -89,7 +94,11 @@ class AuthView {
     const linkSignUp = document.querySelector('#linkSignUp');
 
     callback({
-      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+      loginForm,
+      loginBtn,
+      signupBtn,
+      signupLink,
+      linkSignUp,
     });
   }
 

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Hero extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -5,10 +6,20 @@ class Hero extends HTMLElement {
 
   render() {
     this.innerHTML = `
+    <style>
+    picture{
+      box-sizing:border-box;
+    }
+    </style>
+
       <div class="hero">
         <div class="hero__inner">
           <div class="hero__inner__image">
-          <img src="./images/heros/undraw_World_re_768g.png">
+          <picture class="hero__inner__image">
+            <source media ="(max-width:600px)" srcset="./images/undraw_World_re_768g-small.png" class="lazyload">
+            <img data-src="./images/undraw_World_re_768g-large.png" class="lazyload"
+            alt="hero"></img>
+          </picture>
           </div>
           <div 
           data-aos="fade-left"

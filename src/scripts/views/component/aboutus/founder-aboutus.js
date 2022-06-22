@@ -148,7 +148,7 @@ class FounderAboutus extends HTMLElement {
                             data-aos-easing="ease-in-out"
                             data-aos-mirror="true"
                             data-aos-once="true">
-                            <img src = "./images/heros/yoga2.jpg" alt="Yoga">
+                            <img src = "./images/yoga2-small.png" alt="Yoga">
                             <p>Yoga</p>
                         </li>
                         <li data-aos="flip-left"
@@ -158,7 +158,7 @@ class FounderAboutus extends HTMLElement {
                             data-aos-easing="ease-in-out"
                             data-aos-mirror="true"
                             data-aos-once="true">
-                            <img src = "./images/heros/dwiky.jpg" alt="Dwiky">
+                            <img src = "./images/dwiky-small.png" alt="Dwiky">
                             <p>Dwiky</p>
                         </li>
                         <li data-aos="flip-left"
@@ -168,7 +168,7 @@ class FounderAboutus extends HTMLElement {
                             data-aos-easing="ease-in-out"
                             data-aos-mirror="true"
                             data-aos-once="true">
-                            <img src = "./images/heros/nova.jpg" alt="Nova">
+                            <img src = "./images/nova-small.png" alt="Nova">
                             <p>Nova</p>
                         </li>
                         <li data-aos="flip-left"
@@ -178,7 +178,7 @@ class FounderAboutus extends HTMLElement {
                             data-aos-easing="ease-in-out"
                             data-aos-mirror="true"
                             data-aos-once="true">
-                            <img src = "./images/heros/deva.jpg" alt="Deva">
+                            <img src = "./images/deva-small.png" alt="Deva">
                             <p>Deva</p>
                         </li>
                     </ul>

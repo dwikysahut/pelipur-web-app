@@ -100,7 +100,11 @@ class InfoBisnis extends HTMLElement {
             </p>
           </div>
           <div class = "ket-gambar">
-            <img src ="./images/heros/bisnis.jpg">
+            <picture>
+                <source media ="(max-width:600px)" srcset="./images/bisnis-small.png">
+                <img src="./images/bisnis-large.png"
+                alt="authentication"></img>
+          </picture>
           </div>
         </div>
         

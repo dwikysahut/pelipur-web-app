@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { swalError } from '../../utils/function-helper';
 
 const Unauthorized = {

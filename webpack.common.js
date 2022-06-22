@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-dupe-keys */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
@@ -12,6 +14,7 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const webpack = require('webpack');
@@ -54,6 +57,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/**'],
+          },
         },
       ],
     }),
@@ -109,6 +115,8 @@ module.exports = {
         ]),
       ],
     }),
+
+    new BundleAnalyzerPlugin(),
 
     // new InjectManifest({
     //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
