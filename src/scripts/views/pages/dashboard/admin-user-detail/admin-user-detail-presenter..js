@@ -1,13 +1,9 @@
 /* eslint-disable class-methods-use-this */
-/* eslint-disable guard-for-in */
-/* eslint-disable no-restricted-syntax */
 /* eslint-disable camelcase */
-/* eslint-disable no-param-reassign */
+
 import UrlParser from '../../../../routes/url-routes';
-import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  closeLoader,
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  closeLoader, errorFetch, swalConfirm, swalError,
 } from '../../../../utils/function-helper';
 
 class UserDetailPresenter {
@@ -26,8 +22,27 @@ class UserDetailPresenter {
         this._renderUserDetail(response.data.data);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              await this._getUserById();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
       // swalError('Oops... Something Error');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

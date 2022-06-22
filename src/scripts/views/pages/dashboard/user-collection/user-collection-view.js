@@ -1,9 +1,11 @@
 import { cityItemTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class UserCollectionView {
   getTemplate() {
     return `
+      
       <div class="wrapper-dashboard">
       <aside-user></aside-user>
     
@@ -91,6 +93,10 @@ class UserCollectionView {
       e.preventDefault();
       this.getCollectionFormListener(callback);
     });
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   getCollectionFormListener(callback) {

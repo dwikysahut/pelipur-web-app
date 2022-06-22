@@ -73,7 +73,6 @@ class AuthView {
               <div class="btn-layer"></div>
               <input type="submit" id="submitRegister" value="Daftar">
             </div>
-
           </form>
         </div>
       </div>

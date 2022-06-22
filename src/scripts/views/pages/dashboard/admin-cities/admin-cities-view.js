@@ -1,9 +1,11 @@
-import { tableCityTemplate } from '../../../templates/template-creator';
+import { emptyTableTemplate, tableCityTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-dashboard';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class AdminCitiesView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-dashboard></aside-dashboard>
     <div class="dashboard-container">
@@ -25,7 +27,7 @@ class AdminCitiesView {
         </form>
         <h2 class="content__title list">Daftar Kota</h2>
         <div class="content__table-cities">
-          <table>
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th>ID Kota</th>
@@ -52,6 +54,10 @@ class AdminCitiesView {
     return document.querySelector('#editCityButton');
   }
 
+  loaderListener() {
+    return document.querySelector('custom-loader');
+  }
+
   submitButtonListener(callback) {
     document.querySelector('#submitCityButton').addEventListener('click', (e) => {
       e.preventDefault();
@@ -66,9 +72,13 @@ class AdminCitiesView {
   showAllData(items) {
     const itemContainer = document.querySelector('.content-table');
     itemContainer.innerHTML = '';
-    items.forEach((item) => {
-      itemContainer.innerHTML += tableCityTemplate(item);
-    });
+    if (items.length < 1) {
+      itemContainer.innerHTML += emptyTableTemplate();
+    } else {
+      items.forEach((item) => {
+        itemContainer.innerHTML += tableCityTemplate(item);
+      });
+    }
   }
 
   editCityListener(callback) {

@@ -103,7 +103,7 @@ const swalError = (message, path = '') => {
 };
 const errorFetch = async (errorMessage, actionRefreshToken = null) => {
   if (errorMessage === CONSTANT.NO_ACCESS) {
-    window.history.replaceState('', '', '#/unauthorize');
+    window.history.replaceState('', '', '#/unauthorized');
     window.dispatchEvent(new HashChangeEvent('hashchange'));
   } else if (errorMessage === CONSTANT.TOKEN_ERROR) {
     swalError('Please Login First', '#/auth');

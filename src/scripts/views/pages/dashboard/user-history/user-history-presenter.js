@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler, openLoader, closeLoader, errorFetch,
 } from '../../../../utils/function-helper';
 
 class UserHistoryPresenter {
@@ -17,13 +17,32 @@ class UserHistoryPresenter {
   // handler change collection form input
   async _getAllCollectionsHandler() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getCollectionsByUser(localStorage.getItem('token'), localStorage.getItem('id'));
       if (response.status === 200) {
         this._renderCollectionsByUser(response.data.data);
       }
     } catch (error) {
-      console.log(error);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              await this._getAllCollectionsHandler();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
       // swalError('Oops... Something Error');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

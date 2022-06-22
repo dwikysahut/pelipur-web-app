@@ -6,9 +6,10 @@ import {
 class BerandaView {
   getTemplate() {
     return `
+    
     <div class="wrapper">
       <custom-hero></custom-hero>
-      <div>
+      
         <artikel-custom 
         src="./images/oil-cooking.png" alt="Minyak"></artikel-custom>
         </div>
@@ -26,7 +27,7 @@ class BerandaView {
         </article>
         <list-mitra></list-mitra>
         </div>
-      </div>
+      
     </div>
               `;
   }
