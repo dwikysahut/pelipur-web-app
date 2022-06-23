@@ -1,9 +1,11 @@
 import { cityItemTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class UserCollectionView {
   getTemplate() {
     return `
+      <custom-loader></custom-loader>
       <div class="wrapper-dashboard">
       <aside-user></aside-user>
     
@@ -51,7 +53,7 @@ class UserCollectionView {
                 <button
                 type="submit"
                 form="content_form"
-                id='submitCollection'
+                id='saveTemplateCollection'
                 value="Submit"
                 class="btn__save"
                 >
@@ -60,7 +62,7 @@ class UserCollectionView {
                 <button
                 type="submit"
                 form="content_form"
-                id='submitCollection'
+                id='useTemplateCollection'
                 value="Submit"
                 class="btn__last"
                 >
@@ -91,6 +93,10 @@ class UserCollectionView {
       e.preventDefault();
       this.getCollectionFormListener(callback);
     });
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 
   getCollectionFormListener(callback) {

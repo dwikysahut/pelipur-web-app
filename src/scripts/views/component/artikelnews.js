@@ -10,12 +10,11 @@ class Artikel extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <style>
+      <style>
         .artikels{
           width: 80%;
-          margin: 20px auto 50px;
+          margin: 0 auto 70px;
           display: grid;
-          gap: 10px;
           grid-template-columns:1fr;
           padding:10px;
         }
@@ -25,14 +24,15 @@ class Artikel extends HTMLElement {
         }
 
         .artikel p {
+          text-align: justify;
           font-weight: 400;
-          font-size: 1.1rem;
+          font-size: 15px;
         }
 
         .artikel h2{
           margin: 15px auto 10px;
           font-weight: 500;
-          font-size: 1.7rem;
+          font-size: 23px;
         }
 
         .gambar-artikel {
@@ -55,46 +55,47 @@ class Artikel extends HTMLElement {
           color: #069a8e;
         }
 
-        @media screen and (min-width:900px){
+        @media screen and (min-width: 1200px){
           .artikels{
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
             column-gap: 70px;
-            margin-bottom: 0;
           }
 
           .gambar-artikel {
             align-items: self-end;
             display: flex;
             justify-content: flex-end;
-            
           }
 
           .artikel {
             display: block;
             margin-right: 70px;
+          }
         }
-      }
-        </style>
+      </style>
 
-      <div
-      data-aos="zoom-in"
-      class = "artikels">
-        <div class = "gambar-artikel">
-          <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">
+      <div class = "artikels">
+        <div 
+        data-aos="fade-right"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true" 
+        class = "gambar-artikel">
+          <img src="./images/oil-cooking.png" alt="Minyak">
         </div>
 
-       <div class="artikel" 
-      
-       >
+       <div class="artikel">
           <h2>Limbah Minyak Jelantah</h2>
           <p>Minyak jelantah (waste cooking oil) adalah minyak limbah yang bisa berasal dari jenis-jenis minyak goreng seperti halnya minyak jagung, minyak sayur, minyak samin dan sebagainya. Minyak ini merupakan minyak bekas pemakaian kebutuhan rumah tangga umumnya, dapat digunakan kembali untuk keperluaran kuliner akan tetapi bila ditinjau dari komposisi kimianya, minyak jelantah mengandung senyawa-senyawa yang bersifat karsinogenik, yang terjadi selama proses penggorengan.
           <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer" class="oil-details">Read more...<a/>  
           </p>
        </div>
       </div>
-        
-        `;
+    `;
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

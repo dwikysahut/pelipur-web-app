@@ -1,9 +1,11 @@
 import { categoryItemTemplate } from '../../../templates/template-creator';
+import '../../../component/custom-loader';
 
 /* eslint-disable class-methods-use-this */
 class UserProfileView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-user></aside-user>
     <div class="dashboard-container">
@@ -71,6 +73,10 @@ class UserProfileView {
     });
   }
 
+  loaderListener() {
+    return document.querySelector('custom-loader');
+  }
+
   getProfileFormInputListener(callback) {
     const inputNameProfile = document.querySelector('#nameProfile');
     console.log(inputNameProfile);
@@ -103,6 +109,7 @@ class UserProfileView {
 
   showCategories(items, recentId) {
     const container = document.querySelector('#descProfile');
+    container.innerHTML = '';
     items.forEach((item) => {
       const categoryElement = categoryItemTemplate(item, recentId);
       console.log(categoryElement);

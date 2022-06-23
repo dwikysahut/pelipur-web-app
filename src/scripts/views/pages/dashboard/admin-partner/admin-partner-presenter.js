@@ -83,6 +83,7 @@ class AdminPartnerPresenter {
 
   async _showAllData() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllPartners(localStorage.getItem('token'));
       //   response.data.data.kota_jangkauan = await JSON.parse(response.data.data.kota_jangkauan);
       console.log(response);
@@ -92,6 +93,8 @@ class AdminPartnerPresenter {
     } catch (error) {
       console.log(error.message);
       // swalError('Ooops Something wrong', '#/');
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 

@@ -27,10 +27,13 @@ class AdminCitiesPresenter {
 
   async _showAllData() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getCities(localStorage.getItem('token'));
       this._renderData(response.data.data);
     } catch (error) {
       // swalError('Ooops Something wrong', '#/');
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 

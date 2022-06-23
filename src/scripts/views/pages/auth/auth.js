@@ -13,7 +13,10 @@ const view = new AuthView();
 
 const Auth = {
   async render() {
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

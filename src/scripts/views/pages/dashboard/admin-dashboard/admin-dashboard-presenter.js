@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable camelcase */

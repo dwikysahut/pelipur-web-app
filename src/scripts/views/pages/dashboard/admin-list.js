@@ -5,8 +5,12 @@ import DataDbSource from '../../../data/datadb-source';
 const view = new AdminListView();
 const Collection = {
   async render() {
-    document.querySelector('custom-footer').style.display = 'none';
-    return view.getTemplate();
+    // document.querySelector('custom-footer').style.display = 'none';
+    // return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

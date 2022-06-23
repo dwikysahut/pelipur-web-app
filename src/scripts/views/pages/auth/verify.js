@@ -7,7 +7,10 @@ import VerifyView from './verify/verify-view';
 const view = new VerifyView();
 const Verify = {
   async render() {
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

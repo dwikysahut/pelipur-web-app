@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler,
+  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler, openLoader, closeLoader,
 } from '../../../../utils/function-helper';
 
 class UserCollectionPresenter {
@@ -25,11 +25,14 @@ class UserCollectionPresenter {
 
   async _generateCityDropdownHandler() {
     try {
+      openLoader(this._view.loaderListener());
       const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
       console.log(responseCity);
       this._renderCities(responseCity.data.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      closeLoader(this._view.loaderListener());
     }
   }
 
@@ -73,10 +76,13 @@ class UserCollectionPresenter {
 
       }, token);
       if (response.status === 200) {
-        await swalConfirm('Form berhasil dikirim', '');
+        await swalConfirm('Form has been sent', '');
         resetFormValue(formData);
+      } else if (response.status === 401) {
+        await swalConfirm(response.data.message, '');
       }
     } catch (error) {
+      console.log(error);
       await swalError(`${error.response.data.message}`);
     }
   }

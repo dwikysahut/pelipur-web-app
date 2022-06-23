@@ -10,45 +10,57 @@ class ListMitra extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <style>
-          .list-mitra{
-            width:90%;
-            margin: 0 auto 50px;
-            text-align:center;
-          }
+      <style>
+        .list-mitra{
+          width: 80%;
+          margin: 0 auto 70px;
+          text-align: center;
+        }
 
-          .list-mitra ul{
-            margin:auto;
-            display:flex;
-            padding: 0;
-            justify-content: center;
-            gap: 10%;
-          }
+        .list-mitra h2 {
+          font-size: 23px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
 
-          .list-mitra ul li{
-            list-style:none;
-          }
+        .list-mitra ul{
+          margin:auto;
+          display:flex;
+          padding: 0;
+          justify-content: center;
+          gap: 10%;
+        }
 
+        .list-mitra ul li{
+          list-style:none;
+        }
+
+        .list-mitra img{
+          width:80px;
+          border-radius: 50%;
+        }
+
+        @media screen and (min-width: 700px) {
           .list-mitra img{
-              width:80px;
-              border-radius: 50%;
+            width:120px;
           }
-
-          @media screen and (min-width: 700px) {
-           
-            .list-mitra img{
-              width:120px;
-          }
-          }
-        </style>
+        }
+      </style>
         
-        <div class="list-mitra">
-          <h2> Mitra </h2>
-          <ul id='mitraList'>
-          </ul>
-        </div>
-        
-        `;
+      <div class="list-mitra">
+        <h2>Mitra</h2>
+        <ul 
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          id='mitraList'>
+        </ul>
+      </div>
+    `;
   }
 }
 customElements.define('list-mitra', ListMitra);

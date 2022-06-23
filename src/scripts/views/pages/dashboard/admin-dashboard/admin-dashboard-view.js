@@ -1,10 +1,12 @@
 import { dataDashboardTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
+import '../../../component/custom-loader';
 import '../../../component/collection-chart';
 /* eslint-disable class-methods-use-this */
 class AdminDashboardView {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-dashboard></aside-dashboard>
     <div class="dashboard-container">
@@ -20,7 +22,6 @@ class AdminDashboardView {
       </div>
       
     </div>
-  </div>
               `;
   }
 
@@ -31,6 +32,10 @@ class AdminDashboardView {
 
   getChartListener() {
     return document.getElementById('myChartTotal');
+  }
+
+  loaderListener() {
+    return document.querySelector('custom-loader');
   }
 }
 

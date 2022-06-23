@@ -13,10 +13,9 @@ import UserCollection from '../views/pages/dashboard/user-collection';
 // eslint-disable-next-line import/no-named-as-default
 import UserHistory from '../views/pages/dashboard/user-history';
 import Collection from '../views/pages/dashboard/admin-list';
+import UserDetail from '../views/pages/dashboard/admin-user-detail';
 import Logout from '../views/pages/auth/logout';
 import CityList from '../views/pages/dashboard/admin-cities';
-import UserNotFound from '../views/pages/dashboard/user-notfound';
-import AdminNotFound from '../views/pages/dashboard/admin-notfound';
 import NotFound from '../views/pages/not-found';
 import Unauthorized from '../views/pages/unauthorized';
 
@@ -36,12 +35,11 @@ const routes = {
   '/collections': localStorage.getItem('role') === '1' ? Collection : Unauthorized,
   '/user-collection': localStorage.getItem('role') === '2' ? UserCollection : Unauthorized,
   '/user-history': localStorage.getItem('role') === '2' ? UserHistory : Unauthorized,
+  '/user-detail/:id': localStorage.getItem('role') === '1' ? UserDetail : Unauthorized,
   '/logout': Logout,
   '/city-list': localStorage.getItem('role') === '1' ? CityList : Unauthorized,
   '/not-found': NotFound,
   '/unauthorize': Unauthorized,
-  '/user-notfound': UserNotFound,
-  '/admin-notfound': AdminNotFound,
 };
 
 export default routes;

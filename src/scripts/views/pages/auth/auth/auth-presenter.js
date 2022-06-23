@@ -157,6 +157,12 @@ class AuthPresenter {
       if (response.status === 200) {
         await swalConfirm(`${response.data.message}, Check Your Email for Verification Code`, '#/verify');
       }
+      openLoader(this._view.loaderListener());
+      setTimeout(() => {
+        window.history.replaceState({ page: 'login' }, null, '#/verify');
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+        closeLoader(this._view.loaderListener());
+      }, 2);
     } catch (error) {
       console.log(error);
       await swalError(`${error.response.data.message}`);
