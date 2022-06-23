@@ -15,14 +15,14 @@ class AuthView {
         <div class="slide-controls">
           <input type="radio" name="slide" id="login" checked>
           <input type="radio" name="slide" id="signup">
-          <label for="login" class="slide login">Masuk</label>
-          <label for="signup" class="slide signup">Daftar</label>
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Register</label>
           <div class="slider-tab"></div>
         </div>
 
         <div class="form-inner">
           <form class="login">
-            <h2>Masuk</h2>
+            <h2>Login</h2>
             <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
 
             <div class="field">
@@ -40,12 +40,12 @@ class AuthView {
 
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" id="submitLogin" value="Masuk">
+              <input type="submit" id="submitLogin" value="Login">
             </div>
           </form>
 
           <form action="#" class="signup">
-            <h2>Daftar</h2>
+            <h2>Register</h2>
             <div class="field">
               <input type="text" id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
             </div>
@@ -71,7 +71,7 @@ class AuthView {
             </div>
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" id="submitRegister" value="Daftar">
+              <input type="submit" id="submitRegister" value="Register">
             </div>
           </form>
         </div>

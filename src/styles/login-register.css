@@ -8,8 +8,8 @@
 html,body{
   background: #fff;
   font-family: 'Poppins', sans-serif;
-  
 }
+
 .login > h2 {
   margin: 20px 0;
   font-size: 23px;
@@ -30,12 +30,12 @@ html,body{
   flex-direction: column;
   max-width: 100% !important;
   padding: 0 !important;
-  /* height: 100vh; */
-
 }
+
 .container__side >img{
   width: 200%;
 }
+
 .hint.danger {
   font-size: 0.7em;
   color: red;
@@ -43,13 +43,13 @@ html,body{
   font-family: 'Poppins', sans-serif;
   display: none;
 }
+
 .container__side {
   display: flex;
   width: 50%;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  /* background-color: #005555; */
 }
 
 .container__wrapper{
@@ -65,6 +65,7 @@ html,body{
   display: flex;
   width: 200%;
 }
+
 .container__wrapper .title {
   width: 50%;
   font-size: 35px;
@@ -135,9 +136,11 @@ input[type="radio"] {
 #signup:checked ~ label.login {
   color: #000;
 }
+
 #login:checked ~ label.signup{
   color: #000;
 }
+
 #login:checked ~ label.login {
   cursor: default;
   user-select: none;
@@ -163,6 +166,7 @@ input[type="radio"] {
   width: 100%;
   margin-top: 20px;
 }
+
 .form-inner form .field input {
   height: 100%;
   width: 100%;
@@ -174,6 +178,7 @@ input[type="radio"] {
   font-size: 15px;
   transition: all 0.3s ease;
 }
+
 .form-inner form .field input.danger {
   height: 100%;
   width: 100%;
@@ -185,6 +190,7 @@ input[type="radio"] {
   font-size: 15px;
   transition: all 0.3s ease;
 }
+
 .form-inner form .field input.danger:focus {
   border-color: red;
 }
@@ -263,7 +269,6 @@ form .btn input[type="submit"] {
   .container__side {
     display: flex;
     width: 50%;
-    /* height: 800px; */
   }
   
   .container__side img {
@@ -290,80 +295,18 @@ form .btn input[type="submit"] {
   }
 
   .container__wrapper {
-    /* padding-left: 100px; */
     align-items: center;
     max-width: 50%;
     padding-top: 50px;
   }
 } 
 
-@media screen and (min-width:800px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-    /* height: 700px; */
-  }
-  
-  .container__side img {
-    width: 300px;
-    align-items: center;
-  }
 
-  .container__wrapper {
-    /* padding-left: 100px; */
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
- 
-@media screen and (min-width:700px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-    /* height: 700px; */
-  }
-  
-  .container__side img {
-    width: 200px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
-
-@media screen and (min-width:650px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-    
-    /* height: 600px; */
-  }
-  .container {
-    flex-direction: row;
-  }
-  .container__side img {
-    align-items: center;
-    width: 80%;
-  }
-
-  .container__wrapper {
-    /* padding-left: 100px; */
-    /* align-items: center; */
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
 
 @media screen and (max-width:600px) {
   .container__side {
     display: flex;
     width: 50%;
-  
   }
   
   .container__side img {
@@ -372,7 +315,6 @@ form .btn input[type="submit"] {
   }
 
   .container__wrapper {
-    /* padding-left: 100px; */
     align-items: center;
     max-width: 50%;
     padding-top: 50px;
@@ -397,3 +339,60 @@ form .btn input[type="submit"] {
     padding-top: 200px;
   }
 }
+
+@media screen and (min-width:800px) {
+  .container__side {
+    display: flex;
+    width: 50%;
+  }
+  
+  .container__side img {
+    width: 300px;
+    align-items: center;
+  }
+
+  .container__wrapper {
+    align-items: center;
+    max-width: 50%;
+    padding-top: 50px;
+  }
+} 
+ 
+@media screen and (min-width:700px) {
+  .container__side {
+    display: flex;
+    width: 50%;
+  }
+  
+  .container__side img {
+    width: 200px;
+    align-items: center;
+  }
+
+  .container__wrapper {
+    align-items: center;
+    max-width: 50%;
+    padding-top: 50px;
+  }
+} 
+
+@media screen and (min-width:650px) {
+  .container__side {
+    display: flex;
+    width: 50%;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .container__side img {
+    align-items: center;
+    width: 80%;
+  }
+
+  .container__wrapper {
+    max-width: 50%;
+    padding-top: 50px;
+  }
+} 

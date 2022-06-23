@@ -76,10 +76,13 @@ class UserCollectionPresenter {
 
       }, token);
       if (response.status === 200) {
-        await swalConfirm('Form berhasil dikirim', '');
+        await swalConfirm('Form has been sent', '');
         resetFormValue(formData);
+      } else if (response.status === 401) {
+        await swalConfirm(response.data.message, '');
       }
     } catch (error) {
+      console.log(error);
       await swalError(`${error.response.data.message}`);
     }
   }

@@ -53,6 +53,7 @@ class UserCollectionView {
                 <button
                 type="submit"
                 form="content_form"
+                id='saveTemplateCollection'
                 value="Submit"
                 class="btn__save"
                 >
@@ -61,6 +62,7 @@ class UserCollectionView {
                 <button
                 type="submit"
                 form="content_form"
+                id='useTemplateCollection'
                 value="Submit"
                 class="btn__last"
                 >

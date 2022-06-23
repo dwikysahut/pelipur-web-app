@@ -10,7 +10,7 @@ class Artikel extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <style>
+      <style>
         .artikels{
           width: 80%;
           margin: 0 auto 70px;
@@ -55,7 +55,7 @@ class Artikel extends HTMLElement {
           color: #069a8e;
         }
 
-        @media screen and (min-width:900px){
+        @media screen and (min-width: 1200px){
           .artikels{
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
@@ -66,15 +66,14 @@ class Artikel extends HTMLElement {
             align-items: self-end;
             display: flex;
             justify-content: flex-end;
-            
           }
 
           .artikel {
             display: block;
             margin-right: 70px;
+          }
         }
-      }
-        </style>
+      </style>
 
       <div class = "artikels">
         <div 
@@ -86,7 +85,7 @@ class Artikel extends HTMLElement {
         data-aos-mirror="true"
         data-aos-once="true" 
         class = "gambar-artikel">
-          <img src="./images/oil-cooking.png" alt="gambar ilustrasi minyak">
+          <img src="./images/oil-cooking.png" alt="Minyak">
         </div>
 
        <div class="artikel">
@@ -96,8 +95,7 @@ class Artikel extends HTMLElement {
           </p>
        </div>
       </div>
-        
-        `;
+    `;
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

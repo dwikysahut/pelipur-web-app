@@ -123,6 +123,13 @@ class DataDbSource {
     return response;
   }
 
+  static async getCollectionsByMonth() {
+    const response = await axios.get(API_ENDPOINT.GET_COLLECTIONS_COUNT_BY_MONTH, {
+
+    });
+    return response;
+  }
+
   static async getAllDesc(token) {
     const response = await axios.get(API_ENDPOINT.GET_DESC, {
       headers: {
@@ -201,6 +208,20 @@ class DataDbSource {
       },
     });
     return response;
+  }
+
+  static async getAllNews() {
+    const response = await axios.get(API_ENDPOINT.GET_ALL_NEWS);
+    console.log(response);
+    return response;
+    // const response =
+  }
+
+  static async getAllNewsEnv() {
+    const response = await axios.get(API_ENDPOINT.GET_NEWS_BY_ID);
+    console.log(response);
+    return response;
+    // const response =
   }
 }
 

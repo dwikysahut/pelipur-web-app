@@ -27,11 +27,11 @@ const tableCollectionsTemplate = (item) => {
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
   <td>${item.id}</td>
+  <td><a href="#/user-detail/${item.id_user}">${item.email_user}</a></td>
   <td>${item.nama_user}</td>
   <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
-  <td>${item.email_user}</td>
   <td>${item.alamat}</td>
   <td>${item.kota}</td>
 
@@ -69,7 +69,10 @@ const userListChat = (users, container) => {
 };
 const chatTemplateCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
+  messageContainer.innerHTML = '';
+
   let chatTemplate = '';
+  const container = document.querySelector('.chat__item-container');
 
   chat.forEach((item) => {
     chatTemplate += `
@@ -81,11 +84,31 @@ const chatTemplateCreator = (chat, currentId) => {
       
      </div>
  `;
-    messageContainer.innerHTML = chatTemplate;
-    const container = document.querySelector('.chat__item-container') ? document.querySelector('.chat__item-container')
-      : document.querySelector('.chat__item-admin');
-    container.scrollTop = messageContainer.scrollHeight;
   });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
+};
+const chatTemplateAdminCreator = (chat, currentId) => {
+  const messageContainer = document.querySelector('.text-message');
+
+  let chatTemplate = '';
+  const container = document.querySelector('.chat__item-admin');
+
+  chat.forEach((item) => {
+    chatTemplate += `
+      <div class="container-message ${item.from === currentId ? 'sender' : 'receiver'}">
+       <span class="sender-name" >${item.from === currentId ? 'me' : 'user'}</span>
+       <div class="text-message ${item.from === currentId ? 'sender' : 'receiver'}">
+         <p>${item.message}</p>
+       </div>
+      
+     </div>
+ `;
+
+    // messageContainer.lastChild.scrollIntoView(false);
+  });
+  messageContainer.innerHTML = chatTemplate;
+  container.scrollTop = messageContainer.scrollHeight;
 };
 
 const createSkeletonNewsList = (count) => {
@@ -204,7 +227,7 @@ const partnerByCityItemTemplate = (item) => ` <option value="${item.id}">${item.
 const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>';
 
 const dataDashboardTemplate = (data) => `
-<div class="content__card">
+
 <div class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
@@ -253,7 +276,41 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/assignment_white_36dp.svg" alt="Form Terkumpul" />
   </div>
 </div>
-</div>`;
+`;
+const userDetailItemTemplate = (item) => `
+<div class="content__inner__row">
+  <p class="row-text">Nama</p>
+  <p class="row-data">${item.nama}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Email</p>
+  <p class="row-data">${item.email}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Alamat</p>
+  <p class="row-data">${item.alamat}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">No. Telepon</p>
+  <p class="row-data">${item.no_telp}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Keterangan</p>
+  <p class="row-data">${item.keterangan}</p>
+</div>
+  `;
+const buttonSuspendTemplate = (id) => `
+  <div class="content__inner__row">
+    <div></div>
+    <button id="suspendBtn" data-id=${id} class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i> Suspend</div>
+  </div>
+    `;
+const buttonUnSuspendTemplate = (id) => `
+  <div class="content__inner__row">
+  <div></div>
+    <button id="suspendBtn" data-id=${id} class="btn btn-outline-danger"><i class="fa fa-ban" aria-hidden="true"></i> Unsuspend</div>
+  </div>
+    `;
 
 const tableHistoryTemplate = (item) => {
   const date = new Date(item.tanggal);
@@ -343,5 +400,6 @@ export {
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
-  dropdownCityCheckBoxTemplate, userListChat,
+  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
+  buttonSuspendTemplate, buttonUnSuspendTemplate,
 };

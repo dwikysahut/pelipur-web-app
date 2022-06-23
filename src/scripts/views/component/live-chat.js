@@ -2,16 +2,26 @@
 /* eslint-disable no-restricted-syntax */
 import CONFIG from '../../globals/config';
 import firebase from '../../utils/firebase-config';
-import { chatTemplateCreator, userListChat } from '../templates/template-creator';
+import { chatTemplateAdminCreator, chatTemplateCreator, userListChat } from '../templates/template-creator';
 
 class LiveChat extends HTMLElement {
   connectedCallback() {
     this._idTarget = '';
+
     if (localStorage.getItem('role') === '2') {
       this.loadUserChat();
     } else if (localStorage.getItem('role') === '1') {
       this.loadAdminChat();
     }
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this[name] = newValue;
+    this.loadAdminChat();
+  }
+
+  static get observedAttributes() {
+    return ['disabled'];
   }
 
   async loadAdminChat() {
@@ -31,17 +41,19 @@ class LiveChat extends HTMLElement {
         });
     };
     await loadUserList();
+    // const inputMessage = document.querySelector('#inputMessageAdmin');
+    // inputMessage.setAttribute('disabled', true);
   }
 
   _onClickUserList() {
     const userListElement = document.querySelectorAll('.user-list__item');
     console.log(userListElement);
     const loadMesageFromUser = async (id) => {
-      const chat = [];
       firebase
         .database()
         .ref(`messages/${localStorage.getItem('id')}/${id}`)
         .on('value', (value) => {
+          const chat = [];
           const data = value.val();
           for (const keys in data) {
             const msg = {
@@ -54,7 +66,7 @@ class LiveChat extends HTMLElement {
               chat.splice(0, 6);
             }
           }
-          chatTemplateCreator(chat, localStorage.getItem('id'), id);
+          chatTemplateAdminCreator(chat, localStorage.getItem('id'));
         });
     };
     // when user list clicked
@@ -66,10 +78,17 @@ class LiveChat extends HTMLElement {
         console.log(e.currentTarget.dataset.id);
         this._idTarget = e.currentTarget.dataset.id;
         loadMesageFromUser(e.currentTarget.dataset.id);
+        if (this._idTarget !== '') {
+          const inputMessage = document.querySelector('#inputMessageAdmin');
+          inputMessage.removeAttribute('disabled');
+
+        loadMesageFromUser(this._idTarget);
+        }
       });
     });
-    if (this._idTarget !== '') {
-      loadMesageFromUser(this._idTarget);
+    if (this._idTarget === '') {
+      const inputMessage = document.querySelector('#inputMessageAdmin');
+      inputMessage.setAttribute('disabled', true);
     }
     const inputMessage = document.querySelector('#inputMessageAdmin');
     document.querySelector('#submitMessageAdmin').addEventListener('click', (e) => {
@@ -95,15 +114,37 @@ class LiveChat extends HTMLElement {
     });
   }
 
+  // async updateMessage() {
+  //   const chat = [];
+  //   firebase
+  //     .database()
+  //     .ref(`messages/${localStorage.getItem('id')}/${id}`)
+  //     .on('child_added', (value) => {
+  //       const data = value.val();
+  //       for (const keys in data) {
+  //         const msg = {
+  //           from: data[keys].from,
+  //           message: data[keys].message,
+  //           to: data[keys].to,
+  //         };
+  //         chat.push(msg);
+  //         if (chat.length > 15) {
+  //           chat.splice(0, 6);
+  //         }
+  //       }
+  //       chatTemplateCreator(chat, localStorage.getItem('id'), id);
+  //     });
+  // }
+
   loadUserChat() {
     this.renderChatUser();
 
     const loadMessage = async () => {
-      const chat = [];
       firebase
         .database()
         .ref(`messages/${localStorage.getItem('id')}/${CONFIG.ADMIN_ID}`)
         .on('value', (value) => {
+          const chat = [];
           const data = value.val();
           for (const keys in data) {
             const msg = {
@@ -116,7 +157,7 @@ class LiveChat extends HTMLElement {
               chat.splice(0, 6);
             }
           }
-          chatTemplateCreator(chat, localStorage.getItem('id'), CONFIG.ADMIN_ID);
+          chatTemplateCreator(chat, localStorage.getItem('id'));
         });
     };
     loadMessage();

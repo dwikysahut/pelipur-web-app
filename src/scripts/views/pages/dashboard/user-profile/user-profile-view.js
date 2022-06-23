@@ -109,6 +109,7 @@ class UserProfileView {
 
   showCategories(items, recentId) {
     const container = document.querySelector('#descProfile');
+    container.innerHTML = '';
     items.forEach((item) => {
       const categoryElement = categoryItemTemplate(item, recentId);
       console.log(categoryElement);

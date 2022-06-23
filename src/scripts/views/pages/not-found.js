@@ -1,27 +1,18 @@
-import { swalError } from '../../utils/function-helper';
+/* eslint-disable no-empty-function */
+import NotFoundPresenter from './not-found/not-found-presenter';
+import NotFoundView from './not-found/not-found-view';
 
+const view = new NotFoundView();
 const NotFound = {
   async render() {
-    if (!localStorage.getItem('token')) {
-      await swalError('Please Login First', '#/auth');
-      return false;
-    }
-    return `
-    <div class="wrapper-dashboard">
-      <div class="dashboard-container">
-        <div class="content">
-          <div class="notfound">
-            <img src="images/not-found.png" alt="not-found">
-            <p>halaman tidak ditemukan</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-          `;
+    return {
+      footer: true,
+      content: view.getTemplate(),
+    };
   },
 
-  async afterRender() {},
+  async afterRender() { new NotFoundPresenter({ view }); },
+
 };
 
 export default NotFound;

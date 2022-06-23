@@ -5,8 +5,10 @@ import UserCollectionView from './user-collection/user-collection-view';
 const view = new UserCollectionView();
 const UserCollection = {
   async render() {
-    document.querySelector('custom-footer').style.display = 'none';
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {

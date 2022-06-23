@@ -10,20 +10,24 @@ class VisiMisi extends HTMLElement {
 
   render() {
     this.shadowDOM.innerHTML = `
-
-        <style>
-
+      <style>
         .visimisi{
           width:100%;
           background-color: #f4f4f5;
           padding: 20px 20px 60px;
           box-sizing:border-box;
-          margin: 0 auto;
+          background-image: url('./images/bg-visi-misi.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center; 
+          background-size: cover;
+          margin:0 auto;
         }
 
         .visimisi .visi{
           width:100%;
-          background-color:white;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
           padding:10px;
           box-sizing:border-box;
           border-radius:5px;
@@ -42,12 +46,12 @@ class VisiMisi extends HTMLElement {
 
         .visimisi .misi{
           width:100%;
-          background-color:white;
+          background: rgba(0, 0, 0, 0.5);
+          color:white;
           padding:10px;
           box-sizing:border-box;
           border-radius:5px;
           margin-bottom:10px;
-          
         }
 
         .visimisi .misi:hover{
@@ -56,6 +60,10 @@ class VisiMisi extends HTMLElement {
 
         .visimisi .misi li{
           font-size: 15px;
+        }
+
+        .visimisi > h2{
+          color:white;
         }
 
         .visimisi h2{
@@ -73,45 +81,50 @@ class VisiMisi extends HTMLElement {
         }
 
         @media screen and (min-width:600px){
-        .visimisi{
-          display:flex;
-          flex-direction:column;
-        }
-        .inner__visimisi{
-          display:flex;
-          flex-direction:row;
+          .visimisi{
+            display:flex;
+            flex-direction:column;
+          }
+
+          .inner__visimisi{
+            display:flex;
+            flex-direction:row;
+          }
+
+          .visi{
+            margin:4px;
+          }
+
+          .misi{
+            margin:4px;
+          }
         }
 
-        .visi{
-          margin:4px;
-        }
+        @media screen and (min-width:1000px){
+          .visimisi{
+            box-sizing:border-box;
+          }
 
-        .misi{
-          margin:4px;
-        }
-      }
+          .visimisi .misi{
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width:30%;
+            margin: 0 auto;
+          }
 
-       @media screen and (min-width:1000px){
-         .visimisi{
-          box-sizing:border-box;
-         }
-         .visimisi .misi{
-           background-color:white;
-           width:30%;
-           margin: 0 auto;
-         }
-         .visimisi .visi{
-            background-color:white;
-           width:30%;
-           margin: auto;
-         }
-       }
+          .visimisi .visi{
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width:30%;
+            margin: auto;
+          }
+        }
       </style>
 
-        <div class="visimisi">
-        <h2>Visi dan Misi Kami</h2>
-          <div class="inner__visimisi">
-            <div 
+      <div class="visimisi">
+      <h2>Visi dan Misi Kami</h2>
+        <div class="inner__visimisi">
+          <div 
             data-aos="zoom-in"
             data-aos-offset="200"
             data-aos-delay="50"
@@ -120,10 +133,10 @@ class VisiMisi extends HTMLElement {
             data-aos-mirror="true"
             data-aos-once="true"
             class="visi">
-              <h3>Visi</h3>
+            <h3>Visi</h3>
               <p>Pada Tahun 2030 menjadi platform terbaik tingkat Nasional dalam hal Pengelolaan Limbah Ramah Lingkungan yang menjangkau seluruh wilayah Indonesia dari Sabang sampai Merauke dari Miangas hingga pulau Rote.</p>
-            </div>
-            <div 
+          </div>
+          <div 
             data-aos="zoom-in"
             data-aos-offset="200"
             data-aos-delay="50"
@@ -133,15 +146,15 @@ class VisiMisi extends HTMLElement {
             data-aos-once="true"
             class="misi">
             <h3>Misi</h3>
-              <ol>
-                <li>Meningkatkan Litersi Masyarakat terhadap isu Lingkungan</li>
-                <li>Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah</li>
-                <li>Memberikan Pelayanan yang Baik</li>
-              </ol>
-            </div>
+            <ol>
+              <li>Meningkatkan Litersi Masyarakat terhadap isu Lingkungan</li>
+              <li>Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah</li>
+              <li>Memberikan Pelayanan yang Baik</li>
+            </ol>
           </div>
         </div>
-        `;
+      </div>
+    `;
   }
 }
 

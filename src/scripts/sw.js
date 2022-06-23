@@ -1,6 +1,10 @@
-// /* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
+
+import API_ENDPOINT from './globals/api-endpoint';
+import CONFIG from './globals/config';
 
 /* eslint-disable no-restricted-globals */
 const { assets } = global.serviceWorkerOption;
@@ -25,6 +29,9 @@ self.addEventListener('fetch', (event) => {
 });
 
 // /* eslint-disable no-undef */
+
+// importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
+
 // console.log('hello, from service worker');
 
 // workbox.core.skipWaiting();
@@ -44,10 +51,10 @@ self.addEventListener('fetch', (event) => {
 
 // workbox.routing.registerRoute(
 //   ({ request }) => request.destination === 'image',
-//   new workbox.strategies.NetworkFirst({
+//   new workbox.strategies.StaleWhileRevalidate({
 //     cacheName: 'images',
 //     plugins: [
-//       new workbox.expiration.Plugin({
+//       new workbox.expiration.ExpirationPlugin({
 //         maxEntries: 60,
 //         maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
 //       }),
@@ -56,11 +63,33 @@ self.addEventListener('fetch', (event) => {
 // );
 
 // workbox.routing.registerRoute(
-//   new RegExp('^https://dicoding-restaurant-api.el.r.appspot.com/'),
+//   new RegExp(`^${CONFIG.BASE_IMAGE_URL}`),
 //   new workbox.strategies.StaleWhileRevalidate({
-//     cacheName: 'dicoding-restaurant-api',
+//     cacheName: 'pelipur-images',
 //     plugins: [
-//       new workbox.cacheableResponse.Plugin({
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
+//         statuses: [200, 404],
+//       }),
+//     ],
+//   }),
+// );
+// workbox.routing.registerRoute(
+//   new RegExp(`^${API_ENDPOINT.GET_NEWS_API}`),
+//   new workbox.strategies.StaleWhileRevalidate({
+//     cacheName: 'pelipur-news',
+//     plugins: [
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
+//         statuses: [200, 404],
+//       }),
+//     ],
+//   }),
+// );
+// workbox.routing.registerRoute(
+//   new RegExp(`^${CONFIG.BASE_URL}${API_ENDPOINT.GET_PARTNERS}`),
+//   new workbox.strategies.StaleWhileRevalidate({
+//     cacheName: 'pelipur-news',
+//     plugins: [
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
 //         statuses: [200, 404],
 //       }),
 //     ],
@@ -70,7 +99,7 @@ self.addEventListener('fetch', (event) => {
 // // Menyimpan cache dari CSS Google Fonts
 // workbox.routing.registerRoute(
 //   /^https:\/\/fonts\.googleapis\.com/,
-//   workbox.strategies.staleWhileRevalidate({
+//   new workbox.strategies.StaleWhileRevalidate({
 //     cacheName: 'google-fonts-stylesheets',
 //   }),
 // );
@@ -78,7 +107,7 @@ self.addEventListener('fetch', (event) => {
 // // Menyimpan cache dari font awesome
 // workbox.routing.registerRoute(
 //   /^https:\/\/kit\.fontawesome\.com/,
-//   workbox.strategies.staleWhileRevalidate({
+//   new workbox.strategies.StaleWhileRevalidate({
 //     cacheName: 'font-awesome',
 //   }),
 // );
@@ -86,13 +115,13 @@ self.addEventListener('fetch', (event) => {
 // // Menyimpan cache untuk file font selama 1 tahun
 // workbox.routing.registerRoute(
 //   /^https:\/\/fonts\.gstatic\.com/,
-//   workbox.strategies.cacheFirst({
+//   new workbox.strategies.CacheFirst({
 //     cacheName: 'google-fonts-webfonts',
 //     plugins: [
-//       new workbox.cacheableResponse.Plugin({
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
 //         statuses: [0, 200],
 //       }),
-//       new workbox.expiration.Plugin({
+//       new workbox.expiration.ExpirationPlugin({
 //         maxAgeSeconds: 60 * 60 * 24 * 365,
 //         maxEntries: 30,
 //       }),

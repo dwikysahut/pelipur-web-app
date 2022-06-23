@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const webpack = require('webpack');
 
@@ -14,7 +18,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contentHash].bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -88,6 +92,7 @@ module.exports = {
     // new InjectManifest({
     //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
     //   swDest: 'sw.js',
+    //   maximumFileSizeToCacheInBytes: 5000000,
     // }),
     // new GenerateSW({
     //   clientsClaim: true,
@@ -111,5 +116,11 @@ module.exports = {
     //     },
     //   ],
     // }),
+
+    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ],
 };

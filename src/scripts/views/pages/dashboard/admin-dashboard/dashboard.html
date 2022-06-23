@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/aside.css" />
+    <link rel="stylesheet" href="./styles/admin-dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Daftar Pengumpulan - Pelipur</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="aside">
+        <div class="sidebar">
+          <div class="sidebar__logo-wrapper">
+            <img
+              src="images/favicon.png"
+              alt="Logo Pelipur"
+              class="sidebar__image-profil"
+            />
+          </div>
+          <div class="sidebar__menu" id="sidebar__menu">
+            <ul class="sidebar__list">
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                  <img
+                    src="icons/dashboard_white_24dp.svg"
+                    class="sidebar__icon"
+                    alt="Dashboard"
+                  />
+                  <span class="sidebar__name">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                  <img
+                    src="icons/format_list_bulleted_white_24dp.svg"
+                    class="sidebar__icon"
+                    alt="Daftar"
+                  />
+                  <span class="sidebar__name">Daftar</span>
+                </a>
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                  <img
+                    src="icons/account_balance_white_24dp.svg"
+                    class="sidebar__icon"
+                    alt="Mitra"
+                  />
+                  <span class="sidebar__name">Mitra</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <div class="content">
+            <h2 class="content__title">Dashboard</h2>
+            <div class="content__card">
+              <div class="card__item">
+                <div class="card__detail">
+                  <h3 class="card__number">12</h3>
+                  <span class="card__name">User</span>
+                </div>
+                <div class="card__icon">
+                  <img src="icons/person_white_36dp.svg" alt="User" />
+                </div>
+              </div>
+              <div class="card__item">
+                <div class="card__detail">
+                  <h3 class="card__number">16 L</h3>
+                  <span class="card__name">Total Minyak</span>
+                </div>
+                <div class="card__icon">
+                  <img
+                    src="icons/format_list_bulleted_white_36dp.svg"
+                    alt="Daftar"
+                  />
+                </div>
+              </div>
+              <div class="card__item">
+                <div class="card__detail">
+                  <h3 class="card__number">4</h3>
+                  <span class="card__name">Kota</span>
+                </div>
+                <div class="card__icon">
+                  <img src="icons/room_white_36dp.svg" alt="Kota" />
+                </div>
+              </div>
+              <div class="card__item">
+                <div class="card__detail">
+                  <h3 class="card__number">3</h3>
+                  <span class="card__name">Mitra</span>
+                </div>
+                <div class="card__icon">
+                  <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+                </div>
+              </div>
+              <div class="card__item">
+                <div class="card__detail">
+                  <h3 class="card__number">3</h3>
+                  <span class="card__name">Form Terkumpul</span>
+                </div>
+                <div class="card__icon">
+                  <img src="icons/account_balance_white_36dp.svg" alt="Mitral" />
+                </div>
+              </div>           
+          </div>
+
+          <!-- content chart -->
+          <h2 class="content__chart">Grafik</h2>
+            <div class="chart__card">
+              <div class="card__user">
+                <div>
+                  <canvas id="myChartUser"></canvas>
+                </div>
+              
+                <script>
+                  const labelsUser = [
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                  ];
+                  const dataUser = {
+                    labels: labelsUser,
+                    datasets: [{
+                      label: 'User',
+                      backgroundColor: 'rgb(6, 154, 142)',
+                      borderColor: 'rgb(0, 85, 85)',
+                      data: [12, 23, 28, 40, 30, 36, 54],
+                    }]
+                  };
+              
+                  const configUser = {
+                    type: 'bar',
+                    data: dataUser,
+                    options: {}
+                  };
+              
+                  let myChartUser = new Chart (
+                    document.getElementById('myChartUser'),
+                    configUser
+                  );
+                </script>
+              </div>
+
+              <div class="card__total">
+                <div>
+                  <canvas id="myChartTotal"></canvas>
+                </div>
+
+                <script>
+                  const labelsTotal = [
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                  ];
+                  const dataTotal = {
+                    labels: labelsTotal,
+                    datasets: [{
+                      label: 'Total Minyak',
+                      backgroundColor: 'rgb(6, 154, 142)',
+                      borderColor: 'rgb(6, 154, 142)',
+                      data: [16, 20, 85, 90, 75, 110, 95],
+                    }]
+                  };
+
+                  const configTotal = {
+                    type: 'line',
+                    data: dataTotal,
+                    options: {}
+                  };
+
+                  let myChartTotal = new Chart (
+                    document.getElementById('myChartTotal'),
+                    configTotal
+                  );
+                </script>
+              </div>
+
+              <div class="card__city">
+                <div>
+                  <canvas id="myChartCity"></canvas>
+                </div>
+
+                <script>
+                  const labelsCity = [
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                  ];
+                  const dataCity = {
+                    labels: labelsCity,
+                    datasets: [{
+                      label: 'Kota',
+                      backgroundColor: 'rgb(6, 154, 142)',
+                      borderColor: 'rgb(6, 154, 142)',
+                      data: [3, 6, 10, 5, 14, 8, 25],
+                    }]
+                  };
+
+                  const configCity = {
+                    type: 'line',
+                    data: dataCity,
+                    options: {}
+                  };
+
+                  let myChartCity = new Chart (
+                    document.getElementById('myChartCity'),
+                    configCity
+                  );
+                </script>
+              </div>
+
+              <div class="card__mitra">
+                <div>
+                  <canvas id="myChartMitra"></canvas>
+                </div>
+
+                <script>
+                  const labelsMitra = [
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                  ];
+                  const dataMitra = {
+                    labels: labelsMitra,
+                    datasets: [{
+                      label: 'Mitra',
+                      backgroundColor: 'rgb(6, 154, 142)',
+                      borderColor: 'rgb(6, 154, 142)',
+                      data: [2, 3, 1, 2, 4, 2, 6],
+                    }]
+                  };
+
+                  const configMitra = {
+                    type: 'bar',
+                    data: dataMitra,
+                    options: {}
+                  };
+
+                  let myChartMitra = new Chart (
+                    document.getElementById('myChartMitra'),
+                    configMitra
+                  );
+                </script>
+              </div>
+              
+              <div class="card__form">
+                <div>
+                  <canvas id="myChartForm"></canvas>
+                </div>
+
+                <script>
+                  const labelsForm = [
+                    'Mei',
+                    'Juni',
+                    'Juli',
+                    'Agustus',
+                    'September',
+                    'Oktober',
+                  ];
+                  const dataForm = {
+                    labels: labelsForm,
+                    datasets: [{
+                      label: 'Form',
+                      backgroundColor: 'rgb(6, 154, 142)',
+                      borderColor: 'rgb(6, 154, 142)',
+                      data: [3, 10, 11, 7, 9, 21, 10],
+                    }]
+                  };
+
+                  const configForm = {
+                    type: 'line',
+                    data: dataForm,
+                    options: {}
+                  };
+
+                  let myChartForm = new Chart (
+                    document.getElementById('myChartForm', 'myChartMitra'),
+                    configForm
+                  );
+                </script>
+              </div>
+
+
+              <div class="card__all">
+                <div>
+                  <canvas id="myChartAll"></canvas>
+                </div>
+
+                <script>
+                  const allChart = [
+                    { month: 'Mei', chart: { user: 16, minyak: 10, kota: 6, mitra: 2, form: 4 } },
+                    { month: 'Juni', chart: { user: 20, minyak: 20, kota: 10, mitra: 2, form: 20 } },
+                    { month: 'Juli', chart: { user: 35, minyak: 40, kota: 10, mitra: 4, form: 30 } },
+                    { month: 'Agustus', chart: { user: 45, minyak: 55, kota: 6, mitra: 2, form: 25 } },
+                    { month: 'September', chart: { user: 70, minyak: 67, kota: 13, mitra: 10, form: 45 } },
+                    { month: 'Oktober', chart: { user: 100, minyak: 120, kota: 23, mitra: 10, form: 55 } }
+                  ];
+
+                    // 'rgba(255, 26, 104, 0.2)',
+                    // 'rgba(54, 162, 235, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+
+                  //setup
+                  const data = {
+                    datasets: [{
+                      label: 'User',
+                      data: allChart,
+                      backgroundColor: 'rgba(255, 26, 104, 0.2)',
+                      borderColor: 'rgba(255, 26, 104, 0.2)',
+                      tension: 0.4,
+                      parsing: {
+                        xAxisKey: 'month',
+                        yAxisKey: 'chart.user'
+                      }
+                    },
+                    {
+                      label: 'Minyak',
+                      data: allChart,
+                      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                      borderColor: 'rgba(54, 162, 235, 0.2)',
+                      tension: 0.4,
+                      parsing: {
+                        xAxisKey: 'month',
+                        yAxisKey: 'chart.minyak'
+                      }
+                    },
+                    {
+                      label: 'Kota',
+                      data: allChart,
+                      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                      borderColor: 'rgba(75, 192, 192, 0.2)',
+                      tension: 0.4,
+                      parsing: {
+                        xAxisKey: 'month',
+                        yAxisKey: 'chart.kota'
+                      }
+                    },
+                    {
+                      label: 'Mitra',
+                      data: allChart,
+                      backgroundColor: 'rgba(55, 10, 102, 0.2)',
+                      borderColor: 'rgba(55, 10, 102, 0.2)',
+                      tension: 0.4,
+                      parsing: {
+                        xAxisKey: 'month',
+                        yAxisKey: 'chart.mitra'
+                      }
+                    },
+                    {
+                      label: 'Form',
+                      data: allChart,
+                      backgroundColor: 'rgba(100, 55, 23, 0.2)',
+                      borderColor: 'rgba(100, 55, 23, 0.2)',
+                      tension: 0.4,
+                      parsing: {
+                        xAxisKey: 'month',
+                        yAxisKey: 'chart.form'
+                      }               
+
+                    }]
+                  }
+
+                  // config 
+                  const config = {
+                    type: 'line',
+                    data,
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  };
+
+                  // render init block
+                  const myChart = new Chart(
+                    document.getElementById('myChartAll'),
+                    config
+                  );
+                </script>
+              </div>
+
+              <div class="card__pie">
+                <div>
+                  <canvas id="myChartPie"></canvas>
+                </div>
+
+                <script>
+                  const dataPie = {
+                    labels: [
+                      'Ditolak',
+                      'Selesai',
+                      'Diproses'
+                    ],
+                    datasets: [{
+                      label: 'My First Dataset',
+                      data: [5, 50, 30],
+                      backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                      ],
+                      hoverOffset: 4
+                    }]
+                  };
+                  const configPie = {
+                    type: 'pie',
+                    data: dataPie,
+                  };
+
+                  let myChartPie = new Chart (
+                    document.getElementById('myChartPie'),
+                    configPie
+                  );
+                </script>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
