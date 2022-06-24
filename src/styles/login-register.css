@@ -46,17 +46,21 @@ html,body{
 
 .container__side {
   display: flex;
-  width: 50%;
-  height: 100vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.container__side img {
+  align-items: center;
+  width: 80%;
 }
 
 .container__wrapper{
   display: flex;
   overflow: hidden;
   align-items: center;
-  max-width: 50%;
+  max-width: 100%;
   background: #fff;
   padding: 50px;
 }
@@ -265,81 +269,6 @@ form .btn input[type="submit"] {
   cursor: pointer;
 }
 
-@media screen and (max-width:1280px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-  }
-  
-  .container__side img {
-    width: 500px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-}
-
-@media screen and (max-width:1024px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-  }
-  
-  .container__side img {
-    width: 500px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
-
-
-
-@media screen and (max-width:600px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-  }
-  
-  .container__side img {
-    width: 200px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
-
-@media screen and (max-width:650px) {
-  .container__side {
-    position: absolute;
-    width: 100%;
-    height: 200px;
-  }
-  
-  .container__side img {
-    width: 200px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 100%;
-    padding-top: 200px;
-  }
-}
-
 @media screen and (min-width:800px) {
   .container__side {
     display: flex;
@@ -358,24 +287,6 @@ form .btn input[type="submit"] {
   }
 } 
  
-@media screen and (min-width:700px) {
-  .container__side {
-    display: flex;
-    width: 50%;
-  }
-  
-  .container__side img {
-    width: 200px;
-    align-items: center;
-  }
-
-  .container__wrapper {
-    align-items: center;
-    max-width: 50%;
-    padding-top: 50px;
-  }
-} 
-
 @media screen and (min-width:650px) {
   .container__side {
     display: flex;
@@ -393,6 +304,5 @@ form .btn input[type="submit"] {
 
   .container__wrapper {
     max-width: 50%;
-    padding-top: 50px;
   }
 } 
