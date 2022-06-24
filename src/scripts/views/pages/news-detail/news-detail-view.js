@@ -4,10 +4,10 @@ import '../../component/news-list';
 class NewsDetailView {
   getTemplate() {
     return `   
-   <div class="news-container">
-   ${createSkeletonNewsList(20)}
-   </div>
-              `;
+      <div class="news-container">
+        ${createSkeletonNewsList(20)}
+      </div>
+    `;
   }
 
   showNews(items) {

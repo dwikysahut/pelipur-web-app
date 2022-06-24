@@ -57,7 +57,7 @@ html,body{
   overflow: hidden;
   align-items: center;
   max-width: 50%;
-  background: #fff;
+  /* background: #fff; */
   padding: 50px;
 }
 
@@ -264,6 +264,13 @@ form .btn input[type="submit"] {
   font-weight: 500;
   cursor: pointer;
 }
+
+/* .show-pass {
+  position: absolute;
+  right: 15px;
+  transform: translate(0,-50%);
+  top: 50%;
+} */
 
 @media screen and (max-width:1280px) {
   .container__side {

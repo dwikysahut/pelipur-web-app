@@ -7,6 +7,7 @@ import '../../../component/custom-loader';
 class UserDetailViee {
   getTemplate() {
     return `
+    <custom-loader></custom-loader>
     <div class="wrapper-dashboard">
     <aside-dashboard></aside-dashboard>
   
@@ -24,7 +25,7 @@ class UserDetailViee {
               `;
   }
 
-  getLoaderListener() {
+  loaderListener() {
     return document.querySelector('custom-loader');
   }
 

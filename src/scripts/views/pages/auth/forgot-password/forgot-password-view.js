@@ -6,8 +6,16 @@ class ForgotPasswordView {
     return `
     <div class="container">
         
-    <div class="container__side">
-      <img src="./images/verification.png" alt="authentication">
+    <div 
+      data-aos="fade-right"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="true"
+      class="container__side">
+      <img src="./images/undraw_two_factor_authentication_namy.svg" alt="Authentication">
     </div>
     <div class="container__wrapper">    
         <div class="form-inner">

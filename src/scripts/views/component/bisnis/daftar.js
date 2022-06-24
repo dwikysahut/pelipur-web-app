@@ -7,10 +7,14 @@ class Daftar extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
-        .daftar{
+        .daftar {
+          padding-bottom: 70px;
+        }
+
+        .daftar__inner{
           width:60%;
           padding: 40px;
-          margin: 0 auto 70px;
+          margin: auto;
           box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
           text-align:center;
           border-radius:5px;
@@ -55,9 +59,11 @@ class Daftar extends HTMLElement {
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="true"
-        class ="daftar">
-        <h2> Mari bergabung bersama kami </h2>
-        <button onClick="window.location.href='#/auth';">Daftar sekarang</button>
+        class="daftar">
+        <div class ="daftar__inner">
+          <h2> Mari bergabung bersama kami </h2>
+          <button onClick="window.location.href='#/auth';">Daftar sekarang</button>
+        </div>
       </div>
     `;
   }

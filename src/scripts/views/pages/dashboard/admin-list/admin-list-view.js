@@ -1,7 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-loop-func */
 /* eslint-disable camelcase */
-import { partnerByCityEmptyTemplate, partnerByCityItemTemplate, tableCollectionsTemplate } from '../../../templates/template-creator';
+import {
+  emptyTableTemplate, partnerByCityEmptyTemplate, partnerByCityItemTemplate, tableCollectionsTemplate,
+} from '../../../templates/template-creator';
 
 import '../../../component/aside-dashboard';
 import '../../../component/loader-content';
@@ -18,19 +20,19 @@ class AdminListView {
         <div class="content">
           <h2 class="content__title">Daftar</h2>
           <div class="content__table">
-            <table>
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Tanggal Penjemputan</th>
                   <th>Kode Transaksi</th>
                   <th>Email</th>
-                  <th>Nama</th>
+                  <th class="th__space">Nama</th>
                   <th>No Telepon</th>
                   <th>Total Minyak</th>
                   <th class="th__space">Pesan</th>
                   <th class="th__space">Alamat</th>
                   <th>Kota</th>
-                  <th>Mitra</th>
+                  <th">Mitra</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -112,31 +114,34 @@ class AdminListView {
       container.innerHTML = '';
       let i = 0;
       console.log(items);
+      if (items.length < 1) {
+        container.innerHTML += emptyTableTemplate();
+      } else {
+        items.forEach(async (item) => {
+          const collectionElement = tableCollectionsTemplate(item);
+          container.innerHTML += collectionElement;
+          const buttonContainer = document.querySelectorAll('.btn__action');
 
-      items.forEach(async (item) => {
-        const cityElement = tableCollectionsTemplate(item);
-        container.innerHTML += cityElement;
-        const buttonContainer = document.querySelectorAll('.btn__action');
-
-        if (item.id_status === 1) {
-          buttonContainer[i].innerHTML = `
+          if (item.id_status === 1) {
+            buttonContainer[i].innerHTML = `
               <button class="btn__accept" data-id="${item.id}" disabled>
               <i class="fa fa-check" aria-hidden="true"></i>
             </button>
             <button class="btn__reject" data-id="${item.id}"><i class="fa fa-times" aria-hidden="true"></i></button>`;
-        } else if (item.id_status === 2) {
-          buttonContainer[i].innerHTML = `
+          } else if (item.id_status === 2) {
+            buttonContainer[i].innerHTML = `
             <button class="btn btn-warning btn-finish" data-id="${item.id}">Finish</button>`;
-        } else if (item.id_status === 3) {
-          buttonContainer[i].innerHTML = `
+          } else if (item.id_status === 3) {
+            buttonContainer[i].innerHTML = `
             <button class="btn btn-outline-danger"  disabled>Rejected</button>`;
-        } else {
-          buttonContainer[i].innerHTML = `
+          } else {
+            buttonContainer[i].innerHTML = `
             <button class="btn btn-outline-success" disabled>Completed</button>`;
-        }
-        i += 1;
-      });
-      callback();
+          }
+          i += 1;
+        });
+        callback();
+      }
     }
   }
 

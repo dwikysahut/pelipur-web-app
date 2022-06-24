@@ -10,12 +10,13 @@ class ListMitra extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <style>
-        .list-mitra{
-          width: 80%;
-          margin: 0 auto 70px;
-          text-align: center;
-        }
+        <style>
+          .list-mitra{
+            width:90%;
+            text-align:center;
+            margin: 0 auto;
+            padding: 0 0 60px 0;
+          }
 
         .list-mitra h2 {
           font-size: 23px;

@@ -14,14 +14,13 @@
     grid-template-areas:
       'alamat jadwal medsos'
       'copyright copyright copyright';
+    padding: 30px 40px 20px;
   }
 
   footer .alamat {
     grid-area: alamat;
     text-align: center;
     font-size: 15px;
-    padding: 10px;
-    margin-bottom: 20px;
   }
 
   footer .jadwal {
@@ -51,22 +50,7 @@
 }
 
 @media screen and (min-width: 650px) {
-  .wrapper-news {
-    width: 80%;
-    max-width: 800px;
-  }
   
-  .wrapper-news__item {
-    flex-direction: row;
-  }
-
-  .item-news__image {
-    min-width: 300px;
-    width: 400px;
-    max-width: 300px;
-    min-height: 160px;
-    max-height: 200px;
-  }
 }
 
 @media screen and (min-width: 700px) {
@@ -83,7 +67,7 @@
     position: relative;
     top: 0;
     transform: translate(0);
-    background-color: #fff;
+    background:#F7F8FC;
     color: #005555;
   }
 
@@ -148,13 +132,11 @@
     color: #005555 !important;
   }
 
-  .hero {
-    margin-bottom: 0;
-  }
-
   .hero__title {
     font-size: 2.9em;
     font-weight: lighter;
+    background: transparent;
+    color: black;
   }
 
   .hero__inner{
@@ -162,15 +144,29 @@
   }
 
   .hero__inner__text {
-   align-items: flex-start;
-  }
-
-  .hero__title {
-    text-align: left;
+    align-items: center;
   }
 
   .carousel-inner {
     min-height: 230px;
+  }
+
+  .wrapper-news {
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .wrapper-news__item {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .item-news__image {
+    min-width: 300px;
+    width: 400px;
+    max-width: 300px;
+    min-height: 190px;
+    max-height: 220px;
   }
 }
 
@@ -198,5 +194,11 @@
 @media screen and (min-width: 950px) {
   .carousel-inner {
     min-height: 200px;
+  }
+
+  .medsos {
+    width: 80%;
+    width: 80%;
+    margin: 0 auto;
   }
 }

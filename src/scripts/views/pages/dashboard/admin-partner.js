@@ -1,4 +1,5 @@
 /* eslint-disable no-empty-function */
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 import '../../component/aside-dashboard';
 import AdminPartnerPresenter from './admin-partner/admin-partner-presenter';
@@ -14,7 +15,7 @@ const Partner = {
   },
 
   async afterRender() {
-    new AdminPartnerPresenter({ view, dataDb: DataDbSource });
+    new AdminPartnerPresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
     // let expanded = false;
 
     // const showCheckboxes = () => {

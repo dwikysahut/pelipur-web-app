@@ -5,7 +5,7 @@ import '../../../component/custom-loader';
 class UserCollectionView {
   getTemplate() {
     return `
-      <custom-loader></custom-loader>
+      
       <div class="wrapper-dashboard">
       <aside-user></aside-user>
     
@@ -90,6 +90,20 @@ class UserCollectionView {
 
   collectionFormListener(callback) {
     document.querySelector('#submitCollection').addEventListener('click', async (e) => {
+      e.preventDefault();
+      this.getCollectionFormListener(callback);
+    });
+  }
+
+  saveTemplateListener(callback) {
+    document.querySelector('#saveTemplateCollection').addEventListener('click', (e) => {
+      e.preventDefault();
+      this.getCollectionFormListener(callback);
+    });
+  }
+
+  useTemplateListener(callback) {
+    document.querySelector('#useTemplateCollection').addEventListener('click', (e) => {
       e.preventDefault();
       this.getCollectionFormListener(callback);
     });

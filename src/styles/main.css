@@ -26,6 +26,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+main{
+  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -54,8 +58,9 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  max-height: 100px;
   padding: 16px 32px;
-  background-color: white;
+  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
 }
 
 .header__inner {
@@ -289,8 +294,13 @@ button#hambuger {
   display: flex;
   width: 100%;
   align-items: center;
-  background-position: center;
-  margin-bottom: 50px; 
+  background-position: initial;
+  margin-bottom: 70px;
+  height: 600px;
+  background-attachment: fixed;
+  background-size: cover;  
+  background-repeat: no-repeat;
+  background-image: url('../public/images/heros/hero-img-crop.jpg');
 }
 
 .hero__inner {
@@ -298,6 +308,7 @@ button#hambuger {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -307,10 +318,10 @@ button#hambuger {
 }
 
 .hero__inner__text {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__inner__image > img {
@@ -327,9 +338,11 @@ justify-content: center;
 .hero__title {
   margin: 0 auto;
   text-align: center;
-  font-size: 39px;
-  font-weight: 500;
+  font-size: 2.9em;
+  font-weight: lighter;
   line-height: 1.4;
+  padding: 15px;
+  color: black;
 }
 
 .hero__join {
@@ -394,8 +407,9 @@ justify-content: center;
 article {
   width: 80%;
   margin: 0 auto 70px;
-  padding: 20px;
-  background-color: #eee;
+  padding: 20px 15px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
 }
 
@@ -437,6 +451,7 @@ article {
   width: 100%;
   box-sizing: border-box;
   border-radius: 5px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .card .card-item {
@@ -479,9 +494,14 @@ article {
   font-weight: lighter;
 }
 
+.news-container {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
 .wrapper-news {
-  padding: 10px;
-  margin: 10px auto;
+  padding: 10px 20px;
+  margin: 0 auto;
 }
 
 .wrapper-news__item {
@@ -489,7 +509,7 @@ article {
   display: flex;
   padding: 16px;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-evenly;
   border-radius: 6px;
 }
@@ -502,9 +522,9 @@ article {
 }
 
 .item-news__image {
-  min-height: 120px;
+  /* min-height: 120px; */
   width: 100%;
-  height: 250px;
+  /* height: 200px; */
 }
 
 .item-news__content {
@@ -516,7 +536,7 @@ article {
 .item-news__content h3 {
   padding: 0;
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .item-news__footer {
@@ -542,7 +562,9 @@ article {
 
 footer {
   display: grid;
-  padding: 20px;
+  padding: 30px;
+  gap: 30px;
+  line-height: 1.9;
   background-color: #005555;
 }
 
@@ -564,6 +586,7 @@ footer .medsos p {
 
 footer .jadwal ul {
   padding-left: 0 !important;
+  margin-bottom: 0;
 }
 
 footer .jadwal ul li {
@@ -573,23 +596,25 @@ footer .jadwal ul li {
 footer .jadwal {
   color: white;
   text-align: center;
-  padding: 10px;
 }
 
 footer .jadwal p {
   font-size: 14px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 footer .alamat h3 {
   font-size: 15px;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 footer .alamat p {
   font-size: 14px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 footer .copyrig p {
@@ -601,7 +626,6 @@ footer .copyrig p {
 }
 
 .copyrig {
-  padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
 
@@ -611,6 +635,7 @@ footer .jadwal h3 {
   font-size: 15px;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 footer .fa {
@@ -646,6 +671,7 @@ footer .fa {
   width: 55px;
   height: 55px;
   border-radius: 50%;
+  opacity: 0;
   border: none;
   position: fixed;
   right: 20px;
@@ -851,27 +877,36 @@ textarea.danger {
 .medsos {
   width: 100%;
   height: 100%;
-  margin: 10px auto;
   text-align: center;
   box-sizing: border-box;
 }
+
 .medsos h3 {
   font-size: 15px;
   font-weight: 500;
   color: white;
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .medsos ul {
   display: flex;
   padding-left: 0 !important;
   box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.medsos ul li a{
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .medsos ul li {
   margin: auto;
-  padding: 12px;
   box-sizing: border-box;
 }
 
@@ -934,6 +969,20 @@ custom-loader {
   background: rgba(0, 0, 0, 0.8);
   z-index: 99;
 }
+pre-loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+}
+
 loader-content {
   display: none;
   justify-content: center;
@@ -969,6 +1018,22 @@ loader-content {
   animation:  dots 1s infinite linear;
 
 }
+@keyframes dots {
+  20%{
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40%{
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60%{
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80%{
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+  
+}
+
 @keyframes dots {
   20%{
       background-position: 0% 0%, 50% 50%, 100% 50%;
@@ -1084,4 +1149,28 @@ button > i {
   .modal-content {
     width: 100%;
   }
+}
+
+.card-item > a {
+  text-decoration: none;
+}
+.card-item > a > h2:hover {
+  color: #069a8e;
+  text-decoration: none;
+}
+
+/* table */
+table > tbody > tr > td, th {
+  vertical-align: middle;
+}
+.empty-table{
+  text-align: center;
+  height: 300px;
+    vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.empty-table h4{
+    font-weight: lighter;
 }

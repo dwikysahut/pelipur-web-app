@@ -27,10 +27,12 @@ class Artikel extends HTMLElement {
           text-align: justify;
           font-weight: 400;
           font-size: 15px;
+          line-height: 1.7;
+          margin-bottom: 0;
         }
 
         .artikel h2{
-          margin: 15px auto 10px;
+          margin: 35px auto 20px;
           font-weight: 500;
           font-size: 23px;
         }
@@ -43,6 +45,8 @@ class Artikel extends HTMLElement {
         .gambar-artikel img{
           display: block;
           max-height: 300px;
+          width: 100%;
+          border-radius: 5px;
         }
 
         .oil-details {
@@ -55,22 +59,37 @@ class Artikel extends HTMLElement {
           color: #069a8e;
         }
 
-        @media screen and (min-width: 1200px){
+        @media screen and (min-width: 700px) {
+          .gambar-artikel img {
+            width: 70%;
+            max-height: 330px;
+          }
+        }
+
+        @media screen and (min-width: 1300px) {
           .artikels{
             grid-template-columns: repeat(2, 1fr);
-            align-items: center;
-            column-gap: 70px;
+            padding: 0 50px;
           }
 
           .gambar-artikel {
-            align-items: self-end;
             display: flex;
-            justify-content: flex-end;
+            width: 90%;
+            margin: 0 auto;
+            justify-content: flex-start;
+          }
+
+          .gambar-artikel img {
+            width: 100%;
+            max-height: 300px;
           }
 
           .artikel {
             display: block;
-            margin-right: 70px;
+          }
+
+          .artikel h2{
+            margin-top: 0;
           }
         }
       </style>
@@ -85,7 +104,7 @@ class Artikel extends HTMLElement {
         data-aos-mirror="true"
         data-aos-once="true" 
         class = "gambar-artikel">
-          <img src="./images/oil-cooking.png" alt="Minyak">
+        <img src="./images/minyak-jelantah.jpg" alt="Minyak">
         </div>
 
        <div class="artikel">

@@ -1,3 +1,4 @@
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 /* eslint-disable no-empty-function */
 import '../../component/aside-user';
@@ -14,7 +15,7 @@ const UserHistory = {
   },
 
   async afterRender() {
-    new UserDetailPresenter({ view, dataDb: DataDbSource });
+    new UserDetailPresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
   },
 };
 

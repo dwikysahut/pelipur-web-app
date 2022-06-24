@@ -1,4 +1,5 @@
 /* eslint-disable no-empty-function */
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 import '../../component/aside-user';
 import UserProfilePresenter from './user-profile/user-profile-presenter';
@@ -14,7 +15,7 @@ const Profile = {
   },
 
   async afterRender() {
-    new UserProfilePresenter({ view, dataDb: DataDbSource });
+    new UserProfilePresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
   },
 };
 

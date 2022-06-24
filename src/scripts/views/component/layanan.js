@@ -9,6 +9,7 @@ class Layanan extends HTMLElement {
           .judul {
             width: 100%;
             text-align: center;
+            margin-bottom: 25px;
           }
     
           .judul h2 {
@@ -22,27 +23,28 @@ class Layanan extends HTMLElement {
             width: 80%;
             box-sizing: border-box;
             margin: 0 auto 70px;
+            gap: 40px;
           }
     
           .gambar {
-            width: 0%;
+            width: 100%;
             margin: auto;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 20px;
           }
     
           .gambar img {
-            height: 140px;
+            height: 90px;
           }
     
           .gambar span {
             font-size: 17px;
             font-weight: 400;
             display: block;
-            width: 300px;
             text-align: center;
           }
     
@@ -58,7 +60,7 @@ class Layanan extends HTMLElement {
             }
     
             .gambar img {
-              height: 150px;
+              height: 100px;
             }
           }
         </style>
@@ -75,7 +77,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_On_the_way_re_swjt.png" alt="Jemput Gratis">
+                <img src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
                 <span>Jemput Gratis</span>
             </div>
             <div 
@@ -87,7 +89,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"   
                 class="gambar">
-                <img src="./images/undraw_Chatting_re_j55r.png" alt="Live Chat">
+                <img src="./images/undraw_chatting.svg" alt="Live Chat">
                 <span>Live Chat</span>
             </div>
             <div 
@@ -99,7 +101,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_printing_invoices_5r4r.png" alt="Menghasilkan Uang">
+                <img src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
                 <span>Menghasilkan Uang</span>
             </div>       
         </div>

@@ -18,7 +18,7 @@ class Header extends HTMLElement {
             <ul class="nav__list">
               <li class="nav__item"><a href="#/home">Home</a></li>
               <li class="nav__item"><a href="#/about-us">About us</a></li>
-              <li class="nav__item"><a href="#/bisnis">Business</a></li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">Login</a></li>' : `
+              <li class="nav__item"><a href="#/business">Business</a></li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">Login</a></li>' : `
               <li tabindex="0" class="nav__item dropdown">
               <div class="profile-pict">
                 <img src="${localStorage.getItem('image')}" alt="">
