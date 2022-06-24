@@ -1,4 +1,4 @@
-import { dropdownCityCheckBoxTemplate, tablePartnerTemplate } from '../../../templates/template-creator';
+import { dropdownCityCheckBoxTemplate, emptyTableTemplate, tablePartnerTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-dashboard';
 import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
@@ -61,7 +61,7 @@ class AdminPartnerView {
               </form>
               <h2 class="content__title list">Daftar Mitra</h2>
               <div class="content__table">
-                <table>
+                <table class="table table-striped">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -114,9 +114,13 @@ class AdminPartnerView {
     console.log(items);
     const itemContainer = document.querySelector('.content-table-partner');
     itemContainer.innerHTML = '';
-    items.forEach((item) => {
-      itemContainer.innerHTML += tablePartnerTemplate(item);
-    });
+    if (items.length < 1) {
+      itemContainer.innerHTML += emptyTableTemplate();
+    } else {
+      items.forEach((item) => {
+        itemContainer.innerHTML += tablePartnerTemplate(item);
+      });
+    }
   }
 
   editPartnerListener(callback) {

@@ -1,15 +1,10 @@
 class VisiMisi extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
+    this.innerHTML = `
       <style>
         .visimisi{
           width:100%;
@@ -42,6 +37,7 @@ class VisiMisi extends HTMLElement {
           font-size: 15px;
           text-align: justify;
           padding: 0 20px;
+          line-height: 1.7;
         }
 
         .visimisi .misi{
@@ -60,6 +56,7 @@ class VisiMisi extends HTMLElement {
 
         .visimisi .misi li{
           font-size: 15px;
+          line-height: 1.7;
         }
 
         .visimisi > h2{
@@ -100,7 +97,7 @@ class VisiMisi extends HTMLElement {
           }
         }
 
-        @media screen and (min-width:1000px){
+        @media screen and (min-width: 900px){
           .visimisi{
             box-sizing:border-box;
           }
@@ -125,7 +122,7 @@ class VisiMisi extends HTMLElement {
       <h2>Visi dan Misi Kami</h2>
         <div class="inner__visimisi">
           <div 
-            data-aos="zoom-in"
+            data-aos="flip-down"
             data-aos-offset="200"
             data-aos-delay="50"
             data-aos-duration="1000"
@@ -137,7 +134,7 @@ class VisiMisi extends HTMLElement {
               <p>Pada Tahun 2030 menjadi platform terbaik tingkat Nasional dalam hal Pengelolaan Limbah Ramah Lingkungan yang menjangkau seluruh wilayah Indonesia dari Sabang sampai Merauke dari Miangas hingga pulau Rote.</p>
           </div>
           <div 
-            data-aos="zoom-in"
+            data-aos="flip-down"
             data-aos-offset="200"
             data-aos-delay="50"
             data-aos-duration="1000"

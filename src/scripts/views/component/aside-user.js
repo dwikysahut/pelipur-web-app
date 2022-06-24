@@ -16,16 +16,7 @@ class AsideUser extends HTMLElement {
         </div>
         <div class="sidebar__menu" id="sidebar__menu">
           <ul class="sidebar__list">
-            <li class="sidebar__item">
-              <a href="#/user-collection" class="sidebar__link-user">
-                <img
-                  src="icons/assignment_white_24dp.svg"
-                  class="sidebar__icon"
-                  alt="Pengumpulan"
-                />
-                <span class="sidebar__name">Pengumpulan</span>
-              </a>
-            </li>
+          
             <li class="sidebar__item">
               <a href="#/user-history" class="sidebar__link-user">
                 <img

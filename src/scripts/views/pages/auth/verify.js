@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import AuthDbSource from '../../../data/authdb-source';
+import { swalError } from '../../../utils/function-helper';
 
 import VerifyPresenter from './verify/verify-presenter';
 import VerifyView from './verify/verify-view';
@@ -14,6 +15,10 @@ const Verify = {
   },
 
   async afterRender() {
+    if (localStorage.getItem('token')) {
+      window.history.replaceState('', '', '#/home');
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
     new VerifyPresenter({ view, authDb: AuthDbSource });
   },
 };

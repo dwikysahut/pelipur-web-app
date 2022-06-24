@@ -1,7 +1,7 @@
 import { dataDashboardTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
-import '../../../component/custom-loader';
 import '../../../component/collection-chart';
+import '../../../component/custom-loader';
 /* eslint-disable class-methods-use-this */
 class AdminDashboardView {
   getTemplate() {

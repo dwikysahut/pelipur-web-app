@@ -7,14 +7,14 @@
 import CONFIG from '../../../../globals/config';
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  closeLoader, emptyFileHandler, emptyFormHandler, openLoader, swalConfirm, swalConfirmation, swalError,
+  closeLoader, emptyFileHandler, emptyFormHandler, errorFetch, openLoader, swalConfirm, swalConfirmation, swalError,
 } from '../../../../utils/function-helper';
 
 class AdminPartnerPresenter {
   constructor({ view, dataDb }) {
     this._view = view;
     this._dataDb = dataDb;
-    this._showAllData();
+    this._showAllPartnersData();
     this._formCollectionEventChangeHandler();
     this._submitButtonHandler();
     this._generateCitiesDropdown();
@@ -81,7 +81,7 @@ class AdminPartnerPresenter {
     });
   }
 
-  async _showAllData() {
+  async _showAllPartnersData() {
     try {
       openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllPartners(localStorage.getItem('token'));
@@ -91,10 +91,30 @@ class AdminPartnerPresenter {
         this._renderData(response.data.data);
       }
     } catch (error) {
-      console.log(error.message);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              await this._showAllPartnersData();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          } finally {
+            setTimeout(() => {
+              closeLoader(this._view.loaderListener());
+            }, 500);
+          }
+        });
+      }
       // swalError('Ooops Something wrong', '#/');
     } finally {
-      closeLoader(this._view.loaderListener());
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 
@@ -133,7 +153,7 @@ class AdminPartnerPresenter {
           addressForm.value = '';
           cityForm.value = '';
           imagePartner.value = '';
-          this._showAllData();
+          this._showAllPartnersData();
           //   closeLoader();
         }
       } catch (error) {
@@ -260,7 +280,7 @@ class AdminPartnerPresenter {
         form.addressForm.value = '';
         form.cityForm.value = '';
         form.imagePartner.value = '';
-        await this._showAllData();
+        await this._showAllPartnersData();
       }
     } catch (error) {
       console.log(error.message);
@@ -273,7 +293,7 @@ class AdminPartnerPresenter {
       const response = await this._dataDb.deletePartner(localStorage.getItem('token'), id);
       if (response.status === 200) {
         swalConfirm('Data Terhapus');
-        await this._showAllData();
+        await this._showAllPartnersData();
       }
     } catch (error) {
       swalError('Oops.. Something Wrong', '');

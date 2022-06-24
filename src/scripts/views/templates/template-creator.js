@@ -20,7 +20,11 @@ const newsTemplate = (news) => {
     `;
   return template;
 };
-
+const emptyTableTemplate = () => `
+  <tr >
+  <td class="empty-table" colspan="100%"><h4>Data kosong</h4></td>
+</tr>
+  `;
 const tableCollectionsTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
@@ -401,5 +405,5 @@ export {
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
   dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
-  buttonSuspendTemplate, buttonUnSuspendTemplate,
+  buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
 };

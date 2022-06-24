@@ -8,10 +8,12 @@ import AuthDbSource from '../../../data/authdb-source';
 import AuthView from './auth/auth-view';
 import AuthPresenter from './auth/auth-presenter';
 import '../../component/custom-loader';
+import { swalError } from '../../../utils/function-helper';
 
 const view = new AuthView();
 
 const Auth = {
+
   async render() {
     return {
       footer: false,
@@ -20,6 +22,10 @@ const Auth = {
   },
 
   async afterRender() {
+    if (localStorage.getItem('token')) {
+      window.history.replaceState('', '', '#/home');
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
     new AuthPresenter({ view, authDb: AuthDbSource });
   },
 };

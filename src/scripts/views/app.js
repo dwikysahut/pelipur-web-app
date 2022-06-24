@@ -8,7 +8,7 @@ import OpenChatInitiator from '../utils/OpenChatInitiator';
 
 class App {
   constructor({
-    button, chatButton, chatContainer, drawer, content, footer,
+    button, chatButton, chatContainer, drawer, content, footer, navList,
   }) {
     this._button = button;
     this._chatButton = chatButton;
@@ -16,6 +16,7 @@ class App {
     this._drawer = drawer;
     this._content = content;
     this._footer = footer;
+    this._navList = navList;
 
     this._initialAppShell();
   }
@@ -25,6 +26,7 @@ class App {
       button: this._button,
       drawer: this._drawer,
       content: this._content,
+      navList: this._navList,
     });
     OpenChatInitiator.init({
       button: this._chatButton,
@@ -40,8 +42,6 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     let page = routes[url.page];
     page = this._notFoundCheck(page);
-
-   
 
     window.scrollTo(0, 0);
     const { footer, content } = await page.render();

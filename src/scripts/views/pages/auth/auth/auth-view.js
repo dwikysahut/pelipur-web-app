@@ -6,8 +6,16 @@ class AuthView {
     return `
     <custom-loader></custom-loader>
     <div class="container">
-    <div class="container__side">
-      <img src="./images/auth.png" alt="authentication">
+    <div 
+      data-aos="fade-right"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="true"
+      class="container__side">
+      <img src="./images/undraw_secure_login_pdn4.svg" alt="Authentication">
     </div>
 
     <div class="container__wrapper">

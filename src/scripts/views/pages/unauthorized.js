@@ -7,7 +7,9 @@ const Unauthorized = {
   async render() {
     if (!localStorage.getItem('token')) {
       await swalError('Please Login First', '#/auth');
-      return false;
+      return {
+        content: '<div></div>',
+      };
     }
     return {
       footer: true,
