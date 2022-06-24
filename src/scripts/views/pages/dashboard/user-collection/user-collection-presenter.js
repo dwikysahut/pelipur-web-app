@@ -4,7 +4,8 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, resetFormValue, swalConfirm, swalError, zeroValueHandler, openLoader, closeLoader, errorFetch,
+  emptyFormHandler, resetFormValue,
+  swalConfirm, swalError, zeroValueHandler, openLoader, closeLoader, errorFetch,
 } from '../../../../utils/function-helper';
 
 class UserCollectionPresenter {
@@ -67,29 +68,31 @@ class UserCollectionPresenter {
 
   async _generateCityDropdownHandler() {
     try {
-      // openLoader(this._view.loaderListener());
+      openLoader(this._view.loaderListener());
       const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
       console.log(responseCity);
       this._renderCities(responseCity.data.data);
     } catch (error) {
       // console.log(error);
       if (error.response.data.data.message) {
-        errorFetch(error.response.data.data.message, async (token) => {
-          try {
-            const response = await this._authDb.refreshToken({ token });
-            if (response.status === 200) {
-              localStorage.setItem('token', response.data.data.token);
-              localStorage.setItem('refreshToken', response.data.data.refreshToken);
-              await this._generateCityDropdownHandler();
-            }
-          } catch (errorToken) {
-            // console.log(errorToken);
-            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
-          }
-        });
+        // errorFetch(error.response.data.data.message, async (token) => {
+        //   try {
+        //     const response = await this._authDb.refreshToken({ token });
+        //     if (response.status === 200) {
+        //       localStorage.setItem('token', response.data.data.token);
+        //       localStorage.setItem('refreshToken', response.data.data.refreshToken);
+        //       await this._generateCityDropdownHandler();
+        //     }
+        //   } catch (errorToken) {
+        //     // console.log(errorToken);
+        //     if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+        //   }
+        // });
       }
     } finally {
-      // closeLoader(this._view.loaderListener());
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

@@ -25,6 +25,7 @@ const app = new App({
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),
   footer: document.querySelector('custom-footer'),
+  navList: document.querySelector('.nav__list'),
 });
 
 window.addEventListener('hashchange', () => {

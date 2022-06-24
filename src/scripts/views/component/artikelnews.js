@@ -42,6 +42,7 @@ class Artikel extends HTMLElement {
 
         .gambar-artikel img{
           display: block;
+          width: 100%;
           max-height: 300px;
         }
 
@@ -89,7 +90,7 @@ class Artikel extends HTMLElement {
         </div>
 
        <div class="artikel">
-          <h2>Limbah Minyak Jelantah</h2>
+          <h2>Minyak Jelantah</h2>
           <p>Minyak jelantah (waste cooking oil) adalah minyak limbah yang bisa berasal dari jenis-jenis minyak goreng seperti halnya minyak jagung, minyak sayur, minyak samin dan sebagainya. Minyak ini merupakan minyak bekas pemakaian kebutuhan rumah tangga umumnya, dapat digunakan kembali untuk keperluaran kuliner akan tetapi bila ditinjau dari komposisi kimianya, minyak jelantah mengandung senyawa-senyawa yang bersifat karsinogenik, yang terjadi selama proses penggorengan.
           <a href="https://id.wikipedia.org/wiki/Minyak_jelantah" target="_blank" rel="noreferrer" class="oil-details">Read more...<a/>  
           </p>

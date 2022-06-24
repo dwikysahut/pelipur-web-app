@@ -1,88 +1,94 @@
 import { cityItemTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
 import '../../../component/custom-loader';
+import '../../../component/custom-join';
+
 /* eslint-disable class-methods-use-this */
 class UserCollectionView {
   getTemplate() {
     return `
       
       <div class="wrapper-dashboard">
-      <aside-user></aside-user>
+      
     
       <div class="dashboard-container">
-        <div class="content">
-          <h2 class="content__title">Pengumpulan</h2>
-          <form class="content__form">
-            <div class="content__form-item-date">
-              <label for="date">Tanggal</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div class="content__form-item-time">
-              <label for="time">Estimasi Waktu</label>
-              <input type="time" id="time" name="time" required />
-            </div>
-            <div class="content__form-item-total">
-              <label for="total">Total Minyak</label>
-              <div class="content__form-item-total-list">
-                <input type="number" id="number" name="number" required />
-                <label for="liter">/Liter</label>
-              </div>
-            </div>
-            <div class="content__form-item">
-              <label for="message">Pesan</label>
-              <input type="text" id="message" name="pesan" required />
-            </div>
-            <div class="content__form-item-city">
-              <label for="city">Kota</label>
-              <select id="city" name="city">
-                
-              </select>
-            </div>
-            <div class="content__form-item">
-              <label for="address">Alamat Tujuan</label>
-              <textarea
-                name="address"
-                id="address"
-                cols="12"
-                rows="2"
-                required
-              ></textarea>
-            </div>
-            <div class="btn__collection">
-              <div class="btn-item">
-                <button
-                type="submit"
-                form="content_form"
-                id='saveTemplateCollection'
-                value="Submit"
-                class="btn__save"
-                >
-                  Simpan sebagai template
-                </button>
-                <button
-                type="submit"
-                form="content_form"
-                id='useTemplateCollection'
-                value="Submit"
-                class="btn__last"
-                >
-                  Gunakan data terakhir
-                </button>
-              </div>
-              <div class="btn__form">
-                <button
-                  type="submit"
-                  form="content_form"
-                  id='submitCollection'
-                  value="Submit"
-                  class="btn__save"
-                >
-                  Kirim
-                </button>
-              </div>
-            </div>
-          </form>
+      ${!localStorage.getItem('token') ? '<custom-join></custom-join>' : `
+      <custom-loader></custom-loader>
+      <div class="content">
+      <h2 class="content__title">Pengumpulan</h2>
+      <form class="content__form">
+        <div class="content__form-item-date">
+          <label for="date">Tanggal</label>
+          <input type="date" id="date" name="date" required />
         </div>
+        <div class="content__form-item-time">
+          <label for="time">Estimasi Waktu</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="content__form-item-total">
+          <label for="total">Total Minyak</label>
+          <div class="content__form-item-total-list">
+            <input type="number" id="number" name="number" required />
+            <label for="liter">/Liter</label>
+          </div>
+        </div>
+        <div class="content__form-item">
+          <label for="message">Pesan</label>
+          <input type="text" id="message" name="pesan" required />
+        </div>
+        <div class="content__form-item-city">
+          <label for="city">Kota</label>
+          <select id="city" name="city">
+            
+          </select>
+        </div>
+        <div class="content__form-item">
+          <label for="address">Alamat Tujuan</label>
+          <textarea
+            name="address"
+            id="address"
+            cols="12"
+            rows="2"
+            required
+          ></textarea>
+        </div>
+        <div class="btn__collection">
+          <div class="btn-item">
+            <button
+            type="submit"
+            form="content_form"
+            id='saveTemplateCollection'
+            value="Submit"
+            class="btn__save outline"
+            >
+              Simpan Template
+            </button>
+            <button
+            type="submit"
+            form="content_form"
+            id='useTemplateCollection'
+            value="Submit"
+            class="btn__last"
+            >
+              Gunakan Template
+            </button>
+          </div>
+          <div class="btn__form">
+            <button
+              type="submit"
+              form="content_form"
+              id='submitCollection'
+              value="Submit"
+              class="btn__save"
+            >
+              Kirim
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+      `}
+       
       </div>
     </div>
               `;

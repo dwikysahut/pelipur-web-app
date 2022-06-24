@@ -32,10 +32,6 @@ class UserProfilePresenter {
       this._renderCategories(responseDesc.data.data, recentId);
     } catch (error) {
       console.log(error);
-    } finally {
-      setTimeout(() => {
-        closeLoader(this._view.loaderListener());
-      }, 500);
     }
   }
 
@@ -57,14 +53,19 @@ class UserProfilePresenter {
           } catch (errorToken) {
             // console.log(errorToken);
             if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          } finally {
+            setTimeout(() => {
+              closeLoader(this._view.loaderListener());
+            }, 500);
           }
         });
       }
       // swalError('Oops something wrong');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
-    // finally {
-    //   closeLoader(this._view.loaderListener());
-    // }
   }
 
   _renderCategories(items, recentId) {

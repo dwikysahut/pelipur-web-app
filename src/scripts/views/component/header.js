@@ -17,6 +17,7 @@ class Header extends HTMLElement {
           <nav id="drawer" class="nav">
             <ul class="nav__list">
               <li class="nav__item"><a href="#/home">Beranda</a></li>
+              <li class="nav__item"><a href="#/collection">Pengumpulan</a></li>
               <li class="nav__item"><a href="#/about-us">Tentang Kami</a></li>
               <li class="nav__item"><a href="#/business">Bisnis</a> </li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>' : `
               <li tabindex="0" class="nav__item dropdown">
@@ -27,7 +28,7 @@ class Header extends HTMLElement {
                 </div>
               </div>
               <div class="dropdown-content">
-                <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-collection' : 'collections'}" class="dropdown-dashboard">Dashboard</a>
+                <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-history' : 'collections'}" class="dropdown-dashboard">Dashboard</a>
                 <a href="#/logout" class="dropdown-logout">Logout</a>
               </div>
               </li>
