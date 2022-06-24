@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class VisiMisi extends HTMLElement {
   constructor() {
     super();

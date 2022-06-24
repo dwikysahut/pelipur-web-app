@@ -1,11 +1,10 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 /* eslint-disable no-param-reassign */
 import Swal from 'sweetalert2';
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
-import {
-  closeLoader,
-  emptyFormHandler, formEmailValidation, formPhoneValidation, openLoader, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail,
-} from '../../../../utils/function-helper';
+import { closeLoader, emptyFormHandler, formEmailValidation, formPhoneValidation, openLoader, passwordValidation, resetFormValue, swalConfirm, swalError, validateEmail } from '../../../../utils/function-helper';
 import SwiperButtonLoginPresenter from '../../../../utils/slider-button-login-presenter';
 
 class AuthPresenter {
@@ -22,12 +21,14 @@ class AuthPresenter {
 
   // swiper button in auth page
   _listenElementButtonInit() {
-    this._view.elementButtonInit(({
-      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
-    }) => {
+    this._view.elementButtonInit(({ loginForm, loginBtn, signupBtn, signupLink, linkSignUp }) => {
       window.scrollTo(0, 0);
       SwiperButtonLoginPresenter.init({
-        loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+        loginForm,
+        loginBtn,
+        signupBtn,
+        signupLink,
+        linkSignUp,
       });
     });
     closeLoader(this._view.loaderListener());
@@ -51,9 +52,7 @@ class AuthPresenter {
       if (inputEmailLogin.value !== '' && inputPasswordLogin.value !== '') {
         console.log(validateEmail(inputEmailLogin.value));
         if (formEmailValidation(inputEmailLogin, this._view.alertEmailRegListener())) {
-          await this._loginHandler(
-            { email: inputEmailLogin.value, password: inputPasswordLogin.value },
-          );
+          await this._loginHandler({ email: inputEmailLogin.value, password: inputPasswordLogin.value });
           inputEmailLogin.value = '';
           inputPasswordLogin.value = '';
         }
@@ -114,14 +113,13 @@ class AuthPresenter {
 
   _registerFormHandler() {
     this._view.registerFormListener(async (formRegister) => {
-      if (formRegister.email.value !== '' && formRegister.alamat.value !== '' && formRegister.no_telp.value !== ''
-        && formRegister.password.value !== '' && formRegister.nama.value !== '' && formRegister.confirmPassword.value !== '') {
+      if (formRegister.email.value !== '' && formRegister.alamat.value !== '' && formRegister.no_telp.value !== '' && formRegister.password.value !== '' && formRegister.nama.value !== '' && formRegister.confirmPassword.value !== '') {
         if (formEmailValidation(formRegister.email, this._view.alertEmailRegListener())) {
           if (!formPhoneValidation(formRegister.no_telp, this._view.alertPhoneRegListener())) return;
           if (!passwordValidation(formRegister.password, this._view.alertPassRegListener())) return;
 
           if (formRegister.password.value !== formRegister.confirmPassword.value) {
-            await swalError('Password Doesn\'t match');
+            await swalError("Password Doesn't match");
             formRegister.password.classList.add('danger');
             formRegister.confirmPassword.classList.add('danger');
             return;
@@ -130,15 +128,7 @@ class AuthPresenter {
           resetFormValue(formRegister);
         }
       } else {
-        emptyFormHandler(
-          formRegister.nama,
-          formRegister.email,
-          formRegister.password,
-          formRegister.nama,
-          formRegister.no_telp,
-          formRegister.alamat,
-          formRegister.confirmPassword,
-        );
+        emptyFormHandler(formRegister.nama, formRegister.email, formRegister.password, formRegister.nama, formRegister.no_telp, formRegister.alamat, formRegister.confirmPassword);
       }
     });
   }
@@ -151,7 +141,6 @@ class AuthPresenter {
         no_telp: form.no_telp.value,
         alamat: form.alamat.value,
         password: form.password.value,
-
       });
       console.log(response);
       if (response.status === 200) {
