@@ -34,7 +34,7 @@ const routes = {
   '/partners': localStorage.getItem('role') === '1' ? Partner : Unauthorized,
   '/collections': localStorage.getItem('role') === '1' ? Collection : Unauthorized,
   // '/collections': Collection,
-  '/user-collection': localStorage.getItem('role') === '2' ? UserCollection : Unauthorized,
+  '/collection': UserCollection,
   '/user-history': localStorage.getItem('role') === '2' ? UserHistory : Unauthorized,
   '/user-detail/:id': localStorage.getItem('role') === '1' ? UserDetail : Unauthorized,
   '/logout': Logout,

@@ -8,7 +8,7 @@ const view = new UserCollectionView();
 const UserCollection = {
   async render() {
     return {
-      footer: false,
+      footer: true,
       content: view.getTemplate(),
     };
   },

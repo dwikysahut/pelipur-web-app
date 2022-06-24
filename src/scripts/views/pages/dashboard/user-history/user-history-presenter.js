@@ -35,6 +35,10 @@ class UserHistoryPresenter {
           } catch (errorToken) {
             // console.log(errorToken);
             if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          } finally {
+            setTimeout(() => {
+              closeLoader(this._view.loaderListener());
+            }, 500);
           }
         });
       }

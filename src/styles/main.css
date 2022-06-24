@@ -26,10 +26,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-main{
-  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -60,7 +56,6 @@ main{
   justify-content: space-between;
   max-height: 100px;
   padding: 16px 32px;
-  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
 }
 
 .header__inner {
@@ -216,6 +211,7 @@ button#hambuger {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   color: white;
+  width: 100%;
   font-size: 13px;
   padding: 15px;
   text-align: center;
@@ -297,6 +293,8 @@ button#hambuger {
   background-position: initial;
   margin-bottom: 70px;
   height: 600px;
+  filter: brightness(1) contrast(1.1);
+  filter: blur(100%);
   background-attachment: fixed;
   background-size: cover;  
   background-repeat: no-repeat;
@@ -409,7 +407,7 @@ article {
   margin: 0 auto 70px;
   padding: 20px 15px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   border-radius: 5px;
 }
 
@@ -955,9 +953,9 @@ textarea.danger {
   }
 }
 custom-loader {
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -969,6 +967,7 @@ custom-loader {
   background: rgba(0, 0, 0, 0.8);
   z-index: 99;
 }
+
 pre-loader {
   position: absolute;
   width: 100vw;

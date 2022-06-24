@@ -49,10 +49,6 @@
   }
 }
 
-@media screen and (min-width: 650px) {
-  
-}
-
 @media screen and (min-width: 700px) {
   .header-icon {
     display: flex;
@@ -70,11 +66,7 @@
     background:#F7F8FC;
     color: #005555;
   }
-
-  .nav__list li:nth-child(4) {
-    margin-top: 0;
-  }
-
+  
   .nav__list {
     flex-direction: row;
     margin: 0;

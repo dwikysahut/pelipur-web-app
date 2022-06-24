@@ -140,7 +140,12 @@
   color: #fff;
   /* margin-bottom: 10px; */
 }
-
+.btn__collection button.outline{
+  background-color: white;
+  border: 1px solid #069a8e;
+  color: #069a8e;
+  
+}
 .btn__delete {
   background-color: #eb5353;
 }
