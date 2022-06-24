@@ -87,8 +87,8 @@ body {
   width: 100%;
   padding: 0;
   flex-direction: column;
-  margin: 30px 0 20px;
-  gap: 30px;
+  margin: 10px 0;
+
 }
 
 .nav__item {
@@ -100,6 +100,8 @@ body {
 .nav__list li {
   line-height: normal;
   list-style: none;
+  display: flex;
+  width: 100%;
   min-width: fit-content;
 }
 
@@ -166,8 +168,7 @@ button#hambuger {
 
 .nav__list li:nth-child(4) {
   border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .nav__list li:nth-child(5) {
@@ -186,7 +187,9 @@ button#hambuger {
 .profile-pict {
   display: none;
 }
-
+.content-collection{
+  padding: 40px;
+}
 .header-icon {
   display: flex;
   justify-content: end;
@@ -237,10 +240,11 @@ button#hambuger {
   position: absolute;
   background-color: #005555;
   left: 0;
+  opacity: 0;
   top: 70px;
   text-align: center;
   z-index: 5;
-  transition: transform 0.7s ease-in-out;
+  transition: all 0.8s;
   transform: translate(-100%, 0);
 }
 
@@ -261,7 +265,7 @@ button#hambuger {
 .dropdown-content a {
   width: 100%;
   color: white !important;
-  padding: 12px 16px;
+  padding: 14px 16px;
   text-decoration: none;
   display: block;
   text-align: center;
@@ -274,6 +278,7 @@ button#hambuger {
 
 #drawer.slide {
   transform: translate(0, 0);
+  opacity: 1;
 }
 
 .nav__item.dropdown:hover .dropdown-content {
@@ -294,11 +299,10 @@ button#hambuger {
   margin-bottom: 70px;
   height: 600px;
   filter: brightness(1) contrast(1.1);
-  filter: blur(100%);
   background-attachment: fixed;
   background-size: cover;  
   background-repeat: no-repeat;
-  background-image: url('../public/images/heros/hero-img-crop.jpg');
+  background-image: url('../public/images/heros/hero-img-drop.jpg');
 }
 
 .hero__inner {
@@ -471,11 +475,13 @@ article {
 .card img {
   width: 100%;
   border-radius: 5px;
+  filter: brightness(0.7) ;
 }
 
 .card h4 {
   padding: 0 10px;
   margin-top: -20px;
+  position: relative;
   color: white;
   font-size: 13px;
 }

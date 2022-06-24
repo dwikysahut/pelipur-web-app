@@ -19,7 +19,8 @@ class Header extends HTMLElement {
               <li class="nav__item"><a href="#/home">Beranda</a></li>
               <li class="nav__item"><a href="#/collection">Pengumpulan</a></li>
               <li class="nav__item"><a href="#/about-us">Tentang Kami</a></li>
-              <li class="nav__item"><a href="#/business">Bisnis</a> </li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>' : `
+              <li class="nav__item"><a href="#/business">Bisnis</a> </li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">MASUK</a></li>' 
+              : `
               <li tabindex="0" class="nav__item dropdown">
               <div class="profile-pict">
                 <img src="${localStorage.getItem('image')}" alt="">
