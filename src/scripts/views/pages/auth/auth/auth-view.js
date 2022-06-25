@@ -15,7 +15,7 @@ class AuthView {
       data-aos-mirror="true"
       data-aos-once="true"
       class="container__side">
-      <img src="./images/undraw_secure_login_pdn4.svg" alt="Authentication">
+      <img src="./images/login.svg" alt="Authentication">
     </div>
 
     <div class="container__wrapper">
@@ -23,15 +23,15 @@ class AuthView {
         <div class="slide-controls">
           <input type="radio" name="slide" id="login" checked>
           <input type="radio" name="slide" id="signup">
-          <label for="login" class="slide login">Login</label>
-          <label for="signup" class="slide signup">Register</label>
+          <label for="login" tabindex="0" class="slide login">Login</label>
+          <label for="signup" tabindex="0" class="slide signup">Register</label>
           <div class="slider-tab"></div>
         </div>
 
         <div class="form-inner">
           <form class="login">
-            <h2>Login</h2>
-            <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
+            <h2 tabindex="0">Login</h2>
+            <p tabindex="0">Belum punya akun? <a href="" id="linkSignUp" class="link-daftar" tabindex="0">Daftar Sekarang</a></p>
 
             <div class="field">
               <input type="email" id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
@@ -47,38 +47,38 @@ class AuthView {
             </div>
 
             <div class="field btn">
-              <div class="btn-layer"></div>
+              <div class="btn-layer" tabindex="0"></div>
               <input type="submit" id="submitLogin" value="Login">
             </div>
           </form>
 
           <form action="#" class="signup">
-            <h2>Register</h2>
-            <div class="field">
+            <h2 tabindex="0">Register</h2>
+            <div tabindex="0" class="field">
               <input type="text" id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
             </div>
-            <div class="field">
+            <div tabindex="0" class="field">
               <input type="email" id="inputEmailReg" name="inputEmailReg" placeholder="Masukkan Email" required>
               <span id="alertEmailReg" class="hint danger">error please enter a valid email</span>
             </div>
-            <div class="field">
+            <div tabindex="0" class="field">
               <input type="tel" id="inputPhoneReg" name="inputPhoneReg" placeholder="Masukkan Nomor Telepon" required>
               <span id="alertPhoneReg" class="hint danger">Input Number Only</span>
             </div>
-            <div class="field">
+            <div tabindex="0" class="field">
               <input type="textarea" id="inputAddressReg" name="inputAddressReg" placeholder="Masukkan Alamat" required>
             </div>
-            <div class="field">
+            <div tabindex="0" class="field">
               <input type="password" id="inputPasswordReg" name="inputPasswordReg" placeholder="Masukan Password"
                 required>
               <span id="alertPassReg" class="hint danger">password must be 8-12 characters in length</span>
             </div>
-            <div class="field">
+            <div tabindex="0" class="field">
               <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" placeholder="Konfirmasi password"
                 required>
             </div>
             <div class="field btn">
-              <div class="btn-layer"></div>
+              <div class="btn-layer" tabindex="0"></div>
               <input type="submit" id="submitRegister" value="Register">
             </div>
           </form>

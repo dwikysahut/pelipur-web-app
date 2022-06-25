@@ -232,7 +232,7 @@ const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>'
 
 const dataDashboardTemplate = (data) => `
 
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
     <span class="card__name">User</span>
@@ -241,7 +241,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/person_white_36dp.svg" alt="User" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_minyak} L</h3>
     <span class="card__name">Total Minyak</span>
@@ -253,7 +253,7 @@ const dataDashboardTemplate = (data) => `
     />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_kota}</h3>
     <span class="card__name">Kota</span>
@@ -262,7 +262,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/pin_drop_white_36dp.svg" alt="Kota" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_mitra}</h3>
     <span class="card__name">Mitra</span>
@@ -271,7 +271,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/account_balance_white_36dp.svg" alt="Mitra" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_pengumpulan}</h3>
     <span class="card__name">Form Terkumpul</span>

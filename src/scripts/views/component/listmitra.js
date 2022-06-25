@@ -49,7 +49,7 @@ class ListMitra extends HTMLElement {
       </style>
         
       <div class="list-mitra">
-        <h2>Mitra</h2>
+        <h2 tabindex="0">Mitra</h2>
         <ul 
           data-aos="fade-up"
           data-aos-offset="200"

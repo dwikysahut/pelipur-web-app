@@ -76,7 +76,7 @@ class InfoBisnis extends HTMLElement {
       </style>
 
       <div class= "keterangan-bisnis">
-        <div class="judul-bisnis"><h2>Bisnis</h2></div>
+        <div class="judul-bisnis"><h2 tabindex="0">Bisnis</h2></div>
         <div 
           data-aos="zoom-in-right"
           data-aos-offset="200"
@@ -86,9 +86,9 @@ class InfoBisnis extends HTMLElement {
           data-aos-mirror="true"
           data-aos-once="true"
           class ="ket-bisnis">
-          <p>Saat ini Pelipur fokus pada pengolahan limbah minyak jelantah yang nantinya limbah tersebut bisa dijual kepada kami. Tentunya ini merupakan peluang untuk menambah penghasilan terutama untuk ibu rumah tangga, rumah makan mau pun pedagang.
+          <p tabindex="0">Saat ini Pelipur fokus pada pengolahan limbah minyak jelantah yang nantinya limbah tersebut bisa dijual kepada kami. Tentunya ini merupakan peluang untuk menambah penghasilan terutama untuk ibu rumah tangga, rumah makan mau pun pedagang.
           </p>
-          <p>Kami bekerjasama dengan perusahaan yang berpengalaman untuk mengelola limbah tersebut menjadi Biodiesel. Kami pun membuka program kerjasama dengan pihak mana pun terkait pengumpulan dan pengolahan limbah minyak. Kami berharap dengan program kerjasama tersebut akan memberikan dampak yang besar terhadap pencegahan pencemaran lingkungan yang dihasilkan limbah minyak.</p>
+          <p tabindex="0">Kami bekerjasama dengan perusahaan yang berpengalaman untuk mengelola limbah tersebut menjadi Biodiesel. Kami pun membuka program kerjasama dengan pihak mana pun terkait pengumpulan dan pengolahan limbah minyak. Kami berharap dengan program kerjasama tersebut akan memberikan dampak yang besar terhadap pencegahan pencemaran lingkungan yang dihasilkan limbah minyak.</p>
         </div>
         <div 
           data-aos="zoom-in-left"
@@ -99,7 +99,7 @@ class InfoBisnis extends HTMLElement {
           data-aos-mirror="true"
           data-aos-once="true"
           class = "ket-gambar">
-          <img src ="./images/heros/bisnis.jpg">
+          <img tabindex="0" src ="./images/heros/bisnis.jpg">
         </div>
       </div>
     `;

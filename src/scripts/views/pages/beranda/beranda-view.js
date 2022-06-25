@@ -16,7 +16,7 @@ class BerandaView {
         <custom-carousel></custom-carousel>
         <layanan-custom></layanan-custom>
         <article>
-          <h2 class="news-title">Berita</h2>
+          <h2 class="news-title" tabindex="0">Berita</h2>
           <div class="item-produk">
             ${skeletonNewsHomeTemplate(6)}
           </div>
