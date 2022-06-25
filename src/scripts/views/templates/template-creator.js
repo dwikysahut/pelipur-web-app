@@ -405,7 +405,6 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
 // eslint-disable-next-line import/prefer-default-export
 export {
-<<<<<<< HEAD
   newsTemplate,
   chatTemplateCreator,
   createSkeletonNewsList,
@@ -424,12 +423,8 @@ export {
   dropdownCityCheckBoxTemplate,
   userListChat,
   chatTemplateAdminCreator,
-=======
-  newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
-  cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
-  categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
-  tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
-  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
-  buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
->>>>>>> 1ab05fb296653ac8325b425807901fbc73b73e78
+  userDetailItemTemplate,
+  buttonSuspendTemplate,
+  buttonUnSuspendTemplate,
+  emptyTableTemplate,
 };

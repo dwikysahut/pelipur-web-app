@@ -113,15 +113,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-<<<<<<< HEAD
-                <picture>
-                    <source media ="(max-width:600px)" data-src="./images/undraw_printing_invoices_5r4r-small.png" class="lazyload">
-                    <img data-src="./images/undraw_printing_invoices_5r4r-large.png" class="lazyload"
-                    alt="layanan image"></img>
-                </picture>
-=======
-                <img src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
->>>>>>> 1ab05fb296653ac8325b425807901fbc73b73e78
+                <img class="lazyload" src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
                 <span>Menghasilkan Uang</span>
             </div>       
         </div>

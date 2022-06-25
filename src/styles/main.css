@@ -26,8 +26,8 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-main{
-  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
+main {
+  background-image: linear-gradient(to right, #f2f3f8, #f7f8fc);
 }
 
 .wrapper {
@@ -60,7 +60,7 @@ main{
   justify-content: space-between;
   max-height: 100px;
   padding: 16px 32px;
-  background-image: linear-gradient(to right, #F2F3F8 , #F7F8FC);
+  background-image: linear-gradient(to right, #f2f3f8, #f7f8fc);
 }
 
 .header__inner {
@@ -298,7 +298,7 @@ button#hambuger {
   margin-bottom: 70px;
   height: 600px;
   background-attachment: fixed;
-  background-size: cover;  
+  background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../public/images/heros/hero-img-crop.jpg');
 }
@@ -430,7 +430,7 @@ article {
 .news-list {
   width: 100%;
   display: flex;
-  justify-content: flex-end ;
+  justify-content: flex-end;
 }
 
 .news-list a {
@@ -628,7 +628,6 @@ footer .copyrig p {
 .copyrig {
   box-sizing: border-box;
   border-radius: 5px;
-
 }
 
 footer .jadwal h3 {
@@ -649,16 +648,6 @@ footer .fa {
   color: white !important;
 }
 
-
-
-
-
-
-
-
-
-
-
 .fa.fa-commenting {
   color: white;
 }
@@ -667,7 +656,7 @@ footer .fa {
   display: block !important;
 }
 
-.btn-open-chat{
+.btn-open-chat {
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -714,11 +703,11 @@ footer .fa {
 .chat-admin {
   padding: 8px;
   position: fixed;
-  
+
   right: 10px;
   bottom: 10px;
   border-radius: 5px;
-  width:50%;
+  width: 50%;
   z-index: 10;
   margin-left: auto;
   margin-right: auto;
@@ -757,7 +746,7 @@ footer .fa {
   padding: 8px 2px;
   flex-direction: column;
   overflow: -moz-scrollbars-vertical;
-  border-right:0.4px solid black;
+  border-right: 0.4px solid black;
 }
 
 .user-list__item {
@@ -778,9 +767,9 @@ footer .fa {
 .user-list__item p {
   margin: 0;
   font-size: 10px;
-  word-wrap: break-word;      /* IE 5.5-7 */
+  word-wrap: break-word; /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-  white-space: pre-wrap;      /* current browsers */
+  white-space: pre-wrap; /* current browsers */
 }
 .user-list__item span {
   color: gray;
@@ -797,7 +786,6 @@ footer .fa {
 }
 
 .form__submit-container {
-  
   display: flex;
   margin-left: 10px;
   justify-content: flex-end;
@@ -806,7 +794,6 @@ footer .fa {
   min-height: 44px;
 }
 .chat__form__form-message > .form__input > .form-control {
-
   height: 100% !important;
 }
 .submit-button {
@@ -873,7 +860,6 @@ textarea.danger {
 }
 /* news list detail */
 
-
 .medsos {
   width: 100%;
   height: 100%;
@@ -896,7 +882,7 @@ textarea.danger {
   margin-bottom: 0;
 }
 
-.medsos ul li a{
+.medsos ul li a {
   width: 44px;
   height: 44px;
   display: flex;
@@ -1009,47 +995,42 @@ loader-content {
   width: 50px;
   height: 50px;
   color: white;
-  background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0% 50%,
-  radial-gradient(circle closest-side, currentColor 90%, transparent) 50% 50%,
-  radial-gradient(circle closest-side, currentColor 90%, transparent) 100% 50%;
-  
-  background-size:  calc(100%/3) 12px;
+  background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0% 50%, radial-gradient(circle closest-side, currentColor 90%, transparent) 50% 50%,
+    radial-gradient(circle closest-side, currentColor 90%, transparent) 100% 50%;
+
+  background-size: calc(100% / 3) 12px;
   background-repeat: no-repeat;
-  animation:  dots 1s infinite linear;
-
+  animation: dots 1s infinite linear;
 }
 @keyframes dots {
-  20%{
-      background-position: 0% 0%, 50% 50%, 100% 50%;
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
   }
-  40%{
-      background-position: 0% 100%, 50% 0%, 100% 50%;
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
   }
-  60%{
-      background-position: 0% 50%, 50% 100%, 100% 0%;
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
   }
-  80%{
-      background-position: 0% 50%, 50% 50%, 100% 100%;
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
   }
-  
 }
 
 @keyframes dots {
-  20%{
-      background-position: 0% 0%, 50% 50%, 100% 50%;
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
   }
-  40%{
-      background-position: 0% 100%, 50% 0%, 100% 50%;
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
   }
-  60%{
-      background-position: 0% 50%, 50% 100%, 100% 0%;
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
   }
-  80%{
-      background-position: 0% 50%, 50% 50%, 100% 100%;
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
   }
-  
 }
-
 
 button > i {
   pointer-events: none;
@@ -1059,7 +1040,6 @@ button > i {
   padding: 0 8px;
 }
 
-
 /* image zoom */
 
 .img-partner {
@@ -1068,7 +1048,9 @@ button > i {
   transition: 0.3s;
 }
 
-#partner:hover {opacity: 0.7;}
+#partner:hover {
+  opacity: 0.7;
+}
 
 /* The Modal (background) */
 .modal {
@@ -1081,8 +1063,8 @@ button > i {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
@@ -1106,7 +1088,8 @@ button > i {
 }
 
 /* Add Animation */
-.modal-content, .partner-caption {  
+.modal-content,
+.partner-caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -1114,13 +1097,21 @@ button > i {
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* The Close Button */
@@ -1145,7 +1136,7 @@ button > i {
   text-align: center;
 }
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
@@ -1160,17 +1151,18 @@ button > i {
 }
 
 /* table */
-table > tbody > tr > td, th {
+table > tbody > tr > td,
+th {
   vertical-align: middle;
 }
-.empty-table{
+.empty-table {
   text-align: center;
   height: 300px;
-    vertical-align: middle;
+  vertical-align: middle;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.empty-table h4{
-    font-weight: lighter;
+.empty-table h4 {
+  font-weight: lighter;
 }

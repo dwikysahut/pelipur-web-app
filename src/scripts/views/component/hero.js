@@ -14,13 +14,6 @@ class Hero extends HTMLElement {
 
       <div class="hero">
         <div class="hero__inner">
-          <div class="hero__inner__image">
-          <picture class="hero__inner__image">
-            <source media ="(max-width:600px)" srcset="./images/heros/hero-img-crop-small.jpg" class="lazyload">
-            <img data-src="./images/heros/hero-img-crop-small.jpg" class="lazyload"
-            alt="hero"></img>
-          </picture>
-          </div>
           <div 
             data-aos="zoom-in-up"
             data-aos-offset="200"
