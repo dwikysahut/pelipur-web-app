@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, formPhoneValidation, swalConfirm, swalError, openLoader, closeLoader,
+  emptyFormHandler, formPhoneValidation, swalConfirm, swalError, openLoader, closeLoader, errorFetch,
 } from '../../../../utils/function-helper';
 
 class UserProfilePresenter {
@@ -26,14 +26,16 @@ class UserProfilePresenter {
 
   async _generateCategoryDropdownHandler(recentId) {
     try {
-      openLoader(this._view.loaderListener());
+      // openLoader(this._view.loaderListener());
       const responseDesc = await this._dataDb.getAllDesc(localStorage.getItem('token'));
       console.log(responseDesc);
       this._renderCategories(responseDesc.data.data, recentId);
     } catch (error) {
       console.log(error);
     } finally {
-      closeLoader(this._view.loaderListener());
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 
@@ -43,7 +45,21 @@ class UserProfilePresenter {
       const responseUser = await this._dataDb.getUserById(localStorage.getItem('token'), localStorage.getItem('id'));
       this._renderUserForm(responseUser.data.data);
     } catch (error) {
-      console.log(error);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              this._getAllCollectionsHandler();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
       // swalError('Oops something wrong');
     }
     // finally {

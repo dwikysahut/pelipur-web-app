@@ -1,4 +1,5 @@
 /* eslint-disable no-empty-function */
+import AuthDbSource from '../../../data/authdb-source';
 import DataDbSource from '../../../data/datadb-source';
 import '../../component/aside-dashboard';
 import AdminPartnerPresenter from './admin-partner/admin-partner-presenter';
@@ -7,12 +8,14 @@ import AdminPartnerView from './admin-partner/admin-partner-view';
 const view = new AdminPartnerView();
 const Partner = {
   async render() {
-    document.querySelector('custom-footer').style.display = 'none';
-    return view.getTemplate();
+    return {
+      footer: false,
+      content: view.getTemplate(),
+    };
   },
 
   async afterRender() {
-    new AdminPartnerPresenter({ view, dataDb: DataDbSource });
+    new AdminPartnerPresenter({ view, dataDb: DataDbSource, authDb: AuthDbSource });
     // let expanded = false;
 
     // const showCheckboxes = () => {

@@ -4,10 +4,10 @@ import '../../component/news-list';
 class NewsDetailView {
   getTemplate() {
     return `   
-   <div class="news-container">
-   ${createSkeletonNewsList(20)}
-   </div>
-              `;
+      <div class="news-container">
+        ${createSkeletonNewsList(20)}
+      </div>
+    `;
   }
 
   showNews(items) {
@@ -16,7 +16,7 @@ class NewsDetailView {
     const itemContainer = document.querySelector('.news-container');
     itemContainer.innerHTML = '';
     if (itemContainer !== null) {
-      for (let i = 0; i < 20; i += 1) {
+      for (let i = 0; i < items.length; i += 1) {
         const element = document.createElement('news-list');
         element.item = items[i];
         itemContainer.appendChild(element);

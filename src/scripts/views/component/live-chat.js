@@ -15,6 +15,15 @@ class LiveChat extends HTMLElement {
     }
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    this[name] = newValue;
+    this.loadAdminChat();
+  }
+
+  static get observedAttributes() {
+    return ['disabled'];
+  }
+
   async loadAdminChat() {
     this.renderAdminChat();
 
@@ -69,17 +78,18 @@ class LiveChat extends HTMLElement {
         console.log(e.currentTarget.dataset.id);
         this._idTarget = e.currentTarget.dataset.id;
         loadMesageFromUser(e.currentTarget.dataset.id);
+        if (this._idTarget !== '') {
+          const inputMessage = document.querySelector('#inputMessageAdmin');
+          inputMessage.removeAttribute('disabled');
+
+        loadMesageFromUser(this._idTarget);
+        }
       });
     });
-    if (this._idTarget !== '') {
+    if (this._idTarget === '') {
       const inputMessage = document.querySelector('#inputMessageAdmin');
-      inputMessage.setAttribute('disabled', false);
-
-      loadMesageFromUser(this._idTarget);
-    } else {
-
+      inputMessage.setAttribute('disabled', true);
     }
-
     const inputMessage = document.querySelector('#inputMessageAdmin');
     document.querySelector('#submitMessageAdmin').addEventListener('click', (e) => {
       e.preventDefault();

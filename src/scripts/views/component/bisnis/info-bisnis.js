@@ -8,82 +8,72 @@ class InfoBisnis extends HTMLElement {
   }
   render() {
     this.innerHTML = `
+      <style>
+        .keterangan-bisnis{
+          width: 100%;
+          margin: 0 auto 70px;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas:
+              "title"
+              "image"
+              "desc";
+          padding: 50px 0;
+          gap: 20px;
+          box-sizing: boreder-box;
+          box-shadow: 0 4px 8px 0 rgb(2 56 36 / 20%);
+        }
 
-    <style>
-    .keterangan-bisnis{
-      width:80%;
-      margin: 0 auto 70px;
-      display:grid;
-      grid-template-columns:1fr;
-      grid-template-areas: "title"
-                       "image"
-                       "desc"
-                       ;
-      align-items: center;
-      padding:10px;
-      box-sizing:boreder-box;
-      box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
-    }
-
-    .ket-gambar{
-      width:60%;
-    }
-
-    h2 {
-      margin: 20px 0 30px;
-      font-size: 23px;
-      font-weight: 500;
-      text-align: center;
-    }
+        .judul-bisnis h2 {
+          font-size: 23px;
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 0;
+        }
     
-    .keterangan-bisnis .ket-bisnis p{
-      font-size: 15px;
-      text-align: justify;
-    }
+        .keterangan-bisnis .ket-bisnis p{
+          font-size: 15px;
+          text-align: justify;
+          line-height: 1.7;
+        }
 
-    .keterangan-bisnis .ket-bisnis{
-      width:100%;
-      box-sizing:border-box;
-    }
+        .judul-bisnis {
+          grid-area: title;
+        }
 
-    .keterangan-bisnis .ket-gambar{
-      width:100%;
-      box-sizing:border-box;
-    }
-    .judul-bisnis {
-      grid-area: title;
-    }
-    .ket-bisnis {
-      grid-area: desc;
-    }
-    .ket-gambar {
-      grid-area: image;
-    }
+        .ket-bisnis {
+          grid-area: desc;
+          width: 80%;
+          margin: 0 auto;
+        }
 
-    .ket-gambar img{
-      width: 100%;
-      max-height: 400px;
+        .ket-gambar {
+          grid-area: image;
+          width: 80%;
+          margin: 0 auto;
+        }
 
-    }
+        .ket-gambar img{
+          width: 100%;
+          max-height: 300px;
+        }
 
-    @media screen and (min-width:1000px){
-     .keterangan-bisnis{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        grid-template-areas: "title title"
-                            "desc image";
-        column-gap: 30px;
-        padding:20px;
-        box-sizing:border-box;
-     }
+        @media screen and (min-width:1000px){
+          .keterangan-bisnis{
+              display:grid;
+              grid-template-columns:1fr 1fr;
+              grid-template-areas: "title title"
+                                  "desc image";
+              column-gap: 0;
+              padding: 50px 70px 50px 130px;
+              box-sizing:border-box;
+          }
 
-     .keterangan-bisnis .ket-bisnis p{
-      margin-top: 0;
-    }
-  }
-    }
-    </style>
-
+          .ket-bisnis {
+            width: 100%;
+          }
+        }
+      </style>
 
       <div class= "keterangan-bisnis">
         <div class="judul-bisnis"><h2>Bisnis</h2></div>
@@ -107,8 +97,8 @@ class InfoBisnis extends HTMLElement {
           </picture>
           </div>
         </div>
-        
-        `;
+      </div>
+    `;
   }
 }
 

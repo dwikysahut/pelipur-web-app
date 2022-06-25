@@ -1,14 +1,39 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-new */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
 // import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
-import { swalError, openLoader, closeLoader } from '../../../../utils/function-helper';
+import {
+  Chart,
+  ArcElement,
+  LineElement,
+  BarElement,
+  PointElement,
+  BarController,
+  BubbleController,
+  DoughnutController,
+  LineController,
+  PieController,
+  PolarAreaController,
+  RadarController,
+  ScatterController,
+  CategoryScale,
+  LinearScale,
+  LogarithmicScale,
+  RadialLinearScale,
+  TimeScale,
+  TimeSeriesScale,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
+  SubTitle,
+} from 'chart.js';
+import {
+  swalError, openLoader, closeLoader, errorFetch,
+} from '../../../../utils/function-helper';
 
 // Chart.register(
 //   ArcElement,
@@ -80,14 +105,30 @@ class AdminDashboardPresenter {
 
   async _showAllData() {
     try {
-      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllDataCount(localStorage.getItem('token'));
       this._renderData(response.data.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              this._getAllCollectionsHandler();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
       // swalError('Ooops Something wrong', '#/');
     } finally {
-      closeLoader(this._view.loaderListener());
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

@@ -8,7 +8,17 @@ class AuthView {
     <custom-loader></custom-loader>
     <div class="container">
     <div class="container__side">
-     <picture>
+    
+     <picture 
+       data-aos="fade-right"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="true"
+      class="container__side">
+     
             <source media ="(max-width:600px)" srcset="./images/auth-small.png">
             <img src="./images/auth-large.png"
             alt="authentication"></img>
@@ -20,14 +30,14 @@ class AuthView {
         <div class="slide-controls">
           <input type="radio" name="slide" id="login" checked>
           <input type="radio" name="slide" id="signup">
-          <label for="login" class="slide login">Masuk</label>
-          <label for="signup" class="slide signup">Daftar</label>
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Register</label>
           <div class="slider-tab"></div>
         </div>
 
         <div class="form-inner">
           <form class="login">
-            <h2>Masuk</h2>
+            <h2>Login</h2>
             <p>Belum punya akun? <a href="" id="linkSignUp" class="link-daftar">Daftar Sekarang</a></p>
 
             <div class="field">
@@ -45,12 +55,12 @@ class AuthView {
 
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" id="submitLogin" value="Masuk">
+              <input type="submit" id="submitLogin" value="Login">
             </div>
           </form>
 
           <form action="#" class="signup">
-            <h2>Daftar</h2>
+            <h2>Register</h2>
             <div class="field">
               <input type="text" id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
             </div>
@@ -76,7 +86,7 @@ class AuthView {
             </div>
             <div class="field btn">
               <div class="btn-layer"></div>
-              <input type="submit" id="submitRegister" value="Daftar">
+              <input type="submit" id="submitRegister" value="Register">
             </div>
           </form>
         </div>

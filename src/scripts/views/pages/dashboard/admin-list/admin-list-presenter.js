@@ -3,9 +3,11 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
 
+import CONSTANT from '../../../../globals/constant';
 import {
   closeLoader,
   emptyFormHandler,
+  errorFetch,
   openLoader,
   resetFormValue,
   swalConfirm,
@@ -15,9 +17,10 @@ import {
 } from '../../../../utils/function-helper';
 
 class AdminListPresenter {
-  constructor({ view, dataDb }) {
+  constructor({ view, dataDb, authDb }) {
     this._view = view;
     this._dataDb = dataDb;
+    this._authDb = authDb;
     this._getAllCollectionsHandler();
   }
 
@@ -54,9 +57,26 @@ class AdminListPresenter {
         this._renderCollections(response.data.data);
       }
     } catch (error) {
-      console.log(error);
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              this._getAllCollectionsHandler();
+            }
+          } catch (errorToken) {
+            console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
+      // console.log(error);
     } finally {
-      closeLoader(this._view.loaderListener());
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

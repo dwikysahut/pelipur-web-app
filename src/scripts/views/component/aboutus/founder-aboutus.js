@@ -6,7 +6,6 @@ class FounderAboutus extends HTMLElement {
 
   render() {
     this.innerHTML = `
-
         <style>
             .founder-about{
                 display:grid;
@@ -14,126 +13,113 @@ class FounderAboutus extends HTMLElement {
                 width:100%;
                 margin: 0 auto 70px;
                 box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
+                gap: 20px;
+                padding: 50px 0;
             }
 
             .founder-about .founder{
-                width:50%;
-                margin:30px auto;
+                width:80%;
+                margin: 0 auto;
                 padding:10px;
                 display: flex;
                 flex-direction:column;
                 align-items: center;
                 box-sizing:border-box;
                 text-align:center;
-        
+                gap: 25px;
             }
 
-            .founder-about .founder ul{              
+            .founder .img-founder{              
                 list-style: none;
                 display: flex;
                 justify-content: center;
                 padding: 0;
-                width: 80%;
+                width: 100%;
                 gap:10px;
-                align-items: center
+                align-items: center;
+                margin: 0;
             }
 
-            .founder-about .founder ul li{      
-            }
-            li {
+            .img-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-            li > p {
-                margin:0;
 
+            .img-item > p {
+                margin-bottom: 0;
             }
 
             .founder h2 {
                 font-size: 23px;
                 font-weight: 500;
+                margin: 0;
             }
 
-        .founder-about .founder h4{
-            color:#005555;
-            font-size: 15px;
-        }
+            .founder-about .founder h4{
+                color:#005555;
+                font-size: 15px;
+                line-height: 1.7;
+            }
 
             .founder-about .founder img{
                 width: 100%;
-                
                 box-sizing:border-box;
-                
+                border-radius: 50%;
             }
 
-             .founder-about .about{
-                 width:100%;
-                 padding:15px;
-                 box-sizing:border-box;
+            .founder-about .about{
+                width: 80%;
+                padding: 10px;
+                box-sizing: border-box;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
              }
 
-             .founder-about .about h2{
+            .founder-about .about h2{
                 font-size: 23px;
                 font-weight: 500;
-                margin-bottom:20px;
-                text-align:center;
+                margin-bottom: 0;
+                text-align: center;
              }
 
-             .founder-about .about p{
+            .founder-about .about p{
                 font-size: 15px;
                 text-align: justify;
-             }
+                margin-bottom: 0;
+                line-height: 1.7;
+            }
 
-              @media screen and (min-width:600px){
-                .founder ul{
-                   display:flex;
-                    justify-content: center;
-                  }
-
-                .founder-about .about{
-                 width:60%;
-                 padding:15px;
-                 margin: 30px auto 0;
-                 box-sizing:border-box;
-                  }
-
-                  .founder-about .founder img{
-                      width:100%;
-                  }
-              }
-
-             @media screen and (min-width:1000px){
-                .founder-about{
-                  width:90%;
-                  display:flex;          
+            @media screen and (min-width: 550px) {
+                .founder .img-founder {
+                    width: 80%;
                 }
-                .founder-about .about{
+            }
+
+            @media screen and (min-width: 900px){
+                .founder-about .founder {
+                    width: 50%;
+                }
+
+                .founder-about {
+                    display:flex;          
+                }
+
+                .founder-about .about {
                     width:50%;
                 }
 
-                .founder ul{
+                .founder .img-founder {
                     display:flex;
                     justify-content: center;
                 }
+
+                .founder-about {
+                    padding: 50px 70px;
+                }
              }
-
-             @media screen and (min-width:1300px){
-                .founder-about{
-                  width:100%;
-                  display:flex;
-                }
-
-                 .founder{
-                    width:40%;    
-                    margin-left:30px;                   
-                }
-                .about{
-                    width:40%;
-                    margin-right:30px;
-                }
-            }
-
         </style>
         
 
@@ -186,16 +172,12 @@ class FounderAboutus extends HTMLElement {
             </div>
 
             <div class="about">
-                    <h2>Tentang Kami</h2>
-                    <p> Pelipur merupakan sebuah website yang menjembatani masyarakat dalam pengumpulan minyak jelantah yang kemudian dijual sebagai bahan bakar biodiesel. Biodiesel merupakan bahan bakar yang terdiri dari campuran mono--alkyl ester dari rantai panjang asam lemak. Kami berharap dimasa yang akan datang bukan hanya limbah minyak jelantah, tapi bisa mengelola limbah lainnya.
-
-                    Project yang dihasilkan oleh peserta SIB yang gelisah terhadap permasalahan lingkungan yang dari hari ke hari sangat memprihatinkan. Oleh sebab itu, kami berharap dengan hadirnya pelipur masyarakat lebih peduli lagi terhadap lingkungan terutama pada limbah minyak jelantah. 
-
-                    </p>
+                <h2>Tentang Kami</h2>
+                <p>Pelipur merupakan sebuah website yang menjembatani masyarakat dalam pengumpulan minyak jelantah yang nantinya akan diolah menjadi bahan bakar biodiesel. Kami juga ingin dimasa yang akan datang dapat mengelola berbagai macam limbah.</p>
+                <p>Pelipur dibuat oleh peserta Studi Independen Bersetifikat Batch Kedua Dicoding yang gelisah terhadap permasalahan lingkungan yang dari hari ke hari sangat memprihatinkan. Oleh sebab itu, kami berharap dengan hadirnya pelipur masyarakat lebih peduli lagi terhadap lingkungan terutama pada limbah minyak jelantah.</p>
             </div>
         </div>
-        
-        `;
+    `;
   }
 }
 

@@ -4,6 +4,9 @@
 import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
 
+import API_ENDPOINT from './globals/api-endpoint';
+import CONFIG from './globals/config';
+
 /* eslint-disable no-restricted-globals */
 const { assets } = global.serviceWorkerOption;
 
@@ -49,7 +52,7 @@ self.addEventListener('fetch', (event) => {
 
 // workbox.routing.registerRoute(
 //   ({ request }) => request.destination === 'image',
-//   new workbox.strategies.NetworkFirst({
+//   new workbox.strategies.StaleWhileRevalidate({
 //     cacheName: 'images',
 //     plugins: [
 //       new workbox.expiration.ExpirationPlugin({
@@ -61,9 +64,31 @@ self.addEventListener('fetch', (event) => {
 // );
 
 // workbox.routing.registerRoute(
-//   new RegExp('^https://dicoding-restaurant-api.el.r.appspot.com/'),
+//   new RegExp(`^${CONFIG.BASE_IMAGE_URL}`),
 //   new workbox.strategies.StaleWhileRevalidate({
-//     cacheName: 'dicoding-restaurant-api',
+//     cacheName: 'pelipur-images',
+//     plugins: [
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
+//         statuses: [200, 404],
+//       }),
+//     ],
+//   }),
+// );
+// workbox.routing.registerRoute(
+//   new RegExp(`^${API_ENDPOINT.GET_NEWS_API}`),
+//   new workbox.strategies.StaleWhileRevalidate({
+//     cacheName: 'pelipur-news',
+//     plugins: [
+//       new workbox.cacheableResponse.CacheableResponsePlugin({
+//         statuses: [200, 404],
+//       }),
+//     ],
+//   }),
+// );
+// workbox.routing.registerRoute(
+//   new RegExp(`^${CONFIG.BASE_URL}${API_ENDPOINT.GET_PARTNERS}`),
+//   new workbox.strategies.StaleWhileRevalidate({
+//     cacheName: 'pelipur-news',
 //     plugins: [
 //       new workbox.cacheableResponse.CacheableResponsePlugin({
 //         statuses: [200, 404],
