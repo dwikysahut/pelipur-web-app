@@ -680,11 +680,10 @@ footer .fa {
   position: fixed;
   right: 20px;
   opacity: 1;
-  margin-bottom: 70px;
   display: none;
   z-index: 10;
   box-shadow: 0 0 0 0.6px white;
-  bottom: 10px;
+  bottom:65px;
   background-color: #005555;
 }
 
@@ -896,10 +895,9 @@ textarea.danger {
   display: none;
   opacity: 1;
   margin-bottom: 70px;
-  
   z-index: 10;
   box-shadow: 0 0 0 0.6px #005555;
-  bottom: 20px;
+  bottom: 80px;
   background-color: white;
 }
 

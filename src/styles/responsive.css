@@ -47,6 +47,9 @@
       text-align: center;
       color: #005555;
     }
+    .btn-open-chat{
+      bottom: 75px;
+    }
   }
   
   @media screen and (min-width: 700px) {
@@ -167,10 +170,8 @@
     .hero__highlight {
       font-size: 50px !important;
     }
-  
-    .btn-open-chat {
-      margin-bottom: 20px;
-    }
+
+
   }
   
   @media screen and (min-width: 900px) {
