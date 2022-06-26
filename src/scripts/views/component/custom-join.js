@@ -9,7 +9,7 @@ class Join extends HTMLElement {
 
     <style>
         
-    .daftar{
+    .join{
       width:60%;
       padding: 40px;
       margin: 0 auto 70px;
@@ -17,6 +17,10 @@ class Join extends HTMLElement {
       text-align:center;
       border-radius:5px;
       box-sizing:border-box;
+    }
+    .join h2{
+      font-size:19px;
+
     }
 
     h2 {
@@ -58,7 +62,7 @@ class Join extends HTMLElement {
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
-    class ="daftar">
+    class ="join">
       <h2> Silahkan masuk terlebih dahulu untuk melanjutkan </h2>
       <button onClick="window.location.href='#/auth';">Masuk</button>
     </div>

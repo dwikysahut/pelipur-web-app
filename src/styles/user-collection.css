@@ -166,7 +166,15 @@
   content: "";
   opacity: 0.8;
 }
+.dashboard-container > h2 {
+  margin-bottom: 30px;
+  border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #069a8e;
+    color: white;
 
+}
 
 
 .flow-container{
@@ -185,8 +193,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-     max-height: 200px;
-      max-width: 200px;
+     height: 200px;
+     width: 200px;
       
       
 }
