@@ -54,7 +54,7 @@ body {
   /* height: 40%; */
   bottom: 0;
     /* -webkit-transform: scaleX(-1); */
-  transform: scaleY(-1);
+  /* transform: scaleY(-1); */
   background-size: cover;
   
 }
@@ -140,6 +140,7 @@ body {
   padding: 15px;
   color: white !important;
 }
+
 
 .dropdown-content {
   display: flex;
@@ -439,9 +440,9 @@ article {
   width: 80%;
   margin: 0 auto 30px;
   padding: 20px 15px;
-  background-color: white;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  border-radius: 5px;
+  background-color: #F8FAFF;
+  /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */
+  border-radius: 8px;
 }
 
 .news-title {

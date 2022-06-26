@@ -4,7 +4,7 @@ import '../../../component/custom-loader';
 class AuthView {
   getTemplate() {
     return `
-    <img src="./images/wave2.svg" class="wave" alt="">
+    <img src="./images/wave3.svg" class="wave" alt="">
     <custom-loader></custom-loader>
     <div class="container">
     <div 

@@ -12,10 +12,11 @@ class ListMitra extends HTMLElement {
     this.innerHTML = `
         <style>
           .list-mitra{
-            width:90%;
+            width:80%;
             text-align:center;
             margin: 0 auto;
-            padding: 0 0 60px 0;
+            padding: 20px;
+            background-color: #F8FAFF;
           }
 
         .list-mitra h2 {

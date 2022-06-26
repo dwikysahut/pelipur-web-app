@@ -19,7 +19,9 @@ html,body{
 .login > p, .remember > a {
   font-size: 15px;
 }
-
+a.link-daftar, .pass-link{
+  color: darkblue !important;
+}
 ::selection{
   background: #fff;
   color: #fff;
@@ -60,7 +62,7 @@ html,body{
   display: flex;
   overflow: hidden;
   align-items: center;
-  max-width: 50%;
+  max-width: 100%;
   z-index: 1;
   /* background: #fff; */
   padding: 50px;

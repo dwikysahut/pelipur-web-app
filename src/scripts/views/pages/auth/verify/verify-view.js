@@ -4,6 +4,7 @@
 class VerifyView {
   getTemplate() {
     return `
+    <img src="./images/wave3.svg" class="wave" alt="">
     <div class="container">
     <div 
       data-aos="fade-right"
