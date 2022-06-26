@@ -40,6 +40,7 @@ class AuthView {
             <div class="field">
               <input type="password" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Masukan Password"
                 required>
+                <i class="fa fa-eye" aria-hidden="true"></i>
             </div> <br>
             <div class="remember">
               

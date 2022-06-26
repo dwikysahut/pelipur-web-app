@@ -1,21 +1,16 @@
 .notfound {
     text-align: center;
-    padding-top: 2%;
+    padding-top: 5%;
   }
   
   .notfound p {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     color: #005555;
     text-transform: capitalize;
   }
   
   .notfound img {
-    width: 60%;
+    width: 30%;
   }
   
-  @media screen and (max-width: 689px) {
-    .notfound p {
-      font-size: 18px;
-    }
-  }

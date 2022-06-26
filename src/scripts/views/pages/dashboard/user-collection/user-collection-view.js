@@ -14,7 +14,7 @@ class UserCollectionView {
       <div class="dashboard-container">
       ${!localStorage.getItem('token') ? '<custom-join></custom-join>' : `
       <custom-loader></custom-loader>
-      <div class="content">
+      <div class="content-collection ">
       <h2 class="content__title">Pengumpulan</h2>
       <form class="content__form">
         <div class="content__form-item-date">
