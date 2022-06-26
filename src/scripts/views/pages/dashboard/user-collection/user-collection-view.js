@@ -16,22 +16,28 @@ class UserCollectionView {
       <div class="flow-container">
           <div class="flow-item">
               <img src="./images/flow/flow1.png" alt="gambar langkah daftar akun dan verifikasi" srcset="">
+              <h4>Daftar Akun dan Verifikasi Akun</h4>
           </div>
           <div class="flow-item">
-          <img src="./images/flow/flow2.png" alt="gambar langkah masuk ke halaman menu" srcset="">
+              <img src="./images/flow/flow2.png" alt="gambar langkah masuk ke halaman menu" srcset="">
+              <h4>Masuk ke Halaman Menu</h4>
           </div>
           <div class="flow-item">
-          <img src="./images/flow/flow3.png" alt="gambar langkah melakukan pengisian form" srcset="">
+              <img src="./images/flow/flow3.png" alt="gambar langkah melakukan pengisian form" srcset="">
+              <h4>Melakukan Pengisian Form</h4>
           </div>
           <div class="flow-item">
-          <img src="./images/flow/flow4.png" alt="gambar langkah menunggu persetujuan admin" srcset="">
+              <img src="./images/flow/flow4.png" alt="gambar langkah menunggu persetujuan admin" srcset="">
+              <h4>Menunggu Persetujuan Admin</h4>
           </div>
           <div class="flow-item">
-          <img src="./images/flow/flow5.png" alt="gambar langkah admin melakukan verifikasi" srcset="">
+              <img src="./images/flow/flow5.png" alt="gambar langkah admin melakukan verifikasi" srcset="">
+              <h4>Admin Melakukan Verifikasi untuk Keterjangkauan Lokasi</h4>
           </div>
           <div class="flow-item">
-          <img src="./images/flow/flow6.png" alt="gambar langkah user menunggu petugas menuju lokasi mengambil minyak" srcset="">
-          </div>
+              <img src="./images/flow/flow6.png" alt="gambar langkah user menunggu petugas menuju lokasi mengambil minyak" srcset="">
+              <h4>Menunggu Petugas Mengambil Minyak yang Sudah Disiapkan</h4>
+          </div>  
 
       </div>
       ${!localStorage.getItem('token') ? '<custom-join></custom-join>' : `
