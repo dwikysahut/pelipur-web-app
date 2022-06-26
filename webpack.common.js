@@ -15,6 +15,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
+const ImageminSvgo = require('imagemin-svgo');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -111,6 +112,12 @@ module.exports = {
           },
         ]),
         ImageminPngquant([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
+        ImageminSvgo([
           {
             quality: 10,
             progressive: true,
