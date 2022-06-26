@@ -12,24 +12,25 @@ class UserCollectionView {
       
     
       <div class="dashboard-container">
+      <h2>Alur Pengumpulan Minyak Jelantah</h2>
       <div class="flow-container">
           <div class="flow-item">
-              <img src="./images/flow/1.png" alt="" srcset="">
+              <img src="./images/flow/flow1.png" alt="gambar langkah daftar akun dan verifikasi" srcset="">
           </div>
           <div class="flow-item">
-          <img src="./images/flow/2.png" alt="" srcset="">
+          <img src="./images/flow/flow2.png" alt="gambar langkah masuk ke halaman menu" srcset="">
           </div>
           <div class="flow-item">
-          <img src="./images/flow/3.png" alt="" srcset="">
+          <img src="./images/flow/flow3.png" alt="gambar langkah melakukan pengisian form" srcset="">
           </div>
           <div class="flow-item">
-          <img src="./images/flow/4.png" alt="" srcset="">
+          <img src="./images/flow/flow4.png" alt="gambar langkah menunggu persetujuan admin" srcset="">
           </div>
           <div class="flow-item">
-          <img src="./images/flow/5.png" alt="" srcset="">
+          <img src="./images/flow/flow5.png" alt="gambar langkah admin melakukan verifikasi" srcset="">
           </div>
           <div class="flow-item">
-          <img src="./images/flow/6.png" alt="" srcset="">
+          <img src="./images/flow/flow6.png" alt="gambar langkah user menunggu petugas menuju lokasi mengambil minyak" srcset="">
           </div>
 
       </div>

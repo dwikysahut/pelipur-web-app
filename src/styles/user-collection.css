@@ -167,6 +167,36 @@
   opacity: 0.8;
 }
 
+
+
+.flow-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fill,minmax(150px,200px)); */
+  text-align: center;
+  
+  gap: 10px;
+  margin-bottom: 30px;
+  
+}
+.flow-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     max-height: 200px;
+      max-width: 200px;
+      
+      
+}
+.flow-item>img{
+      width: 100%;
+      padding: 10px;
+      height: 100%;
+      
+}
+
 @media screen and (min-width: 500px) {
   .btn__collection {
     flex-direction: row;
