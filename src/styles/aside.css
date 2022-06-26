@@ -31,7 +31,7 @@ aside,aside-dashboard, aside-user {
   background-color: #005555;
   box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
   width: 100%;
-  height: 5rem;
+  height: 4.1rem;
   display: grid;
   align-content: center;
   transition: 0.5s;
@@ -95,7 +95,7 @@ aside,aside-dashboard, aside-user {
 
 @media screen and (min-width: 600px) {
   .sidebar__menu {
-    height: 5.5rem;
+    height: 5rem;
   }
 
   .sidebar__list {

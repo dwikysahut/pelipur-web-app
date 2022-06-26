@@ -12,7 +12,7 @@ class Footer extends HTMLElement {
         <p>Jln. Rasuna Said RT/RW 002/002 Kunciran Jaya Pinang Kota Tangerang Banten, 15144</p>
       </div>
 
-      <div class = "jadwal">
+      <div  tabindex="0" class = "jadwal">
       <h3>Jadwal Operasional</h3>
       <ul>
         <li><p>Senin - Jumat : 08.00 WIB - 17.00 WIB</p></li>
@@ -24,7 +24,7 @@ class Footer extends HTMLElement {
       <h3>Hubungi Kami</h3>
           
         <ul>
-         <li tabindex="0"><a href="https://www.facebook.com/profile.php?id=100081708250334"><i class="fa fa-instagram" aria-hidden="true"></a></i></li>
+         <li tabindex="0"><a href="http://instagram.com/pelipur.app/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></a></i></li>
           <li tabindex="0"><a href="https://www.facebook.com/profile.php?id=100081708250334" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></a></i></li>
           <li tabindex="0"><a href="mailto:pelipurapps@gmail.com" target="_blank"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
           <li tabindex="0"><a href="https://wa.me/082234632343" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>         

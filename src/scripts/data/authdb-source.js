@@ -27,6 +27,11 @@ class AuthDbSource {
     const response = await axios.post(API_ENDPOINT.LOGOUT, body);
     return response;
   }
+
+  static async refreshToken(body) {
+    const response = await axios.post(API_ENDPOINT.REFRESH_TOKEN, body);
+    return response;
+  }
 }
 
 export default AuthDbSource;

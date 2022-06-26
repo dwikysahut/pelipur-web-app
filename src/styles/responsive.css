@@ -1,300 +1,199 @@
-/* RESPONSIVE HEADER & NAV */
-
-@media screen and (max-width: 700px) {
-  #drawer {
-    width: 100%;
+@media screen and (min-width: 455px) {
+    .carousel-inner {
+      min-height: 280px
+    }
+  }
+  
+  @media screen and (min-width: 600px) {
+    .item-produk {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  
+    footer {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        'alamat jadwal medsos'
+        'copyright copyright copyright';
+      padding: 30px 40px 20px;
+    }
+  
+    footer .alamat {
+      grid-area: alamat;
+      text-align: center;
+      font-size: 15px;
+    }
+  
+    footer .jadwal {
+      grid-area: jadwal;
+    }
+  
+    footer .medsos li {
+      grid-area: medsos;
+      list-style: none;
+      text-align: center;
+    }
     
-    position: absolute;
-    background-color: #005555;
-    left: 0;
-    top: 70px;
-    text-align: center;
-
-    z-index: 5;
-
-    transition: transform 0.7s ease-in-out;
-    transform: translate(-100%, 0);
+    footer .medsos p {
+      color: white;
+      margin-top: -50px;
+    }
+  
+    footer .copyrig {
+      grid-area: copyright;
+      border-radius: 5px;
+    }
+  
+    .copyrig p {
+      text-align: center;
+      color: #005555;
+    }
+    .btn-open-chat{
+      bottom: 75px;
+    }
+  }
+  
+  @media screen and (min-width: 700px) {
+    .header-icon {
+      display: flex;
+      justify-content: end;
+    }
+    .header-icon i {
+      color: white;
+    }
+  
+    #drawer {
+      width: inherit;
+      position: relative;
+      top: 0;
+      opacity: 1;
+      transform: translate(0);
+      background:transparent;
+      color: #005555;
+    }
     
-  }
-
-  .item-news__content p {
-    font-size: 0.9rem;
+    .nav__list {
+      flex-direction: row;
+      margin: 0;
+      gap: 10px;
+    }
+  
+    .nav__list li:nth-child(4) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  
+    .dropdown-dashboard {
+      margin-top: 0;
+    }
+  
+    .nav .nav__item.dropdown {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .profile-pict {
+      display: block;
+      width: 44px;
+      height: max-content;
+      border-radius: 50%;
+      margin-left: 8px;
+      padding: 5px;
+    }
     
-  }
-  .nav__item.dropdown {
-    width: 100%;
-    margin: 0 !important;
-  }
-  .profile-pict {
-    display: none;
-  }
-  .nav__list {
-    padding: 0;
-  }
-  .nav__item a:hover {
-    background-color: transparent;
-  }
-  .dropdown-content {
-    display: flex;
-    visibility: visible;
-    border-top: 1px solid white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: static;
-
-    opacity: 1;
-    width: 100%;
-    min-width: 120px;
-    background-color: #005555;
-    transition: all 0.7s ease-in-out;
-    transition: visibility 0s, opacity 0.3s linear;
-    z-index: 4;
-    gap: 7px;
-
-    border-radius: 0 0 5px 5px;
-  }
-  #hamburger.rotate {
-    transform: rotate(90deg);
-    transform-origin: center center;
-    background-color: transparent;
-    transition: all 0.7s ease-in-out;
-  }
-  button#hambuger {
-    transition: all 0.7s ease-in-out;
-    color: #005555;
-  }
-  .nav__list {
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0 10px;
-    gap: 20px;
-  }
-
-  .nav__list li:nth-child(4) {
-    border-radius: 5px;
-    margin-bottom: 40px;
-  }
-
-  .nav__item {
-    margin-top: 10px;
-  }
-  .nav__item a:hover {
-    color: white;
-    background-color: rgb(20, 1, 13);
-    border-radius: 5px;
-    opacity: 1;
-    padding: 17px;
-  }
-}
-
-/* Hamburger menu */
-
-@media screen and (max-width: 700px) {
-  .menu-toggle button {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-    font-size: 22px;
-    opacity: 2;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.7s ease-in-out;
-    color: #005555;
-  }
-
-  button:focus {
-    background-color: white;
-  }
-
-  .menu-toggle button {
-    opacity: 1;
-    border-radius: 3px;
-  }
-  #drawer.slide {
-    transform: translate(0, 0);
-  }
-}
-
-/* item produk */
-
-@media screen and (min-width: 700px) {
-  /* .item-produk {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  } */
-  .dropdown-content {
-    display: flex;
-    visibility: hidden;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 40px;
-    opacity: 0;
-    right: -25px;
-    min-width: 120px;
-    background-color: white;
-    transition: all 0.7s ease-in-out;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    transition: visibility 0s, opacity 0.3s linear;
+    .profile-pict > img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  
+    .dropdown-content {
+      visibility: hidden;
+      position: absolute;
+      top: 40px;
+      right: -25px;
+      background-color: white;
+      box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+      transition: visibility 0s, opacity 0.3s linear;
+    }
+  
+    .btn-drawer {
+      display: none;
+    }
+  
+    .nav__item a {
+      color: #005555 !important;
+    }
+  
+    .hero__title {
+      font-size: 2.9em;
+      font-weight: lighter;
+      background: transparent;
+      color: black;
+    }
+  
+    .hero__inner{
+      flex-direction: row !important;
+    }
+  
+    .hero__inner__text {
+      align-items: center;
+    }
+  
+    .carousel-inner {
+      min-height: 230px;
+    }
+  
+    .wrapper-news {
+      width: 80%;
+      max-width: 800px;
+    }
     
-
-    border-radius: 0 0 5px 5px;
+    .wrapper-news__item {
+      flex-direction: row;
+      gap: 20px;
+    }
+  
+    .item-news__image {
+      min-width: 300px;
+      width: 400px;
+      max-width: 300px;
+      min-height: 190px;
+      max-height: 220px;
+    }
   }
-    
-  .hero__title {
-    font-size: 2.9em;
-    font-weight: lighter;
-  }
-  .hero__inner{
-    flex-direction: row !important;
-  }
-  .hero__inner__text {
-   align-items: flex-start;
-  }
-  .hero__title {
-    text-align: left;
-  }
-  .btn-drawer {
-    display: none;
-  }
-  .profile-pict {
-    width: 44px;
-    height: 44px;
-    padding: 5px;
-    border-radius: 50%;
-  }
-  .nav__item a {
-    color: #005555 !important;
-  }
-  .profile-pict > img {
-    width: 100%;
-    border-radius: 50%;
-  }
-
-  .header-icon {
-    display: flex;
-    justify-content: end;
-  }
-  .header-icon i {
-    color: white;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  /* article {
-    width: 1000px;
-    margin: auto;
-  }
-
-  .item-produk {
-    display: grid;
-   
-  } */
-  .item-produk {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .item-produk {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-/* slider */
-
-@media screen and (max-width: 600px) {
-  .slider {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .slider img {
-    width: 100%;
-    margin: 4px 0;
-  }
-}
-
-/* Footer responsiv */
-
-@media screen and (min-width: 600px) {
-  footer {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      'alamat jadwal medsos'
-      'copyright copyright copyright';
-  }
-
-  footer .alamat {
-    grid-area: alamat;
-    text-align: center;
-    font-size: 15px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-
-  footer .jadwal {
-    grid-area: jadwal;
-  }
-
-  footer .medsos li {
-    grid-area: medsos;
-    list-style: none;
-    /* margin-top: 20px; */
-    text-align: center;
-  }
-  footer .medsos h3 {
-    text-align: center;
-  }
-  footer .medsos p {
-    color: white;
-    margin-top: -50px;
-  }
-
-  footer .jadwal h3 {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  footer .copyrig {
-    grid-area: copyright;
-    border-radius: 5px;
-  }
-
-  .copyrig p {
-    text-align: center;
-    color: #005555;
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .wrapper-news {
-    width: 80%;
-    margin: 10px auto;
-    max-width: 800px;
-  }
-  .wrapper-news__item {
-    flex-direction: row;
-  }
-
-  .item-news__image {
-    min-width: 300px;
-    width: 300px;
-    max-width: 300px;
-    min-height: 160px;
-    
-    max-height: 240px;
-  }
-}
+  
+  @media screen and (min-width: 800px) {
+    .hero__highlight {
+      font-size: 50px !important;
+    }
 
 
-@media screen and (min-width: 800px) {
-
-  .hero__highlight {
-    font-size: 50px !important;
   }
-}
+  
+  @media screen and (min-width: 900px) {
+    article {
+      padding: 20px;
+    }
+  
+    .item-produk {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 950px) {
+    .carousel-inner {
+      min-height: 200px;
+    }
+  
+    .medsos {
+      width: 80%;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  

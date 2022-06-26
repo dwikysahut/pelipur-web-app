@@ -1,38 +1,42 @@
 import {
-  createSkeletonNewsList, mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
+  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
 } from '../../templates/template-creator';
 
 /* eslint-disable class-methods-use-this */
 class BerandaView {
   getTemplate() {
-    return `   
+    return `
+    
     <div class="wrapper">
       <custom-hero></custom-hero>
-      <div>
-        <artikel-custom 
-        src="./images/oil-cooking.png" alt="Minyak"></artikel-custom>
+      
+        <artikel-custom></artikel-custom>
         </div>
         <div>
         <custom-carousel></custom-carousel>
         <layanan-custom></layanan-custom>
         <article>
-          <h2 class="news-title">Berita</h2>
+          <h2 class="news-title" tabindex="0">Berita</h2>
           <div class="item-produk">
             ${skeletonNewsHomeTemplate(6)}
           </div>
           <div class="news-list">
-            <a href="#/news">Tampilkan semua<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            <a href="#/news">Tampilkan semua <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
         <list-mitra></list-mitra>
         </div>
-      </div>
+      
     </div>
               `;
   }
 
   getFormListener(callback) {
     callback({ nameForm: document.querySelector('#cityNameForm') });
+  }
+
+  getNewsContainerListener() {
+    return document.querySelector('.item-produk');
   }
 
   showNews(items) {
@@ -53,9 +57,14 @@ class BerandaView {
     }
   }
 
+  getMitracontainerListener() {
+    return document.querySelector('list-mitra');
+  }
+
   showPartners(items) {
     console.log(items);
-    const itemContainer = document.querySelector('list-mitra').mitraContainer;
+
+    const itemContainer = this.getMitracontainerListener().mitraContainer;
     items.forEach((item) => {
       itemContainer.innerHTML += mitraListTemplate(item);
     });

@@ -1,10 +1,8 @@
-import '../../component/aside-dashboard';
-
-const AdminNotFound = {
-  async render() {
+/* eslint-disable class-methods-use-this */
+class NotFoundView {
+  getTemplate() {
     return `
     <div class="wrapper-dashboard">
-      <aside-dashboard></aside-dashboard>
       <div class="dashboard-container">
         <div class="content">
           <div class="notfound">
@@ -16,9 +14,6 @@ const AdminNotFound = {
     </div>
 
           `;
-  },
-
-  async afterRender() {},
-};
-
-export default AdminNotFound;
+  }
+}
+export default NotFoundView;

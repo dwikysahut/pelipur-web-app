@@ -1,18 +1,18 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable import/extensions */
-import '../component/aboutus/founder-aboutus.js';
-import '../component/aboutus/visi-misi.js';
-import '../component/aboutus/kritik-saran.js';
+import AboutUsPresenter from './about-us/aboutUs-presenter';
+import AboutUsView from './about-us/aboutUs-view';
 
+const view = new AboutUsView();
 const AboutUs = {
   async render() {
-    return `
-        <founder-aboutus></founder-aboutus>
-        <visi-misi></visi-misi>
-        `;
+    return {
+      footer: true,
+      content: view.getTemplate(),
+    };
   },
 
-  async afterRender() {},
+  async afterRender() {
+    new AboutUsPresenter({ view });
+  },
 };
 
 export default AboutUs;

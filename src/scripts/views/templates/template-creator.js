@@ -13,25 +13,29 @@ const newsTemplate = (news) => {
               <div class="img-news" tabindex="0">
               <img src="${news.urlToImage}" alt="" >
               </div>
-             <h3>${dateConvert(news.publishedAt)}</h3>
-             <a href="${news.url}" target="_blank"><h2>${news.title}</h2></a>
+             <h4>${dateConvert(news.publishedAt)}</h4>
+             <a href="${news.url}" target="_blank"><h3>${news.title}</h3></a>
             </div>
           </div>    
     `;
   return template;
 };
-
+const emptyTableTemplate = () => `
+  <tr >
+  <td class="empty-table" colspan="100%"><h4>Data kosong</h4></td>
+</tr>
+  `;
 const tableCollectionsTemplate = (item) => {
   const date = new Date(item.tanggal);
   return `
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
   <td>${item.id}</td>
+  <td><a href="#/user-detail/${item.id_user}">${item.email_user}</a></td>
   <td>${item.nama_user}</td>
   <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
   <td>${item.pesan}</td>
-  <td>${item.email_user}</td>
   <td>${item.alamat}</td>
   <td>${item.kota}</td>
 
@@ -58,7 +62,7 @@ const userListChat = (users, container) => {
 
   users.forEach((user) => {
     userTemplate += `
-    <div class="user-list__item" data-id="${user.id}">
+    <div class="user-list__item ${user.lastSender === user.id ? 'unread' : ''}" data-id="${user.id}">
     <span>${user.id}</span>
         <p>${user.email}</p>
        
@@ -90,7 +94,6 @@ const chatTemplateCreator = (chat, currentId) => {
 };
 const chatTemplateAdminCreator = (chat, currentId) => {
   const messageContainer = document.querySelector('.text-message');
-  messageContainer.innerHTML = '';
 
   let chatTemplate = '';
   const container = document.querySelector('.chat__item-admin');
@@ -229,7 +232,7 @@ const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>'
 
 const dataDashboardTemplate = (data) => `
 
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
     <span class="card__name">User</span>
@@ -238,7 +241,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/person_white_36dp.svg" alt="User" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_minyak} L</h3>
     <span class="card__name">Total Minyak</span>
@@ -250,7 +253,7 @@ const dataDashboardTemplate = (data) => `
     />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_kota}</h3>
     <span class="card__name">Kota</span>
@@ -259,7 +262,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/pin_drop_white_36dp.svg" alt="Kota" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_mitra}</h3>
     <span class="card__name">Mitra</span>
@@ -268,7 +271,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/account_balance_white_36dp.svg" alt="Mitra" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_pengumpulan}</h3>
     <span class="card__name">Form Terkumpul</span>
@@ -278,6 +281,40 @@ const dataDashboardTemplate = (data) => `
   </div>
 </div>
 `;
+const userDetailItemTemplate = (item) => `
+<div class="content__inner__row">
+  <p class="row-text">Nama</p>
+  <p class="row-data">${item.nama}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Email</p>
+  <p class="row-data">${item.email}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Alamat</p>
+  <p class="row-data">${item.alamat}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">No. Telepon</p>
+  <p class="row-data">${item.no_telp}</p>
+</div>
+<div class="content__inner__row">
+  <p class="row-text">Keterangan</p>
+  <p class="row-data">${item.keterangan}</p>
+</div>
+  `;
+const buttonSuspendTemplate = (id) => `
+  <div class="content__inner__row">
+    <div></div>
+    <button id="suspendBtn" data-id=${id} class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i> Suspend</div>
+  </div>
+    `;
+const buttonUnSuspendTemplate = (id) => `
+  <div class="content__inner__row">
+  <div></div>
+    <button id="suspendBtn" data-id=${id} class="btn btn-outline-danger"><i class="fa fa-ban" aria-hidden="true"></i> Unsuspend</div>
+  </div>
+    `;
 
 const tableHistoryTemplate = (item) => {
   const date = new Date(item.tanggal);
@@ -348,8 +385,8 @@ const skeletonNewsHomeTemplate = () => {
                   <div class="img-news" tabindex="0">
                     <img srcset="./images/placeholder.png" alt="">
                   </div>
-                  <h3>0/0/0000 0:0</h3>
-                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+                  <h4>0/0/0000 0:0</h4>
+                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
                 </div>
               </div>    
       `;
@@ -367,5 +404,6 @@ export {
   cityItemTemplate, tableCollectionsTemplate, dataDashboardTemplate,
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
-  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator,
+  dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
+  buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
 };

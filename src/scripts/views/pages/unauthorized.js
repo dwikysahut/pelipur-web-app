@@ -1,27 +1,23 @@
 import { swalError } from '../../utils/function-helper';
+import UnauthorizedPresenter from './unauthorized/unauthorized-presenter';
+import UnauthorizedView from './unauthorized/unauthorized-view';
 
+const view = new UnauthorizedView();
 const Unauthorized = {
   async render() {
     if (!localStorage.getItem('token')) {
       await swalError('Please Login First', '#/auth');
-      return false;
+      return {
+        content: '<div></div>',
+      };
     }
-    return `
-    <div class="wrapper-dashboard">
-      <div class="dashboard-container">
-        <div class="content">
-          <div class="unauthorize">
-            <img src="images/undraw_Cancel_re_pkdm.png" width="30%" alt="unauthorized image">
-            <p>Tidak Memiliki Akses</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-          `;
+    return {
+      footer: true,
+      content: view.getTemplate(),
+    };
   },
 
-  async afterRender() {},
+  async afterRender() { new UnauthorizedPresenter({ view }); },
 };
 
 export default Unauthorized;

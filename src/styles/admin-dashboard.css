@@ -59,7 +59,7 @@
 @media screen and (min-width: 798px) {
   .wrapper-dashboard {
     overflow-x: auto;
-    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2); */
   }
   
   .content {
@@ -70,6 +70,7 @@
     padding: 4% 4% ;
     flex: 1;
     overflow-x: auto;
+    
   }
 }
 

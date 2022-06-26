@@ -6,7 +6,7 @@
 import CONFIG from '../../../../globals/config';
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  closeLoader, emptyFormHandler, openLoader, swalConfirm, swalConfirmation, swalError,
+  closeLoader, emptyFormHandler, errorFetch, openLoader, swalConfirm, swalConfirmation, swalError,
 } from '../../../../utils/function-helper';
 
 class AdminCitiesPresenter {
@@ -27,10 +27,30 @@ class AdminCitiesPresenter {
 
   async _showAllData() {
     try {
+      openLoader(this._view.loaderListener());
       const response = await this._dataDb.getCities(localStorage.getItem('token'));
       this._renderData(response.data.data);
     } catch (error) {
+      if (error.response.data.data.message) {
+        errorFetch(error.response.data.data.message, async (token) => {
+          try {
+            const response = await this._authDb.refreshToken({ token });
+            if (response.status === 200) {
+              localStorage.setItem('token', response.data.data.token);
+              localStorage.setItem('refreshToken', response.data.data.refreshToken);
+              this._getAllCollectionsHandler();
+            }
+          } catch (errorToken) {
+            // console.log(errorToken);
+            if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+          }
+        });
+      }
       // swalError('Ooops Something wrong', '#/');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 
