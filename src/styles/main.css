@@ -11,6 +11,7 @@
 @import 'user-history.css';
 @import 'not-found.css';
 @import 'unauthorize.css';
+@import 'collection.css';
 
 * {
   margin: 0;
@@ -52,9 +53,9 @@ body {
   left: 0;
   z-index: 0;
   /* height: 40%; */
-  /* top: 0; */
+  bottom: 0;
     /* -webkit-transform: scaleX(-1); */
-  /* transform: scaleY(-1); */
+  transform: scaleY(-1);
   background-size: cover;
   
 }

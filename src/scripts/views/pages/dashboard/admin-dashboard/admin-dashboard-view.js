@@ -11,7 +11,7 @@ class AdminDashboardView {
     <aside-dashboard></aside-dashboard>
     <div class="dashboard-container">
       <div class="content">
-        <h2 class="content__title">Dashboard</h2>
+        <h2 class="content__title" tabindex="0">Dashboard</h2>
         <div class="content__card">
 
         </div>

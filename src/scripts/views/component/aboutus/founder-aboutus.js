@@ -125,9 +125,9 @@ class FounderAboutus extends HTMLElement {
 
         <div class="founder-about">
             <div class="founder">
-            <h2>Founder Pelipur</h2>
+            <h2 tabindex="0">Founder Pelipur</h2>
                 <ul class="img-founder">
-                    <li data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="fade-down-right"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -138,7 +138,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/yoga2.jpg" alt="Yoga">
                         <p>Yoga</p>
                     </li>
-                    <li data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="fade-down-right"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -149,7 +149,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/dwiky.jpg" alt="Dwiky">
                         <p>Dwiky</p>
                     </li>
-                    <li  data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="fade-up-left"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -160,7 +160,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/nova.jpg" alt="Nova">
                         <p>Nova</p>
                     </li>
-                    <li  data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="fade-up-left"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -172,13 +172,13 @@ class FounderAboutus extends HTMLElement {
                         <p>Deva</p>
                     </li>
                 </ul>
-                <h4>Menjaga alam adalah tugas kita semua sebagai manusia untuk menjadi rahmat bagi semesta</h4>
+                <h4 tabindex="0">Menjaga alam adalah tugas kita semua sebagai manusia untuk menjadi rahmat bagi semesta</h4>
             </div>
 
             <div class="about">
-                <h2>Tentang Kami</h2>
-                <p>Pelipur merupakan sebuah website yang menjembatani masyarakat dalam pengumpulan minyak jelantah yang nantinya akan diolah menjadi bahan bakar biodiesel. Kami juga ingin dimasa yang akan datang dapat mengelola berbagai macam limbah.</p>
-                <p>Pelipur dibuat oleh peserta Studi Independen Bersetifikat Batch Kedua Dicoding yang gelisah terhadap permasalahan lingkungan yang dari hari ke hari sangat memprihatinkan. Oleh sebab itu, kami berharap dengan hadirnya pelipur masyarakat lebih peduli lagi terhadap lingkungan terutama pada limbah minyak jelantah.</p>
+                <h2 tabindex="0">Tentang Kami</h2>
+                <p tabindex="0">Pelipur merupakan sebuah website yang menjembatani masyarakat dalam pengumpulan minyak jelantah yang nantinya akan diolah menjadi bahan bakar biodiesel. Kami juga ingin dimasa yang akan datang dapat mengelola berbagai macam limbah.</p>
+                <p tabindex="0">Pelipur dibuat oleh peserta Studi Independen Bersetifikat Batch Kedua Dicoding yang gelisah terhadap permasalahan lingkungan yang dari hari ke hari sangat memprihatinkan. Oleh sebab itu, kami berharap dengan hadirnya pelipur masyarakat lebih peduli lagi terhadap lingkungan terutama pada limbah minyak jelantah.</p>
             </div>
         </div>
     `;

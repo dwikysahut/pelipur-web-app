@@ -61,8 +61,8 @@ class Daftar extends HTMLElement {
         data-aos-once="true"
         class="daftar">
         <div class ="daftar__inner">
-          <h2> Mari bergabung bersama kami </h2>
-          <button onClick="window.location.href='#/auth';">Daftar sekarang</button>
+          <h2 tabindex="0"> Mari bergabung bersama kami </h2>
+          <button tabindex="0" onClick="window.location.href='#/auth';">Daftar sekarang</button>
         </div>
       </div>
     `;

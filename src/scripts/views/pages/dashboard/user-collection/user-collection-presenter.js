@@ -13,11 +13,13 @@ class UserCollectionPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._formTemplateDb = formTemplateDb;
-    this._generateCityDropdownHandler();
-    this._addCollectionHandler();
-    this._saveTemplateCollectionHandler();
-    this._useTemplateCollectionHandler();
-    this._formCollectionEventChangeHandler();
+    if (this._view.contentFormListener() !== null) {
+      this._generateCityDropdownHandler();
+      this._addCollectionHandler();
+      this._saveTemplateCollectionHandler();
+      this._useTemplateCollectionHandler();
+      this._formCollectionEventChangeHandler();
+    }
   }
 
   // handler change collection form input

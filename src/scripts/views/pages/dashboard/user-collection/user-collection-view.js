@@ -12,9 +12,31 @@ class UserCollectionView {
       
     
       <div class="dashboard-container">
+      <div class="flow-container">
+          <div class="flow-item">
+              <img src="./images/flow/1.png" alt="" srcset="">
+          </div>
+          <div class="flow-item">
+          <img src="./images/flow/2.png" alt="" srcset="">
+          </div>
+          <div class="flow-item">
+          <img src="./images/flow/3.png" alt="" srcset="">
+          </div>
+          <div class="flow-item">
+          <img src="./images/flow/4.png" alt="" srcset="">
+          </div>
+          <div class="flow-item">
+          <img src="./images/flow/5.png" alt="" srcset="">
+          </div>
+          <div class="flow-item">
+          <img src="./images/flow/6.png" alt="" srcset="">
+          </div>
+
+      </div>
       ${!localStorage.getItem('token') ? '<custom-join></custom-join>' : `
       <custom-loader></custom-loader>
       <div class="content-collection ">
+      
       <h2 class="content__title">Pengumpulan</h2>
       <form class="content__form">
         <div class="content__form-item-date">
@@ -92,6 +114,10 @@ class UserCollectionView {
       </div>
     </div>
               `;
+  }
+
+  contentFormListener() {
+    return document.querySelector('.content__form');
   }
 
   collectionFormListener(callback) {
