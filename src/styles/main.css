@@ -21,7 +21,7 @@
 
 main,
 body {
-  min-height: 80vh;
+  min-height: 100vh;
   scroll-margin-top: 40px;
   font-family: 'Poppins', sans-serif;
 }

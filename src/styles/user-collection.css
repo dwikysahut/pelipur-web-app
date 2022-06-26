@@ -193,7 +193,7 @@
 .flow-item{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 230px;
     width: 230px;
