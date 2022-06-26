@@ -57,6 +57,7 @@ html,body{
   overflow: hidden;
   align-items: center;
   max-width: 50%;
+  z-index: 1;
   /* background: #fff; */
   padding: 50px;
 }

@@ -21,7 +21,7 @@
 
 main,
 body {
-  min-height: 100vh;
+  min-height: 80vh;
   scroll-margin-top: 40px;
   font-family: 'Poppins', sans-serif;
 }
@@ -46,7 +46,28 @@ body {
   border-radius: 5px;
   text-decoration: none;
 }
-
+.wave{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 0;
+  /* height: 40%; */
+  /* top: 0; */
+    /* -webkit-transform: scaleX(-1); */
+  /* transform: scaleY(-1); */
+  background-size: cover;
+  
+}
+.wave-footer{
+  display: flex;
+  width: 100%;
+  z-index: 0;
+  /* top: 0; */
+    /* -webkit-transform: scaleX(-1); */
+  /* transform: scaleY(-1); */
+  background-size: cover;
+  
+}
 .skip-link:focus {
   top: 0;
 }
@@ -64,6 +85,7 @@ body {
   justify-content: center;
   align-items: center;
   width: fit-content;
+  z-index: 1;
 }
 
 .header__inner__title {
@@ -159,6 +181,10 @@ button#hambuger {
   border-radius: 4px;
   transition: all 0.7s ease-in-out;
   color: #005555;
+ 
+}
+.menu-toggle{
+  z-index: 1;
 }
 
 .menu-toggle button {
@@ -291,12 +317,15 @@ button#hambuger {
   width: 100%;
 }
 
+custom-hero {
+  height: 100vh;
+  margin-bottom: 40px;
+}
 .hero {
   display: flex;
   width: 100%;
   align-items: center;
   background-position: initial;
-  margin-bottom: 70px;
   height: 600px;
   filter: brightness(1) contrast(1.1);
   background-attachment: fixed;
@@ -408,7 +437,7 @@ button#hambuger {
 
 article {
   width: 80%;
-  margin: 0 auto 70px;
+  margin: 0 auto 30px;
   padding: 20px 15px;
   background-color: white;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
@@ -569,7 +598,21 @@ footer {
   padding: 30px;
   gap: 30px;
   line-height: 1.9;
-  background-color: #005555;
+  /* background-color: #005555; */
+  /* background-image: linear-gradient(#005555,#069a8e); */
+
+}
+custom-footer{
+
+  background: url('../public/./images/wave-footer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex ;
+  bottom: 0;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 50vh;
+    max-height: 1000px;
 }
 
 footer .alamat {
@@ -712,6 +755,9 @@ footer .fa {
 
 .chat-admin.show {
   display: flex;
+}
+.unread {
+  color:#CCCC00;
 }
 
 .chat-admin {

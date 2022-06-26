@@ -53,7 +53,7 @@ class App {
 
     window.scrollTo(0, 0);
     const { footer, content } = await page.render();
-    !footer ? this._footer.style.display = 'none' : this._footer.style.display = 'block';
+    !footer ? this._footer.style.display = 'none' : this._footer.style.display = 'flex';
     this._content.innerHTML = content;
     await page.afterRender();
 

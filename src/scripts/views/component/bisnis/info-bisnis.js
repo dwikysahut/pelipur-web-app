@@ -23,6 +23,12 @@ class InfoBisnis extends HTMLElement {
           box-sizing: boreder-box;
           box-shadow: 0 4px 8px 0 rgb(2 56 36 / 20%);
         }
+        info-bisnis{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80vh;
+        }
 
         .judul-bisnis h2 {
           font-size: 23px;

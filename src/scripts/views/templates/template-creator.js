@@ -62,7 +62,7 @@ const userListChat = (users, container) => {
 
   users.forEach((user) => {
     userTemplate += `
-    <div class="user-list__item" data-id="${user.id}">
+    <div class="user-list__item ${user.lastSender === user.id ? 'unread' : ''}" data-id="${user.id}">
     <span>${user.id}</span>
         <p>${user.email}</p>
        

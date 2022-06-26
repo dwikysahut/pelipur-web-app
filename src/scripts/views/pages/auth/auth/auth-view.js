@@ -4,6 +4,7 @@ import '../../../component/custom-loader';
 class AuthView {
   getTemplate() {
     return `
+    <img src="./images/wave2.svg" class="wave" alt="">
     <custom-loader></custom-loader>
     <div class="container">
     <div 
@@ -15,7 +16,7 @@ class AuthView {
       data-aos-mirror="true"
       data-aos-once="true"
       class="container__side">
-      <img src="./images/undraw_secure_login_pdn4.svg" alt="Authentication">
+      <img src="./images/undraw_on_the_way.svg" alt="Authentication">
     </div>
 
     <div class="container__wrapper">
