@@ -78,15 +78,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-<<<<<<< HEAD
-                <picture>
-                    <source media ="(max-width:600px)" data-src="./images/undraw_On_the_way_re_swjt-small.png" class="lazyload">
-                    <img data-src="./images/undraw_On_the_way_re_swjt-large.png"
-                    alt="layanan image" class="lazyload"></img>
-                </picture>
-=======
-                <img src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
->>>>>>> 1ab05fb296653ac8325b425807901fbc73b73e78
+                <img class="lazyload" src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
                 <span>Jemput Gratis</span>
             </div>
             <div 
@@ -98,10 +90,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"   
                 class="gambar">
-                 <picture>
-                    <source media ="(max-width:600px)" data-srx="./images/undraw_Chatting_re_j55r-small.png" class="lazyload">
-                    <img data-src="./images/undraw_Chatting_re_j55r-large.png" class="lazyload" alt="layanan image"></img>
-                </picture>
+                <img class="lazyload" src="./images/undraw_chatting.svg" alt="Live Chat">
                 <span>Live Chat</span>
             </div>
             <div 

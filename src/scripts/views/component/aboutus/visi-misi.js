@@ -12,12 +12,16 @@ class VisiMisi extends HTMLElement {
           background-color: #f4f4f5;
           padding: 20px 20px 60px;
           box-sizing:border-box;
-          background-image: url('./images/bg-visi-misi.jpg');
+          background-image: url('./images/bg-visi-misi-large.jpg');
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-position: center; 
           background-size: cover;
           margin:0 auto;
+        }
+
+        @media screen and (min-width:480px){
+          background-image: url('./images/bg-visi-misi-small.jpg');
         }
 
         .visimisi .visi{

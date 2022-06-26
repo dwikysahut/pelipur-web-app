@@ -2,8 +2,6 @@
 /* eslint-disable no-param-reassign */
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import { dateConvert } from '../../utils/function-helper';
 
@@ -14,7 +12,7 @@ const newsTemplate = (news) => {
             <div class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
-              <img class="lazyload" src="${news.urlToImage}" alt="gambar-${news.title}" >
+              <img class="lazyload" src="${news.urlToImage}" alt="" >
               </div>
              <h4>${dateConvert(news.publishedAt)}</h4>
              <a href="${news.url}" target="_blank"><h3>${news.title}</h3></a>

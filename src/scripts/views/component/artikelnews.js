@@ -104,11 +104,7 @@ class Artikel extends HTMLElement {
         data-aos-mirror="true"
         data-aos-once="true" 
         class = "gambar-artikel">
-            <picture>
-            <source media ="(max-width:600px)" data-src="./images/oil-cooking-small.png" class="lazyload">
-            <img data-src="./images/oil-cooking-large.png" class="lazyload"
-            alt="oil image"></img>
-          </picture>
+             <img class="lazyload" src="./images/minyak-jelantah.jpg" alt="Minyak">
         </div>
 
        <div class="artikel">

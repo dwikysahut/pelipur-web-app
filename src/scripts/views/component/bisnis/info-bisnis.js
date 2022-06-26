@@ -90,11 +90,7 @@ class InfoBisnis extends HTMLElement {
             </p>
           </div>
           <div class = "ket-gambar">
-            <picture>
-                <source media ="(max-width:600px)" srcset="./images/bisnis-small.png">
-                <img src="./images/bisnis-large.png"
-                alt="authentication"></img>
-          </picture>
+             <img class="lazyload" src ="./images/bisnis.jpg">
           </div>
         </div>
       </div>

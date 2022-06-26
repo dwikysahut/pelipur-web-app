@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 class Header extends HTMLElement {
@@ -18,7 +19,10 @@ class Header extends HTMLElement {
             <ul class="nav__list">
               <li class="nav__item"><a href="#/home">Home</a></li>
               <li class="nav__item"><a href="#/about-us">About us</a></li>
-              <li class="nav__item"><a href="#/business">Business</a></li>${!localStorage.getItem('token') ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">Login</a></li>' : `
+              <li class="nav__item"><a href="#/business">Business</a></li>${
+                !localStorage.getItem('token')
+                  ? '<li tabindex="0" class="nav__item"><a class="active" href="#/auth">Login</a></li>'
+                  : `
               <li tabindex="0" class="nav__item dropdown">
               <div class="profile-pict">
                 <img src="${localStorage.getItem('image')}" alt="">
@@ -33,7 +37,8 @@ class Header extends HTMLElement {
               </li>
             </ul>
             </a>
-            `}
+            `
+              }
             </ul>
           </nav>
         </header>

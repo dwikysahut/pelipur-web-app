@@ -49,12 +49,6 @@
   }
 }
 
-@media screen and (min-width: 650px) {
-  .hero {
-    background-image: url('../public/images/heros/hero-img-crop.jpg');
-  }
-}
-
 @media screen and (min-width: 700px) {
   .header-icon {
     display: flex;

@@ -7,9 +7,26 @@ class Hero extends HTMLElement {
   render() {
     this.innerHTML = `
     <style>
-    picture{
-      box-sizing:border-box;
-    }
+      .hero {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-position: initial;
+  margin-bottom: 70px;
+  height: 600px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./images/hero-img-crop-large.jpg');
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .hero {
+    background-image: url('./images/hero-img-small.jpg');
+  }
+}
     </style>
 
       <div class="hero">
