@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { merge } = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -21,7 +22,9 @@ module.exports = merge(common, {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              generatorOpts: { compact: false },
             },
+
           },
         ],
       },
