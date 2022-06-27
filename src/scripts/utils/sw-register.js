@@ -1,14 +1,14 @@
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+// import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 
 const swRegister = async () => {
   if ('serviceWorker' in navigator) {
-    await runtime.register();
-    // try {
-    //   await navigator.serviceWorker.register('./sw.js');
-    //   console.log('service worker registration success');
-    // } catch (error) {
-    //   console.log('service worker registration success');
-    // }
+    // await runtime.register();
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+      console.log('service worker registration success');
+    } catch (error) {
+      console.log('service worker registration success');
+    }
 
     return;
   }

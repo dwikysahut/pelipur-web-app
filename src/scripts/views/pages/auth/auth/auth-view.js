@@ -39,7 +39,7 @@ class AuthView {
               <span id="alertEmailLogin" class="hint danger">error please enter a valid email</span>
             </div>
             <div class="field">
-              <input type="password" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Masukan Password"
+              <input type="password" id="inputPasswordLogin" autocomplete="on" name="inputPasswordLogin" placeholder="Masukan Password"
                 required>
             </div> <br>
             <div class="remember">
@@ -59,23 +59,23 @@ class AuthView {
               <input type="text" id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
             </div>
             <div tabindex="0" class="field">
-              <input type="email" id="inputEmailReg" name="inputEmailReg" placeholder="Masukkan Email" required>
+              <input type="email" id="inputEmailReg" name="inputEmailReg" autocomplete="username email" placeholder="Masukkan Email" required>
               <span id="alertEmailReg" class="hint danger">error please enter a valid email</span>
             </div>
             <div tabindex="0" class="field">
-              <input type="tel" id="inputPhoneReg" name="inputPhoneReg" placeholder="Masukkan Nomor Telepon" required>
+              <input type="tel" id="inputPhoneReg" name="inputPhoneReg" autocomplete="on" placeholder="Masukkan Nomor Telepon" required>
               <span id="alertPhoneReg" class="hint danger">Input Number Only</span>
             </div>
             <div tabindex="0" class="field">
               <input type="textarea" id="inputAddressReg" name="inputAddressReg" placeholder="Masukkan Alamat" required>
             </div>
             <div tabindex="0" class="field">
-              <input type="password" id="inputPasswordReg" name="inputPasswordReg" placeholder="Masukan Password"
+              <input type="password" id="inputPasswordReg" name="inputPasswordReg" autocomplete="new-password" placeholder="Masukan Password"
                 required>
               <span id="alertPassReg" class="hint danger">password must be 8-12 characters in length</span>
             </div>
             <div tabindex="0" class="field">
-              <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" placeholder="Konfirmasi password"
+              <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" autocomplete="new-password" placeholder="Konfirmasi password"
                 required>
             </div>
             <div class="field btn">

@@ -27,7 +27,7 @@ class InfoBisnis extends HTMLElement {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 80vh;
+          
         }
 
         .judul-bisnis h2 {
