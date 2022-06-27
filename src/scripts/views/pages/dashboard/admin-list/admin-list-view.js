@@ -32,7 +32,7 @@ class AdminListView {
                   <th class="th__space">Pesan</th>
                   <th class="th__space">Alamat</th>
                   <th>Kota</th>
-                  <th">Mitra</th>
+                  <th>Mitra</th>
                   <th>Aksi</th>
                 </tr>
               </thead>

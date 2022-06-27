@@ -319,9 +319,9 @@ button#hambuger {
 }
 
 custom-hero {
-  height: 100vh;
   margin-bottom: 40px;
 }
+
 .hero {
   display: flex;
   width: 100%;

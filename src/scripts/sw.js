@@ -95,7 +95,17 @@ workbox.routing.registerRoute(
     ],
   }),
 );
-
+workbox.routing.registerRoute(
+  new RegExp(`^${CONFIG.BASE_URL}${API_ENDPOINT.GET_ALL_NEWS}`),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'pelipur-news',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [200, 404],
+      }),
+    ],
+  }),
+);
 // Menyimpan cache dari CSS Google Fonts
 workbox.routing.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
