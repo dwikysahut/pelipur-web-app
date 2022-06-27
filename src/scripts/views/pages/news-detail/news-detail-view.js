@@ -5,7 +5,12 @@ class NewsDetailView {
   getTemplate() {
     return `   
       <div class="news-container">
-        ${createSkeletonNewsList(20)}
+        <div class="news-inner__title">
+          <h2>Berita</h2>
+        </div>
+        <div class="news-inner__list">
+          ${createSkeletonNewsList(20)}
+        </div>        
       </div>
     `;
   }
@@ -13,7 +18,7 @@ class NewsDetailView {
   showNews(items) {
     console.log(items);
 
-    const itemContainer = document.querySelector('.news-container');
+    const itemContainer = document.querySelector('.news-inner__list');
     itemContainer.innerHTML = '';
     if (itemContainer !== null) {
       for (let i = 0; i < items.length; i += 1) {

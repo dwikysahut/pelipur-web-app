@@ -20,7 +20,6 @@ class FounderAboutus extends HTMLElement {
             .founder-about .founder{
                 width:80%;
                 margin: 0 auto;
-                padding:10px;
                 display: flex;
                 flex-direction:column;
                 align-items: center;
@@ -70,7 +69,6 @@ class FounderAboutus extends HTMLElement {
 
             .founder-about .about{
                 width: 80%;
-                padding: 10px;
                 box-sizing: border-box;
                 margin: 0 auto;
                 display: flex;

@@ -214,9 +214,11 @@ button#hambuger {
 .profile-pict {
   display: none;
 }
+
 .content-collection{
-  padding: 40px;
+  padding: 25px 40px 40px;
 }
+
 .header-icon {
   display: flex;
   justify-content: end;
@@ -440,9 +442,9 @@ article {
   width: 80%;
   margin: 0 auto 30px;
   padding: 20px 15px;
-  background-color: #F8FAFF;
-  /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */
-  border-radius: 8px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
 }
 
 .news-title {
@@ -530,7 +532,19 @@ article {
 
 .news-container {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 50px 0 70px;
+  box-shadow: 0 4px 8px 0 rgb(2 56 36 / 20%);
+}
+
+.news-inner__title {
+  margin: 0 auto 20px;
+}
+
+.news-inner__title h2 {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .wrapper-news {
@@ -719,13 +733,14 @@ footer .fa {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  opacity: 0;
+  /* opacity: 0; */
   border: none;
   position: fixed;
   right: 20px;
-  opacity: 1;
-  display: none;
-  z-index: 10;
+  /* opacity: 1; */
+  margin-bottom: 70px;
+  display: block;
+  /* z-index: 10; */
   box-shadow: 0 0 0 0.6px white;
   bottom:65px;
   background-color: #005555;
@@ -1252,4 +1267,10 @@ table > tbody > tr > td, th {
 }
 .empty-table h4{
     font-weight: lighter;
+}
+
+.btn-danger {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 5px;
 }
