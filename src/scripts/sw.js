@@ -76,7 +76,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp(`^${CONFIG.BASE_URL}`),
   new workbox.strategies.NetworkFirst({
-    cacheName: 'pelipur-news',
+    cacheName: 'pelipur-data',
     plugins: [
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200, 404],
@@ -87,7 +87,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp(`^${CONFIG.BASE_URL}${API_ENDPOINT.GET_PARTNERS}`),
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'pelipur-news',
+    cacheName: 'pelipur-partner',
     plugins: [
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200, 404],

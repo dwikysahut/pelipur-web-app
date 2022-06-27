@@ -1,5 +1,5 @@
 const CONFIG = {
-  BASE_URL: 'https://pelipur-api.herokuapp.com',
+  BASE_URL: 'https://pelipur-api.herokuapp.com/',
   BASE_IMAGE_URL: 'https://pelipur-api.herokuapp.com/public/image/',
   // BASE_URL: 'http://localhost:5000/',
   // BASE_IMAGE_URL: 'http://localhost:5000/public/image/',
