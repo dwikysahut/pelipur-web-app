@@ -41,19 +41,19 @@ module.exports = merge(common, {
       plugins: [
         ImageminMozjpeg([
           {
-            quality: 10,
+            quality: 70,
             progressive: true,
           },
         ]),
         ImageminPngquant([
           {
-            quality: 10,
+            quality: 50,
             progressive: true,
           },
         ]),
         ImageminSvgo([
           {
-            quality: 10,
+            quality: 50,
             progressive: true,
           },
         ]),

@@ -157,6 +157,7 @@
   border-radius: 5px;
   margin-bottom: 20px;
   color: white;
+  padding: 5px;
   background-color: #069a8e;
   text-align: center;
   font-size: 23px;
@@ -236,9 +237,6 @@
     flex: 1;
   }
 
-  .content__form {
-    margin-bottom: 0;
-  }
   
   .content__form-item-time label {
     line-height: normal;

@@ -18,6 +18,7 @@ body {
 aside,aside-dashboard, aside-user {
   position: fixed;
   bottom: 0;
+  z-index: 10;
 }
 
 .sidebar__image-profil {

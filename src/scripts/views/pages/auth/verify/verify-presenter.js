@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, formEmailValidation, swalConfirm, swalError, openLoader, closeLoader,
+  emptyFormHandler, formEmailValidation, swalConfirm, swalError,
 } from '../../../../utils/function-helper';
 
 class VerifyPresenter {
@@ -36,7 +36,6 @@ class VerifyPresenter {
 
   async _verifyEmail({ email, kode }) {
     try {
-      openLoader(this._view.loaderListener());
       const response = await this._authDb.postVerifyEmail(
         { email, kode },
       );
@@ -45,8 +44,6 @@ class VerifyPresenter {
       }
     } catch (error) {
       await swalError(`${error.response.data.message}`);
-    } finally {
-      closeLoader(this._view.loaderListener());
     }
   }
 }

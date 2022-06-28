@@ -21,11 +21,13 @@ fs.readdirSync(target).forEach((image) => {
   //   .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-large.png`));
 
   sharp(`${target}/${image}`)
-    .resize(800)
+    .resize(1200)
+    .jpeg({ quality: 80 })
     .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-large.${image.split('.').slice(1).join('.')}`));
 
   // mengubah ukuran gambar dengan lebar 480px, dengan prefix -small.jpg
   sharp(`${target}/${image}`)
-    .resize(480)
+    .resize(650)
+    .jpeg({ quality: 80 })
     .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-small.${image.split('.').slice(1).join('.')}`));
 });
