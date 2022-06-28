@@ -125,7 +125,7 @@ class FounderAboutus extends HTMLElement {
             <div class="founder">
             <h2 tabindex="0">Founder Pelipur</h2>
                 <ul class="img-founder">
-                    <li tabindex="0" data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="zoom-out-up"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -136,7 +136,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/yoga2.jpg" alt="Yoga">
                         <p>Yoga</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="zoom-out-down"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -147,7 +147,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/dwiky.jpg" alt="Dwiky">
                         <p>Dwiky</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="zoom-out-up"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -158,7 +158,7 @@ class FounderAboutus extends HTMLElement {
                         <img src = "./images/heros/nova.jpg" alt="Nova">
                         <p>Nova</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="zoom-out-down"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
