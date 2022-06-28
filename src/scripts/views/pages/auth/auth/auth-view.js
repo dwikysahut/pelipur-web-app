@@ -1,5 +1,6 @@
 // import { createMovieItemTemplate } from '../../templates/template-creator';
 import '../../../component/custom-loader';
+import { showPasswordIcon } from '../../../templates/template-creator';
 /* eslint-disable class-methods-use-this */
 class AuthView {
   getTemplate() {
@@ -38,9 +39,10 @@ class AuthView {
               <input type="email" id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
               <span id="alertEmailLogin" class="hint danger">error please enter a valid email</span>
             </div>
-            <div class="field">
+            <div class="field" id="fieldPassword">
               <input type="password" id="inputPasswordLogin" autocomplete="on" name="inputPasswordLogin" placeholder="Masukan Password"
                 required>
+               
             </div> <br>
             <div class="remember">
               
@@ -99,6 +101,19 @@ class AuthView {
 
     callback({
       loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+    });
+  }
+
+  passwordFieldListener() {
+    return document.querySelector('#fieldPassword');
+  }
+
+  renderIconPassword(fieldElement, callback) {
+    // eslint-disable-next-line no-param-reassign
+    fieldElement.innerHTML += showPasswordIcon();
+    document.querySelector('#showPassword').addEventListener('click', (e) => {
+      e.stopPropagation();
+      callback(document.querySelector('#inputPasswordLogin'), document.querySelector('#showPassword'));
     });
   }
 

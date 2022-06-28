@@ -16,8 +16,25 @@ class AuthPresenter {
     this._listenElementButtonInit();
     this._formLoginEventChangeHandler();
     this._formRegisterEventChangeHandler();
+    this._passwordFieldListener();
+    this._showPasswordHandler();
     this._loginFormHandler();
     this._registerFormHandler();
+  }
+
+  _passwordFieldListener() {
+    const fieldElement = this._view.passwordFieldListener();
+    this._view.renderIconPassword(fieldElement, (element, iconElement) => {
+      if (element.type === 'password') {
+        element.setAttribute('type', 'text');
+        iconElement.classList.remove('fa-eye-slash');
+        iconElement.classList.add('fa-eye');
+      } else {
+        element.setAttribute('type', 'password');
+        iconElement.classList.add('fa-eye-slash');
+        iconElement.classList.remove('fa-eye');
+      }
+    });
   }
 
   // swiper button in auth page

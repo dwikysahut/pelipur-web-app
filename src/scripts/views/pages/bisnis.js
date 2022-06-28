@@ -1,3 +1,4 @@
+import DataDbSource from '../../data/datadb-source';
 import BisnisPresenter from './bisnis/bisnis-presenter';
 import BisnisView from './bisnis/bisnis-view';
 
@@ -11,7 +12,7 @@ const Bisnis = {
   },
 
   async afterRender() {
-    new BisnisPresenter({ view });
+    new BisnisPresenter({ view, dataDb: DataDbSource });
   },
 };
 

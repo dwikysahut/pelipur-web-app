@@ -11,6 +11,7 @@
 @import 'user-history.css';
 @import 'not-found.css';
 @import 'unauthorize.css';
+@import 'business-page.css';
 
 * {
   margin: 0;
@@ -320,6 +321,9 @@ button#hambuger {
 
 custom-hero {
   margin-bottom: 40px;
+}
+.nav__item.hidden,.nav__item.dropdown.hidden{
+  display: none !important;
 }
 
 .hero {

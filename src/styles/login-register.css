@@ -15,7 +15,15 @@ html,body{
   font-size: 23px;
   font-weight: 500;
 }
-
+.password-hint {
+  float: right;
+  margin-right: 15px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+  color: #005555;
+  cursor: pointer;
+}
 .login > p, .remember > a {
   font-size: 15px;
 }

@@ -4,6 +4,8 @@ import CONFIG from '../../globals/config';
 
 import { dateConvert } from '../../utils/function-helper';
 
+const showPasswordIcon = () => '<span class="fa fa-eye-slash fa-lg password-hint" id="showPassword" aria-hidden="true"></span>';
+
 const newsTemplate = (news, att) => {
   let template = '';
 
@@ -406,4 +408,5 @@ export {
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
   dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
   buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
+  showPasswordIcon,
 };
