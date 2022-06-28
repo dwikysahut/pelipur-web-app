@@ -7,14 +7,88 @@ import '../../../component/custom-join';
 class UserCollectionView {
   getTemplate() {
     return `
+      <div class="wrapper-collection">
+      <div class="container-collection">
+      <h2>Alur Pengumpulan Minyak Jelantah</h2>
+      <div class="flow-container">
+          <div
+            data-aos="flip-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true" 
+            class="flow-item">
+              <img src="./images/flow/flow1.png" alt="gambar langkah daftar akun dan verifikasi" srcset="">
+              <h4>Daftar dan Verifikasi Akun</h4>
+          </div>
+          <div 
+            data-aos="flip-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="flow-item">
+              <img src="./images/flow/flow2.png" alt="gambar langkah masuk ke halaman menu" srcset="">
+              <h4>Masuk ke Halaman Menu</h4>
+          </div>
+          <div 
+            data-aos="flip-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="flow-item">
+              <img src="./images/flow/flow3.png" alt="gambar langkah melakukan pengisian form" srcset="">
+              <h4>Melakukan Pengisian Form</h4>
+          </div>
+          <div 
+            data-aos="flip-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="flow-item">
+              <img src="./images/flow/flow4.png" alt="gambar langkah menunggu persetujuan admin" srcset="">
+              <h4>Menunggu Persetujuan Admin</h4>
+          </div>
+          <div 
+            data-aos="flip-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="flow-item">
+              <img src="./images/flow/flow5.png" alt="gambar langkah admin melakukan verifikasi" srcset="">
+              <h4>Admin Melakukan Verifikasi untuk Keterjangkauan Lokasi</h4>
+          </div>
+          <div 
+            data-aos="flip-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true" 
+            class="flow-item">
+              <img src="./images/flow/flow6.png" alt="gambar langkah user menunggu petugas menuju lokasi mengambil minyak" srcset="">
+              <h4>Menunggu Petugas Mengambil Minyak yang Sudah Disiapkan</h4>
+          </div>  
       
-      <div class="wrapper-dashboard">
-      
-    
-      <div class="dashboard-container">
+      </div>
       ${!localStorage.getItem('token') ? '<custom-join></custom-join>' : `
       <custom-loader></custom-loader>
       <div class="content-collection ">
+      
       <h2 class="content__title">Pengumpulan</h2>
       <form class="content__form">
         <div class="content__form-item-date">
@@ -88,10 +162,13 @@ class UserCollectionView {
       </form>
     </div>
       `}
-       
-      </div>
     </div>
-              `;
+    </div>
+    `;
+  }
+
+  contentFormListener() {
+    return document.querySelector('.content__form');
   }
 
   collectionFormListener(callback) {

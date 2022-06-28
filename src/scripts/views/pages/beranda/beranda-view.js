@@ -1,5 +1,5 @@
 import {
-  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
+  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate, skeletonMitraListTemplate,
 } from '../../templates/template-creator';
 
 /* eslint-disable class-methods-use-this */
@@ -16,7 +16,7 @@ class BerandaView {
         <custom-carousel></custom-carousel>
         <layanan-custom></layanan-custom>
         <article>
-          <h2 class="news-title">Berita</h2>
+          <h2 class="news-title" tabindex="0">Berita</h2>
           <div class="item-produk">
             ${skeletonNewsHomeTemplate(6)}
           </div>
@@ -24,7 +24,9 @@ class BerandaView {
             <a href="#/news">Tampilkan semua <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
-        <list-mitra></list-mitra>
+        <list-mitra>
+          ${skeletonMitraListTemplate(6)}
+        </list-mitra>
         </div>
       
     </div>
@@ -63,8 +65,8 @@ class BerandaView {
 
   showPartners(items) {
     console.log(items);
-
     const itemContainer = this.getMitracontainerListener().mitraContainer;
+    itemContainer.innerHTML = '';
     items.forEach((item) => {
       itemContainer.innerHTML += mitraListTemplate(item);
     });

@@ -12,7 +12,7 @@ class Footer extends HTMLElement {
         <p>Jln. Rasuna Said RT/RW 002/002 Kunciran Jaya Pinang Kota Tangerang Banten, 15144</p>
       </div>
 
-      <div class = "jadwal">
+      <div  tabindex="0" class = "jadwal">
       <h3>Jadwal Operasional</h3>
       <ul>
         <li><p>Senin - Jumat : 08.00 WIB - 17.00 WIB</p></li>

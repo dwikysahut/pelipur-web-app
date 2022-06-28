@@ -66,7 +66,7 @@ class Layanan extends HTMLElement {
         </style>
 
 
-        <div class="judul"><h2>Layanan</h2></div>
+        <div class="judul"><h2 tabindex="0">Layanan</h2></div>
         <div class="layanan">
             <div 
                 data-aos="flip-left"
@@ -78,7 +78,7 @@ class Layanan extends HTMLElement {
                 data-aos-once="true"
                 class="gambar">
                 <img src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
-                <span>Jemput Gratis</span>
+                <span tabindex="0">Jemput Gratis</span>
             </div>
             <div 
                 data-aos="flip-left"
@@ -90,7 +90,7 @@ class Layanan extends HTMLElement {
                 data-aos-once="true"   
                 class="gambar">
                 <img src="./images/undraw_chatting.svg" alt="Live Chat">
-                <span>Live Chat</span>
+                <span tabindex="0">Live Chat</span>
             </div>
             <div 
                 data-aos="flip-left"
@@ -102,7 +102,7 @@ class Layanan extends HTMLElement {
                 data-aos-once="true"
                 class="gambar">
                 <img src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
-                <span>Menghasilkan Uang</span>
+                <span tabindex="0">Menghasilkan Uang</span>
             </div>       
         </div>
     `;

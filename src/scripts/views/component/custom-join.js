@@ -9,7 +9,7 @@ class Join extends HTMLElement {
 
     <style>
         
-    .daftar{
+    .join{
       width:60%;
       padding: 40px;
       margin: 0 auto 70px;
@@ -19,14 +19,15 @@ class Join extends HTMLElement {
       box-sizing:border-box;
     }
 
-    h2 {
+    .join h2 {
       font-size: 23px;
       font-weight: 500;
       text-align: center;
       margin-bottom: 10px;
+      line-height: 1.4;
     }
 
-    button {
+    .join button {
       width:100%;
       background-color:#005555;
       color:white;
@@ -43,7 +44,7 @@ class Join extends HTMLElement {
     }
 
     @media screen and (min-width:600px){
-      button{
+      .join button{
         width:50%;
       }
     }
@@ -58,7 +59,7 @@ class Join extends HTMLElement {
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
-    class ="daftar">
+    class ="join">
       <h2> Silahkan masuk terlebih dahulu untuk melanjutkan </h2>
       <button onClick="window.location.href='#/auth';">Masuk</button>
     </div>

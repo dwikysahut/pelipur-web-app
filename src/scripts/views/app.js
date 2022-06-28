@@ -4,14 +4,16 @@ import UrlParser from '../routes/url-routes';
 import routes from '../routes/routes';
 import NotFound from './pages/not-found';
 
-import OpenChatInitiator from '../utils/OpenChatInitiator';
+import OpenChatInitiator from '../utils/open-chat-initiator';
+import GoTopInitiator from '../utils/go-top-initiator';
 
 class App {
   constructor({
-    button, chatButton, chatContainer, drawer, content, footer, navList,
+    button, chatButton, goTopButton, chatContainer, drawer, content, footer, navList,
   }) {
     this._button = button;
     this._chatButton = chatButton;
+    this._goTopButton = goTopButton;
     this._chatContainer = chatContainer;
     this._drawer = drawer;
     this._content = content;
@@ -34,6 +36,12 @@ class App {
       content: this._content,
 
     });
+    GoTopInitiator.init({
+      goTopButton: this._goTopButton,
+      body: document.body,
+      documentElement: document.documentElement,
+
+    });
   }
 
   async renderPage() {
@@ -45,7 +53,7 @@ class App {
 
     window.scrollTo(0, 0);
     const { footer, content } = await page.render();
-    !footer ? this._footer.style.display = 'none' : this._footer.style.display = 'block';
+    !footer ? this._footer.style.display = 'none' : this._footer.style.display = 'flex';
     this._content.innerHTML = content;
     await page.afterRender();
 

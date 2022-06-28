@@ -21,6 +21,7 @@ import swRegister from './utils/sw-register';
 const app = new App({
   button: document.querySelector('button'),
   chatButton: document.querySelector('#btnOpenChat'),
+  goTopButton: document.querySelector('#btnGoTop'),
   chatContainer: document.querySelector('#chatContainer'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#maincontent'),

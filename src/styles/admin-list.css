@@ -1,17 +1,3 @@
-/* .content {
-  padding: 30px;
-} */
-
-/* .content__title {
-  font-weight: 600;
-  padding: 20px;
-  line-height: 20px;
-  font-size: 23px;
-  color: #005555;
-  text-align: center;
-  border-bottom: 2px solid #069a8e;
-} */
-
 .none{
   display: none !important;
 }
@@ -23,14 +9,6 @@
 
 .btn.btn-outline-dark{
   width: max-content !important;
-}
-
-table {
-  padding: 5px;
-  width: 100%;
-  margin: 7% 0;
-  border-collapse: collapse;
-  /* border: 1px solid black; */
 }
 
 td,
@@ -90,45 +68,16 @@ th {
 .btn__update {
   background-color: #ff8c32;
 }
+
 .btn__update#editCityButton {
 display: none;
 }
+
 .btn__delete, .btn__reject {
   background-color: #eb5353;
 }
 
-/* button:hover {
-  content: "";
-  opacity: 0.6;
-} */
-
-@media screen and (min-width: 500px) {
-  .content__table, .content__table-cities {
-    margin-top: 1%;
-  }
-
-  table {
-    margin-top: 4%;
-  }
-}
-
 @media screen and (min-width: 798px) {
-  /* .content {
-    padding: 2% 4%;
-  } */
-
-  /* table {
-    margin-top: 2%;
-  } */
-
-  /* .th__space {
-    width: 100px;
-  } */
-
-  .content__table {
-    margin-bottom: 0;
-  }
-
   .content__table-cities {
     padding: 5px 110px;
   }

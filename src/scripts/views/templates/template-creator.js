@@ -62,7 +62,7 @@ const userListChat = (users, container) => {
 
   users.forEach((user) => {
     userTemplate += `
-    <div class="user-list__item" data-id="${user.id}">
+    <div class="user-list__item ${user.lastSender === user.id ? 'unread' : ''}" data-id="${user.id}">
     <span>${user.id}</span>
         <p>${user.email}</p>
        
@@ -232,7 +232,7 @@ const partnerByCityEmptyTemplate = () => ' <option value="" selected>-</option>'
 
 const dataDashboardTemplate = (data) => `
 
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_user}</h3>
     <span class="card__name">User</span>
@@ -241,7 +241,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/person_white_36dp.svg" alt="User" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_minyak} L</h3>
     <span class="card__name">Total Minyak</span>
@@ -253,7 +253,7 @@ const dataDashboardTemplate = (data) => `
     />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_kota}</h3>
     <span class="card__name">Kota</span>
@@ -262,7 +262,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/pin_drop_white_36dp.svg" alt="Kota" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_mitra}</h3>
     <span class="card__name">Mitra</span>
@@ -271,7 +271,7 @@ const dataDashboardTemplate = (data) => `
     <img src="icons/account_balance_white_36dp.svg" alt="Mitra" />
   </div>
 </div>
-<div class="card__item">
+<div tabindex="0" class="card__item">
   <div class="card__detail">
     <h3 class="card__number">${data.total_pengumpulan}</h3>
     <span class="card__name">Form Terkumpul</span>
@@ -380,16 +380,16 @@ const skeletonNewsHomeTemplate = () => {
 
   for (let i = 0; i < 6; i += 1) {
     template += `
-              <div class="card">
-                <div class="card-item" tabindex="0">
-                  <div class="img-news" tabindex="0">
-                    <img srcset="./images/placeholder.png" alt="">
-                  </div>
-                  <h4>0/0/0000 0:0</h4>
-                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
-                </div>
-              </div>    
-      `;
+      <div class="card">
+        <div class="card-item" tabindex="0">
+          <div class="img-news" tabindex="0">
+            <img srcset="./images/placeholder.png" alt="Berita">
+          </div>
+          <h4>0/0/0000 0:0</h4>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+        </div>
+      </div>    
+    `;
   }
   return template;
 };
@@ -398,6 +398,8 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
 `;
 
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
+const skeletonMitraListTemplate = () => ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
@@ -405,5 +407,5 @@ export {
   categoryItemTemplate, tableHistoryTemplate, partnerByCityItemTemplate, partnerByCityEmptyTemplate,
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
   dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
-  buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
+  buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate, skeletonMitraListTemplate,
 };

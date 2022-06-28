@@ -13,11 +13,13 @@ class UserCollectionPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._formTemplateDb = formTemplateDb;
-    this._generateCityDropdownHandler();
-    this._addCollectionHandler();
-    this._saveTemplateCollectionHandler();
-    this._useTemplateCollectionHandler();
-    this._formCollectionEventChangeHandler();
+    if (this._view.contentFormListener() !== null) {
+      this._generateCityDropdownHandler();
+      this._addCollectionHandler();
+      this._saveTemplateCollectionHandler();
+      this._useTemplateCollectionHandler();
+      this._formCollectionEventChangeHandler();
+    }
   }
 
   // handler change collection form input
@@ -85,7 +87,8 @@ class UserCollectionPresenter {
         //     }
         //   } catch (errorToken) {
         //     // console.log(errorToken);
-        //     if (errorToken.response.status === 403) { swalError('Session Expired, Please Login First', '#/logout'); }
+        //     if (errorToken.response.status === 403) 
+        // { swalError('Session Expired, Please Login First', '#/logout'); }
         //   }
         // });
       }

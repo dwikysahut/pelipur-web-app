@@ -1,198 +1,196 @@
 @media screen and (min-width: 455px) {
-    .carousel-inner {
-      min-height: 280px
-    }
+  .carousel-inner {
+    min-height: 280px;
   }
-  
-  @media screen and (min-width: 600px) {
-    .item-produk {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-  
-    footer {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas:
-        'alamat jadwal medsos'
-        'copyright copyright copyright';
-      padding: 30px 40px 20px;
-    }
-  
-    footer .alamat {
-      grid-area: alamat;
-      text-align: center;
-      font-size: 15px;
-    }
-  
-    footer .jadwal {
-      grid-area: jadwal;
-    }
-  
-    footer .medsos li {
-      grid-area: medsos;
-      list-style: none;
-      text-align: center;
-    }
-    
-    footer .medsos p {
-      color: white;
-      margin-top: -50px;
-    }
-  
-    footer .copyrig {
-      grid-area: copyright;
-      border-radius: 5px;
-    }
-  
-    .copyrig p {
-      text-align: center;
-      color: #005555;
-    }
+}
+
+@media screen and (min-width: 600px) {
+  .item-produk {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  
-  @media screen and (min-width: 700px) {
-    .header-icon {
-      display: flex;
-      justify-content: end;
-    }
-    .header-icon i {
-      color: white;
-    }
-  
-    #drawer {
-      width: inherit;
-      position: relative;
-      top: 0;
-      opacity: 1;
-      transform: translate(0);
-      background:transparent;
-      color: #005555;
-    }
-    
-    .nav__list {
-      flex-direction: row;
-      margin: 0;
-      gap: 10px;
-    }
-  
-    .nav__list li:nth-child(4) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  
-    .dropdown-dashboard {
-      margin-top: 0;
-    }
-  
-    .nav .nav__item.dropdown {
-      text-decoration: none;
-      color: white;
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-  
-    .profile-pict {
-      display: block;
-      width: 44px;
-      height: max-content;
-      border-radius: 50%;
-      margin-left: 8px;
-      padding: 5px;
-    }
-    
-    .profile-pict > img {
-      width: 100%;
-      border-radius: 50%;
-    }
-  
-    .dropdown-content {
-      visibility: hidden;
-      position: absolute;
-      top: 40px;
-      right: -25px;
-      background-color: white;
-      box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
-      transition: visibility 0s, opacity 0.3s linear;
-    }
-  
-    .btn-drawer {
-      display: none;
-    }
-  
-    .nav__item a {
-      color: #005555 !important;
-    }
-  
-    .hero__title {
-      font-size: 2.9em;
-      font-weight: lighter;
-      background: transparent;
-      color: black;
-    }
-  
-    .hero__inner{
-      flex-direction: row !important;
-    }
-  
-    .hero__inner__text {
-      align-items: center;
-    }
-  
-    .carousel-inner {
-      min-height: 230px;
-    }
-  
-    .wrapper-news {
-      width: 80%;
-      max-width: 800px;
-    }
-    
-    .wrapper-news__item {
-      flex-direction: row;
-      gap: 20px;
-    }
-  
-    .item-news__image {
-      min-width: 300px;
-      width: 400px;
-      max-width: 300px;
-      min-height: 190px;
-      max-height: 220px;
-    }
+
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "alamat jadwal medsos"
+      "copyright copyright copyright";
+    padding: 30px 40px 20px;
   }
-  
-  @media screen and (min-width: 800px) {
-    .hero__highlight {
-      font-size: 50px !important;
-    }
-  
-    .btn-open-chat {
-      margin-bottom: 20px;
-    }
+
+  footer .alamat {
+    grid-area: alamat;
+    text-align: center;
+    font-size: 15px;
   }
-  
-  @media screen and (min-width: 900px) {
-    article {
-      padding: 20px;
-    }
-  
-    .item-produk {
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 20px;
-    }
+
+  footer .jadwal {
+    grid-area: jadwal;
   }
-  
-  @media screen and (min-width: 950px) {
-    .carousel-inner {
-      min-height: 200px;
-    }
-  
-    .medsos {
-      width: 80%;
-      width: 80%;
-      margin: 0 auto;
-    }
+
+  footer .medsos li {
+    grid-area: medsos;
+    list-style: none;
+    text-align: center;
   }
-  
+
+  footer .medsos p {
+    color: white;
+    margin-top: -50px;
+  }
+
+  footer .copyrig {
+    grid-area: copyright;
+    border-radius: 5px;
+  }
+
+  .copyrig p {
+    text-align: center;
+    color: #005555;
+  }
+  .btn-open-chat {
+    bottom: 75px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .header-icon {
+    display: flex;
+    justify-content: end;
+  }
+  .header-icon i {
+    color: white;
+  }
+
+  #drawer {
+    width: inherit;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    transform: translate(0);
+    background: transparent;
+    color: #005555;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    margin: 0;
+    gap: 10px;
+  }
+
+  .nav__list li:nth-child(4) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .dropdown-dashboard {
+    margin-top: 0;
+  }
+
+  .nav .nav__item.dropdown {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile-pict {
+    display: block;
+    width: 44px;
+    height: max-content;
+    border-radius: 50%;
+    margin-left: 8px;
+    padding: 5px;
+  }
+
+  .profile-pict > img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: -25px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  .btn-drawer {
+    display: none;
+  }
+
+  .nav__item a {
+    color: #005555 !important;
+  }
+
+  .hero__title {
+    font-size: 2.9em;
+    font-weight: lighter;
+    background: transparent;
+    color: black;
+  }
+
+  .hero__inner {
+    flex-direction: row !important;
+  }
+
+  .hero__inner__text {
+    align-items: center;
+  }
+
+  .carousel-inner {
+    min-height: 230px;
+  }
+
+  .wrapper-news {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .wrapper-news__item {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .item-news__image {
+    min-width: 300px;
+    width: 400px;
+    max-width: 300px;
+    min-height: 190px;
+    max-height: 220px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero__highlight {
+    font-size: 50px !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  article {
+    padding: 20px;
+  }
+
+  .item-produk {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .carousel-inner {
+    min-height: 200px;
+  }
+
+  .medsos {
+    width: 80%;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

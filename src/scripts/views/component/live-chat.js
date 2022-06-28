@@ -28,15 +28,36 @@ class LiveChat extends HTMLElement {
     this.renderAdminChat();
 
     const loadUserList = async () => {
+      const dataUser = [];
       await firebase
         .database()
         .ref('users')
+        .orderByChild('updatedAt')
         .on('value', async (value) => {
           console.log(Object.values(value.val()));
+
+          // console.log(child.val());
+
           const container = document.querySelector('.user-list');
           container.innerHTML = '';
-          console.log(Object.keys(value.val()));
-          await userListChat(Object.values(value.val()), container);
+          console.log(value.val());
+
+          const filteredData = [];
+          value.forEach((child) => {
+            filteredData.unshift(child.val());
+          });
+          // console.log(filteredData);
+
+          // for (const keys in filteredData) {
+          //   const user = {
+          //     id: filteredData[keys].id,
+          //     email: filteredData[keys].email,
+          //     lastSender: filteredData[keys].lastSender,
+
+          //   };
+          //   dataUser.push(user);
+          // }
+          userListChat(filteredData, container);
           this._onClickUserList();
         });
     };
@@ -82,7 +103,7 @@ class LiveChat extends HTMLElement {
           const inputMessage = document.querySelector('#inputMessageAdmin');
           inputMessage.removeAttribute('disabled');
 
-        loadMesageFromUser(this._idTarget);
+          loadMesageFromUser(this._idTarget);
         }
       });
     });
@@ -107,8 +128,13 @@ class LiveChat extends HTMLElement {
           message: inputMessage.value,
           to: this._idTarget,
         });
+        firebase.database().ref(`/users/${this._idTarget}`).update({
+          lastSender: localStorage.getItem('id'),
+
+        });
 
         loadMesageFromUser(this._idTarget);
+        // this.loadAdminChat();
       }
       inputMessage.value = '';
     });
@@ -183,6 +209,8 @@ class LiveChat extends HTMLElement {
           id: localStorage.getItem('id'),
           email: localStorage.getItem('email'),
           nama: localStorage.getItem('nama'),
+          lastSender: localStorage.getItem('id'),
+          updatedAt: new Date().getTime(),
         });
         loadMessage();
       }
