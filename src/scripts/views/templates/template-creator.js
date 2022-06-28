@@ -4,11 +4,13 @@ import CONFIG from '../../globals/config';
 
 import { dateConvert } from '../../utils/function-helper';
 
-const newsTemplate = (news) => {
+const showPasswordIcon = () => '<span class="fa fa-eye-slash fa-lg password-hint" id="showPassword" aria-hidden="true"></span>';
+
+const newsTemplate = (news, att) => {
   let template = '';
 
   template += `
-            <div class="card">
+            <div ${att} class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
               <img src="${news.urlToImage}" alt="" >
@@ -406,4 +408,5 @@ export {
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
   dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
   buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
+  showPasswordIcon,
 };

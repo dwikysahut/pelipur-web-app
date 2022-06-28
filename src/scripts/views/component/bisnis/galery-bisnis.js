@@ -24,3 +24,4 @@ class GaleryBisnis extends HTMLElement {
         `;
   }
 }
+export default GaleryBisnis;
