@@ -24,6 +24,15 @@ body {
   color: #005555;
   cursor: pointer;
 }
+
+#fieldPasswordProfile > .fa.fa-eye-slash.fa-lg.password-hint,#fieldPasswordProfile .fa-eye{
+  float: none;
+  right: 30px;
+  position: relative;
+  z-index: 2;
+  color: #005555;
+  cursor: pointer;
+}
 .login > p, .remember > a {
   font-size: 15px;
 }
@@ -236,12 +245,6 @@ form .field input:focus::placeholder, form .field-password input:focus::placehol
   position: relative;
 }
 
-.fa-eye {
-  position: absolute;
-  margin-left: -30px;
-  margin-top: 18px;
-  font-size: 22pxssssss;
-}
 
 .form-inner form .pass-link a,
 .form-inner form .signup-link a {

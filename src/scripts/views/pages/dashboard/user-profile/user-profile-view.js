@@ -1,4 +1,4 @@
-import { categoryItemTemplate } from '../../../templates/template-creator';
+import { categoryItemTemplate, showPasswordIcon } from '../../../templates/template-creator';
 import '../../../component/custom-loader';
 
 /* eslint-disable class-methods-use-this */
@@ -46,9 +46,8 @@ class UserProfileView {
           </div>
           <div class="content__form-item list>
             <label for="password">Ubah Password</label>
-            <div class="field-password">
+            <div class="field-password"  id="fieldPasswordProfile">
               <input type="password" id="passwordProfile" name="passwordProfile" required />
-              <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
           </div>
           <div class="btn__form">
@@ -67,6 +66,19 @@ class UserProfileView {
     </div>
   </div>
               `;
+  }
+
+  passwordFieldListener() {
+    return document.querySelector('#fieldPasswordProfile');
+  }
+
+  renderIconPassword(fieldElement, callback) {
+    // eslint-disable-next-line no-param-reassign
+    fieldElement.innerHTML += showPasswordIcon();
+    document.querySelector('#showPassword').addEventListener('click', (e) => {
+      e.stopPropagation();
+      callback(document.querySelector('#passwordProfile'), document.querySelector('#showPassword'));
+    });
   }
 
   profileFormInputListener(callback) {

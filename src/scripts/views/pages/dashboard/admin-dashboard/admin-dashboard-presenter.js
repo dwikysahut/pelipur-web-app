@@ -43,7 +43,7 @@ class AdminDashboardPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._showAllData();
-    this._getChartData();
+    // this._getChartData();
   }
 
   async _getChartData() {
@@ -68,6 +68,7 @@ class AdminDashboardPresenter {
       };
 
       new Chart(
+        // eslint-disable-next-line no-underscore-dangle
         this._view.getChartListener(),
         configTotal,
       );

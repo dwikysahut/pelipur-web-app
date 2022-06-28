@@ -104,8 +104,8 @@ class InfoBisnis extends HTMLElement {
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
           data-aos-once="true"
-          class = "ket-gambar">
-          <img tabindex="0" src ="./images/heros/bisnis.jpg">
+          class ="ket-gambar">
+          <img class="lazyload"  tabindex="0" src ="./images/bisnis.jpg">
         </div>
       </div>
     `;

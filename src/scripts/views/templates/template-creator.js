@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-param-reassign */
 // import data from '../../../DATA.json';
 import CONFIG from '../../globals/config';
@@ -13,7 +14,7 @@ const newsTemplate = (news, att) => {
             <div ${att} class="card">
               <div class="card-item" tabindex="0">
               <div class="img-news" tabindex="0">
-              <img src="${news.urlToImage}" alt="" >
+              <img class="lazyload" src="${news.urlToImage}" alt="" >
               </div>
              <h4>${dateConvert(news.publishedAt)}</h4>
              <a href="${news.url}" target="_blank"><h3>${news.title}</h3></a>
@@ -42,9 +43,7 @@ const tableCollectionsTemplate = (item) => {
   <td>${item.kota}</td>
 
   <td>
-  ${item.id_status === 1 ? `<button class="btn btn-outline-dark generate" data-id="${item.id}" data-kota="${item.id_kota}">Pilih mitra</button>`
-    : `${item.nama_mitra === null ? '-' : item.nama_mitra}`
-}
+  ${item.id_status === 1 ? `<button class="btn btn-outline-dark generate" data-id="${item.id}" data-kota="${item.id_kota}">Pilih mitra</button>` : `${item.nama_mitra === null ? '-' : item.nama_mitra}`}
     <select id="partnersDropdown" name="partnersDropdown" class="partnersDropdown none" data-id="${item.id}">   
 
     </select>
@@ -149,7 +148,11 @@ const createSkeletonNewsList = (count) => {
 
 const createAuthTemplate = () => ` <div class="container">
 <div class="container__side">
-  <img src="./images/auth.png" alt="authentication">
+     <picture>
+            <source media ="(max-width:600px)" srcset="./images/auth-small.png">
+            <img src="./images/auth-large.png"
+            alt="authentication"></img>
+          </picture>
 </div>
 
 <div class="container__wrapper">    
@@ -158,7 +161,7 @@ const createAuthTemplate = () => ` <div class="container">
       <input type="radio" name="slide" id="login" checked>
       <input type="radio" name="slide" id="signup">
       <label for="login" class="slide login">Masuk</label>
-      <label for="signup" class="slide signup">Daftar</label>
+      <label for="signup" class="slide signup">Da</label>
       <div class="slider-tab"></div>
     </div>
     
@@ -385,7 +388,7 @@ const skeletonNewsHomeTemplate = () => {
       <div class="card">
         <div class="card-item" tabindex="0">
           <div class="img-news" tabindex="0">
-            <img srcset="./images/placeholder.png" alt="Berita">
+            <img class="lazyload" srcset="./images/placeholder.png" alt="Berita">
           </div>
           <h4>0/0/0000 0:0</h4>
           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>

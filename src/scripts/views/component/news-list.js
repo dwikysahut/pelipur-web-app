@@ -20,7 +20,7 @@ class NewsList extends HTMLElement {
             data-aos-mirror="true"
             data-aos-once="true" 
             class="item-news__image">
-            <img tabindex="0" src="${this._item.urlToImage !== null ? this._item.urlToImage : './images/no_image_available.png'}" alt="${this._item.title}" >
+            <img class="lazyload" tabindex="0" src="${this._item.urlToImage !== null ? this._item.urlToImage : './images/no_image_available.png'}" alt="${this._item.title}" >
             </div>
           <div
             data-aos="zoom-in"

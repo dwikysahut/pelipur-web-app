@@ -327,7 +327,7 @@ custom-hero {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../public/images/heros/hero-img-drop.jpg");
+  /* background-image: url("../public/images/heros/hero-img-drop.jpg"); */
 }
 
 .hero__inner {
@@ -849,7 +849,6 @@ footer .fa {
 .chat__form__form-message > .form__input {
   min-height: 44px;
 }
-
 .chat__form__form-message > .form__input > .form-control {
   height: 100% !important;
 }
@@ -1257,7 +1256,6 @@ table > tbody > tr > td,
 th {
   vertical-align: middle;
 }
-
 .empty-table {
   text-align: center;
   height: 300px;

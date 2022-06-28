@@ -5,8 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
+const ImageminSvgo = require('imagemin-svgo');
 
 const common = require('./webpack.common');
 
@@ -34,14 +36,30 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new CompressionWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
+
     new ImageminWebpackPlugin({
       plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
+        ImageminMozjpeg([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
+        ImageminPngquant([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
+        ImageminSvgo([
+          {
+            quality: 10,
+            progressive: true,
+          },
+        ]),
       ],
     }),
+
   ],
   optimization: {
     minimizer: [

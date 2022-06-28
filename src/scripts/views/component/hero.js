@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Hero extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -5,6 +6,29 @@ class Hero extends HTMLElement {
 
   render() {
     this.innerHTML = `
+    <style>
+      .hero {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-position: initial;
+  margin-bottom: 70px;
+  height: 600px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./images/hero-img-drop-large.jpg');
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .hero {
+    background-image: url('./images/hero-img-drop-small.jpg');
+  }
+}
+    </style>
+
       <div class="hero">
         <div class="hero__inner">
           <div 

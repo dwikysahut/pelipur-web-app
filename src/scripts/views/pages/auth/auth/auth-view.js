@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // import { createMovieItemTemplate } from '../../templates/template-creator';
 import '../../../component/custom-loader';
 import { showPasswordIcon } from '../../../templates/template-creator';
@@ -99,7 +100,11 @@ class AuthView {
     const linkSignUp = document.querySelector('#linkSignUp');
 
     callback({
-      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+      loginForm,
+      loginBtn,
+      signupBtn,
+      signupLink,
+      linkSignUp,
     });
   }
 
