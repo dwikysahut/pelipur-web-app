@@ -121,29 +121,26 @@ class VisiMisi extends HTMLElement {
       <div class="visimisi">
       <h2 tabindex="0">Visi dan Misi Kami</h2>
         <div class="inner__visimisi">
-          <div 
-            data-aos="flip-down"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="true"
-            class="visi">
+          <div class="visi">
             <h3 tabindex="0">Visi</h3>
-              <p tabindex="0">Pada Tahun 2030 menjadi platform terbaik tingkat Nasional dalam hal Pengelolaan Limbah Ramah Lingkungan yang menjangkau seluruh wilayah Indonesia dari Sabang sampai Merauke dari Miangas hingga pulau Rote.</p>
+              <p  data-aos="flip-down"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="true"
+               tabindex="0">Pada Tahun 2030 menjadi platform terbaik tingkat Nasional dalam hal Pengelolaan Limbah Ramah Lingkungan yang menjangkau seluruh wilayah Indonesia dari Sabang sampai Merauke dari Miangas hingga pulau Rote.</p>
           </div>
-          <div 
-            data-aos="flip-down"
+          <div class="misi">
+            <h3 tabindex="0">Misi</h3>
+            <ol  data-aos="flip-down"
             data-aos-offset="200"
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
-            data-aos-once="true"
-            class="misi">
-            <h3 tabindex="0">Misi</h3>
-            <ol tabindex="0">
+            data-aos-once="true" tabindex="0">
               <li>Meningkatkan Litersi Masyarakat terhadap isu Lingkungan</li>
               <li>Menjalin Kolaborasi dengan Setiap Elemen Masyarakat, organisasi dan Pemerintah</li>
               <li>Memberikan Pelayanan yang Baik</li>

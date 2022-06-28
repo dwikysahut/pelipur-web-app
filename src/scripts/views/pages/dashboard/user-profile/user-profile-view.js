@@ -44,9 +44,12 @@ class UserProfileView {
               required
             ></textarea>
           </div>
-          <div class="content__form-item list">
+          <div class="content__form-item list>
             <label for="password">Ubah Password</label>
-            <input type="password" id="passwordProfile" name="passwordProfile" required />
+            <div class="field-password">
+              <input type="password" id="passwordProfile" name="passwordProfile" required />
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
           </div>
           <div class="btn__form">
             <button

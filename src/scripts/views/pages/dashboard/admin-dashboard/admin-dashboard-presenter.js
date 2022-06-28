@@ -12,6 +12,11 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
 
 } from 'chart.js';
 import {
@@ -25,6 +30,11 @@ Chart.register(
   CategoryScale,
   LinearScale,
   PointElement,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
 
 );
 

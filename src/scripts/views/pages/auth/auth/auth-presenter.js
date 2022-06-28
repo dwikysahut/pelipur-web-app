@@ -16,13 +16,12 @@ class AuthPresenter {
     this._listenElementButtonInit();
     this._formLoginEventChangeHandler();
     this._formRegisterEventChangeHandler();
-    this._passwordFieldListener();
     this._showPasswordHandler();
     this._loginFormHandler();
     this._registerFormHandler();
   }
 
-  _passwordFieldListener() {
+  _showPasswordHandler() {
     const fieldElement = this._view.passwordFieldListener();
     this._view.renderIconPassword(fieldElement, (element, iconElement) => {
       if (element.type === 'password') {

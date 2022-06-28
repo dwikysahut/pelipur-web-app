@@ -382,16 +382,16 @@ const skeletonNewsHomeTemplate = () => {
 
   for (let i = 0; i < 6; i += 1) {
     template += `
-              <div class="card">
-                <div class="card-item" tabindex="0">
-                  <div class="img-news" tabindex="0">
-                    <img srcset="./images/placeholder.png" alt="">
-                  </div>
-                  <h4>0/0/0000 0:0</h4>
-                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
-                </div>
-              </div>    
-      `;
+      <div class="card">
+        <div class="card-item" tabindex="0">
+          <div class="img-news" tabindex="0">
+            <img srcset="./images/placeholder.png" alt="Berita">
+          </div>
+          <h4>0/0/0000 0:0</h4>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+        </div>
+      </div>    
+    `;
   }
   return template;
 };
@@ -400,6 +400,8 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
 `;
 
 const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
+const skeletonMitraListTemplate = () => ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+
 // eslint-disable-next-line import/prefer-default-export
 export {
   newsTemplate, chatTemplateCreator, createSkeletonNewsList, createAuthTemplate,
@@ -408,5 +410,5 @@ export {
   tableCityTemplate, mitraListTemplate, skeletonNewsHomeTemplate, tablePartnerTemplate,
   dropdownCityCheckBoxTemplate, userListChat, chatTemplateAdminCreator, userDetailItemTemplate,
   buttonSuspendTemplate, buttonUnSuspendTemplate, emptyTableTemplate,
-  showPasswordIcon,
+  showPasswordIcon, skeletonMitraListTemplate,
 };

@@ -15,8 +15,8 @@ class ListMitra extends HTMLElement {
             width:80%;
             text-align:center;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #F8FAFF;
+            padding: 20px 20px 50px;
+            
           }
 
         .list-mitra h2 {
@@ -26,15 +26,19 @@ class ListMitra extends HTMLElement {
         }
 
         .list-mitra ul{
-          margin:auto;
-          display:flex;
+          margin: 0 auto;
+          display: flex;
           padding: 0;
           justify-content: center;
-          gap: 10%;
+          gap: 20px;
+          flex-wrap: wrap;
         }
 
         .list-mitra ul li{
-          list-style:none;
+          list-style: none;
+          width: 200px;
+          background-color: #fff;
+          box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
         }
 
         .list-mitra img{
@@ -50,7 +54,7 @@ class ListMitra extends HTMLElement {
       </style>
         
       <div class="list-mitra">
-        <h2 tabindex="0">Mitra</h2>
+        <h2 tabindex="0">Mitra Kami</h2>
         <ul 
           data-aos="fade-up"
           data-aos-offset="200"

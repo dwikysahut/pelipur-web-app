@@ -26,21 +26,23 @@ class Daftar extends HTMLElement {
           font-weight: 500;
           text-align: center;
           margin-bottom: 10px;
+          line-height: 1.4;
         }
 
         button {
           width:100%;
           background-color:#005555;
           color:white;
-          padding:10px;
+          padding: 10px;
           box-sizing:border-box;
           border-radius:5px;
           cursor: pointer;
           font-size: 15px;
           font-weight: 500;
           border: none;
-          height: 44px;
-          line-height: 10px;
+          min-width: 44px;
+          min-height: 44px
+          line-height: 1.4;
           font-family: "Poppins", sans-serif;
         }
 
