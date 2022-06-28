@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { dataDashboardTemplate } from '../../../templates/template-creator';
 import '../../../component/aside-user';
 import '../../../component/collection-chart';

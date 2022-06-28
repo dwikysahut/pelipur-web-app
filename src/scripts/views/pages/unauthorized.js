@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { swalError } from '../../utils/function-helper';
 import UnauthorizedPresenter from './unauthorized/unauthorized-presenter';
 import UnauthorizedView from './unauthorized/unauthorized-view';

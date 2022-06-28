@@ -4,9 +4,9 @@ import '../../component/aboutus/kritik-saran';
 /* eslint-disable class-methods-use-this */
 class AboutUsView {
   getTemplate() {
-    return `   
-    <founder-aboutus></founder-aboutus>
-    <visi-misi></visi-misi>
+    return `
+        <founder-aboutus></founder-aboutus>
+        <visi-misi></visi-misi>
                 `;
   }
 }

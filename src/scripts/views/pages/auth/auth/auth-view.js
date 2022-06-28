@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // import { createMovieItemTemplate } from '../../templates/template-creator';
 import '../../../component/custom-loader';
 import { showPasswordIcon } from '../../../templates/template-creator';
@@ -7,9 +8,9 @@ class AuthView {
     return `
     <img src="./images/wave3.svg" class="wave" alt="">
     <custom-loader></custom-loader>
-    <div class="container">
+    <div class="container-auth">
     <div 
-      data-aos="fade-right"
+      data-aos="fade-down"
       data-aos-offset="200"
       data-aos-delay="50"
       data-aos-duration="1000"
@@ -45,7 +46,6 @@ class AuthView {
                
             </div> <br>
             <div class="remember">
-              
               <a href="#/forgot-password" class="pass-link">Lupa password?</a>
             </div>
 
@@ -100,7 +100,11 @@ class AuthView {
     const linkSignUp = document.querySelector('#linkSignUp');
 
     callback({
-      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+      loginForm,
+      loginBtn,
+      signupBtn,
+      signupLink,
+      linkSignUp,
     });
   }
 

@@ -81,13 +81,7 @@ aside,aside-dashboard, aside-user {
   margin-bottom: 0 !important;
 }
 
-/* .sidebar__icon {
-  padding: 10px;
-  margin-top: 0.5em;
-} */
-
 .sidebar__name {
-  /* display: none; */
   color: #fff;
   font-size: 13px;
 }
@@ -95,7 +89,7 @@ aside,aside-dashboard, aside-user {
 
 @media screen and (min-width: 600px) {
   .sidebar__menu {
-    height: 5rem;
+    height: 4.1rem;
   }
 
   .sidebar__list {
@@ -110,7 +104,6 @@ aside,aside-dashboard, aside-user {
 
   .sidebar__name {
     display: block;
-    /* margin-bottom: 10%; */
   }
 }
 

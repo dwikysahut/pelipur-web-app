@@ -1,3 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 import 'regenerator-runtime'; /* for async await transpile */
@@ -14,7 +19,11 @@ import './views/component/live-chat';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
+// lazyiload
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
+//
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
