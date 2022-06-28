@@ -1,0 +1,21 @@
+.notfound {
+    text-align: center;
+    padding-top: 2%;
+  }
+  
+  .notfound p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #005555;
+    text-transform: capitalize;
+  }
+  
+  .notfound img {
+    width: 60%;
+  }
+  
+  @media screen and (max-width: 689px) {
+    .notfound p {
+      font-size: 18px;
+    }
+  }

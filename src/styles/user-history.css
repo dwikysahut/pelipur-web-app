@@ -1,0 +1,98 @@
+/* .content {
+  padding: 30px;
+} */
+
+/* .content__title {
+  font-weight: 600;
+  padding: 20px;
+  line-height: 20px;
+  font-size: 23px;
+  color: #005555;
+  text-align: center;
+  border-bottom: 2px solid #069a8e;
+} */
+
+.content__table {
+  overflow-x: auto;
+  margin-top: 7%;
+  margin-bottom: 70px;
+}
+
+.content__table .th__space {
+  min-width: 200px;
+}
+
+.status {
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 25px;
+  width: 100px;
+  display: inline-block;
+}
+
+.status.success {
+  background-color: #36ae7c;
+}
+
+.status.taken {
+  background-color: #ff8c32;
+}
+
+.status.rejected {
+  background-color: #eb5353;
+}
+
+table {
+  padding: 5px;
+  width: 100%;
+  margin: 1% 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #dddddd !important;
+  text-align: center !important;
+  padding: 8px 10px;
+}
+
+th {
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .content__table {
+    margin-top: 1%;
+  }
+
+  /* table {
+    margin-top: 4%;
+  } */
+}
+
+@media screen and (min-width: 798px) {
+  /* .content {
+    padding: 1% 4%;
+  } */
+
+  table {
+    margin-top: 2%;
+    border: 1px solid #005555;
+  }
+
+  /* .btn__space {
+    width: 14%;
+  } */
+
+  .content__table {
+    margin-bottom: 0;
+  }
+
+  /* .content__table .btn {
+    justify-content: space-between
+  } */
+
+  /* .btn__save {
+    margin-bottom: 0px;
+  } */
+}

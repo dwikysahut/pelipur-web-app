@@ -1,0 +1,143 @@
+/* .content {
+  padding: 30px;
+} */
+
+/* .content__title {
+  font-weight: 600;
+  padding: 20px;
+  line-height: 20px;
+  font-size: 23px;
+  color: #005555;
+  text-align: center;
+  border-bottom: 2px solid #069a8e;
+} */
+
+.none{
+  display: none !important;
+}
+
+.content__table, .content__table-cities {
+  overflow-x: auto;
+  margin-bottom: 70px;
+}
+
+.btn.btn-outline-dark{
+  width: max-content !important;
+}
+
+table {
+  padding: 5px;
+  width: 100%;
+  margin: 7% 0;
+  border-collapse: collapse;
+  /* border: 1px solid black; */
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 7px 10px;
+}
+
+th {
+  text-align: center;
+}
+
+.action-column{
+  width: 100px;
+}
+
+.content__table select {
+  border-radius: 3px;
+  min-width: 44px;
+  width: 91px;
+  min-height: 44px;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.btn__action {
+  display: flex;
+  column-gap: 10px;
+  justify-items: center;
+}
+
+.btn__action button {
+  display: inline-block;
+  min-width: 60px;
+  min-height: 44px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.btn__accept:focus, .btn__reject:focus {
+  outline-color: #069a8e;
+}
+
+.btn__save, .btn__accept {
+  background-color: #36ae7c;
+}
+
+.btn__accept[disabled]{
+  background-color: gray;
+  cursor: default;
+}
+
+.btn__update {
+  background-color: #ff8c32;
+}
+.btn__update#editCityButton {
+display: none;
+}
+.btn__delete, .btn__reject {
+  background-color: #eb5353;
+}
+
+/* button:hover {
+  content: "";
+  opacity: 0.6;
+} */
+
+@media screen and (min-width: 500px) {
+  .content__table, .content__table-cities {
+    margin-top: 1%;
+  }
+
+  table {
+    margin-top: 4%;
+  }
+}
+
+@media screen and (min-width: 798px) {
+  /* .content {
+    padding: 2% 4%;
+  } */
+
+  /* table {
+    margin-top: 2%;
+  } */
+
+  /* .th__space {
+    width: 100px;
+  } */
+
+  .content__table {
+    margin-bottom: 0;
+  }
+
+  .content__table-cities {
+    padding: 5px 110px;
+  }
+
+  .content__table .btn__action {
+    justify-content: center;
+  }
+
+  .btn__save {
+    margin-bottom: 0px;
+  }
+}
