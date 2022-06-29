@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable linebreak-style */
 /* eslint-disable class-methods-use-this */
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-routes';
@@ -34,7 +36,6 @@ class App {
       button: this._chatButton,
       chatContainer: this._chatContainer,
       content: this._content,
-
     });
     GoTopInitiator.init({
       goTopButton: this._goTopButton,

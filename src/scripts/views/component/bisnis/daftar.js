@@ -26,6 +26,7 @@ class Daftar extends HTMLElement {
           font-weight: 500;
           text-align: center;
           margin-bottom: 10px;
+          line-height: 1.4;
         }
 
         button {
@@ -41,7 +42,7 @@ class Daftar extends HTMLElement {
           border: none;
           min-width: 44px;
           min-height: 44px
-          line-height: 1.7;
+          line-height: 1.4;
           font-family: "Poppins", sans-serif;
         }
 

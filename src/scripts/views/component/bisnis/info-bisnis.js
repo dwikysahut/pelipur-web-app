@@ -9,25 +9,34 @@ class InfoBisnis extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
+
+        .business-item {
+          width: 80%;
+          margin: 0 auto;
+
+        }
+        .business-wrapper{
+          margin-bottom: 70px;
+        }
         .keterangan-bisnis{
           width: 100%;
-          margin: 0 auto 70px;
+          margin: 0 auto 20px;
           display: grid;
           grid-template-columns: 1fr;
           grid-template-areas:
               "title"
               "image"
               "desc";
-          padding: 50px 0;
+          padding: 15px 0;
           gap: 20px;
           box-sizing: boreder-box;
-          box-shadow: 0 4px 8px 0 rgb(2 56 36 / 20%);
+          
         }
         info-bisnis{
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 80vh;
+          
         }
 
         .judul-bisnis h2 {
@@ -64,20 +73,20 @@ class InfoBisnis extends HTMLElement {
           max-height: 300px;
         }
 
-        @media screen and (min-width:1000px){
-          .keterangan-bisnis{
-              display:grid;
-              grid-template-columns:1fr 1fr;
-              grid-template-areas: "title title"
-                                  "desc image";
-              column-gap: 0;
-              padding: 50px 70px 50px 130px;
-              box-sizing:border-box;
-          }
+      @media screen and (min-width:1000px){
+        .keterangan-bisnis{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-areas: "title title"
+                                "desc image";
+            column-gap: 0;
+            padding: 50px 70px 50px 130px;
+            box-sizing:border-box;
+        }
 
-          .ket-bisnis {
-            width: 100%;
-          }
+        .ket-bisnis {
+          width: 100%;
+        }
         }
       </style>
 
@@ -104,8 +113,8 @@ class InfoBisnis extends HTMLElement {
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
           data-aos-once="true"
-          class = "ket-gambar">
-          <img tabindex="0" src ="./images/heros/bisnis.jpg">
+          class ="ket-gambar">
+          <img class="lazyload"  tabindex="0" src ="./images/bisnis.jpg">
         </div>
       </div>
     `;

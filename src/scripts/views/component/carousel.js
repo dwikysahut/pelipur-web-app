@@ -18,7 +18,7 @@ class Carousel extends HTMLElement {
           </div>
           <div class="carousel-item">
             <h2 class="d-block w-100" tabindex="0">Bernilai Ekonomis</h2>
-            <p tabindex="0">Dengan mengumpulkan minimal 10 jerigen minyak jelantah, Anda akan memperoleh pendapatan tambahan sebesar Rp 4.000 setiap 10 jerigen minyak jelantah yang Anda tukarkan kepada kami.</p>
+            <p tabindex="0">Dengan mengumpulkan minyak jelantah, Anda akan memperoleh pendapatan tambahan dari hasil penukaran minyak jelantah kepada kami.</p>
           </div>
           <div class="carousel-item">
             <h2 class="d-block w-100" tabindex="0">Go Green dan Go Health</h2>

@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://pelipur-apps.herokuapp.com/">
-    <img src="https://github.com/dwikysahut/pelipur-web-app/blob/nova/src/public/images/favicon.png" alt="Logo" width=120 height=120>
+    <img src="https://github.com/dwikysahut/pelipur-web-app/blob/main/src/public/favicon.png" alt="Logo" width=120 height=120>
   </a>
   <h3 align="center">Pelipur</h3>
   <p align="center">
-    Bergabung bersama kami untuk Bumi yang lebih sehat → Aplikasi Pelipur dapat diakases <a href="https://pelipur-apps.herokuapp.com/">di sini</a>
+    Bergabung bersama kami untuk Bumi yang lebih sehat → Aplikasi Pelipur dapat diakses <a href="https://pelipur-apps.herokuapp.com/">di sini</a>
   </p>
 </p>
 
@@ -52,7 +52,7 @@
 1. Isi semua field
 2. Klik tombol Login
 
-  ![login](https://user-images.githubusercontent.com/68586731/175916872-509eb18d-2be6-4881-8200-f805b43b72e3.jpg)
+  ![login](https://user-images.githubusercontent.com/68586731/176345853-64dd1c73-71b6-4996-84c3-70bf9a429190.jpg)
 
 ## Lupa Password
 1. Pada halaman Login, pilih Lupa password
@@ -61,7 +61,7 @@
 
 *Password baru dikirim memalui email yang di daftarkan*
 
-  ![forgot](https://user-images.githubusercontent.com/68586731/175916211-6c13a80e-f3d8-46f9-bf36-2d87493b257c.jpg)
+  ![forgot](https://user-images.githubusercontent.com/68586731/176346056-9418040b-eafd-4e5c-8097-b210213ce894.jpg)
 
 ## Mengisi Form Pengumpulan 
 1. Pada bagian navigasi, klik menu Pengumpulan
@@ -133,6 +133,21 @@
 3. Klik tombol centang, jika ingin melanjutkan pengajuan ke mitra
 
 *Dapat diakses Admin jika sudah Login*
+
+### Keterangan:
+Riwayat:
+- *Pending* = saat user mengirimkan form dan menunggu verifikasi admin
+- *On process* = sudah disetujui oleh admin dan sedang dalam proses
+- *Rejected* = ditolak oleh admin
+- *Completed* = saat mitra sudah selesai mengambil minyak
+
+Daftar:
+- *Button accept* = disetujui oleh admin, mengirim notifikasi ke user dan mitra
+- *Rejected* = menolak pengajuan user
+- *Finish* = mitra sudah mengambil dan mengonfirmasi ke admin
+- *Completed* = proses telah selesai 
+
+
 
   ![pengajuan](https://user-images.githubusercontent.com/68586731/175923159-e149d296-0438-4737-abea-d1b00baf76d2.png)
 
@@ -229,7 +244,7 @@
 
 **Creator**
 
-- <https://github.com/devaem>
 - <https://github.com/dwikysahut>
-- <https://github.com/novaramadhona>
 - <https://github.com/yogatresnaa>
+- <https://github.com/novaramadhona>
+- <https://github.com/devaem>
