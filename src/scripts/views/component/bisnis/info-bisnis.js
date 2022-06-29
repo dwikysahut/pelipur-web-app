@@ -66,6 +66,7 @@ class InfoBisnis extends HTMLElement {
           grid-area: image;
           width: 80%;
           margin: 0 auto;
+          max-width: 650px;
         }
 
         .ket-gambar img{
