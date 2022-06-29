@@ -9,6 +9,15 @@ class InfoBisnis extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
+
+        .business-item {
+          width: 80%;
+          margin: 0 auto;
+
+        }
+        .business-wrapper{
+          margin-bottom: 70px;
+        }
         .keterangan-bisnis{
           width: 100%;
           margin: 0 auto 20px;

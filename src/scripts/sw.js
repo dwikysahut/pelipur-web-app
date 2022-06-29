@@ -48,9 +48,9 @@ workbox.core.setCacheNameDetails({
 });
 
 // eslint-disable-next-line no-restricted-globals
-if (process.env.NODE_ENV === 'production') {
-  precacheAndRoute(self.__WB_MANIFEST);
-}
+// if (process.env.NODE_ENV === 'production') {
+// precacheAndRoute(self.__WB_MANIFEST);
+// }
 
 workbox.routing.registerRoute(
   ({ request }) => request.destination === 'image',

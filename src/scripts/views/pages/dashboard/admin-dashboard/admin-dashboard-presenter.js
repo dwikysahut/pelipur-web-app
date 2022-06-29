@@ -43,7 +43,7 @@ class AdminDashboardPresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._showAllData();
-    // this._getChartData();
+    this._getChartData();
   }
 
   async _getChartData() {

@@ -10,7 +10,7 @@ class Join extends HTMLElement {
     <style>
         
     .join{
-      width:60%;
+      width:80%;
       padding: 40px;
       margin: 0 auto 70px;
       box-shadow: 0 4px 8px 0 rgba(2, 56, 36, 0.2);
