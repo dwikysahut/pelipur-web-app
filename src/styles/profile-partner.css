@@ -1,21 +1,7 @@
-/* .content {
-  padding: 30px;
-} */
-
-/* .content__title {
-  font-weight: 600;
-  padding: 20px;
-  line-height: 20px;
-  font-size: 23px;
-  color: #005555;
-  text-align: center;
-  border-bottom: 2px solid #069a8e;
-} */
-
 .content__form {
   border-radius: 5px;
   padding: 25px;
-  margin: 3% 0 55px;
+  margin-bottom: 55px;
   border: 1px solid #dddddd;
 }
 
@@ -76,7 +62,6 @@
 }
 
 .content__form .btn__form {
-  /* margin: 20px 0 0; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
   column-gap: 10px;
@@ -100,8 +85,6 @@
   content: "";
   opacity: 0.8;
 }
-
-/* checkboxes */
 
 .select-box {
   position: static;
@@ -128,36 +111,45 @@
   width: inherit;
   height: 150px;
   overflow-y: auto;
-  /* z-index: 10; */
   transition: visibility 0s, opacity 0.3s linear;
   background-color: white;
 }
+
 #selectCityDisplay{
   caret-color: transparent;
   background-color: white;
 }
+
 #checkBoxes label {
   display: flex;
   padding: 5px;
-
 }
+
 #checkBoxes input {
   margin-right: 10px;
 }
+
 #checkBoxes input[type="checkbox"]{
   min-width: auto !important;
 }
+
 #checkBoxes label:hover {
   background-color: #005555;
   color: white;
+}
 
+.img-partner {
+  width: 44px;
+
+}
+.btn__update#editPartnerButton{
+  display: none;
 }
 
 @media screen and (min-width: 600px) {
   .content__form-item, .content__form-item-img {
     display: grid;
     grid-template-columns: 25% auto;
-    /* margin-bottom: 10px; */
   }
 
   .content__form-item.list input {
@@ -167,26 +159,4 @@
   .content__form-item.list__small input, .content__form-item.list__small select {
     width: 200px;
   }
-}
-
-@media screen and (min-width: 798px) {
-  /* .content {
-    padding: 2% 10%;
-  } */
-
-  /* .content__form {
-    margin: 3% 0 0;
-  } */
-
-  .content__title.list {
-    margin-top: 40px;
-  }
-}
-
-.img-partner {
-  width: 44px;
-
-}
-.btn__update#editPartnerButton{
-  display: none;
 }

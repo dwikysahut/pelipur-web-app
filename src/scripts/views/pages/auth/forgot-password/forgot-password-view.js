@@ -8,7 +8,7 @@ class ForgotPasswordView {
     <div class="container">
         
     <div 
-      data-aos="fade-right"
+      data-aos="fade-down"
       data-aos-offset="200"
       data-aos-delay="50"
       data-aos-duration="1000"
@@ -16,7 +16,7 @@ class ForgotPasswordView {
       data-aos-mirror="true"
       data-aos-once="true"
       class="container__side">
-      <img src="./images/undraw_two_factor_authentication_namy.svg" alt="Authentication">
+      <img src="./images/undraw_forgot_password_re_hxwm.svg" alt="Authentication">
     </div>
     <div class="container__wrapper">    
         <div class="form-inner">

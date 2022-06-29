@@ -16,7 +16,7 @@ class Footer extends HTMLElement {
       <h3>Jadwal Operasional</h3>
       <ul>
         <li><p>Senin - Jumat : 08.00 WIB - 17.00 WIB</p></li>
-        <li><p>Sabtu - Minggu dan tanggal Merah : Libur</p></li>
+        <li><p>Sabtu - Minggu dan Tanggal Merah : Libur</p></li>
       </ul>
       </div>
 

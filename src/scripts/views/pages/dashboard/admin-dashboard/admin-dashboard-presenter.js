@@ -6,60 +6,36 @@
 // import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
   Chart,
-  ArcElement,
+  SubTitle,
   LineElement,
-  BarElement,
-  PointElement,
-  BarController,
-  BubbleController,
-  DoughnutController,
   LineController,
-  PieController,
-  PolarAreaController,
-  RadarController,
-  ScatterController,
   CategoryScale,
   LinearScale,
-  LogarithmicScale,
-  RadialLinearScale,
-  TimeScale,
-  TimeSeriesScale,
+  PointElement,
   Decimation,
   Filler,
   Legend,
   Title,
   Tooltip,
-  SubTitle,
+
 } from 'chart.js';
 import {
-  swalError, openLoader, closeLoader, errorFetch,
+  swalError, closeLoader, errorFetch,
 } from '../../../../utils/function-helper';
 
 Chart.register(
-  ArcElement,
+  SubTitle,
   LineElement,
-  BarElement,
-  PointElement,
-  BarController,
-  BubbleController,
-  DoughnutController,
   LineController,
-  PieController,
-  PolarAreaController,
-  RadarController,
-  ScatterController,
   CategoryScale,
   LinearScale,
-  LogarithmicScale,
-  RadialLinearScale,
-  TimeScale,
-  TimeSeriesScale,
+  PointElement,
   Decimation,
   Filler,
   Legend,
   Title,
   Tooltip,
-  SubTitle,
+
 );
 
 class AdminDashboardPresenter {
@@ -78,7 +54,7 @@ class AdminDashboardPresenter {
       const dataTotal = {
         labels: labelsTotal,
         datasets: [{
-          label: 'Total Minyak',
+          label: 'Total Form Terkumpul',
           backgroundColor: 'rgb(6, 154, 142)',
           borderColor: 'rgb(6, 154, 142)',
           data: response.data.data.map((data) => data.count),
@@ -92,6 +68,7 @@ class AdminDashboardPresenter {
       };
 
       new Chart(
+        // eslint-disable-next-line no-underscore-dangle
         this._view.getChartListener(),
         configTotal,
       );

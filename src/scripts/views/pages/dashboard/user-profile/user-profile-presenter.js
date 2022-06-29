@@ -4,7 +4,8 @@
 /* eslint-disable no-param-reassign */
 import FormEventChangeHandler from '../../../../utils/form-event-change-handler';
 import {
-  emptyFormHandler, formPhoneValidation, swalConfirm, swalError, openLoader, closeLoader, errorFetch,
+  emptyFormHandler, formPhoneValidation, swalConfirm, swalError,
+  closeLoader, errorFetch,
 } from '../../../../utils/function-helper';
 
 class UserProfilePresenter {
@@ -12,14 +13,30 @@ class UserProfilePresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._generateUserDataHandler();
+    this._showPasswordHandler();
     this._putUserHandler();
     this._formProfileEventChangeHandler();
+  }
+
+  _showPasswordHandler() {
+    const fieldElement = this._view.passwordFieldListener();
+    this._view.renderIconPassword(fieldElement, (element, iconElement) => {
+      if (element.type === 'password') {
+        element.setAttribute('type', 'text');
+        iconElement.classList.remove('fa-eye-slash');
+        iconElement.classList.add('fa-eye');
+      } else {
+        element.setAttribute('type', 'password');
+        iconElement.classList.add('fa-eye-slash');
+        iconElement.classList.remove('fa-eye');
+      }
+    });
   }
 
   // handler change collection form input
   _formProfileEventChangeHandler() {
     this._view.getProfileFormInputListener((formData) => {
-      console.log(formData);
+      // console.log(formData);
       FormEventChangeHandler.init(formData);
     });
   }
@@ -28,10 +45,10 @@ class UserProfilePresenter {
     try {
       // openLoader(this._view.loaderListener());
       const responseDesc = await this._dataDb.getAllDesc(localStorage.getItem('token'));
-      console.log(responseDesc);
+      // console.log(responseDesc);
       this._renderCategories(responseDesc.data.data, recentId);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
 
@@ -79,7 +96,7 @@ class UserProfilePresenter {
       formData.number.value = data.no_telp;
       formData.address.value = data.alamat;
       // formData.detail.value = data.id_keterangan;
-      console.log(formData.desc.value);
+      // console.log(formData.desc.value);
 
       this._generateCategoryDropdownHandler(data.id_keterangan);
     });
@@ -99,7 +116,7 @@ class UserProfilePresenter {
           );
           return;
         }
-        console.log(formData);
+        // console.log(formData);
         await this.putUserProfile(localStorage.getItem('token'), formData, localStorage.getItem('id'));
       } else {
         emptyFormHandler(

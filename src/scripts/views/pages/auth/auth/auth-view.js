@@ -1,14 +1,16 @@
+/* eslint-disable linebreak-style */
 // import { createMovieItemTemplate } from '../../templates/template-creator';
 import '../../../component/custom-loader';
+import { showPasswordIcon } from '../../../templates/template-creator';
 /* eslint-disable class-methods-use-this */
 class AuthView {
   getTemplate() {
     return `
     <img src="./images/wave3.svg" class="wave" alt="">
     <custom-loader></custom-loader>
-    <div class="container">
+    <div class="container-auth">
     <div 
-      data-aos="fade-right"
+      data-aos="fade-down"
       data-aos-offset="200"
       data-aos-delay="50"
       data-aos-duration="1000"
@@ -38,13 +40,12 @@ class AuthView {
               <input type="email" id="inputEmailLogin" name="inputEmailLogin" placeholder="Masukan Email" required>
               <span id="alertEmailLogin" class="hint danger">error please enter a valid email</span>
             </div>
-            <div class="field">
-              <input type="password" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Masukan Password"
+            <div class="field" id="fieldPassword">
+              <input type="password" id="inputPasswordLogin" autocomplete="on" name="inputPasswordLogin" placeholder="Masukan Password"
                 required>
-                <i class="fa fa-eye" aria-hidden="true"></i>
+               
             </div> <br>
             <div class="remember">
-              
               <a href="#/forgot-password" class="pass-link">Lupa password?</a>
             </div>
 
@@ -60,23 +61,23 @@ class AuthView {
               <input type="text" id="inputNameReg" name="inputNameReg" placeholder="Masukkan Nama" required>
             </div>
             <div tabindex="0" class="field">
-              <input type="email" id="inputEmailReg" name="inputEmailReg" placeholder="Masukkan Email" required>
+              <input type="email" id="inputEmailReg" name="inputEmailReg" autocomplete="username email" placeholder="Masukkan Email" required>
               <span id="alertEmailReg" class="hint danger">error please enter a valid email</span>
             </div>
             <div tabindex="0" class="field">
-              <input type="tel" id="inputPhoneReg" name="inputPhoneReg" placeholder="Masukkan Nomor Telepon" required>
+              <input type="tel" id="inputPhoneReg" name="inputPhoneReg" autocomplete="on" placeholder="Masukkan Nomor Telepon" required>
               <span id="alertPhoneReg" class="hint danger">Input Number Only</span>
             </div>
             <div tabindex="0" class="field">
               <input type="textarea" id="inputAddressReg" name="inputAddressReg" placeholder="Masukkan Alamat" required>
             </div>
             <div tabindex="0" class="field">
-              <input type="password" id="inputPasswordReg" name="inputPasswordReg" placeholder="Masukan Password"
+              <input type="password" id="inputPasswordReg" name="inputPasswordReg" autocomplete="new-password" placeholder="Masukan Password"
                 required>
               <span id="alertPassReg" class="hint danger">password must be 8-12 characters in length</span>
             </div>
             <div tabindex="0" class="field">
-              <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" placeholder="Konfirmasi password"
+              <input type="password" id="inputRePasswordReg" name="inputRePasswordReg" autocomplete="new-password" placeholder="Konfirmasi password"
                 required>
             </div>
             <div class="field btn">
@@ -99,7 +100,24 @@ class AuthView {
     const linkSignUp = document.querySelector('#linkSignUp');
 
     callback({
-      loginForm, loginBtn, signupBtn, signupLink, linkSignUp,
+      loginForm,
+      loginBtn,
+      signupBtn,
+      signupLink,
+      linkSignUp,
+    });
+  }
+
+  passwordFieldListener() {
+    return document.querySelector('#fieldPassword');
+  }
+
+  renderIconPassword(fieldElement, callback) {
+    // eslint-disable-next-line no-param-reassign
+    fieldElement.innerHTML += showPasswordIcon();
+    document.querySelector('#showPassword').addEventListener('click', (e) => {
+      e.stopPropagation();
+      callback(document.querySelector('#inputPasswordLogin'), document.querySelector('#showPassword'));
     });
   }
 

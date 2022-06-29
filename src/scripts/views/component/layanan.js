@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class Layanan extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -77,7 +78,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
+                <img class="lazyload" src="./images/undraw_on_the_way.svg" alt="Jemput Gratis">
                 <span tabindex="0">Jemput Gratis</span>
             </div>
             <div 
@@ -89,7 +90,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"   
                 class="gambar">
-                <img src="./images/undraw_chatting.svg" alt="Live Chat">
+                <img  class="lazyload" src="./images/undraw_chatting.svg" alt="Live Chat">
                 <span tabindex="0">Live Chat</span>
             </div>
             <div 
@@ -101,7 +102,7 @@ class Layanan extends HTMLElement {
                 data-aos-mirror="true"
                 data-aos-once="true"
                 class="gambar">
-                <img src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
+                <img  class="lazyload" src="./images/undraw_printing_invoices.svg" alt="Menghasilkan Uang">
                 <span tabindex="0">Menghasilkan Uang</span>
             </div>       
         </div>

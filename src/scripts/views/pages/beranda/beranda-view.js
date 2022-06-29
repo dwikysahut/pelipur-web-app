@@ -1,5 +1,6 @@
+/* eslint-disable linebreak-style */
 import {
-  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate,
+  mitraListTemplate, newsTemplate, skeletonNewsHomeTemplate, skeletonMitraListTemplate,
 } from '../../templates/template-creator';
 
 /* eslint-disable class-methods-use-this */
@@ -24,7 +25,9 @@ class BerandaView {
             <a href="#/news">Tampilkan semua <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
-        <list-mitra></list-mitra>
+        <list-mitra>
+          ${skeletonMitraListTemplate(6)}
+        </list-mitra>
         </div>
       
     </div>
@@ -42,17 +45,40 @@ class BerandaView {
   showNews(items) {
     const itemContainer = document.querySelector('.item-produk');
     itemContainer.innerHTML = '';
-    console.log(items);
     if (items.length < 1) {
       // itemContainer.innerHTML += createSkeletonNewsList(6);
       // empty
 
       return;
     }
+    let att = '';
 
     if (itemContainer !== null) {
       for (let i = 0; i < 6; i += 1) {
-        itemContainer.innerHTML += newsTemplate(items[i]);
+        if (i % 2 === 0) {
+          // atribut aos saat genap
+
+          att = `data-aos="fade-down"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          `;
+          itemContainer.innerHTML += newsTemplate(items[i], att);
+        } else {
+          // atribut aos selain genap
+
+          att = `data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"`;
+          itemContainer.innerHTML += newsTemplate(items[i], att);
+        }
       }
     }
   }
@@ -63,8 +89,8 @@ class BerandaView {
 
   showPartners(items) {
     console.log(items);
-
     const itemContainer = this.getMitracontainerListener().mitraContainer;
+    itemContainer.innerHTML = '';
     items.forEach((item) => {
       itemContainer.innerHTML += mitraListTemplate(item);
     });
