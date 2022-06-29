@@ -34,10 +34,6 @@ class LiveChat extends HTMLElement {
         .ref('users')
         .orderByChild('updatedAt')
         .on('value', async (value) => {
-          console.log(Object.values(value.val()));
-
-          // console.log(child.val());
-
           const container = document.querySelector('.user-list');
           container.innerHTML = '';
           console.log(value.val());
@@ -68,7 +64,6 @@ class LiveChat extends HTMLElement {
 
   _onClickUserList() {
     const userListElement = document.querySelectorAll('.user-list__item');
-    console.log(userListElement);
     const loadMesageFromUser = async (id) => {
       firebase
         .database()
@@ -96,7 +91,7 @@ class LiveChat extends HTMLElement {
       element.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log(e.currentTarget.dataset.id);
+
         this._idTarget = e.currentTarget.dataset.id;
         loadMesageFromUser(e.currentTarget.dataset.id);
         if (this._idTarget !== '') {

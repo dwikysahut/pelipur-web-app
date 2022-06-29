@@ -54,7 +54,7 @@ class UserDetailPresenter {
 
   async _buttonSuspendHandler(id, suspend) {
     const suspend_code = !suspend;
-    console.log(suspend_code);
+    // console.log(suspend_code);
     try {
       const response = await this._dataDb.putUserById(localStorage.getItem('token'), { suspend: suspend_code }, id);
       if (response.status === 200) {
