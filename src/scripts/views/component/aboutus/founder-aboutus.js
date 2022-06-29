@@ -40,6 +40,7 @@ class FounderAboutus extends HTMLElement {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                width: 50px;
             }
             .img-item > p {
                 margin-bottom: 0;
@@ -117,7 +118,7 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img class="lazyload" src = "./images/yoga2.jpg" alt="Yoga">
+                        <img class="lazyload" src = "./images/yoga.png" alt="Yoga">
                         <p>Yoga</p>
                     </li>
                     <li tabindex="0" data-aos="zoom-out-down"
@@ -128,7 +129,7 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img class="lazyload" src = "./images/dwiky.jpg" alt="Dwiky">
+                        <img class="lazyload" src = "./images/dwiky.png" alt="Dwiky">
                         <p>Dwiky</p>
                     </li>
                     <li tabindex="0" data-aos="zoom-out-up"
@@ -139,7 +140,7 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img class="lazyload" src = "./images/nova.jpg" alt="Nova">
+                        <img class="lazyload" src = "./images/nova.png" alt="Nova">
                         <p>Nova</p>
                     </li>
                     <li tabindex="0" data-aos="zoom-out-down"
@@ -150,7 +151,7 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img class="lazyload" src = "./images/deva.jpg" alt="Deva">
+                        <img class="lazyload" src = "./images/deva.png" alt="Deva">
                         <p>Deva</p>
                     </li>
                 </ul>
