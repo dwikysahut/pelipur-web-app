@@ -9,15 +9,7 @@ class AuthView {
     <img src="./images/wave3.svg" class="wave" alt="">
     <custom-loader></custom-loader>
     <div class="container-auth">
-    <div 
-      data-aos="fade-down"
-      data-aos-offset="200"
-      data-aos-delay="50"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-out"
-      data-aos-mirror="true"
-      data-aos-once="true"
-      class="container__side">
+    <div class="container__side">
       <img src="./images/login.svg" alt="Authentication">
     </div>
 

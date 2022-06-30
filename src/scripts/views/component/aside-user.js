@@ -18,7 +18,7 @@ class AsideUser extends HTMLElement {
           <ul class="sidebar__list">
           
             <li class="sidebar__item">
-              <a href="#/user-history" class="sidebar__link-user">
+              <a href="#/dashboard/user-history" class="sidebar__link-user">
                 <img
                   src="icons/history_white_24dp.svg"
                   class="sidebar__icon"
@@ -28,7 +28,7 @@ class AsideUser extends HTMLElement {
               </a>
             </li>
             <li class="sidebar__item">
-              <a href="#/profile" class="sidebar__link-user">
+              <a href="#/dashboard/profile" class="sidebar__link-user">
                 <img
                   src="icons/person_white_24dp.svg"
                   class="sidebar__icon"

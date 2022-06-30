@@ -30,7 +30,7 @@ class Header extends HTMLElement {
                 </div>
               </div>
               <div class="dropdown-content">
-                <a href="#/${localStorage.getItem('role').toString() === '2' ? 'user-history' : 'collections'}" class="dropdown-dashboard">Dashboard</a>
+                <a href="#/dashboard/${localStorage.getItem('role').toString() === '2' ? 'user-history' : 'collections'}" class="dropdown-dashboard">Dashboard</a>
                 <a href="#/logout" class="dropdown-logout">Logout</a>
               </div>
               </li>
