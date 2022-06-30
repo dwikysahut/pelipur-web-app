@@ -105,7 +105,7 @@ class Artikel extends HTMLElement {
         data-aos-mirror="true"
         data-aos-once="true" 
         class = "gambar-artikel">
-        <img src="./images/minyak-jelantah.jpg" alt="Minyak">
+             <img class="lazyload" src="./images/minyak-jelantah.jpg" alt="Minyak">
         </div>
 
        <div class="artikel">

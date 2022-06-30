@@ -6,7 +6,7 @@ class FounderAboutus extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <style>
+         <style>
             .founder-about{
                 display:grid;
                 grid-template-columns: 1fr ;
@@ -16,11 +16,9 @@ class FounderAboutus extends HTMLElement {
                 gap: 20px;
                 padding: 50px 0;
             }
-
             .founder-about .founder{
                 width:80%;
                 margin: 0 auto;
-                padding:10px;
                 display: flex;
                 flex-direction:column;
                 align-items: center;
@@ -28,7 +26,6 @@ class FounderAboutus extends HTMLElement {
                 text-align:center;
                 gap: 25px;
             }
-
             .founder .img-founder{              
                 list-style: none;
                 display: flex;
@@ -39,83 +36,69 @@ class FounderAboutus extends HTMLElement {
                 align-items: center;
                 margin: 0;
             }
-
             .img-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                width: 50px;
             }
-
             .img-item > p {
                 margin-bottom: 0;
             }
-
             .founder h2 {
                 font-size: 23px;
                 font-weight: 500;
                 margin: 0;
             }
-
             .founder-about .founder h4{
                 color:#005555;
                 font-size: 15px;
                 line-height: 1.7;
             }
-
             .founder-about .founder img{
                 width: 100%;
                 box-sizing:border-box;
                 border-radius: 50%;
             }
-
             .founder-about .about{
                 width: 80%;
-                padding: 10px;
                 box-sizing: border-box;
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
              }
-
             .founder-about .about h2{
                 font-size: 23px;
                 font-weight: 500;
                 margin-bottom: 0;
                 text-align: center;
              }
-
             .founder-about .about p{
                 font-size: 15px;
                 text-align: justify;
                 margin-bottom: 0;
                 line-height: 1.7;
             }
-
             @media screen and (min-width: 550px) {
                 .founder .img-founder {
                     width: 80%;
                 }
             }
-
             @media screen and (min-width: 900px){
                 .founder-about .founder {
                     width: 50%;
                 }
-
                 .founder-about {
                     display:flex;          
                 }
-
                 .founder-about .about {
                     width:50%;
                 }
-
                 .founder .img-founder {
                     display:flex;
                     justify-content: center;
                 }
-
                 .founder-about {
                     padding: 50px 70px;
                 }
@@ -127,7 +110,7 @@ class FounderAboutus extends HTMLElement {
             <div class="founder">
             <h2 tabindex="0">Founder Pelipur</h2>
                 <ul class="img-founder">
-                    <li tabindex="0" data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="zoom-out-up"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -135,10 +118,10 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img src = "./images/heros/yoga2.jpg" alt="Yoga">
+                        <img class="lazyload" src = "./images/yoga.png" alt="Yoga">
                         <p>Yoga</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-down-right"
+                    <li tabindex="0" data-aos="zoom-out-down"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -146,10 +129,10 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img src = "./images/heros/dwiky.jpg" alt="Dwiky">
+                        <img class="lazyload" src = "./images/dwiky.png" alt="Dwiky">
                         <p>Dwiky</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="zoom-out-up"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -157,10 +140,10 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img src = "./images/heros/nova.jpg" alt="Nova">
+                        <img class="lazyload" src = "./images/nova.png" alt="Nova">
                         <p>Nova</p>
                     </li>
-                    <li tabindex="0" data-aos="fade-up-left"
+                    <li tabindex="0" data-aos="zoom-out-down"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="1000"
@@ -168,7 +151,7 @@ class FounderAboutus extends HTMLElement {
                         data-aos-mirror="true"
                         data-aos-once="true"
                         class="img-item">
-                        <img src = "./images/heros/deva.jpg" alt="Deva">
+                        <img class="lazyload" src = "./images/deva.png" alt="Deva">
                         <p>Deva</p>
                     </li>
                 </ul>

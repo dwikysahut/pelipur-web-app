@@ -12,6 +12,11 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
 
 } from 'chart.js';
 import {
@@ -25,6 +30,11 @@ Chart.register(
   CategoryScale,
   LinearScale,
   PointElement,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
 
 );
 
@@ -39,7 +49,7 @@ class AdminDashboardPresenter {
   async _getChartData() {
     try {
       const response = await this._dataDb.getCollectionsByMonth();
-      console.log(response);
+      // console.log(response);
       const labelsTotal = response.data.data.map((data) => data.month.toString().split('/'));
       const dataTotal = {
         labels: labelsTotal,
@@ -58,6 +68,7 @@ class AdminDashboardPresenter {
       };
 
       new Chart(
+        // eslint-disable-next-line no-underscore-dangle
         this._view.getChartListener(),
         configTotal,
       );

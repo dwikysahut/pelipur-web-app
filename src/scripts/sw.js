@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 // import 'regenerator-runtime';
@@ -47,7 +48,9 @@ workbox.core.setCacheNameDetails({
 });
 
 // eslint-disable-next-line no-restricted-globals
-workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
+// if (process.env.NODE_ENV === 'production') {
+// precacheAndRoute(self.__WB_MANIFEST);
+// }
 
 workbox.routing.registerRoute(
   ({ request }) => request.destination === 'image',

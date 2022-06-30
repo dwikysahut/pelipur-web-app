@@ -17,8 +17,8 @@ const UrlParser = {
     const urlsSplits = url.split('/');
     return {
       resource: urlsSplits[1] || null,
-      id: urlsSplits[2] || null,
-      verb: urlsSplits[3] || null,
+      verb: urlsSplits[2] || null,
+      id: urlsSplits[3] || null,
     };
   },
 

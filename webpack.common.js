@@ -1,14 +1,22 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-dupe-keys */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 /* eslint-disable prefer-regex-literals */
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const webpack = require('webpack');
 
@@ -50,6 +58,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/images/heros/**'],
+          },
         },
       ],
     }),
@@ -85,15 +96,21 @@ module.exports = {
       jQuery: 'jquery',
     }),
 
-    // new ServiceWorkerWebpackPlugin({
-    //   entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    }),
+
+    // new InjectManifest({
+    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+    //   swDest: 'sw.js',
+    //   maximumFileSizeToCacheInBytes: 5000000,
     // }),
 
-    new InjectManifest({
-      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-      swDest: 'sw.js',
-      maximumFileSizeToCacheInBytes: 5000000,
-    }),
+    // new InjectManifest({
+    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+    //   swDest: 'sw.js',
+    //   maximumFileSizeToCacheInBytes: 5000000,
+    // }),
     // new GenerateSW({
     //   clientsClaim: true,
     //   skipWaiting: true,

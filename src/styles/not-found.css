@@ -1,21 +1,23 @@
+.content-hide {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+}
+
 .notfound {
-    text-align: center;
-    padding-top: 2%;
-  }
-  
-  .notfound p {
-    font-size: 28px;
-    font-weight: bold;
-    color: #005555;
-    text-transform: capitalize;
-  }
-  
-  .notfound img {
-    width: 60%;
-  }
-  
-  @media screen and (max-width: 689px) {
-    .notfound p {
-      font-size: 18px;
-    }
-  }
+  text-align: center;
+}
+
+.notfound p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #005555;
+  text-transform: capitalize;
+}
+
+.notfound img {
+  width: 40%;
+}

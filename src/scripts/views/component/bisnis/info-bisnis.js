@@ -9,6 +9,15 @@ class InfoBisnis extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
+
+        .business-item {
+          width: 80%;
+          margin: 0 auto;
+
+        }
+        .business-wrapper{
+          margin-bottom: 70px;
+        }
         .keterangan-bisnis{
           width: 100%;
           margin: 0 auto 20px;
@@ -57,6 +66,7 @@ class InfoBisnis extends HTMLElement {
           grid-area: image;
           width: 80%;
           margin: 0 auto;
+          max-width: 650px;
         }
 
         .ket-gambar img{
@@ -104,8 +114,8 @@ class InfoBisnis extends HTMLElement {
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
           data-aos-once="true"
-          class = "ket-gambar">
-          <img tabindex="0" src ="./images/heros/bisnis.jpg">
+          class ="ket-gambar">
+          <img class="lazyload"  tabindex="0" src ="./images/bisnis.jpg">
         </div>
       </div>
     `;

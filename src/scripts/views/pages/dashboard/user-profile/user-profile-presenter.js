@@ -13,8 +13,24 @@ class UserProfilePresenter {
     this._view = view;
     this._dataDb = dataDb;
     this._generateUserDataHandler();
+    this._showPasswordHandler();
     this._putUserHandler();
     this._formProfileEventChangeHandler();
+  }
+
+  _showPasswordHandler() {
+    const fieldElement = this._view.passwordFieldListener();
+    this._view.renderIconPassword(fieldElement, (element, iconElement) => {
+      if (element.type === 'password') {
+        element.setAttribute('type', 'text');
+        iconElement.classList.remove('fa-eye-slash');
+        iconElement.classList.add('fa-eye');
+      } else {
+        element.setAttribute('type', 'password');
+        iconElement.classList.add('fa-eye-slash');
+        iconElement.classList.remove('fa-eye');
+      }
+    });
   }
 
   // handler change collection form input

@@ -49,7 +49,6 @@ class AdminPartnerPresenter {
     cbs.forEach((cb) => {
       cb.addEventListener('change', (e) => {
         if (e.target.checked) {
-          console.log('sss');
           if (selectText.value.length < 1) {
             selectText.value += e.target.value;
           } else {
@@ -64,7 +63,6 @@ class AdminPartnerPresenter {
           selectText.value = selectText.value
             .replace(/,+/g, ',');
         }
-        console.log(JSON.stringify(selectText.value.toString().split(',')));
       });
     });
     // selectBox.addEventListener('click', this._showCheckboxes(expanded, checkboxes));
