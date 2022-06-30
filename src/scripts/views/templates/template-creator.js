@@ -34,7 +34,7 @@ const tableCollectionsTemplate = (item) => {
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
   <td>${item.id}</td>
-  <td><a href="#/user-detail/${item.id_user}">${item.email_user}</a></td>
+  <td><a href="#/dashboard/user-detail/${item.id_user}">${item.email_user}</a></td>
   <td>${item.nama_user}</td>
   <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
