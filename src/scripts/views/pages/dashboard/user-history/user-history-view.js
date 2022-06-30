@@ -38,7 +38,7 @@ class UserHistoryView {
   }
 
   showCollectionsByUser(items) {
-    console.log(items);
+    // console.log(items);
     const container = document.querySelector('#contentUserCollection');
     let i = 0;
     if (items.length < 1) {

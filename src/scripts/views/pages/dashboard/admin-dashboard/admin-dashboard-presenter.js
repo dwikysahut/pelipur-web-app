@@ -49,7 +49,7 @@ class AdminDashboardPresenter {
   async _getChartData() {
     try {
       const response = await this._dataDb.getCollectionsByMonth();
-      console.log(response);
+      // console.log(response);
       const labelsTotal = response.data.data.map((data) => data.month.toString().split('/'));
       const dataTotal = {
         labels: labelsTotal,

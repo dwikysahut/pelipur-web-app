@@ -53,7 +53,7 @@ class UserHistoryPresenter {
   async _generateCityDropdownHandler() {
     try {
       const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
-      console.log(responseCity);
+      // console.log(responseCity);
       this._renderCities(responseCity.data.data);
     } catch (error) {
       console.log(error);

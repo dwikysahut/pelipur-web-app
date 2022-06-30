@@ -20,7 +20,6 @@ class AdminCitiesPresenter {
 
   _formCollectionEventChangeHandler() {
     this._view.getFormListener((formData) => {
-      console.log(formData);
       FormEventChangeHandler.init(formData);
     });
   }

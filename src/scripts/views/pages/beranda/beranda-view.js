@@ -88,7 +88,6 @@ class BerandaView {
   }
 
   showPartners(items) {
-    console.log(items);
     const itemContainer = this.getMitracontainerListener().mitraContainer;
     itemContainer.innerHTML = '';
     items.forEach((item) => {

@@ -105,7 +105,7 @@ class AdminListPresenter {
           if (element.dataset.id === datasetId) {
             element.removeAttribute('disabled');
           }
-          console.log(element);
+
           element.addEventListener('click', async (e) => {
             e.preventDefault();
             swalConfirmation('Yakin untuk Melanjutkan', 'Data sudah disetujui', async () => {
@@ -124,7 +124,6 @@ class AdminListPresenter {
   _rejectActionHandler() {
     this._view.rejectCollectionListener((rejectElements) => {
       rejectElements.forEach((element) => {
-        console.log(element);
         element.addEventListener('click', async (e) => {
           e.preventDefault();
           swalConfirmation('Yakin untuk Menolak', 'Data berhasil Ditolak', async () => {
@@ -142,7 +141,6 @@ class AdminListPresenter {
   _finishActionHandler() {
     this._view.finishCollectionListener((accElements) => {
       accElements.forEach((element) => {
-        console.log(element);
         element.addEventListener('click', async (e) => {
           e.preventDefault();
           swalConfirmation('Yakin untuk Melanjutkan', 'Pengumpulan selesai', async () => {
@@ -159,7 +157,6 @@ class AdminListPresenter {
 
   async _acceptCollectionHandler(selectElement, dataId) {
     try {
-      console.log(dataId);
       const response = await this._dataDb.confirmCollection(localStorage.getItem('token'), { id_mitra: selectElement.value, id_status: 2 }, dataId);
       if (response.status === 200) {
         swalConfirm('Pengajuan Berhasil Disetujui');
@@ -185,7 +182,6 @@ class AdminListPresenter {
 
   async _finishCollectionHandler(dataId) {
     try {
-      console.log(dataId);
       const response = await this._dataDb.putCollection(localStorage.getItem('token'), { id_status: 4 }, dataId);
       if (response.status === 200) {
         swalConfirm('Pengumpulan minyak Selesai');

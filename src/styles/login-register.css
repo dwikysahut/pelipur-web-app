@@ -15,6 +15,9 @@ body {
   font-size: 23px;
   font-weight: 500;
 }
+.container__side {
+  z-index: 10;
+}
 .password-hint {
   float: right;
   margin-right: 15px;
