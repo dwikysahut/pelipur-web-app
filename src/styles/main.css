@@ -83,8 +83,9 @@ body {
   z-index: 1;
 }
 
-.header__inner__title {
-  color: white;
+.header__inner__title a{
+  color: #005555;
+  text-decoration: none;
   font-weight: 400;
   font-family: "Oleo Script Swash Caps", cursive;
   font-style: italic;
@@ -218,7 +219,7 @@ button#hambuger {
   position: absolute;
 }
 
-.header__inner h1 {
+.header__inner h1 a{
   font-size: 2rem;
   color: #005555;
 }

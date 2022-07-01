@@ -34,7 +34,7 @@ const tableCollectionsTemplate = (item) => {
   <tr>
   <td>${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${item.waktu}</td>
   <td>${item.id}</td>
-  <td><a href="#/user-detail/${item.id_user}">${item.email_user}</a></td>
+  <td><a href="#/dashboard/user-detail/${item.id_user}">${item.email_user}</a></td>
   <td>${item.nama_user}</td>
   <td>${item.phone_user}</td>
   <td>${item.total_minyak} Liter</td>
@@ -402,8 +402,18 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
   <input class="cb" type="checkbox" id="city-${item.kota}" value="${item.kota}" />${item.kota}</label>
 `;
 
-const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
-const skeletonMitraListTemplate = () => ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+const mitraListTemplate = (data) => ` <li>
+<div class="image-partner">
+  <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt="gambar mitra ${data.nama}">
+</div>
+</li>`;
+const skeletonMitraListTemplate = (count) => {
+  let template = '';
+  for (let i = 0; i < count; i += 1) {
+    template += ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+  }
+  return template;
+};
 
 // eslint-disable-next-line import/prefer-default-export
 export {

@@ -69,7 +69,6 @@ class AdminListView {
   }
 
   buttonGeneratePartnerListener(callback) {
-    console.log(document.querySelectorAll('.btn.btn-outline-dark.generate'));
     callback(document.querySelectorAll('.btn.btn-outline-dark.generate'));
   }
 
@@ -113,7 +112,6 @@ class AdminListView {
       const container = document.querySelector('#tableContent');
       container.innerHTML = '';
       let i = 0;
-      console.log(items);
       if (items.length < 1) {
         container.innerHTML += emptyTableTemplate();
       } else {

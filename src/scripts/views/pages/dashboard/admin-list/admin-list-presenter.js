@@ -26,11 +26,10 @@ class AdminListPresenter {
 
   _buttonGeneratePartnerHandler() {
     this._view.buttonGeneratePartnerListener((btnElements) => {
-      console.log(btnElements);
       btnElements.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
-          console.log(e.target.dataset.id);
-          console.log(e.target.dataset.kota);
+          // console.log(e.target.dataset.id);
+          // console.log(e.target.dataset.kota);
 
           try {
             btn.classList.add('none');
@@ -52,7 +51,7 @@ class AdminListPresenter {
     try {
       openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllCollections(localStorage.getItem('token'));
-      console.log(response);
+      // console.log(response);
       if (response.status === 200) {
         this._renderCollections(response.data.data);
       }
@@ -169,7 +168,6 @@ class AdminListPresenter {
 
   async _rejectCollectionHandler(dataId) {
     try {
-      console.log(dataId);
       const response = await this._dataDb.putCollection(localStorage.getItem('token'), { id_status: 3 }, dataId);
       if (response.status === 200) {
         swalConfirm('Pengajuan Telah Ditolak');

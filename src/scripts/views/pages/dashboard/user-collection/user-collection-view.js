@@ -222,7 +222,7 @@ class UserCollectionView {
     const container = document.querySelector('#city');
     items.forEach((item) => {
       const cityElement = cityItemTemplate(item);
-      console.log(cityElement);
+
       container.innerHTML += cityElement;
     });
   }

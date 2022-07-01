@@ -27,7 +27,7 @@ class AdminPartnerPresenter {
         this._renderCities(response.data.data);
       }
     } catch (error) {
-
+      console.log(error.message);
     }
 
     const {
@@ -74,7 +74,6 @@ class AdminPartnerPresenter {
 
   _formCollectionEventChangeHandler() {
     this._view.getFormListener((formData) => {
-      console.log(formData);
       FormEventChangeHandler.init(formData);
     });
   }
@@ -84,7 +83,7 @@ class AdminPartnerPresenter {
       openLoader(this._view.loaderListener());
       const response = await this._dataDb.getAllPartners(localStorage.getItem('token'));
       //   response.data.data.kota_jangkauan = await JSON.parse(response.data.data.kota_jangkauan);
-      console.log(response);
+
       if (response.status === 200) {
         this._renderData(response.data.data);
       }
@@ -142,7 +141,7 @@ class AdminPartnerPresenter {
       formData.append('kota_jangkauan', JSON.stringify(cityForm.value.split(',')));
 
       try {
-        //   openLoader()
+        openLoader(this._view.loaderListener());
         const response = await this._dataDb.postPartner(localStorage.getItem('token'), formData);
         if (response.status === 200) {
           swalConfirm('Data berhasil ditambahkan', '');
@@ -152,10 +151,14 @@ class AdminPartnerPresenter {
           cityForm.value = '';
           imagePartner.value = '';
           this._showAllPartnersData();
-          //   closeLoader();
+          closeLoader();
         }
       } catch (error) {
         swalError('Oops.. Something Wrong', '');
+      } finally {
+        setTimeout(() => {
+          closeLoader(this._view.loaderListener());
+        }, 500);
       }
     } else {
       emptyFormHandler(nameForm, emailForm, addressForm, cityForm);
@@ -192,13 +195,13 @@ class AdminPartnerPresenter {
         btn.addEventListener('click', async (e) => {
           try {
             // open loader
+            openLoader(this._view.loaderListener());
             const response = await this._dataDb.getPartnerById(localStorage.getItem('token'), e.target.dataset.id);
             form.nameForm.value = response.data.data.nama;
             form.emailForm.value = response.data.data.email;
             form.addressForm.value = response.data.data.alamat;
             form.cityForm.value = JSON.parse(response.data.data.kota_jangkauan).toString();
             form.nameForm.value = response.data.data.nama;
-            console.log(JSON.parse(response.data.data.kota_jangkauan));
 
             const cbs = this._view.getCheckBoxItemListener();
             cbs.forEach(async (_, i) => {
@@ -211,10 +214,8 @@ class AdminPartnerPresenter {
                   return false;
                 });
               if (contains) {
-                console.log(`true${cbs[i].value}`);
                 cbs[i].checked = true;
               } else {
-                console.log('false');
                 cbs[i].checked = false;
               }
             });
@@ -231,6 +232,10 @@ class AdminPartnerPresenter {
             });
           } catch (error) {
             console.log(error);
+          } finally {
+            setTimeout(() => {
+              closeLoader(this._view.loaderListener());
+            }, 500);
           }
         });
       });
@@ -269,6 +274,8 @@ class AdminPartnerPresenter {
     formData.append('kota_jangkauan', JSON.stringify(form.cityForm.value.split(',')));
 
     try {
+      openLoader(this._view.loaderListener());
+
       const response = await this._dataDb.putPartner(localStorage.getItem('token'), formData, id);
       if (response.status === 200) {
         // closeLoader
@@ -283,6 +290,10 @@ class AdminPartnerPresenter {
     } catch (error) {
       console.log(error.message);
       swalConfirm('Oops.. Something Wrong');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 

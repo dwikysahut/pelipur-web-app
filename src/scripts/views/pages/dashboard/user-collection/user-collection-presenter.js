@@ -72,7 +72,7 @@ class UserCollectionPresenter {
     try {
       openLoader(this._view.loaderListener());
       const responseCity = await this._dataDb.getCities(localStorage.getItem('token'));
-      console.log(responseCity);
+
       this._renderCities(responseCity.data.data);
     } catch (error) {
       // console.log(error);
@@ -87,7 +87,7 @@ class UserCollectionPresenter {
         //     }
         //   } catch (errorToken) {
         //     // console.log(errorToken);
-        //     if (errorToken.response.status === 403) 
+        //     if (errorToken.response.status === 403)
         // { swalError('Session Expired, Please Login First', '#/logout'); }
         //   }
         // });
