@@ -111,7 +111,6 @@ class AdminPartnerView {
   }
 
   showAllData(items) {
-    console.log(items);
     const itemContainer = document.querySelector('.content-table-partner');
     itemContainer.innerHTML = '';
     if (items.length < 1) {

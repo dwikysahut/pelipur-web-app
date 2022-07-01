@@ -1,3 +1,5 @@
+import { skeletonMitraListTemplate } from '../templates/template-creator';
+
 /* eslint-disable class-methods-use-this */
 class ListMitra extends HTMLElement {
   connectedCallback() {
@@ -37,6 +39,7 @@ class ListMitra extends HTMLElement {
         .list-mitra ul li{
           list-style: none;
           width: 200px;
+          min-height: 100px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -70,7 +73,9 @@ class ListMitra extends HTMLElement {
           data-aos-mirror="true"
           data-aos-once="true"
           id='mitraList'>
+          ${skeletonMitraListTemplate(3)}
         </ul>
+        
       </div>
     `;
   }

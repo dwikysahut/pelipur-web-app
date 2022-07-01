@@ -404,10 +404,16 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
 
 const mitraListTemplate = (data) => ` <li>
 <div class="image-partner">
-  <img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt="gambar mitra ${data.nama}">
+  <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt="gambar mitra ${data.nama}">
 </div>
 </li>`;
-const skeletonMitraListTemplate = () => ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+const skeletonMitraListTemplate = (count) => {
+  let template = '';
+  for (let i = 0; i < count; i += 1) {
+    template += ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
+  }
+  return template;
+};
 
 // eslint-disable-next-line import/prefer-default-export
 export {

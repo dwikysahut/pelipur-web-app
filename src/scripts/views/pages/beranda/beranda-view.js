@@ -26,7 +26,7 @@ class BerandaView {
           </div>
         </article>
         <list-mitra>
-          ${skeletonMitraListTemplate(6)}
+         
         </list-mitra>
         </div>
       

@@ -15,12 +15,13 @@ class BerandaPresenter {
     if (this._view.getNewsContainerListener()) {
       try {
         const response = await this._dataDb.getAllNews();
-
-        const dataNews = response.data.data;
-        // console.log(dataNews);
-        this._renderNews(dataNews);
+        if (response.status === 200) {
+          const dataNews = response.data.data;
+          // console.log(dataNews);
+          this._renderNews(dataNews);
+        }
       } catch (error) {
-      // console.log(error);
+        console.log(error);
       // swalError('Ooops Something wrong', '#/');
       }
     }
