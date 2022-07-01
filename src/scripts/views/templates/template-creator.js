@@ -402,7 +402,11 @@ const dropdownCityCheckBoxTemplate = (item) => `<label for="city-${item.kota}">
   <input class="cb" type="checkbox" id="city-${item.kota}" value="${item.kota}" />${item.kota}</label>
 `;
 
-const mitraListTemplate = (data) => ` <li><img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt=""></li>`;
+const mitraListTemplate = (data) => ` <li>
+<div class="image-partner">
+  <img src="${CONFIG.BASE_IMAGE_URL}${data.image}" alt="gambar mitra ${data.nama}">
+</div>
+</li>`;
 const skeletonMitraListTemplate = () => ' <li><img src="./images/placeholder.png" alt="Mitra"></li>';
 
 // eslint-disable-next-line import/prefer-default-export

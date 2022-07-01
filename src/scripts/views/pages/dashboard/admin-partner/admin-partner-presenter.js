@@ -27,7 +27,7 @@ class AdminPartnerPresenter {
         this._renderCities(response.data.data);
       }
     } catch (error) {
-
+      console.log(error.message);
     }
 
     const {
@@ -142,7 +142,7 @@ class AdminPartnerPresenter {
       formData.append('kota_jangkauan', JSON.stringify(cityForm.value.split(',')));
 
       try {
-        //   openLoader()
+        openLoader(this._view.loaderListener());
         const response = await this._dataDb.postPartner(localStorage.getItem('token'), formData);
         if (response.status === 200) {
           swalConfirm('Data berhasil ditambahkan', '');
@@ -152,10 +152,14 @@ class AdminPartnerPresenter {
           cityForm.value = '';
           imagePartner.value = '';
           this._showAllPartnersData();
-          //   closeLoader();
+          closeLoader();
         }
       } catch (error) {
         swalError('Oops.. Something Wrong', '');
+      } finally {
+        setTimeout(() => {
+          closeLoader(this._view.loaderListener());
+        }, 500);
       }
     } else {
       emptyFormHandler(nameForm, emailForm, addressForm, cityForm);
@@ -192,6 +196,7 @@ class AdminPartnerPresenter {
         btn.addEventListener('click', async (e) => {
           try {
             // open loader
+            openLoader(this._view.loaderListener());
             const response = await this._dataDb.getPartnerById(localStorage.getItem('token'), e.target.dataset.id);
             form.nameForm.value = response.data.data.nama;
             form.emailForm.value = response.data.data.email;
@@ -231,6 +236,10 @@ class AdminPartnerPresenter {
             });
           } catch (error) {
             console.log(error);
+          } finally {
+            setTimeout(() => {
+              closeLoader(this._view.loaderListener());
+            }, 500);
           }
         });
       });
@@ -269,6 +278,8 @@ class AdminPartnerPresenter {
     formData.append('kota_jangkauan', JSON.stringify(form.cityForm.value.split(',')));
 
     try {
+      openLoader(this._view.loaderListener());
+
       const response = await this._dataDb.putPartner(localStorage.getItem('token'), formData, id);
       if (response.status === 200) {
         // closeLoader
@@ -283,6 +294,10 @@ class AdminPartnerPresenter {
     } catch (error) {
       console.log(error.message);
       swalConfirm('Oops.. Something Wrong');
+    } finally {
+      setTimeout(() => {
+        closeLoader(this._view.loaderListener());
+      }, 500);
     }
   }
 
