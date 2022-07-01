@@ -10,7 +10,7 @@ class Header extends HTMLElement {
     this.innerHTML = `
         <header class="header">
           <div class="header__inner">
-            <h1 class="header__inner__title">Pelipur</h1>
+            <h1 class="header__inner__title"><a href="#/home">Pelipur</a></h1>
           </div>
           <div class="menu-toggle">
             <button id="hamburger" class="btn-drawer" tabindex="0">☰</button>

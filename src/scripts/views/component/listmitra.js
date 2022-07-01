@@ -1,3 +1,5 @@
+import { skeletonMitraListTemplate } from '../templates/template-creator';
+
 /* eslint-disable class-methods-use-this */
 class ListMitra extends HTMLElement {
   connectedCallback() {
@@ -37,8 +39,15 @@ class ListMitra extends HTMLElement {
         .list-mitra ul li{
           list-style: none;
           width: 200px;
+          min-height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           background-color: #fff;
           box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+        }
+        .image-partner {
+          max-height: 100%;
         }
 
         .list-mitra img{
@@ -64,7 +73,9 @@ class ListMitra extends HTMLElement {
           data-aos-mirror="true"
           data-aos-once="true"
           id='mitraList'>
+          ${skeletonMitraListTemplate(3)}
         </ul>
+        
       </div>
     `;
   }

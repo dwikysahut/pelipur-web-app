@@ -36,7 +36,7 @@ class LiveChat extends HTMLElement {
         .on('value', async (value) => {
           const container = document.querySelector('.user-list');
           container.innerHTML = '';
-          console.log(value.val());
+          // console.log(value.val());
 
           const filteredData = [];
           value.forEach((child) => {
